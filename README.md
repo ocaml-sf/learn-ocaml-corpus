@@ -1,1 +1,1 @@
-# learn-ocaml-corpus
+# The Learn OCaml Corpus
