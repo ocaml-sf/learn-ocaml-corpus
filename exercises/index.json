@@ -1,0 +1,10 @@
+{ "learnocaml_version": "1",
+  "groups":
+  {
+      "Functional data structures":
+      {
+	  "title": "Functional data structures",
+	  "exercises": []
+      }
+  }
+}
