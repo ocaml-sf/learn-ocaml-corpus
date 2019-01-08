@@ -1,0 +1,47 @@
+Question 1
+  Found [rank] with compatible type.
+  Computing [rank E]
+  Success 1: Correct value [0]
+  Computing [rank (T (1, Red, E, E))]
+  Success 1: Correct value [1]
+  Computing [rank (T (2, Red, T (1, Red, E, E), T (1, Yellow, E, E)))]
+  Success 1: Correct value [2]
+  Computing [rank (T (42, Red, E, E))]
+  Success 1: Correct value [42]
+Question 2
+  Found [makeT] with compatible type.
+  Failure: The following exception is raised and never caught:
+     | "Assert_failure ./solution.ml:13:2"
+     | Raised at file "./solution.ml", line 13, characters 2-14
+     | Called from file "./test.ml", line 664, characters 14-36
+     | Called from unknown location
+     | Called from file "./test.ml", line 660, characters 4-872
+     | Called from file "./test.ml", line 431, characters 4-19
+  Failure: The following exception is raised and never caught:
+     | "Assert_failure ./solution.ml:13:2"
+     | Raised at file "./solution.ml", line 13, characters 2-14
+     | Called from file "./test.ml", line 664, characters 14-36
+     | Called from unknown location
+     | Called from file "./test.ml", line 660, characters 4-872
+     | Called from file "./test.ml", line 431, characters 4-19
+  Failure: The following exception is raised and never caught:
+     | "Assert_failure ./solution.ml:13:2"
+     | Raised at file "./solution.ml", line 13, characters 2-14
+     | Called from file "./test.ml", line 664, characters 14-36
+     | Called from unknown location
+     | Called from file "./test.ml", line 660, characters 4-872
+     | Called from file "./test.ml", line 431, characters 4-19
+  Failure: The following exception is raised and never caught:
+     | "Assert_failure ./solution.ml:13:2"
+     | Raised at file "./solution.ml", line 13, characters 2-14
+     | Called from file "./test.ml", line 664, characters 14-36
+     | Called from unknown location
+     | Called from file "./test.ml", line 660, characters 4-872
+     | Called from file "./test.ml", line 431, characters 4-19
+Question 3
+  Failure: Cannot find  [singleton]
+Question 4
+  Found [makeT] with compatible type.
+  Failure: Cannot find  [union]
+Questions 5 and 6
+  Failure: Cannot find  [insert]

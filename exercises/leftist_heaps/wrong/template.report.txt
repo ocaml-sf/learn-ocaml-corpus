@@ -1,0 +1,82 @@
+Question 1
+  Found [rank] with compatible type.
+  Computing [rank E]
+  Failure: Wrong exception ["Assert_failure ./solution.ml:6:2"]
+  Computing [rank (T (1, Red, E, E))]
+  Failure: Wrong exception ["Assert_failure ./solution.ml:6:2"]
+  Computing [rank (T (2, Red, T (1, Red, E, E), T (1, Yellow, E, E)))]
+  Failure: Wrong exception ["Assert_failure ./solution.ml:6:2"]
+  Computing [rank (T (42, Red, E, E))]
+  Failure: Wrong exception ["Assert_failure ./solution.ml:6:2"]
+Question 2
+  Found [makeT] with compatible type.
+  Failure: The following exception is raised and never caught:
+     | "Assert_failure ./solution.ml:10:2"
+     | Raised at file "./solution.ml", line 10, characters 2-14
+     | Called from file "./test.ml", line 664, characters 14-36
+     | Called from unknown location
+     | Called from file "./test.ml", line 660, characters 4-872
+     | Called from file "./test.ml", line 431, characters 4-19
+  Failure: The following exception is raised and never caught:
+     | "Assert_failure ./solution.ml:10:2"
+     | Raised at file "./solution.ml", line 10, characters 2-14
+     | Called from file "./test.ml", line 664, characters 14-36
+     | Called from unknown location
+     | Called from file "./test.ml", line 660, characters 4-872
+     | Called from file "./test.ml", line 431, characters 4-19
+  Failure: The following exception is raised and never caught:
+     | "Assert_failure ./solution.ml:10:2"
+     | Raised at file "./solution.ml", line 10, characters 2-14
+     | Called from file "./test.ml", line 664, characters 14-36
+     | Called from unknown location
+     | Called from file "./test.ml", line 660, characters 4-872
+     | Called from file "./test.ml", line 431, characters 4-19
+  Failure: The following exception is raised and never caught:
+     | "Assert_failure ./solution.ml:10:2"
+     | Raised at file "./solution.ml", line 10, characters 2-14
+     | Called from file "./test.ml", line 664, characters 14-36
+     | Called from unknown location
+     | Called from file "./test.ml", line 660, characters 4-872
+     | Called from file "./test.ml", line 431, characters 4-19
+Question 3
+  Found [singleton] with compatible type.
+  Computing [singleton Red]
+  Failure: Wrong exception ["Assert_failure ./solution.ml:14:2"]
+  Computing [singleton Yellow]
+  Failure: Wrong exception ["Assert_failure ./solution.ml:14:2"]
+  Computing [singleton Green]
+  Failure: Wrong exception ["Assert_failure ./solution.ml:14:2"]
+Question 4
+  Found [makeT] with compatible type.
+  Found [union] with compatible type.
+  Failure: The following exception is raised and never caught:
+     | "Assert_failure ./solution.ml:10:2"
+     | Raised at file "./solution.ml", line 10, characters 2-14
+     | Called from file "./test.ml", line 560, characters 37-59
+     | Called from file "./test.ml", line 760, characters 16-46
+     | Called from unknown location
+     | Called from unknown location
+     | Called from file "./test.ml", line 755, characters 4-612
+     | Called from file "./test.ml", line 431, characters 4-19
+  Failure: The following exception is raised and never caught:
+     | "Assert_failure ./solution.ml:10:2"
+     | Raised at file "./solution.ml", line 10, characters 2-14
+     | Called from file "./test.ml", line 560, characters 37-59
+     | Called from file "./test.ml", line 760, characters 16-46
+     | Called from unknown location
+     | Called from unknown location
+     | Called from file "./test.ml", line 755, characters 4-612
+     | Called from file "./test.ml", line 431, characters 4-19
+Questions 5 and 6
+  Found [insert] with compatible type.
+  Found [extract] with compatible type.
+  Failure: The following exception is raised and never caught:
+     | "Assert_failure ./solution.ml:26:2"
+     | Raised at file "./solution.ml", line 26, characters 2-14
+     | Called from file "./test.ml", line 923, characters 14-23
+     | Called from file "./test.ml", line 914, characters 26-29
+     | Called from file "./test.ml", line 942, characters 33-51
+     | Called from file "./test.ml", line 974, characters 15-31
+     | Called from unknown location
+     | Called from file "./test.ml", line 1001, characters 6-86
+     | Called from file "./test.ml", line 431, characters 4-19

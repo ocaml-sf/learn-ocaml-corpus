@@ -1,0 +1,34 @@
+Question 1
+  Found [rank] with compatible type.
+  Computing [rank E]
+  Success 1: Correct value [0]
+  Computing [rank (T (1, Red, E, E))]
+  Success 1: Correct value [1]
+  Computing [rank (T (2, Red, T (1, Red, E, E), T (1, Yellow, E, E)))]
+  Success 1: Correct value [2]
+  Computing [rank (T (42, Red, E, E))]
+  Success 1: Correct value [42]
+Question 2
+  Found [makeT] with compatible type.
+  Success 1: The heap invariant seems respected.
+  Success 1: The rank invariant seems respected.
+  Success 1: The leftist invariant seems respected.
+  Success 1: The multiset of elements seems preserved.
+Question 3
+  Found [singleton] with compatible type.
+  Computing [singleton Red]
+  Success 1: Correct value [(T (1, Red, E, E))]
+  Computing [singleton Yellow]
+  Success 1: Correct value [(T (1, Yellow, E, E))]
+  Computing [singleton Green]
+  Success 1: Correct value [(T (1, Green, E, E))]
+Question 4
+  Found [makeT] with compatible type.
+  Found [union] with compatible type.
+  Failure: The heap invariant is violated.The following expression:
+     | union (makeT Yellow E E) (makeT Red E E)produces the following invalid
+                                               result:
+     | T(1, Yellow, T(1, Red, E, E), E)
+  Success 1: The multiset of elements seems preserved.
+Questions 5 and 6
+  Failure: Cannot find  [insert]

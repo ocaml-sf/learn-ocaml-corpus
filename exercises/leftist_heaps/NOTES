@@ -1,0 +1,1 @@
+The rank of [makeT x h1 h2] is always [min (rank h1) (rank h2) + 1].
