@@ -8,6 +8,13 @@
 	    "exercises": [
                 "leftist_heaps"
             ]
+        },
+        "programming":
+        {
+            "title": "Programming",
+            "exercises": [
+                "pprint"
+            ]
         }
     }
 }

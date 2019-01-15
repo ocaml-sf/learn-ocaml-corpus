@@ -1,0 +1,14 @@
+Question 1
+  Failure: Cannot find  [++]
+Question 2
+  Failure: Cannot find  [<==]
+Question 3
+  Failure: Cannot find  [requirement]
+Question 4
+  Failure: Cannot find  [char]
+  Failure: Cannot find  [^^]
+  Failure: Cannot find  [nest]
+  Failure: Cannot find  [group]
+  Failure: Cannot find  [ifflat]
+Question 5
+  Failure: Cannot find  [pretty]

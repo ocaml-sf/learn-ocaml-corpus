@@ -1,0 +1,37 @@
+Should this exercise be extended with more questions?
+  One could ask the student to implement more document combinators,
+  or even a pretty-printer for a simple type of trees.
+
+-- ocaml questions -------------------------------------------------------------
+
+-- learn-ocaml questions -------------------------------------------------------
+
+The command `learn-ocaml grade --grade-student=foo.ml --dump-reports=foo`
+leaves stale files `foo.report.{html,txt}` if the file `foo.ml` cannot be
+compiled for some reason (for instance, it may contain a syntax error or a
+type error). This can be a source of confusion. It would be preferable if in
+that case `learn-ocaml` would remove these stale files (from a previous run).
+
+Which version of OCaml can one assume when writing exercises and graders? Can
+one explicitly indicate which version is required by a particular exercise?
+
+Suppose I want to test a function on 1000 different inputs
+using T.test_function_1_against_solution.
+Suppose there are 999 successes and 1 failure.
+I don't want a list of all 999 successes to be shown to the
+student, with a failure lost somewhere in it.
+I want a summary score of the successes (999) (or perhaps not even that)
+and a detailed display of just the failure.
+(Also, printing the arguments and results of all of these successful tests
+is very, very slow.)
+I have written my own code to do this;
+perhaps something like it should be provided by default.
+
+Suppose I have given an algebraic data type definition to the student and I
+have asked the student to implement some operations on this type. Then, at the
+end, suppose I would like the student to add new cases to this algebraic type
+and extend his code. This will typically break my grader (e.g., if I have
+written a well-formedness test, then it will no longer be exhaustive). Can
+anything be done about this?
+
+Can a grader log messages in a log file? (For debugging.)

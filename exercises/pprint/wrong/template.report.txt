@@ -1,0 +1,23 @@
+Question 1
+  Found [++] with compatible type.
+  Failure: Not yet implemented.
+Question 2
+  Found [<==] with compatible type.
+  Failure: Not yet implemented.
+Question 3
+  Found [requirement] with compatible type.
+  Failure: Not yet implemented.
+Question 4
+  Found [char] with compatible type.
+  Failure: Not yet implemented.
+  Found [^^] with compatible type.
+  Failure: Not yet implemented.
+  Found [nest] with compatible type.
+  Failure: Not yet implemented.
+  Found [group] with compatible type.
+  Failure: Not yet implemented.
+  Found [ifflat] with compatible type.
+  Failure: Not yet implemented.
+Question 5
+  Found [pretty] with compatible type.
+  Failure: Not yet implemented.

@@ -1,0 +1,28 @@
+This code is based on PPrintMini, but is scaled even further down, for greater
+simplicity. [FancyString] and [Blank] are replaced with [Char]. There is no
+support for UTF8; we assume that the apparent length of a character is 1. The
+type [requirement] is implemented as an algebraic data type, which is slower
+but cleaner.
+
+A precondition of [pretty] is:
+  [flatten] implies
+  [Finite state.column ++ requirement doc <== Finite state.width].
+In other words, flattening mode can be entered only if there is sufficient
+space on the current line.
+
+Currently, [flatten = true] *implies* that there is enough space on the
+current line. I thought for a moment that perhaps [flatten] should be true *if
+and only if* there is enough space on the current line. Then, [flatten] would
+no longer be an indication that we are "in flattening mode"; instead, it would
+be just an optimization, a redundant piece of information, which perhaps can
+be removed altogether, or must be kept only for performance reasons. However,
+this does not work. If it did, then [Group] would have no meaning. Indeed,
+[Group] does not affect the property "there is enough space on the current
+line", yet it does represent an option to switch to flattening mode. In other
+words, the fact that [flatten] is false represents meaningful information: it
+tells us that all enclosing groups have been dissolved. This can be the case
+even though there is enough space on the current line to print the current
+document.
+
+We could improve [group] by simplifying [Group doc] to just [doc] when [doc]
+has an infinite width requirement, that is, when [doc] contains a hardline

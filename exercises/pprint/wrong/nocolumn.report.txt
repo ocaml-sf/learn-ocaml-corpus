@@ -1,0 +1,305 @@
+Question 1
+  Found [++] with compatible type.
+  Success 1: [++] seems correct.
+Question 2
+  Found [<==] with compatible type.
+  Success 1: [<==] seems correct.
+Question 3
+  Found [requirement] with compatible type.
+  Success 1: [requirement] seems correct.
+Question 4
+  Found [char] with compatible type.
+  Success 1: [char] seems correct.
+  Found [^^] with compatible type.
+  Success 1: [^^] seems correct.
+  Found [nest] with compatible type.
+  Success 1: [nest] seems correct.
+  Found [group] with compatible type.
+  Success 1: [group] seems correct.
+  Found [ifflat] with compatible type.
+  Failure: [ifflat] is incorrect.When applied to the following arguments:
+     | Empty
+     | IfFlat (Empty, Empty)it produces the following invalid result:
+    [IfFlat (Empty, Empty)] A valid result is:
+     | IfFlat (Empty, IfFlat (Empty, Empty))
+Question 5
+  Found [pretty] with compatible type.
+  Failure: [pretty] is incorrect.When applied to the following arguments:
+     | 16
+     | Cat (
+     |   Finite 41,
+     |   Char 'N',
+     |   Cat (
+     |     Finite 40,
+     |     Char ' ',
+     |     Group (
+     |       Finite 39,
+     |       Cat (
+     |         Finite 39,
+     |         Char '(',
+     |         Cat (
+     |           Finite 38,
+     |           Nest (
+     |             2,
+     |             Finite 37,
+     |             Cat (
+     |               Finite 37,
+     |               IfFlat (Empty, HardLine),
+     |               Cat (
+     |                 Finite 37,
+     |                 Char 'L',
+     |                 Cat (
+     |                   Finite 36,
+     |                   Cat (
+     |                     Finite 3,
+     |                     Char ',',
+     |                     Cat (
+     |                       Finite 2,
+     |                       IfFlat (Char ' ', HardLine),
+     |                       Char '9'
+     |                     )
+     |                   ),
+     |                   Cat (
+     |                     Finite 33,
+     |                     Char ',',
+     |                     Cat (
+     |                       Finite 32,
+     |                       IfFlat (Char ' ', HardLine),
+     |                       Cat (
+     |                         Finite 31,
+     |                         Char 'N',
+     |                         Cat (
+     |                           Finite 30,
+     |                           Char ' ',
+     |                           Group (
+     |                             Finite 29,
+     |                             Cat (
+     |                               Finite 29,
+     |                               Char '(',
+     |                               Cat (
+     |                                 Finite 28,
+     |                                 Nest (
+     |                                   2,
+     |                                   Finite 27,
+     |                                   Cat (
+     |                                     Finite 27,
+     |                                     IfFlat (Empty, HardLine),
+     |                                     Cat (
+     |                                       Finite 27,
+     |                                       Char 'L',
+     |                                       Cat (
+     |                                         Finite 26,
+     |                                         Cat (
+     |                                           Finite 3,
+     |                                           Char ',',
+     |                                           Cat (
+     |                                             Finite 2,
+     |                                             IfFlat (
+     |                                               Char ' ',
+     |                                               HardLine
+     |                                             ),
+     |                                             Char '4'
+     |                                           )
+     |                                         ),
+     |                                         Cat (
+     |                                           Finite 23,
+     |                                           Char ',',
+     |                                           Cat (
+     |                                             Finite 22,
+     |                                             IfFlat (
+     |                                               Char ' ',
+     |                                               HardLine
+     |                                             ),
+     |                                             Cat (
+     |                                               Finite 21,
+     |                                               Char 'N',
+     |                                               Cat (
+     |                                                 Finite 20,
+     |                                                 Char ' ',
+     |                                                 Group (
+     |                                                   Finite 19,
+     |                                                   Cat (
+     |                                                     Finite 19,
+     |                                                     Char '(',
+     |                                                     Cat (
+     |                                                       Finite 18,
+     |                                                       Nest (
+     |                                                         2,
+     |                                                         Finite 17,
+     |                                                         Cat (
+     |                                                           Finite 17,
+     |                                                           IfFlat (
+     |                                                             Empty,
+     |                                                             HardLine
+     |                                                           ),
+     |                                                           Cat (
+     |                                                             Finite 17,
+     |                                                             Char 'L',
+     |                                                             Cat (
+     |                                                               Finite 16,
+     |                                                               Cat (
+     |                                                                 Finite 3,
+     |                                                                 Char ',',
+     |                                                                 Cat (
+     |                                                                   Finite 2,
+     |                                                                   IfFlat (
+     |                                                                     Char ' ',
+     |                                                                     HardLine
+     |                                                                   ),
+     |                                                                   Char '7'
+     |                                                                 )
+     |                                                               ),
+     |                                                               Cat (
+     |                                                                 Finite 13,
+     |                                                                 Char ',',
+     |                                                                 Cat (
+     |                                                                   Finite 12,
+     |                                                                   IfFlat (
+     |                                                                     Char ' ',
+     |                                                                     HardLine
+     |                                                                   ),
+     |                                                                   Cat (
+     |                                                                     Finite 11,
+     |                                                                     Char 'N',
+     |                                                                     Cat (
+     |                                                                       Finite 10,
+     |                                                                       Char ' ',
+     |                                                                       Group (
+     |                                                                         Finite 9,
+     |                                                                         Cat (
+     |                                                                           Finite 9,
+     |                                                                           Char '(',
+     |                                                                           Cat (
+     |                                                                             Finite 8,
+     |                                                                             Nest (
+     |                                                                               2,
+     |                                                                               Finite 7,
+     |                                                                               Cat (
+     |                                                                                 Finite 7,
+     |                                                                                 IfFlat (
+     |                                                                                   Empty,
+     |                                                                                   HardLine
+     |                                                                                 ),
+     |                                                                                 Cat (
+     |                                                                                   Finite 7,
+     |                                                                                   Char 'L',
+     |                                                                                   Cat (
+     |                                                                                     Finite 6,
+     |                                                                                     Cat (
+     |                                                                                       Finite 3,
+     |                                                                                       Char ',',
+     |                                                                                       Cat (
+     |                                                                                         Finite 2,
+     |                                                                                         IfFlat (
+     |                                                                                           Char ' ',
+     |                                                                                           HardLine
+     |                                                                                         ),
+     |                                                                                         Char '9'
+     |                                                                                       )
+     |                                                                                     ),
+     |                                                                                     Cat (
+     |                                                                                       Finite 3,
+     |                                                                                       Char ',',
+     |                                                                                       Cat (
+     |                                                                                         Finite 2,
+     |                                                                                         IfFlat (
+     |                                                                                           Char ' ',
+     |                                                                                           HardLine
+     |                                                                                         ),
+     |                                                                                         Char 'L'
+     |                                                                                       )
+     |                                                                                     )
+     |                                                                                   )
+     |                                                                                 )
+     |                                                                               )
+     |                                                                             ),
+     |                                                                             Cat (
+     |                                                                               Finite 1,
+     |                                                                               IfFlat (
+     |                                                                                 Empty,
+     |                                                                                 HardLine
+     |                                                                               ),
+     |                                                                               Char ')'
+     |                                                                             )
+     |                                                                           )
+     |                                                                         )
+     |                                                                       )
+     |                                                                     )
+     |                                                                   )
+     |                                                                 )
+     |                                                               )
+     |                                                             )
+     |                                                           )
+     |                                                         )
+     |                                                       ),
+     |                                                       Cat (
+     |                                                         Finite 1,
+     |                                                         IfFlat (
+     |                                                           Empty,
+     |                                                           HardLine
+     |                                                         ),
+     |                                                         Char ')'
+     |                                                       )
+     |                                                     )
+     |                                                   )
+     |                                                 )
+     |                                               )
+     |                                             )
+     |                                           )
+     |                                         )
+     |                                       )
+     |                                     )
+     |                                   )
+     |                                 ),
+     |                                 Cat (
+     |                                   Finite 1,
+     |                                   IfFlat (Empty, HardLine),
+     |                                   Char ')'
+     |                                 )
+     |                               )
+     |                             )
+     |                           )
+     |                         )
+     |                       )
+     |                     )
+     |                   )
+     |                 )
+     |               )
+     |             )
+     |           ),
+     |           Cat (Finite 1, IfFlat (Empty, HardLine), Char ')')
+     |         )
+     |       )
+     |     )
+     |   )
+     | )it produces the following invalid result:
+     | N (
+     |   L,
+     |   9,
+     |   N (
+     |     L,
+     |     4,
+     |     N (
+     |       L,
+     |       7,
+     |       N (L, 9, L)
+     |     )
+     |   )
+     | )A valid result is:
+     | N (
+     |   L,
+     |   9,
+     |   N (
+     |     L,
+     |     4,
+     |     N (
+     |       L,
+     |       7,
+     |       N (
+     |         L,
+     |         9,
+     |         L
+     |       )
+     |     )
+     |   )
+     | )
