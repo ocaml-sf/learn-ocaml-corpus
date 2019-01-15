@@ -4,7 +4,7 @@ let empty : heap =
 (* BEGIN INCLUDE
 (* TO DO: Define the auxiliary function [rank]. *)
 let rank (h : heap) : rank =
-  assert false
+  raise TODO
      END INCLUDE *)
 (* BEGIN EXCLUDE *)
 let rank (h : heap) : rank =
@@ -18,7 +18,7 @@ let rank (h : heap) : rank =
 (* BEGIN INCLUDE
 (* TO DO: Define the auxiliary function [makeT]. *)
 let makeT (x : element) (h1 : heap) (h2 : heap) : heap =
-  assert false
+  raise TODO
      END INCLUDE *)
 (* BEGIN EXCLUDE *)
 let makeT x h1 h2 =
@@ -33,7 +33,7 @@ let makeT x h1 h2 =
 (* BEGIN INCLUDE
 (* TO DO: Define [singleton]. *)
 let singleton (x : element) : heap =
-  assert false
+  raise TODO
      END INCLUDE *)
 (* BEGIN EXCLUDE *)
 let singleton (x : element) : heap =
@@ -44,7 +44,7 @@ let singleton (x : element) : heap =
 (* BEGIN INCLUDE
 (* TO DO: Define [union]. *)
 let union (h1 : heap) (h2 : heap) : heap =
-  assert false
+  raise TODO
      END INCLUDE *)
 (* BEGIN EXCLUDE *)
 let rec union h1 h2 =
@@ -62,7 +62,7 @@ let rec union h1 h2 =
 (* BEGIN INCLUDE
 (* TO DO: Define [insert]. *)
 let insert (x : element) (h : heap) : heap =
-  assert false
+  raise TODO
      END INCLUDE *)
 (* BEGIN EXCLUDE *)
 let insert (x : element) (h : heap) : heap =
@@ -72,7 +72,7 @@ let insert (x : element) (h : heap) : heap =
 (* BEGIN INCLUDE
 (* TO DO: Define [extract]. *)
 let extract (h : heap) : (element * heap) option =
-  assert false
+  raise TODO
      END INCLUDE *)
 (* BEGIN EXCLUDE *)
 let extract (h : heap) : (element * heap) option =

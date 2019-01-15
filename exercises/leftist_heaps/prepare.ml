@@ -1,3 +1,5 @@
+exception TODO
+
 (* -------------------------------------------------------------------------- *)
 
 (* Definitions that the student relies upon. *)

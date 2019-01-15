@@ -432,6 +432,12 @@ let protect f =
   with
   | Fail report ->
       report
+  | TODO ->
+      let text = [
+        R.Text "Not yet implemented."
+      ] in
+      let report = [R.Message (text, R.Failure)] in
+      report
   | (e : exn) ->
       let text = [
         R.Text "The following exception is raised and never caught:";
@@ -461,6 +467,40 @@ let rec successful_item = function
 
 and successful (r : report) =
   List.for_all successful_item r
+
+(* -------------------------------------------------------------------------- *)
+
+(* Generic test functions. *)
+
+let test1 name candidate reference showx showy eqy xs =
+  xs |> List.iter (fun x ->
+    let actual = candidate x
+    and expected = reference x in
+    if not (eqy actual expected) then
+      fail [
+        R.Code name; R.Text "is incorrect.";
+        R.Break;
+        R.Text "When applied to the following argument:";
+        R.Break;
+        R.Code (showx x);
+        R.Break;
+        R.Text "it produces the following invalid result:";
+        R.Break;
+        R.Output (showy actual);
+        R.Text "A valid result is:";
+        R.Break;
+        R.Output (showy expected);
+      ]
+  );
+  let message = [ R.Code name; R.Text "seems correct."; ] in
+  [ R.Message (message, R.Success 1) ]
+
+let test_value_1 name ty reference showx showy eqy xxs =
+  T.test_value (T.lookup_student ty name) (fun candidate ->
+    protect (fun () ->
+      test1 name candidate reference showx showy eqy xxs
+    )
+  )
 
 (* -------------------------------------------------------------------------- *)
 
@@ -609,6 +649,11 @@ let rec print (h : heap) : document =
 let print h =
   pretty 40 (print h)
 
+(* A printer for integers. *)
+
+let show_int i =
+  Printf.sprintf "%d" i
+
 (* -------------------------------------------------------------------------- *)
 
 (* Testing [rank]. *)
@@ -621,12 +666,13 @@ let print h =
 
 let test_rank () =
   within_section "Question 1" (fun () ->
-    T.test_function_1_against_solution ~gen:0 [%ty: heap -> rank] "rank" [
-      E;
-      T(1, Red, E, E);
-      T(2, Red, T(1, Red, E, E), T(1, Yellow, E, E));
-      T(42, Red, E, E); (* invalid rank at root *)
-    ]
+    test_value_1 "rank" [%ty: heap -> rank] rank
+      print show_int (=) [
+        E;
+        T(1, Red, E, E);
+        T(2, Red, T(1, Red, E, E), T(1, Yellow, E, E));
+        T(42, Red, E, E); (* invalid rank at root *)
+      ]
   )
 
 (* -------------------------------------------------------------------------- *)
@@ -726,8 +772,8 @@ let test_makeT () =
 
 let test_singleton () =
   within_section "Question 3" (fun () ->
-    T.test_function_1_against_solution ~gen:0
-      [%ty: element -> heap] "singleton"
+    test_value_1 "singleton" [%ty: element -> heap] Solution.singleton
+      print_element print (=)
       elems
   )
 
@@ -983,7 +1029,6 @@ let test_insert_extract insert extract (is : instructions) =
       R.Text "gives rise to the following sequence of extracted elements:";
       R.Break;
       R.Output actual;
-      R.Break;
       R.Text "whereas the expected sequence is as follows:";
       R.Break;
       R.Output expected;

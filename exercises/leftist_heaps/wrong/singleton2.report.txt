@@ -4,12 +4,10 @@ Question 2
   Failure: Cannot find  [makeT]
 Question 3
   Found [singleton] with compatible type.
-  Computing [singleton Red]
-  Failure: Wrong value [(T (1, Red, T (1, Red, E, E), E))]
-  Computing [singleton Yellow]
-  Failure: Wrong value [(T (1, Yellow, T (1, Yellow, E, E), E))]
-  Computing [singleton Green]
-  Failure: Wrong value [(T (1, Green, T (1, Green, E, E), E))]
+  Failure: [singleton] is incorrect.When applied to the following argument:
+     | Redit produces the following invalid result:[T(1, Red, T(1, Red, E,
+                                                   E), E)] A valid result is:
+     | T(1, Red, E, E)
 Question 4
   Failure: Cannot find  [makeT]
 Questions 5 and 6

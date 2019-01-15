@@ -10,4 +10,4 @@ let rank (h : heap) : rank =
 
 let makeT x h1 h2 =
   (* Fails. *)
-  assert false
+  failwith "I am wrong"

@@ -1,13 +1,9 @@
 Question 1
   Found [rank] with compatible type.
-  Computing [rank E]
-  Success 1: Correct value [0]
-  Computing [rank (T (1, Red, E, E))]
-  Failure: Wrong value [0]
-  Computing [rank (T (2, Red, T (1, Red, E, E), T (1, Yellow, E, E)))]
-  Failure: Wrong value [0]
-  Computing [rank (T (42, Red, E, E))]
-  Failure: Wrong value [0]
+  Failure: [rank] is incorrect.When applied to the following argument:
+     | T(1, Red, E, E)it produces the following invalid result:[0] A valid
+                                                               result is:
+     | 1
 Question 2
   Failure: Cannot find  [makeT]
 Question 3

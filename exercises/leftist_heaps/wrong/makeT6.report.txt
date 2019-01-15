@@ -1,13 +1,6 @@
 Question 1
   Found [rank] with compatible type.
-  Computing [rank E]
-  Success 1: Correct value [0]
-  Computing [rank (T (1, Red, E, E))]
-  Success 1: Correct value [1]
-  Computing [rank (T (2, Red, T (1, Red, E, E), T (1, Yellow, E, E)))]
-  Success 1: Correct value [2]
-  Computing [rank (T (42, Red, E, E))]
-  Success 1: Correct value [42]
+  Success 1: [rank] seems correct.
 Question 2
   Found [makeT] with compatible type.
   Failure: The heap invariant is violated.The following expression:
