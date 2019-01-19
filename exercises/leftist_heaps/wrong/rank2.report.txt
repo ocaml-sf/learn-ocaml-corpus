@@ -2,10 +2,10 @@ Question 1
   Found [rank] with compatible type.
   Failure: The following exception is raised and never caught:
      | (Failure Ohmigod!)
-     | Called from file "./test.ml", line 477, characters 17-28
+     | Called from file "./test.ml", line 466, characters 17-28
      | Called from unknown location
-     | Called from file "./test.ml", line 476, characters 2-532
-     | Called from file "./test.ml", line 431, characters 4-19
+     | Called from file "./test.ml", line 465, characters 2-532
+     | Called from file "./test.ml", line 420, characters 4-19
 Question 2
   Failure: Cannot find  [makeT]
 Question 3

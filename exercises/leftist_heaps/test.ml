@@ -392,17 +392,6 @@ exception Fail of report
 let section title report : report =
   [R.Section ([R.Text title], report)]
 
-(* [within_section title action] evaluates [action()], which either returns
-   normally and produces a report, or fails and produces a report. In either
-   case, the report is enclosed within a section entitled [title]. *)
-
-let within_section title action : report =
-  try
-    let report = action() in
-    section title report
-  with Fail report ->
-    raise (Fail (section title report))
-
 (* This generic function takes as an argument the text of the message that
    will be displayed. A message is a list of inline things. *)
 
@@ -665,7 +654,7 @@ let show_int i =
    ill-formed heaps whose rank information is incorrect. *)
 
 let test_rank () =
-  within_section "Question 1" (fun () ->
+  section "Question 1" (
     test_value_1 "rank" [%ty: heap -> rank] rank
       print show_int (=) [
         E;
@@ -751,7 +740,7 @@ let tests = [
 ]
 
 let test_makeT () =
-  within_section "Question 2" (fun () ->
+  section "Question 2" (
     T.test_value
       (T.lookup_student [%ty : element -> heap -> heap -> heap] "makeT")
       (fun makeT ->
@@ -771,7 +760,7 @@ let test_makeT () =
    comparison with a reference implementation. *)
 
 let test_singleton () =
-  within_section "Question 3" (fun () ->
+  section "Question 3" (
     test_value_1 "singleton" [%ty: element -> heap] Solution.singleton
       print_element print (=)
       elems
@@ -902,7 +891,7 @@ let test_union makeT union =
     correctness
 
 let test_union () =
-  within_section "Question 4" (fun () ->
+  section "Question 4" (
     T.test_value
       (T.lookup_student [%ty : element -> heap -> heap -> heap] "makeT")
       (fun makeT ->
@@ -1052,7 +1041,7 @@ let test_insert_extract insert extract =
   )
 
 let test_insert_extract () =
-  within_section "Questions 5 and 6" (fun () ->
+  section "Questions 5 and 6" (
     T.test_value
       (T.lookup_student [%ty : element -> heap -> heap] "insert")
       (fun insert ->

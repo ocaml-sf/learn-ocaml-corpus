@@ -21,17 +21,6 @@ exception Fail of report
 let section title report : report =
   [R.Section ([R.Text title], report)]
 
-(* [within_section title action] evaluates [action()], which either returns
-   normally and produces a report, or fails and produces a report. In either
-   case, the report is enclosed within a section entitled [title]. *)
-
-let within_section title action : report =
-  try
-    let report = action() in
-    section title report
-  with Fail report ->
-    raise (Fail (section title report))
-
 (* This generic function takes as an argument the text of the message that
    will be displayed. A message is a list of inline things. *)
 
@@ -476,14 +465,14 @@ let tests =
   ]
 
 let test_addition () =
-  within_section "Question 1" (fun () ->
+  section "Question 1" (
     test_value_2 "++" [%ty : req -> req -> req] (++)
       show_req show_req show_req (=)
       tests
   )
 
 let test_comparison () =
-  within_section "Question 2" (fun () ->
+  section "Question 2" (
     test_value_2 "<==" [%ty : req -> req -> bool] (<==)
       show_req show_req show_bool (=)
       tests
@@ -510,7 +499,7 @@ let poison =
   ]
 
 let test_requirement () =
-  within_section "Question 3" (fun () ->
+  section "Question 3" (
     test_value_1 "requirement" [%ty : doc -> req] requirement
       show_doc show_req (=)
       (docs_1 @ poison)
@@ -524,7 +513,7 @@ let doc_pairs_2=
   list (deepening doc_pairs 2)
 
 let test_smart_constructors () =
-  within_section "Question 4" (fun () ->
+  section "Question 4" (
     (* No need to test [empty] and [hardline]. *)
     test_value_1 "char" [%ty : char -> doc] char
       show_char show_doc wf_eq_doc
@@ -563,7 +552,7 @@ let tests =
   |> flat_map (fun doc -> [8, doc; 16, doc])
 
 let test_pretty () =
-  within_section "Question 5" (fun () ->
+  section "Question 5" (
     test_value_2 "pretty" [%ty : int -> doc -> string] pretty
       show_int show_doc show_string (=)
       tests
