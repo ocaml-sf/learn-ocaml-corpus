@@ -1,0 +1,25 @@
+Question 1
+  Found [empty] with compatible type.
+  Success 1: [empty] is correct.
+Question 2
+  Found [test24] with compatible type.
+  Success 1: [test24] is correct.
+Question 3
+  Found [digits] with compatible type.
+  Success 1: [digits] is correct.
+Question 4
+  Found [length] with compatible type.
+  Failure: [length] is incorrect.When applied to the following argument:
+     | Zero (One ((9, 7), Nil))it produces the following invalid result:
+    [1] A valid result is:
+     | 2
+Question 5
+  Failure: Cannot find  [cons]
+Question 6
+  Failure: Cannot find  [uncons]
+Question 7
+  Failure: Cannot find  [get]
+Question 9
+  Failure: Cannot find  [update]
+Question 10
+  Failure: Cannot find  [eval]

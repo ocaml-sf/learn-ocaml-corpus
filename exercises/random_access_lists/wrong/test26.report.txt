@@ -1,0 +1,20 @@
+Question 1
+  Found [empty] with compatible type.
+  Success 1: [empty] is correct.
+Question 2
+  Found [test24] with compatible type.
+  Failure: [test24] is incorrect. It represents the sequence: [2, 6]
+Question 3
+  Failure: Cannot find  [digits]
+Question 4
+  Failure: Cannot find  [length]
+Question 5
+  Failure: Cannot find  [cons]
+Question 6
+  Failure: Cannot find  [uncons]
+Question 7
+  Failure: Cannot find  [get]
+Question 9
+  Failure: Cannot find  [update]
+Question 10
+  Failure: Cannot find  [eval]

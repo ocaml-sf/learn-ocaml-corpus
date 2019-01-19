@@ -6,7 +6,8 @@
         {
 	    "title": "Functional data structures",
 	    "exercises": [
-                "leftist_heaps"
+                "leftist_heaps",
+                "random_access_lists",
             ]
         },
         "programming":

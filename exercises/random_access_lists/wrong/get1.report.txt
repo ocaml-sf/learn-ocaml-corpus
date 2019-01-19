@@ -1,0 +1,26 @@
+Question 1
+  Failure: Cannot find  [empty]
+Question 2
+  Failure: Cannot find  [test24]
+Question 3
+  Failure: Cannot find  [digits]
+Question 4
+  Failure: Cannot find  [length]
+Question 5
+  Failure: Cannot find  [cons]
+Question 6
+  Failure: Cannot find  [uncons]
+Question 7
+  Found [get] with compatible type.
+  Failure: The following exception is raised and never caught:
+     | "Assert_failure ./solution.ml:5:8"
+     | Raised at file "./solution.ml", line 5, characters 8-20
+     | Called from file "./solution.ml", line 9, characters 23-37
+     | Called from file "./test.ml", line 438, characters 21-36
+     | Called from unknown location
+     | Called from file "./test.ml", line 437, characters 6-311
+     | Called from file "./test.ml", line 339, characters 4-19
+Question 9
+  Failure: Cannot find  [update]
+Question 10
+  Failure: Cannot find  [eval]

@@ -1,0 +1,34 @@
+Question 1
+  Found [empty] with compatible type.
+  Success 1: [empty] is correct.
+Question 2
+  Found [test24] with compatible type.
+  Success 1: [test24] is correct.
+Question 3
+  Found [digits] with compatible type.
+  Success 1: [digits] is correct.
+Question 4
+  Found [length] with compatible type.
+  Success 1: [length] seems correct.
+Question 5
+  Found [cons] with compatible type.
+  Success 1: [cons] seems correct.
+Question 6
+  Found [uncons] with compatible type.
+  Success 1: [uncons] seems correct.
+Question 7
+  Found [get] with compatible type.
+  Success 1: [get] seems correct.
+Question 9
+  Found [update] with compatible type.
+  Success 1: [update] seems correct.
+Question 10
+  Found [eval] with compatible type.
+  Failure: The following exception is raised and never caught:
+     | "Assert_failure ./solution.ml:64:8"
+     | Raised at file "./solution.ml", line 64, characters 8-20
+     | Called from file "./solution.ml", line 105, characters 23-36
+     | Called from file "./test.ml", line 438, characters 21-36
+     | Called from unknown location
+     | Called from file "./test.ml", line 437, characters 6-311
+     | Called from file "./test.ml", line 339, characters 4-19

@@ -1,0 +1,22 @@
+Question 1
+  Failure: Cannot find  [empty]
+Question 2
+  Failure: Cannot find  [test24]
+Question 3
+  Failure: Cannot find  [digits]
+Question 4
+  Failure: Cannot find  [length]
+Question 5
+  Failure: Cannot find  [cons]
+Question 6
+  Found [uncons] with compatible type.
+  Failure: [uncons] is incorrect.When applied to the following argument:
+     | Zero (One ((9, 7), Nil))it produces the following invalid result:
+    [Some ((9, Zero (Nil)))] A valid result is:
+     | Some ((9, One (7, Nil)))
+Question 7
+  Failure: Cannot find  [get]
+Question 9
+  Failure: Cannot find  [update]
+Question 10
+  Failure: Cannot find  [eval]

@@ -1,0 +1,23 @@
+Question 1
+  Failure: Cannot find  [empty]
+Question 2
+  Failure: Cannot find  [test24]
+Question 3
+  Failure: Cannot find  [digits]
+Question 4
+  Failure: Cannot find  [length]
+Question 5
+  Failure: Cannot find  [cons]
+Question 6
+  Failure: Cannot find  [uncons]
+Question 7
+  Found [get] with compatible type.
+  Failure: [get] is incorrect.When applied to the following arguments:
+     | 0
+     | Zero (One ((9, 7), Nil))it produces the following invalid result:
+    [7] A valid result is:
+     | 9
+Question 9
+  Failure: Cannot find  [update]
+Question 10
+  Failure: Cannot find  [eval]

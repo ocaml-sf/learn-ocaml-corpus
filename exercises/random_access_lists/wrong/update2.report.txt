@@ -1,0 +1,25 @@
+Question 1
+  Failure: Cannot find  [empty]
+Question 2
+  Failure: Cannot find  [test24]
+Question 3
+  Failure: Cannot find  [digits]
+Question 4
+  Failure: Cannot find  [length]
+Question 5
+  Found [cons] with compatible type.
+  Success 1: [cons] seems correct.
+Question 6
+  Failure: Cannot find  [uncons]
+Question 7
+  Failure: Cannot find  [get]
+Question 9
+  Found [update] with compatible type.
+  Failure: [update] is incorrect.When applied to the following arguments:
+     | 0
+     | 42
+     | Zero (One ((9, 7), Nil))it produces the following invalid result:
+    [Zero (One ((42, 42), Nil))] A valid result is:
+     | Zero (One ((42, 7), Nil))
+Question 10
+  Failure: Cannot find  [eval]

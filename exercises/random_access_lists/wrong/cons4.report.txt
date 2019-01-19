@@ -1,0 +1,76 @@
+Question 1
+  Failure: Cannot find  [empty]
+Question 2
+  Failure: Cannot find  [test24]
+Question 3
+  Failure: Cannot find  [digits]
+Question 4
+  Found [length] with compatible type.
+  Success 1: [length] seems correct.
+Question 5
+  Found [cons] with compatible type.
+  Failure: [cons] is incorrect.When applied to the following arguments:
+     | 5
+     | Zero (
+     |   One (
+     |     (1, 1),
+     |     One (
+     |       ((9, 7), (7, 1)),
+     |       One (
+     |         (((1, 8), (8, 5)), ((4, 5), (4, 8))),
+     |         One (
+     |           (
+     |             (((7, 7), (4, 8)), ((9, 5), (5, 1))),
+     |             (((6, 1), (0, 1)), ((8, 2), (4, 1)))
+     |           ),
+     |           Nil
+     |         )
+     |       )
+     |     )
+     |   )
+     | )it produces the following invalid result:
+     | Zero (
+     |   One (
+     |     (1, 1),
+     |     One (
+     |       ((9, 7), (7, 1)),
+     |       One (
+     |         (((1, 8), (8, 5)), ((4, 5), (4, 8))),
+     |         One (
+     |           (
+     |             (((7, 7), (4, 8)), ((9, 5), (5, 1))),
+     |             (((6, 1), (0, 1)), ((8, 2), (4, 1)))
+     |           ),
+     |           Nil
+     |         )
+     |       )
+     |     )
+     |   )
+     | )A valid result is:
+     | One (
+     |   5,
+     |   One (
+     |     (1, 1),
+     |     One (
+     |       ((9, 7), (7, 1)),
+     |       One (
+     |         (((1, 8), (8, 5)), ((4, 5), (4, 8))),
+     |         One (
+     |           (
+     |             (((7, 7), (4, 8)), ((9, 5), (5, 1))),
+     |             (((6, 1), (0, 1)), ((8, 2), (4, 1)))
+     |           ),
+     |           Nil
+     |         )
+     |       )
+     |     )
+     |   )
+     | )
+Question 6
+  Failure: Cannot find  [uncons]
+Question 7
+  Failure: Cannot find  [get]
+Question 9
+  Failure: Cannot find  [update]
+Question 10
+  Failure: Cannot find  [eval]

@@ -1,0 +1,19 @@
+Question 1
+  Failure: Cannot find  [empty]
+Question 2
+  Failure: Found [test24] with unexpected type:
+     | Wrong type (int * int) seq.
+Question 3
+  Failure: Cannot find  [digits]
+Question 4
+  Failure: Cannot find  [length]
+Question 5
+  Failure: Cannot find  [cons]
+Question 6
+  Failure: Cannot find  [uncons]
+Question 7
+  Failure: Cannot find  [get]
+Question 9
+  Failure: Cannot find  [update]
+Question 10
+  Failure: Cannot find  [eval]
