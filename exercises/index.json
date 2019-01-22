@@ -10,6 +10,13 @@
                 "random_access_lists",
             ]
         },
+        "Imperative data structures":
+        {
+	    "title": "Imperative data structures",
+	    "exercises": [
+                "persistent_arrays"
+            ]
+        },
         "programming":
         {
             "title": "Programming",

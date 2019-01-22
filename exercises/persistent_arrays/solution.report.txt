@@ -1,0 +1,15 @@
+Correctness
+  Found [make] with compatible type.
+  Found [get] with compatible type.
+  Found [set] with compatible type.
+  Success 1: The code seems correct. It passes 5702 test scenarios.
+Optimization
+  Found [make] with compatible type.
+  Found [get] with compatible type.
+  Found [set] with compatible type.
+  Success 1: The code seems to respect the optimization scheme of Question 4.
+Complexity
+  Found [make] with compatible type.
+  Found [get] with compatible type.
+  Found [set] with compatible type.
+  Success 1: The code seems to have the desired complexity.

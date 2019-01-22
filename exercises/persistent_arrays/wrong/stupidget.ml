@@ -1,0 +1,32 @@
+(* Increase costs by inserting a useless call to [representative]. *)
+
+let make (n : int) (x : 'a) : 'a parray =
+  let data = Array.make n x in
+  ref (Array { data })
+
+let set (base : 'a parray) (i : int) (value : 'a) =
+  ref (Apply { base; i; value })
+
+let rec representative a =
+  match !a with
+  | Array _ ->
+      a
+  | Apply { base; _ } ->
+      representative base
+
+let rec revert (a : 'a parray) : 'a array =
+  match !a with
+  | Array { data } ->
+      data
+  | Apply { base; i; value } ->
+      let r = representative a in
+      let data = revert base in
+      let v = data.(i) in
+      data.(i) <- value;
+      a := Array { data };
+      base := Apply { base = a; i; value = v };
+      data
+
+let get (a : 'a parray) (i : int) : 'a =
+  let data = revert a in
+  data.(i)

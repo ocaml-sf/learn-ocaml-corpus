@@ -1,0 +1,9 @@
+-- about this exercise ---------------------------------------------------------
+
+Check that [revert], [set], [get] do not allocate a new array.
+
+Maybe the rendering of the diagnostics is still not right.
+
+-- ocaml questions -------------------------------------------------------------
+
+-- learn-ocaml questions -------------------------------------------------------
