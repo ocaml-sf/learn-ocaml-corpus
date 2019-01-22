@@ -20,8 +20,9 @@ By convention, a smaller priority denotes a "more urgent" element.
 
 We wish to implement a **priority queue**, that is, a multiset (also known as
 a bag) of elements which supports the following operations: `empty`,
-`singleton`, `insert`, `union`, and `extract`, which extracts an element whose
-priority is minimal.
+`singleton`, `insert`, `union`, and `extract`, which extracts
+an element whose priority is minimal. There might be several
+such elements; an arbitrary one is picked.
 
 ## Data structure
 
@@ -42,12 +43,13 @@ Because this data structure is immutable,
 it is automatically persistent: the operations
 that we are about to implement are nondestructive.
 
-A heap must satisfy the **heap invariant**: if an element `x` is
-stored higher in the tree than an element `y`, then `x` is more urgent than
-`y`, that is, `priority x <= priority y` holds. In particular, the element
-that is stored at the root of the tree has minimal priority.
+A heap must satisfy the **heap invariant**: if an element `x` is an ancestor
+in the tree of an element `y`, then `x` is more urgent than `y`, that is,
+`priority x <= priority y` holds. In particular, the element that is stored at
+the root of the tree has minimal priority.
 
-By definition, the **rank** of a heap is the length of its right spine. Thus,
+By definition, the **rank** of a heap is the length of its right spine, that
+is, the length of its rightmost branch. Thus,
 the rank of an empty heap is zero, while the rank of a nonempty heap is one
 more than the rank of its right child. For efficiency, we require every heap
 to satisfy the **rank invariant**: the rank of a nonempty heap is stored at

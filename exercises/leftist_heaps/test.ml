@@ -457,6 +457,12 @@ let rec successful_item = function
 and successful (r : report) =
   List.for_all successful_item r
 
+let (@@) (r : report) (f : unit -> report) : report =
+  if successful r then
+    r @ f()
+  else
+    r
+
 (* -------------------------------------------------------------------------- *)
 
 (* Generic test functions. *)
@@ -873,22 +879,17 @@ let test_union_complexity makeT union =
   [ R.success points "The complexity of union seems correct." ]
 
 let test_union makeT union =
-  let correctness =
-    flat_map (fun test ->
-      protect (fun () ->
-        partially_test_union test makeT union
-      )
-    ) tests
-  in
+  flat_map (fun test ->
+    protect (fun () ->
+      partially_test_union test makeT union
+    )
+  ) tests @@
   (* Complexity is tested only if [union] seems functionally correct.
      We do not want the student to worry about complexity too early. *)
-  if successful correctness then
-    correctness @
+  fun () ->
     protect (fun () ->
       test_union_complexity makeT union
     )
-  else
-    correctness
 
 let test_union () =
   section "Question 4" (

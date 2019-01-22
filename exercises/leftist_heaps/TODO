@@ -6,6 +6,8 @@ When displaying a counter-example, indicate which priority function is used.
 
 Might wish to check that [union] does not use [T] directly to build a tree.
 
+Link to an exercise that uses a priority queue, e.g., Dijkstra.
+
 -- ocaml questions -------------------------------------------------------------
 
 OCaml: Unbound value "|". (|.)
