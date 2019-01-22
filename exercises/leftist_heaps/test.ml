@@ -457,7 +457,7 @@ let rec successful_item = function
 and successful (r : report) =
   List.for_all successful_item r
 
-let (@@) (r : report) (f : unit -> report) : report =
+let (-@>) (r : report) (f : unit -> report) : report =
   if successful r then
     r @ f()
   else
@@ -883,7 +883,7 @@ let test_union makeT union =
     protect (fun () ->
       partially_test_union test makeT union
     )
-  ) tests @@
+  ) tests -@>
   (* Complexity is tested only if [union] seems functionally correct.
      We do not want the student to worry about complexity too early. *)
   fun () ->
