@@ -7,7 +7,7 @@
 	    "title": "Functional data structures",
 	    "exercises": [
                 "leftist_heaps",
-                "random_access_lists",
+                "random_access_lists"
             ]
         },
         "Imperative data structures":
