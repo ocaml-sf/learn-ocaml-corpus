@@ -87,13 +87,13 @@ can be described as follows:
 
 * The document `Char c` represents a single character, namely `c`.
 
-* The composite document `Cat (_, doc1, doc2)` represents the concatenation of
-  the documents `doc1` and `doc2`.
+* A composite document of the form `Cat (_, doc1, doc2)`
+  represents the concatenation of the documents `doc1` and `doc2`.
 
-* The document `Nest (i, _, doc)` represents the document `doc`, inside which
-  the indentation level has been changed from `n` to `n+i`.
+* A document of the form `Nest (i, _, doc)` represents the document `doc`,
+  inside which the indentation level has been changed from `n` to `n+i`.
 
-* In flattening mode, the document `Group (_, doc)` is treated like `doc`.
+* In flattening mode, a document of the form `Group (_, doc)` is treated like `doc`.
   In normal mode, the document `Group (_, doc)` denotes a choice between two
   ways of displaying the document `doc`. The first alternative is to enter
   flattening mode and display `doc` on a single line. (Any `Group` constructors
@@ -124,13 +124,14 @@ in a well-formed document,
 some space requirements
 have been computed ahead of time
 and stored.
+(This computation is the topic of Question 4.)
 
 The last three points above are designed so as to allow the function
 `requirement` (below) to have constant time complexity.
 
 ## Computing or fetching a space requirement
 
-**Question 3.** Define a function `requirement` of type `req -> doc` such that
+**Question 3.** Define a function `requirement` of type `doc -> req` such that
 `requirement doc` is the horizontal space requirement of the document `doc`.
 One may assume that `doc` is well-formed. This function must have **constant
 time complexity**.
