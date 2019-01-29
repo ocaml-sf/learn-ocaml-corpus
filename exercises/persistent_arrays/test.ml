@@ -555,7 +555,7 @@ let print_option print = function
 
 (* -------------------------------------------------------------------------- *)
 
-(* Basic functions on requirements and documents are taken from the solution. *)
+(* Some code is taken from the solution. *)
 
 open Solution
 
