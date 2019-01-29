@@ -1,8 +1,8 @@
-language: c
-os:
-  - linux
-sudo: required
+services:
+  - docker
+
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker pull -t learn-ocaml --target program .; fi
+  - docker pull ocamlsf/learn-ocaml
+
 script:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sh -c 'docker run --rm -v $(pwd)/.:/repository learn-ocaml -- build'; fi
+  - docker run --rm -v $(pwd)/.:/repository ocamlsf/learn-ocaml -- build
