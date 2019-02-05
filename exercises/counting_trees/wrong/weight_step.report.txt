@@ -1,0 +1,32 @@
+Question 1
+  Found [weight] with compatible type.
+  Failure: [weight] is incorrect.
+    When applied to the following argument:
+    
+     | Node (Leaf, Leaf)
+    it produces the following invalid result:
+    [0] A valid result is:
+    
+     | 1
+Question 2
+  Failure: Cannot find  [height]
+Question 3
+  Failure: Cannot find  [naive_trees_of_weight]
+Question 4
+  Failure: Cannot find  [trees_of_weights]
+Question 5
+  Failure: Cannot find  [fix]
+Question 6
+  Failure: Cannot find  [sigma]
+Question 7
+  Failure: Cannot find  [split_weight]
+Question 8
+  Failure: Cannot find  [trees_of_weight]
+Question 9
+  Failure: Cannot find  [trees_of_weight_0_19]
+Question 10
+  Failure: Cannot find  [split_wb_weight]
+Question 11
+  Failure: Cannot find  [wb_trees_of_weight]
+Question 12
+  Failure: Cannot find  [wb_trees_of_weight_0_19]

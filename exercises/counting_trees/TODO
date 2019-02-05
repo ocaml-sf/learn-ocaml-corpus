@@ -1,0 +1,10 @@
+-- about this exercise ---------------------------------------------------------
+
+Enforce the rule that some functions *must* / *must not* be recursive.
+
+We *could* ask the students to write (or give them?) a defensive version of
+[fix] so as to produce a nice error message when a recursive call is cyclic.
+
+-- ocaml questions -------------------------------------------------------------
+
+-- learn-ocaml questions -------------------------------------------------------
