@@ -1,0 +1,12 @@
+A description of size `n` can represent a sequence of doubly
+exponential length `2^(2^n)`. (Build a tree of products, where
+the children of each `Product` node are shared.)
+
+`get` takes linear time in the depth of the sequence description.
+  (Not counting the complexity of user-supplied transformations
+  at `Map` nodes.)
+
+`foreach` takes linear time in the size of the sequence description
+plus the length of the sequence.
+  (Not counting the complexity of user-supplied transformations
+  at `Map` nodes.)

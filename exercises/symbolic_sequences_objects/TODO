@@ -1,0 +1,22 @@
+-- about this exercise ---------------------------------------------------------
+
+Link to defunctionalization.
+
+-- ocaml questions -------------------------------------------------------------
+
+-- learn-ocaml questions -------------------------------------------------------
+
+Can one link from one exercise to another exercise?
+
+Adding [@@@warning "-A"] at the top of `test.ml` has no effect.
+I still no warnings when running `learn-ocaml build`.
+
+"Unbound module Lazy" in test.ml?
+
+`Test_lib.result` does not seem to correctly protect against non-terminating
+computations. An infinite loop (`let rec f x = f x in f 0`) is never
+interrupted.
+
+Grading is slow. This limits the number of tests that I can run.
+I can run about 10000 tests in one second offline,
+but grading in the browser seems slower.
