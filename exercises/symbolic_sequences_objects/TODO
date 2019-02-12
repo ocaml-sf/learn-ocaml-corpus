@@ -1,7 +1,5 @@
 -- about this exercise ---------------------------------------------------------
 
-Link to defunctionalization.
-
 -- ocaml questions -------------------------------------------------------------
 
 -- learn-ocaml questions -------------------------------------------------------
@@ -9,7 +7,7 @@ Link to defunctionalization.
 Can one link from one exercise to another exercise?
 
 Adding [@@@warning "-A"] at the top of `test.ml` has no effect.
-I still no warnings when running `learn-ocaml build`.
+I still get no warnings when running `learn-ocaml build`.
 
 "Unbound module Lazy" in test.ml?
 

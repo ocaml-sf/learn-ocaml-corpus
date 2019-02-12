@@ -24,7 +24,8 @@ exercise, entitled "Symbolic Sequences as Objects", we implement them as
 records of functions. Although these two approaches give
 rise to two different ways of organizing the code, the underlying algorithm is
 the same. In fact, the GADT-based code is the image of the object-based code
-through a mechanical transformation known as defunctionalization.
+through a mechanical transformation known as
+[defunctionalization](https://en.wikipedia.org/wiki/Defunctionalization).
 
 In another exercise, entitled "Enumerating Trees",
 we *use* symbolic sequences.
