@@ -22,7 +22,7 @@ For simplicity, we use OCaml's built-in limited-precision integers.
 As we compute fast-growing sequences, we are quickly in danger
 of computing incorrect results due to overflow.
 To escape this limitation, we would have to
-use a library such as [GNU MP](https://gmplib.org/).
+use a library such as [GNU MP](https://gmplib.org/) or [BigNum](https://opam.ocaml.org/packages/bignum/).
 
 ## Trees
 
