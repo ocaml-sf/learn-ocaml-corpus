@@ -142,16 +142,13 @@ there?
 In order to express the answer to this question in an elegant manner, let us
 first write two auxiliary functions, `sigma` and `split_weight`.
 
-In the following, a **weight** (written `w`, `w1`, `w2`, etc.) is always
-nonnegative.
-
 **Question 6.** Define a function `sigma` of type `int -> int -> (int -> int)
   -> int` such that `sigma i j f` is the sum `f i + f (i+1) + ... + f j`. The
 sum is zero if `j` is strictly less than `i`.
 
 **Question 7.** Define a function `split_weight` of type `int -> (int -> int
 -> int) -> int` such that `split_weight w f` is the sum of all terms of the
-form `f w1 w2`, where `w1` and `w2` must obey the constraint `w1 + w2 = w`.
+form `f w1 w2`, where the weights `w1` and `w2` must obey the constraint `w1 + w2 = w`.
 
 **Question 8.** Define a memoizing function `trees_of_weight` of type
 `int -> int` such that `trees_of_weight w` is the number of
