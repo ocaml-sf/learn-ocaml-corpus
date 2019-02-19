@@ -228,7 +228,12 @@ variable `0`, and so on.
 Define a function `eval` of type `env -> expr -> constant`,
 such that `eval env e`
 is the value of the expression `e` under the environment `env`.
-
 In particular,
 if the expression `e` has no free variables,
 then `eval empty e` is the value of `e`.
+
+*Note.* When writing `eval`, one can assume that every variable is in scope:
+that is, if the expression `e` contains a free occurrence of the index `i`,
+then `i` is a valid index into `env`. Symmetrically, at every call of `eval`,
+one must ensure that every variable is in scope by providing a suitable
+environment.
