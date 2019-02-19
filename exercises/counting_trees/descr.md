@@ -125,8 +125,10 @@ In this approach, each computation is performed at most once, possibly never.
 The order in which computations take place remains implicit.
 
 Memoization can be implemented once and for all as a function `fix`. The idea
-is, instead of defining an ordinary recursive function by `let rec f x = ...`,
-a user can define a memoizing recursive function by `let f = fix (fun f x -> ...)`.
+is, instead of defining an ordinary recursive function by `let rec f x = e`,
+a user can define a memoizing recursive function by `let f = fix (fun f x ->
+e)`. The expression `e` is unchanged; a recursive call to `f` inside `e` is
+re-interpreted as a call to the parameter `f` of the function `fun f x -> e`.
 
 **Question 5.** Complete the definition of the function `fix`, whose skeleton
 is given to you.
