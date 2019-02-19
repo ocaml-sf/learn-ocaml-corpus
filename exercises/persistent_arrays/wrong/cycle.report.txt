@@ -4,6 +4,7 @@ Correctness
   Found [set] with compatible type.
   Failure: The code is incorrect. In the following scenario, the graph
            becomes cyclic:
+    
      | let a = make 1 false;;
      | let b = set a 0 true;;
      | let observed = get b 0;;

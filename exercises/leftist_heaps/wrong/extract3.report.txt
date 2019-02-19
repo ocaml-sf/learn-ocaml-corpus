@@ -19,12 +19,11 @@ Question 4
 Questions 5 and 6
   Found [insert] with compatible type.
   Found [extract] with compatible type.
-  Failure: One of insert or extract is incorrect.The following sequence of
-                                                 operations:
+  Failure: One of insert or extract is incorrect.
+    The following sequence of operations:
+    
      | empty; insert Red; insert Green; insert Yellow; extract; extract
-    gives rise to the following sequence of extracted elements:[Red; Green]
-                                                               whereas the
-                                                               expected
-                                                               sequence is as
-                                                               follows:
+    gives rise to the following sequence of extracted elements:
+    [Red; Green] whereas the expected sequence is as follows:
+    
      | Red; Yellow

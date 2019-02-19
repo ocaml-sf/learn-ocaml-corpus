@@ -1,9 +1,14 @@
 Question 1
   Found [++] with compatible type.
-  Failure: [++] is incorrect.When applied to the following arguments:
+  Failure: [++] is incorrect.
+    When applied to the following arguments:
+    
      | Finite 3
-     | Finite 4it produces the following invalid result:[Finite 3] A valid
-                                                        result is:
+    
+     | Finite 4
+    it produces the following invalid result:
+    [Finite 3] A valid result is:
+    
      | Finite 7
 Question 2
   Found [<==] with compatible type.
@@ -15,11 +20,15 @@ Question 4
   Found [char] with compatible type.
   Success 1: [char] seems correct.
   Found [^^] with compatible type.
-  Failure: [^^] is incorrect.When applied to the following arguments:
+  Failure: [^^] is incorrect.
+    When applied to the following arguments:
+    
      | Char 'a'
-     | Char 'a'it produces the following invalid result:[Cat (Finite 1, Char
-                                                        'a', Char 'a')] A
-                                                        valid result is:
+    
+     | Char 'a'
+    it produces the following invalid result:
+    [Cat (Finite 1, Char 'a', Char 'a')] A valid result is:
+    
      | Cat (Finite 2, Char 'a', Char 'a')
   Found [nest] with compatible type.
   Success 1: [nest] seems correct.

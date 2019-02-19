@@ -4,11 +4,19 @@ Question 1
 Question 2
   Found [makeT] with compatible type.
   Success 1: The heap invariant seems respected.
-  Failure: The rank invariant is violated.The following expression:
-     | makeT Red E (makeT Red E E)produces the following invalid result:
+  Failure: The rank invariant is violated.
+    The following expression:
+    
+     | makeT Red E (makeT Red E E)
+    produces the following invalid result:
+    
      | T(1, Red, E, T(1, Red, E, E))
-  Failure: The leftist invariant is violated.The following expression:
-     | makeT Red E (makeT Red E E)produces the following invalid result:
+  Failure: The leftist invariant is violated.
+    The following expression:
+    
+     | makeT Red E (makeT Red E E)
+    produces the following invalid result:
+    
      | T(1, Red, E, T(1, Red, E, E))
   Success 1: The multiset of elements seems preserved.
 Question 3

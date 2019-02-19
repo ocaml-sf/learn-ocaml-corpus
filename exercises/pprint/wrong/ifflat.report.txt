@@ -17,11 +17,15 @@ Question 4
   Found [group] with compatible type.
   Success 1: [group] seems correct.
   Found [ifflat] with compatible type.
-  Failure: [ifflat] is incorrect.When applied to the following arguments:
+  Failure: [ifflat] is incorrect.
+    When applied to the following arguments:
+    
      | IfFlat (Empty, Empty)
-     | Emptyit produces the following invalid result:[IfFlat (IfFlat (Empty,
-                                                     Empty), Empty)] A valid
-                                                     result is:
+    
+     | Empty
+    it produces the following invalid result:
+    [IfFlat (IfFlat (Empty, Empty), Empty)] A valid result is:
+    
      | IfFlat (Empty, Empty)
 Question 5
   Found [pretty] with compatible type.

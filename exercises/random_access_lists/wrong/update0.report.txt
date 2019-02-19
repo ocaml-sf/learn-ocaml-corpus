@@ -15,11 +15,17 @@ Question 7
   Failure: Cannot find  [get]
 Question 9
   Found [update] with compatible type.
-  Failure: [update] is incorrect.When applied to the following arguments:
+  Failure: [update] is incorrect.
+    When applied to the following arguments:
+    
      | 0
+    
      | 42
-     | One (3, Nil)it produces the following invalid result:[One (3, Nil)] A
-                                                            valid result is:
+    
+     | One (5, Nil)
+    it produces the following invalid result:
+    [One (5, Nil)] A valid result is:
+    
      | One (42, Nil)
 Question 10
   Failure: Cannot find  [eval]

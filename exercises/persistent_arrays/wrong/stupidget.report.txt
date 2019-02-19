@@ -13,6 +13,7 @@ Complexity
   Found [get] with compatible type.
   Found [set] with compatible type.
   Failure: The desired complexity is not achieved. In the following scenario:
+    
      | let a = make 1 false;;
      | let b = set a 0 true;;
      | let observed = get b 0;;The last call involves 4 uses of dereferencing

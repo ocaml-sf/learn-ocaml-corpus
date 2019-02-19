@@ -15,7 +15,9 @@ Question 4
   Found [union] with compatible type.
   Success 1: The heap invariant seems respected.
   Success 1: The multiset of elements seems preserved.
-  Failure: The complexity of union seems incorrect.The following expression:
+  Failure: The complexity of union seems incorrect.
+    The following expression:
+    
      | union (
      |   makeT Red (
      |     makeT Red (
@@ -24,7 +26,8 @@ Question 4
      |       )
      |     ) (makeT Red E E)
      |   ) (makeT Red E E)
-     | ) (makeT Red E E)causes 4 priority comparisons, while we estimate that
-                        3 comparisons should suffice.
+     | ) (makeT Red E E)
+    causes 4 priority comparisons, while we estimate that 3 comparisons
+    should suffice.
 Questions 5 and 6
   Failure: Cannot find  [insert]

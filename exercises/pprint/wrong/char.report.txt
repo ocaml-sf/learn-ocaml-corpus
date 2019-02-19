@@ -9,9 +9,13 @@ Question 3
   Success 1: [requirement] seems correct.
 Question 4
   Found [char] with compatible type.
-  Failure: [char] is incorrect.When applied to the following argument:
-     | '\n'it produces the following invalid result:[Char '\n'] A valid
-                                                    result is:
+  Failure: [char] is incorrect.
+    When applied to the following argument:
+    
+     | '\n'
+    it produces the following invalid result:
+    [Char '\n'] A valid result is:
+    
      | HardLine
   Found [^^] with compatible type.
   Success 1: [^^] seems correct.

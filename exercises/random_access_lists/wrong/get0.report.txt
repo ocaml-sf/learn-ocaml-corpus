@@ -13,6 +13,7 @@ Question 6
 Question 7
   Found [get] with compatible type.
   Failure: The following exception is raised and never caught:
+    
      | "Assert_failure ./solution.ml:5:8"
      | Raised at file "./solution.ml", line 5, characters 8-20
      | Called from file "./solution.ml", line 12, characters 23-37

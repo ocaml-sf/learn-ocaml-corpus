@@ -4,24 +4,28 @@ Question 1
 Question 2
   Found [makeT] with compatible type.
   Failure: The following exception is raised and never caught:
+    
      | (Failure "I am wrong")
      | Called from file "./test.ml", line 705, characters 14-36
      | Called from unknown location
      | Called from file "./test.ml", line 701, characters 4-872
      | Called from file "./test.ml", line 420, characters 4-19
   Failure: The following exception is raised and never caught:
+    
      | (Failure "I am wrong")
      | Called from file "./test.ml", line 705, characters 14-36
      | Called from unknown location
      | Called from file "./test.ml", line 701, characters 4-872
      | Called from file "./test.ml", line 420, characters 4-19
   Failure: The following exception is raised and never caught:
+    
      | (Failure "I am wrong")
      | Called from file "./test.ml", line 705, characters 14-36
      | Called from unknown location
      | Called from file "./test.ml", line 701, characters 4-872
      | Called from file "./test.ml", line 420, characters 4-19
   Failure: The following exception is raised and never caught:
+    
      | (Failure "I am wrong")
      | Called from file "./test.ml", line 705, characters 14-36
      | Called from unknown location

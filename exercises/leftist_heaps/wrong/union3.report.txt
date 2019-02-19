@@ -14,8 +14,9 @@ Question 4
   Found [makeT] with compatible type.
   Found [union] with compatible type.
   Success 1: The heap invariant seems respected.
-  Failure: The multiset of elements is not preserved.The following
-                                                     expression:
+  Failure: The multiset of elements is not preserved.
+    The following expression:
+    
      | union (
      |   makeT Red (makeT Yellow E E) (
      |     makeT Red E E
@@ -24,7 +25,9 @@ Question 4
      |   makeT Red E (
      |     makeT Red E (makeT Red E E)
      |   )
-     | )produces the following invalid result:
+     | )
+    produces the following invalid result:
+    
      | T(
      |   2,
      |   Red,

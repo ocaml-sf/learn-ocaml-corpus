@@ -15,9 +15,13 @@ Question 4
   Found [nest] with compatible type.
   Success 1: [nest] seems correct.
   Found [group] with compatible type.
-  Failure: [group] is incorrect.When applied to the following argument:
-     | Emptyit produces the following invalid result:[Empty] A valid result
-                                                     is:
+  Failure: [group] is incorrect.
+    When applied to the following argument:
+    
+     | Empty
+    it produces the following invalid result:
+    [Empty] A valid result is:
+    
      | Group (Finite 0, Empty)
   Found [ifflat] with compatible type.
   Success 1: [ifflat] seems correct.

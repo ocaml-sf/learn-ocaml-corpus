@@ -33,9 +33,11 @@ and 'a representation =
 A persistent array `a` is a **reference** to an internal **representation**.
 
 Because a persistent array is a reference, its representation can change over
-time. However, as far as a user of this data structure is concerned, this change must be invisible:
-we must maintain the illusion that a persistent array is immutable. Ideally,
-the type `'a parray` must be presented to a user as an abstract type.
+time. However, as far as a user of this data structure is concerned, this
+change must be invisible: we must maintain the illusion that a persistent
+array is immutable. Ideally, the type `'a parray` must be presented to a user
+as an abstract type, so that the user has access to no operations other than
+`make`, `get`, and `set`.
 
 Two internal representations exist:
 
@@ -61,6 +63,9 @@ If its current representation `!a` is `Apply { base; ... }`,
 then it has an outgoing edge
 towards the vertex `base`.
 
+Several edges can lead to the same vertex! This occurs when two independent
+`set` operations are applied to the same persistent array.
+
 Because a persistent array `a` is a *reference* to a representation,
 the representation of `a` can be modified by updating the reference `a`.
 Thus, the shape of the graph can change over time.
@@ -74,6 +79,11 @@ such that `make n x` returns a persistent array
 of size `n`
 where every element is `x`.
 This function should have time complexity O(n).
+
+*Hint.* Calling `Array.make` is permitted,
+since its time complexity is O(n).
+The reason why it is O(n), as opposed to O(1),
+is that every array cell must be initialized.
 
 **Question 2.**
 In one line,
@@ -148,3 +158,6 @@ from `a` to `z`, where it finds the array `data`, then
 reverses this path.)
 Then, in one line, use `revert` to define
 an optimized version of `get`.
+
+*Note.* You may either modify your existing `get` function,
+or hide it by defining a new function, also named `get`.

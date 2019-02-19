@@ -17,15 +17,23 @@ Question 4
   Found [group] with compatible type.
   Success 1: [group] seems correct.
   Found [ifflat] with compatible type.
-  Failure: [ifflat] is incorrect.When applied to the following arguments:
+  Failure: [ifflat] is incorrect.
+    When applied to the following arguments:
+    
      | Empty
-     | IfFlat (Empty, Empty)it produces the following invalid result:
+    
+     | IfFlat (Empty, Empty)
+    it produces the following invalid result:
     [IfFlat (Empty, Empty)] A valid result is:
+    
      | IfFlat (Empty, IfFlat (Empty, Empty))
 Question 5
   Found [pretty] with compatible type.
-  Failure: [pretty] is incorrect.When applied to the following arguments:
+  Failure: [pretty] is incorrect.
+    When applied to the following arguments:
+    
      | 16
+    
      | Cat (
      |   Finite 41,
      |   Char 'N',
@@ -56,7 +64,7 @@ Question 5
      |                     Cat (
      |                       Finite 2,
      |                       IfFlat (Char ' ', HardLine),
-     |                       Char '9'
+     |                       Char '0'
      |                     )
      |                   ),
      |                   Cat (
@@ -98,7 +106,7 @@ Question 5
      |                                               Char ' ',
      |                                               HardLine
      |                                             ),
-     |                                             Char '4'
+     |                                             Char '9'
      |                                           )
      |                                         ),
      |                                         Cat (
@@ -146,7 +154,7 @@ Question 5
      |                                                                     Char ' ',
      |                                                                     HardLine
      |                                                                   ),
-     |                                                                   Char '7'
+     |                                                                   Char '4'
      |                                                                 )
      |                                                               ),
      |                                                               Cat (
@@ -194,7 +202,7 @@ Question 5
      |                                                                                           Char ' ',
      |                                                                                           HardLine
      |                                                                                         ),
-     |                                                                                         Char '9'
+     |                                                                                         Char '7'
      |                                                                                       )
      |                                                                                     ),
      |                                                                                     Cat (
@@ -272,32 +280,35 @@ Question 5
      |       )
      |     )
      |   )
-     | )it produces the following invalid result:
+     | )
+    it produces the following invalid result:
+    
      | N (
      |   L,
-     |   9,
+     |   0,
      |   N (
      |     L,
-     |     4,
+     |     9,
      |     N (
      |       L,
-     |       7,
-     |       N (L, 9, L)
+     |       4,
+     |       N (L, 7, L)
      |     )
      |   )
      | )A valid result is:
+    
      | N (
      |   L,
-     |   9,
+     |   0,
      |   N (
      |     L,
-     |     4,
+     |     9,
      |     N (
      |       L,
-     |       7,
+     |       4,
      |       N (
      |         L,
-     |         9,
+     |         7,
      |         L
      |       )
      |     )

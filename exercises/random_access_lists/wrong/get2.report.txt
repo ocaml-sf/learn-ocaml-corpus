@@ -12,11 +12,16 @@ Question 6
   Failure: Cannot find  [uncons]
 Question 7
   Found [get] with compatible type.
-  Failure: [get] is incorrect.When applied to the following arguments:
+  Failure: [get] is incorrect.
+    When applied to the following arguments:
+    
      | 0
-     | Zero (One ((9, 7), Nil))it produces the following invalid result:
-    [7] A valid result is:
-     | 9
+    
+     | Zero (One ((7, 1), Nil))
+    it produces the following invalid result:
+    [1] A valid result is:
+    
+     | 7
 Question 9
   Failure: Cannot find  [update]
 Question 10

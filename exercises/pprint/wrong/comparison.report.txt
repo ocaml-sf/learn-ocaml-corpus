@@ -3,10 +3,15 @@ Question 1
   Success 1: [++] seems correct.
 Question 2
   Found [<==] with compatible type.
-  Failure: [<==] is incorrect.When applied to the following arguments:
+  Failure: [<==] is incorrect.
+    When applied to the following arguments:
+    
      | Infinite
-     | Finite 4it produces the following invalid result:[true] A valid result
-                                                        is:
+    
+     | Finite 4
+    it produces the following invalid result:
+    [true] A valid result is:
+    
      | false
 Question 3
   Found [requirement] with compatible type.

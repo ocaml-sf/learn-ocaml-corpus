@@ -1,6 +1,7 @@
 Question 1
   Found [rank] with compatible type.
   Failure: The following exception is raised and never caught:
+    
      | (Failure Ohmigod!)
      | Called from file "./test.ml", line 472, characters 17-28
      | Called from unknown location

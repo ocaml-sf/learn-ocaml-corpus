@@ -8,11 +8,16 @@ Question 4
   Failure: Cannot find  [length]
 Question 5
   Found [cons] with compatible type.
-  Failure: [cons] is incorrect.When applied to the following arguments:
+  Failure: [cons] is incorrect.
+    When applied to the following arguments:
+    
      | 2
-     | Zero (One ((9, 7), Nil))it produces the following invalid result:
-    [Zero (Zero (One (((2, 2), (9, 7)), Nil)))] A valid result is:
-     | One (2, One ((9, 7), Nil))
+    
+     | Zero (One ((7, 1), Nil))
+    it produces the following invalid result:
+    [Zero (Zero (One (((2, 2), (7, 1)), Nil)))] A valid result is:
+    
+     | One (2, One ((7, 1), Nil))
 Question 6
   Failure: Cannot find  [uncons]
 Question 7

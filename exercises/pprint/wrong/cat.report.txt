@@ -11,11 +11,15 @@ Question 4
   Found [char] with compatible type.
   Success 1: [char] seems correct.
   Found [^^] with compatible type.
-  Failure: [^^] is incorrect.When applied to the following arguments:
+  Failure: [^^] is incorrect.
+    When applied to the following arguments:
+    
      | HardLine
-     | Char 'a'it produces the following invalid result:[Cat (Infinite, Char
-                                                        'a', HardLine)] A
-                                                        valid result is:
+    
+     | Char 'a'
+    it produces the following invalid result:
+    [Cat (Infinite, Char 'a', HardLine)] A valid result is:
+    
      | Cat (Infinite, HardLine, Char 'a')
   Found [nest] with compatible type.
   Success 1: [nest] seems correct.

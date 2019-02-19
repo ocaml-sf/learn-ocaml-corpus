@@ -20,8 +20,11 @@ Question 4
   Success 1: [ifflat] seems correct.
 Question 5
   Found [pretty] with compatible type.
-  Failure: [pretty] is incorrect.When applied to the following arguments:
+  Failure: [pretty] is incorrect.
+    When applied to the following arguments:
+    
      | 8
+    
      | Cat (
      |   Finite 11,
      |   Char 'N',
@@ -52,7 +55,7 @@ Question 5
      |                     Cat (
      |                       Finite 2,
      |                       IfFlat (Char ' ', HardLine),
-     |                       Char '2'
+     |                       Char '6'
      |                     )
      |                   ),
      |                   Cat (
@@ -73,10 +76,12 @@ Question 5
      |       )
      |     )
      |   )
-     | )it produces the following invalid result:[N (L, 2, L)] A valid result
-                                                 is:
+     | )
+    it produces the following invalid result:
+    [N (L, 6, L)] A valid result is:
+    
      | N (
      |   L,
-     |   2,
+     |   6,
      |   L
      | )

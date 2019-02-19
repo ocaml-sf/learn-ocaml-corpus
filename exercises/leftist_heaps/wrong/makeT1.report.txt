@@ -6,9 +6,12 @@ Question 2
   Success 1: The heap invariant seems respected.
   Success 1: The rank invariant seems respected.
   Success 1: The leftist invariant seems respected.
-  Failure: The multiset of elements is not preserved.The following
-                                                     expression:
-     | makeT Red E Eproduces the following invalid result:
+  Failure: The multiset of elements is not preserved.
+    The following expression:
+    
+     | makeT Red E E
+    produces the following invalid result:
+    
      | E
 Question 3
   Failure: Cannot find  [singleton]

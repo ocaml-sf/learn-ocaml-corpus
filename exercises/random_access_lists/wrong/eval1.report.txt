@@ -24,10 +24,16 @@ Question 9
   Success 1: [update] seems correct.
 Question 10
   Found [eval] with compatible type.
-  Failure: [eval] is incorrect.When applied to the following arguments:
+  Failure: [eval] is incorrect.
+    When applied to the following arguments:
+    
      | empty
+    
      | ELet (
      |   EConstant (4),
      |   ELet (EConstant (8), EBinOp (EVar (0), ( - ), EVar (1)))
-     | )it produces the following invalid result:[-4] A valid result is:
+     | )
+    it produces the following invalid result:
+    [-4] A valid result is:
+    
      | 4

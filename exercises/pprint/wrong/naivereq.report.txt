@@ -6,9 +6,13 @@ Question 2
   Success 1: [<==] seems correct.
 Question 3
   Found [requirement] with compatible type.
-  Failure: [requirement] is incorrect.When applied to the following argument:
-     | Cat (Infinite, Empty, Empty)it produces the following invalid result:
+  Failure: [requirement] is incorrect.
+    When applied to the following argument:
+    
+     | Cat (Infinite, Empty, Empty)
+    it produces the following invalid result:
     [Finite 0] A valid result is:
+    
      | Infinite
 Question 4
   Found [char] with compatible type.

@@ -117,6 +117,7 @@ We wish to define a function
 whose behavior can be described as follows:
 
 * The length of `update i x xs` is the length of `xs`.
+  (`i` must be a valid index into `xs`.)
 
 * The `i`-th element of `update i x xs` is `x`.
 

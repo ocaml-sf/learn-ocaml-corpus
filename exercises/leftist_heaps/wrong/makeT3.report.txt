@@ -5,8 +5,12 @@ Question 2
   Found [makeT] with compatible type.
   Success 1: The heap invariant seems respected.
   Success 1: The rank invariant seems respected.
-  Failure: The leftist invariant is violated.The following expression:
-     | makeT Red E (makeT Red E E)produces the following invalid result:
+  Failure: The leftist invariant is violated.
+    The following expression:
+    
+     | makeT Red E (makeT Red E E)
+    produces the following invalid result:
+    
      | T(2, Red, E, T(1, Red, E, E))
   Success 1: The multiset of elements seems preserved.
 Question 3

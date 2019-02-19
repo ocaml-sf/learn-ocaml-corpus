@@ -8,10 +8,16 @@ Question 4
   Failure: Cannot find  [length]
 Question 5
   Found [cons] with compatible type.
-  Failure: [cons] is incorrect.When applied to the following arguments:
-     | 2
-     | Nilit produces the following invalid result:[Nil] A valid result is:
-     | One (2, Nil)
+  Failure: [cons] is incorrect.
+    When applied to the following arguments:
+    
+     | 9
+    
+     | Nil
+    it produces the following invalid result:
+    [Nil] A valid result is:
+    
+     | One (9, Nil)
 Question 6
   Failure: Cannot find  [uncons]
 Question 7

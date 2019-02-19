@@ -9,9 +9,13 @@ Question 3
   Success 1: [digits] is correct.
 Question 4
   Found [length] with compatible type.
-  Failure: [length] is incorrect.When applied to the following argument:
-     | Zero (One ((9, 7), Nil))it produces the following invalid result:
+  Failure: [length] is incorrect.
+    When applied to the following argument:
+    
+     | Zero (One ((7, 1), Nil))
+    it produces the following invalid result:
     [1] A valid result is:
+    
      | 2
 Question 5
   Failure: Cannot find  [cons]
