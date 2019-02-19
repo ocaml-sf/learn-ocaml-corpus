@@ -18,6 +18,10 @@ This is also an opportunity to use **dynamic programming**
 or **memoization** in order to share repeated subcomputations
 and avoid exponential time complexity.
 
+In this exercise, we focus on questions that involve weight,
+but analogous questions involving height could be treated in
+the same way.
+
 For simplicity, we use OCaml's built-in limited-precision integers.
 As we compute fast-growing sequences, we are quickly in danger
 of computing incorrect results due to overflow.
