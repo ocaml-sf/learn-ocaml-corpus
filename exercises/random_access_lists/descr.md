@@ -39,6 +39,8 @@ digit is at the head of this list.) The length of this list is obviously
 logarithmic in `n`. Furthermore, each element of this list is a pair of pairs
 of pairs (...) whose depth is also logarithmic in `n`. This is why the random
 access operations `get` and `update` have logarithmic time complexity.
+This is much better than access in an ordinary linked list:
+`List.nth` has linear time complexity.
 
 Since `Zero` and `One` are used only when the sequence is nonempty,
 `Zero` is never followed with `Nil`.
