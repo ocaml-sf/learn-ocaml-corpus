@@ -45,7 +45,7 @@ not in the data that it might carry.
 The **weight** of a tree is the total number of its binary nodes.
 
 The **height** of a tree is the maximum number of binary nodes
-that appear along a branch.
+that appear along a branch (that is, a path from the root to a leaf).
 
 **Question 1.** Define a function `weight` of type `tree -> int`
 which computes the weight of a tree.
