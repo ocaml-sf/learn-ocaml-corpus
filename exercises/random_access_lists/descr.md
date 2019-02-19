@@ -170,7 +170,7 @@ type constant =
   int
 
 type var =
-  int (* a de Bruijn index *)
+  int (* a de Bruijn index, see below. *)
 
 type op =
   int -> int -> int
