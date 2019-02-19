@@ -147,7 +147,7 @@ nonnegative.
 
 **Question 6.** Define a function `sigma` of type `int -> int -> (int -> int)
   -> int` such that `sigma i j f` is the sum `f i + f (i+1) + ... + f j`. The
-sum is zero if `j` is less than `i`.
+sum is zero if `j` is strictly less than `i`.
 
 **Question 7.** Define a function `split_weight` of type `int -> (int -> int
 -> int) -> int` such that `split_weight w f` is the sum of all terms of the
