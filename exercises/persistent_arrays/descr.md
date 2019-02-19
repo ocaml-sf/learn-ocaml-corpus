@@ -33,7 +33,7 @@ and 'a representation =
 A persistent array `a` is a **reference** to an internal **representation**.
 
 Because a persistent array is a reference, its representation can change over
-time. However, as far as a user is concerned, this change must be invisible:
+time. However, as far as a user of this data structure is concerned, this change must be invisible:
 we must maintain the illusion that a persistent array is immutable. Ideally,
 the type `'a parray` must be presented to a user as an abstract type.
 
