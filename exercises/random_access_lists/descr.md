@@ -136,6 +136,7 @@ we first define a more general function
 whose behavior can be described as follows:
 
 * The length of `fupdate i f xs` is the length of `xs`.
+  (`i` must be a valid index into `xs`.)
 
 * The `i`-th element of `fupdate i f xs` is `f (get i xs)`.
 
