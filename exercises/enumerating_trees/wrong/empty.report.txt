@@ -1,0 +1,34 @@
+Question 1
+  Found [empty] with compatible type.
+  Failure: Something is wrong. The following expression:
+    
+     | List.sort compare (Seq.elements (empty (* applied to size: *) 0))
+    produces the following value: [[0]] Yet, it should produce this value:
+    [[]]
+Question 2
+  Failure: Cannot find  [just]
+Question 3
+  Found [empty] with compatible type.
+  Failure: Cannot find  [just]
+Question 4
+  Found [empty] with compatible type.
+  Failure: Cannot find  [just]
+Question 5
+  Found [empty] with compatible type.
+  Failure: Cannot find  [just]
+Question 6
+  Found [empty] with compatible type.
+  Failure: Cannot find  [just]
+Question 7
+  Failure: Cannot find  [bit]
+Question 8
+  Failure: Cannot find  [bit]
+Question 9
+  Failure: Cannot find  [tree]
+Question 10
+  Found [empty] with compatible type.
+  Failure: Cannot find  [just]
+Question 11
+  Failure: Cannot find  [balanced_tree]
+Question 12
+  Failure: Cannot find  [balanced_tidy_tree]

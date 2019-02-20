@@ -1,0 +1,25 @@
+Question 1
+  Failure: Cannot find  [empty]
+Question 2
+  Found [just] with compatible type.
+  Failure: Not yet implemented.
+Question 3
+  Failure: Cannot find  [empty]
+Question 4
+  Failure: Cannot find  [empty]
+Question 5
+  Failure: Cannot find  [empty]
+Question 6
+  Failure: Cannot find  [empty]
+Question 7
+  Failure: Cannot find  [bit]
+Question 8
+  Failure: Cannot find  [bit]
+Question 9
+  Failure: Cannot find  [tree]
+Question 10
+  Failure: Cannot find  [empty]
+Question 11
+  Failure: Cannot find  [balanced_tree]
+Question 12
+  Failure: Cannot find  [balanced_tidy_tree]
