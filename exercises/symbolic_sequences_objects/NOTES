@@ -10,3 +10,8 @@ the children of each `Product` node are shared.)
 plus the length of the sequence.
   (Not counting the complexity of user-supplied transformations
   at `Map` nodes.)
+Actually, for this claim to be true, I think that a product whose
+child is a singleton must be optimized away. (But that creates a
+`Map` node!)
+So I will fix tihs claim by adding the length of the sequence and
+the size of the sequence description. Ugly, but should be correct.

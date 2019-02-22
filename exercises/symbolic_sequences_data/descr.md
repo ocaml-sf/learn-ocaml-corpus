@@ -12,11 +12,15 @@ sequences.
 This data structure is designed so that construction is cheap:
 every **constructor** function has constant time complexity.
 
-There are three **destructor** functions, also known as **accessors**.
-The function `length` returns the **length** of a sequence; it also takes
-constant time. The **random access** function `get` returns the `i`-th
-element of a sequence. The **iteration** function `foreach`
-provides access to each element of the sequence in turn.
+There are three **destructor** functions, also known as **accessors**. The
+function `length` returns the **length** of a sequence; it also takes constant
+time. The **random access** function `get` returns the `i`-th element of a
+sequence. The **iteration** function `foreach` provides access to each element
+of the sequence in turn. The complexity of `get` and `foreach` is a little
+more difficult to describe; let us say that, if a sequence is built without
+using `map`, then the complexity of `get` is linear in the depth of the
+sequence description, and the complexity of `foreach` is linear in the length
+of the sequence plus the size of the sequence description.
 
 **In this exercise, we implement symbolic sequences as data**, that is,
 as a (generalized) algebraic data type. In a companion
@@ -66,7 +70,7 @@ The sequence `singleton x` has length 1. Its single element is `x`.
 The sequence `sum s1 s2` is the concatenation of the sequences `s1` and `s2`.
 
 ```
-  val sum    : 'a seq -> 'a seq -> 'a seq
+  val sum: 'a seq -> 'a seq -> 'a seq
 ```
 
 The sequence `product s1 s2`, a sequence of pairs, is the Cartesian product
