@@ -1,0 +1,22 @@
+Question 1
+  Found [even] with compatible type.
+  Success 1: [even] seems correct.
+  Found [odd] with compatible type.
+  Success 1: [odd] seems correct.
+Question 2
+  Found [merge] with compatible type.
+  Success 1: [merge] seems correct.
+Question 3
+  Found [sort] with compatible type.
+  Failure: [sort] is incorrect.
+    When applied to the following argument:
+    
+     | [8; 2; 1]
+    it produces the following invalid result:
+    [[2; 8; 1]] A valid result is:
+    
+     | [1; 2; 8]
+Question 4
+  Failure: Cannot find  [uniq]
+Question 5
+  Failure: Cannot find  [weed]
