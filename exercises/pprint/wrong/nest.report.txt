@@ -1,0 +1,32 @@
+Question 1
+  Found [++] with compatible type.
+  Success 1: [++] seems correct.
+Question 2
+  Found [<==] with compatible type.
+  Success 1: [<==] seems correct.
+Question 3
+  Found [requirement] with compatible type.
+  Success 1: [requirement] seems correct.
+Question 4
+  Found [char] with compatible type.
+  Success 1: [char] seems correct.
+  Found [^^] with compatible type.
+  Success 1: [^^] seems correct.
+  Found [nest] with compatible type.
+  Failure: [nest] is incorrect.
+    When applied to the following arguments:
+    
+     | 2
+    
+     | Empty
+    it produces the following invalid result:
+    [Nest (2, Infinite, Empty)] A valid result is:
+    
+     | Nest (2, Finite 0, Empty)
+  Found [group] with compatible type.
+  Success 1: [group] seems correct.
+  Found [ifflat] with compatible type.
+  Success 1: [ifflat] seems correct.
+Question 5
+  Found [pretty] with compatible type.
+  Success 1: [pretty] seems correct.

@@ -1,0 +1,92 @@
+Question 1
+  Found [++] with compatible type.
+  Success 1: [++] seems correct.
+Question 2
+  Found [<==] with compatible type.
+  Success 1: [<==] seems correct.
+Question 3
+  Found [requirement] with compatible type.
+  Success 1: [requirement] seems correct.
+Question 4
+  Found [char] with compatible type.
+  Success 1: [char] seems correct.
+  Found [^^] with compatible type.
+  Success 1: [^^] seems correct.
+  Found [nest] with compatible type.
+  Success 1: [nest] seems correct.
+  Found [group] with compatible type.
+  Success 1: [group] seems correct.
+  Found [ifflat] with compatible type.
+  Success 1: [ifflat] seems correct.
+Question 5
+  Found [pretty] with compatible type.
+  Failure: [pretty] is incorrect.
+    When applied to the following arguments:
+    
+     | 8
+    
+     | Cat (
+     |   Finite 11,
+     |   Char 'N',
+     |   Cat (
+     |     Finite 10,
+     |     Char ' ',
+     |     Group (
+     |       Finite 9,
+     |       Cat (
+     |         Finite 9,
+     |         Char '(',
+     |         Cat (
+     |           Finite 8,
+     |           Nest (
+     |             2,
+     |             Finite 7,
+     |             Cat (
+     |               Finite 7,
+     |               IfFlat (Empty, HardLine),
+     |               Cat (
+     |                 Finite 7,
+     |                 Char 'L',
+     |                 Cat (
+     |                   Finite 6,
+     |                   Cat (
+     |                     Finite 3,
+     |                     Char ',',
+     |                     Cat (
+     |                       Finite 2,
+     |                       IfFlat (Char ' ', HardLine),
+     |                       Char '6'
+     |                     )
+     |                   ),
+     |                   Cat (
+     |                     Finite 3,
+     |                     Char ',',
+     |                     Cat (
+     |                       Finite 2,
+     |                       IfFlat (Char ' ', HardLine),
+     |                       Char 'L'
+     |                     )
+     |                   )
+     |                 )
+     |               )
+     |             )
+     |           ),
+     |           Cat (Finite 1, IfFlat (Empty, HardLine), Char ')')
+     |         )
+     |       )
+     |     )
+     |   )
+     | )
+    it produces the following invalid result:
+    
+     | N (
+     | L,
+     | 6,
+     | L
+     | )A valid result is:
+    
+     | N (
+     |   L,
+     |   6,
+     |   L
+     | )

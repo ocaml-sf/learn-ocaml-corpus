@@ -1,0 +1,22 @@
+Question 1
+  Found [rank] with compatible type.
+  Success 1: [rank] seems correct.
+Question 2
+  Found [makeT] with compatible type.
+  Success 1: The heap invariant seems respected.
+  Success 1: The rank invariant seems respected.
+  Success 1: The leftist invariant seems respected.
+  Failure: The multiset of elements is not preserved.
+    The following expression:
+    
+     | makeT Red E E
+    produces the following invalid result:
+    
+     | E
+Question 3
+  Failure: Cannot find  [singleton]
+Question 4
+  Found [makeT] with compatible type.
+  Failure: Cannot find  [union]
+Questions 5 and 6
+  Failure: Cannot find  [insert]

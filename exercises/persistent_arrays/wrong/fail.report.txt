@@ -1,0 +1,9 @@
+Correctness
+  Found [make] with compatible type.
+  Found [get] with compatible type.
+  Found [set] with compatible type.
+  Failure: The code is incorrect. In the following scenario:
+    [let a = make 0 false;;] The following exception is raised and never
+    caught:
+    
+     | (Failure FUBAR)

@@ -1,0 +1,16 @@
+Correctness
+  Found [make] with compatible type.
+  Found [get] with compatible type.
+  Found [set] with compatible type.
+  Success 1: The code seems correct. It passes 5702 test scenarios.
+Optimization
+  Found [make] with compatible type.
+  Found [get] with compatible type.
+  Found [set] with compatible type.
+  Failure: The optimization scheme of Question 4 is not respected. At the end
+           of the following scenario:
+    
+     | let a = make 1 false;;
+     | let b = set a 0 true;;
+     | let observed = get b 0;;The graph should have a path from [b] to [b]
+                               and no further. Yet, this is not the case.

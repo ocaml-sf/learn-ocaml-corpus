@@ -1,0 +1,18 @@
+Question 1
+  Found [rank] with compatible type.
+  Failure: [rank] is incorrect.
+    When applied to the following argument:
+    
+     | T(1, Red, E, E)
+    it produces the following invalid result:
+    [0] A valid result is:
+    
+     | 1
+Question 2
+  Failure: Cannot find  [makeT]
+Question 3
+  Failure: Cannot find  [singleton]
+Question 4
+  Failure: Cannot find  [makeT]
+Questions 5 and 6
+  Failure: Cannot find  [insert]

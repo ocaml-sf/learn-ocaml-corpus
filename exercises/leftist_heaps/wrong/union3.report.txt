@@ -1,0 +1,43 @@
+Question 1
+  Found [rank] with compatible type.
+  Success 1: [rank] seems correct.
+Question 2
+  Found [makeT] with compatible type.
+  Success 1: The heap invariant seems respected.
+  Success 1: The rank invariant seems respected.
+  Success 1: The leftist invariant seems respected.
+  Success 1: The multiset of elements seems preserved.
+Question 3
+  Found [singleton] with compatible type.
+  Success 1: [singleton] seems correct.
+Question 4
+  Found [makeT] with compatible type.
+  Found [union] with compatible type.
+  Success 1: The heap invariant seems respected.
+  Failure: The multiset of elements is not preserved.
+    The following expression:
+    
+     | union (
+     |   makeT Red (makeT Yellow E E) (
+     |     makeT Red E E
+     |   )
+     | ) (
+     |   makeT Red E (
+     |     makeT Red E (makeT Red E E)
+     |   )
+     | )
+    produces the following invalid result:
+    
+     | T(
+     |   2,
+     |   Red,
+     |   T(1, Yellow, E, E),
+     |   T(
+     |     1,
+     |     Red,
+     |     T(1, Red, T(1, Red, E, E), E),
+     |     E
+     |   )
+     | )
+Questions 5 and 6
+  Failure: Cannot find  [insert]

@@ -1,0 +1,29 @@
+Question 1
+  Found [rank] with compatible type.
+  Success 1: [rank] seems correct.
+Question 2
+  Found [makeT] with compatible type.
+  Success 1: The heap invariant seems respected.
+  Success 1: The rank invariant seems respected.
+  Success 1: The leftist invariant seems respected.
+  Success 1: The multiset of elements seems preserved.
+Question 3
+  Found [singleton] with compatible type.
+  Success 1: [singleton] seems correct.
+Question 4
+  Found [makeT] with compatible type.
+  Found [union] with compatible type.
+  Success 1: The heap invariant seems respected.
+  Success 1: The multiset of elements seems preserved.
+  Success 1: The complexity of union seems correct.
+Questions 5 and 6
+  Found [insert] with compatible type.
+  Found [extract] with compatible type.
+  Failure: One of insert or extract is incorrect.
+    The following sequence of operations:
+    
+     | empty; insert Red; insert Red; extract; extract
+    gives rise to the following sequence of extracted elements:
+    [Red; <none>] whereas the expected sequence is as follows:
+    
+     | Red; Red

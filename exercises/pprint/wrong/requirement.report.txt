@@ -1,0 +1,54 @@
+Question 1
+  Found [++] with compatible type.
+  Success 1: [++] seems correct.
+Question 2
+  Found [<==] with compatible type.
+  Success 1: [<==] seems correct.
+Question 3
+  Found [requirement] with compatible type.
+  Failure: [requirement] is incorrect.
+    When applied to the following argument:
+    
+     | IfFlat (Empty, HardLine)
+    it produces the following invalid result:
+    [Infinite] A valid result is:
+    
+     | Finite 0
+Question 4
+  Found [char] with compatible type.
+  Success 1: [char] seems correct.
+  Found [^^] with compatible type.
+  Failure: [^^] is incorrect.
+    When applied to the following arguments:
+    
+     | Char 'a'
+    
+     | IfFlat (Empty, HardLine)
+    it produces the following invalid result:
+    [Cat (Infinite, Char 'a', IfFlat (Empty, HardLine))] A valid result is:
+    
+     | Cat (Finite 1, Char 'a', IfFlat (Empty, HardLine))
+  Found [nest] with compatible type.
+  Failure: [nest] is incorrect.
+    When applied to the following arguments:
+    
+     | 2
+    
+     | IfFlat (Empty, HardLine)
+    it produces the following invalid result:
+    [Nest (2, Infinite, IfFlat (Empty, HardLine))] A valid result is:
+    
+     | Nest (2, Finite 0, IfFlat (Empty, HardLine))
+  Found [group] with compatible type.
+  Failure: [group] is incorrect.
+    When applied to the following argument:
+    
+     | IfFlat (Empty, HardLine)
+    it produces the following invalid result:
+    [Group (Infinite, IfFlat (Empty, HardLine))] A valid result is:
+    
+     | Group (Finite 0, IfFlat (Empty, HardLine))
+  Found [ifflat] with compatible type.
+  Success 1: [ifflat] seems correct.
+Question 5
+  Failure: Cannot find  [pretty]

@@ -1,0 +1,21 @@
+Question 1
+  Found [rank] with compatible type.
+  Failure: Not yet implemented.
+Question 2
+  Found [makeT] with compatible type.
+  Failure: Not yet implemented.
+  Failure: Not yet implemented.
+  Failure: Not yet implemented.
+  Failure: Not yet implemented.
+Question 3
+  Found [singleton] with compatible type.
+  Failure: Not yet implemented.
+Question 4
+  Found [makeT] with compatible type.
+  Found [union] with compatible type.
+  Failure: Not yet implemented.
+  Failure: Not yet implemented.
+Questions 5 and 6
+  Found [insert] with compatible type.
+  Found [extract] with compatible type.
+  Failure: Not yet implemented.

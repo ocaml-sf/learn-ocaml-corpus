@@ -1,0 +1,33 @@
+Question 1
+  Found [rank] with compatible type.
+  Success 1: [rank] seems correct.
+Question 2
+  Found [makeT] with compatible type.
+  Success 1: The heap invariant seems respected.
+  Success 1: The rank invariant seems respected.
+  Success 1: The leftist invariant seems respected.
+  Success 1: The multiset of elements seems preserved.
+Question 3
+  Found [singleton] with compatible type.
+  Success 1: [singleton] seems correct.
+Question 4
+  Found [makeT] with compatible type.
+  Found [union] with compatible type.
+  Success 1: The heap invariant seems respected.
+  Success 1: The multiset of elements seems preserved.
+  Failure: The complexity of union seems incorrect.
+    The following expression:
+    
+     | union (
+     |   makeT Red (
+     |     makeT Red (
+     |       makeT Red (makeT Red E E) (
+     |         makeT Red E E
+     |       )
+     |     ) (makeT Red E E)
+     |   ) (makeT Red E E)
+     | ) (makeT Red E E)
+    causes 4 priority comparisons, while we estimate that 3 comparisons
+    should suffice.
+Questions 5 and 6
+  Failure: Cannot find  [insert]

@@ -1,0 +1,30 @@
+Question 1
+  Found [++] with compatible type.
+  Success 1: [++] seems correct.
+Question 2
+  Found [<==] with compatible type.
+  Success 1: [<==] seems correct.
+Question 3
+  Found [requirement] with compatible type.
+  Success 1: [requirement] seems correct.
+Question 4
+  Found [char] with compatible type.
+  Success 1: [char] seems correct.
+  Found [^^] with compatible type.
+  Success 1: [^^] seems correct.
+  Found [nest] with compatible type.
+  Success 1: [nest] seems correct.
+  Found [group] with compatible type.
+  Failure: [group] is incorrect.
+    When applied to the following argument:
+    
+     | Empty
+    it produces the following invalid result:
+    [Empty] A valid result is:
+    
+     | Group (Finite 0, Empty)
+  Found [ifflat] with compatible type.
+  Success 1: [ifflat] seems correct.
+Question 5
+  Found [pretty] with compatible type.
+  Success 1: [pretty] seems correct.

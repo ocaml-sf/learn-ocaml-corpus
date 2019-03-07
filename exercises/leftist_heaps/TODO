@@ -1,0 +1,36 @@
+Proof-read descr.md. Mention that elements are Red/Yellow/Green
+and that several notions of priority will be tested.
+
+Test with multiple priority functions.
+When displaying a counter-example, indicate which priority function is used.
+
+Might wish to check that [union] does not use [T] directly to build a tree.
+
+Link to an exercise that uses a priority queue, e.g., Dijkstra.
+
+-- ocaml questions -------------------------------------------------------------
+
+OCaml: Unbound value "|". (|.)
+
+-- learn-ocaml questions -------------------------------------------------------
+
+Find a way of moving reusable grading code to library files. (Issue #169.)
+
+We have `test_function_1` which compares an actual output with an explicit
+expected output, and `test_function_1_against` which compares an actual output
+with the output of a reference implementation. We seem to be lacking
+`test_function_1_post` which would test whether an actual output satisfies a
+certain postcondition. Such a facility seems necessary when the specification
+is nondeterministic (i.e., when multiple outputs are correct). (Issue #223.)
+
+Can we activate some OCaml warnings (e.g. unused values) when compiling
+our code (solution/prelude/prepare/test)? (Issue #224.)
+
+The textual display of reports (as produced by `learn-ocaml grade
+--dump-reports=foo`) does not correctly handle line breaks (`Break`): instead
+of a line break, it prints no space at all, and continues on the same line.
+Furthermore, after a line break, formatting seems suboptimal (there is too
+much indentation). (Issue #225.)
+
+If the student writes `let x = assert false` at the top level,
+can this be properly detected and reported? (Issue #226.)

@@ -1,10 +1,28 @@
-{ "learnocaml_version": "1",
-  "groups":
-  {
-      "Functional data structures":
-      {
-	  "title": "Functional data structures",
-	  "exercises": []
-      }
-  }
+{
+    "learnocaml_version": "1",
+    "groups":
+    {
+        "Functional data structures":
+        {
+	    "title": "Functional data structures",
+	    "exercises": [
+                "leftist_heaps",
+                "random_access_lists"
+            ]
+        },
+        "Imperative data structures":
+        {
+	    "title": "Imperative data structures",
+	    "exercises": [
+                "persistent_arrays"
+            ]
+        },
+        "programming":
+        {
+            "title": "Programming",
+            "exercises": [
+                "pprint"
+            ]
+        }
+    }
 }

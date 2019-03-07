@@ -1,0 +1,20 @@
+Correctness
+  Found [make] with compatible type.
+  Found [get] with compatible type.
+  Found [set] with compatible type.
+  Success 1: The code seems correct. It passes 5702 test scenarios.
+Optimization
+  Found [make] with compatible type.
+  Found [get] with compatible type.
+  Found [set] with compatible type.
+  Success 1: The code seems to respect the optimization scheme of Question 4.
+Complexity
+  Found [make] with compatible type.
+  Found [get] with compatible type.
+  Found [set] with compatible type.
+  Failure: The desired complexity is not achieved. In the following scenario:
+    
+     | let a = make 1 false;;
+     | let b = set a 0 true;;
+     | let observed = get b 0;;The last call involves 4 uses of dereferencing
+                               (!), whereas 2 uses should be enough.
