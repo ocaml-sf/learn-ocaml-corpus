@@ -276,7 +276,21 @@ let rec normalize doc =
   | Group (_, doc) ->
       group (normalize doc)
   | IfFlat (doc1, doc2) ->
-      ifflat (normalize doc1) (normalize doc2)
+      ifflat (normalize_flattening doc1) (normalize_non_flattening doc2)
+
+and normalize_flattening doc =
+  match doc with
+  | IfFlat (doc, _) ->
+      normalize_flattening doc
+  | doc ->
+      normalize doc
+
+and normalize_non_flattening doc =
+  match doc with
+  | IfFlat (_, doc) ->
+      normalize_non_flattening doc
+  | doc ->
+      normalize doc
 
 let eq_doc doc1 doc2 =
   normalize doc1 = normalize doc2
