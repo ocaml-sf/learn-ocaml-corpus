@@ -22,11 +22,11 @@ Question 4
     
      | Empty
     
-     | IfFlat (Empty, Empty)
+     | IfFlat (Empty, HardLine)
     it produces the following invalid result:
     [IfFlat (Empty, Empty)] A valid result is:
     
-     | IfFlat (Empty, IfFlat (Empty, Empty))
+     | IfFlat (Empty, IfFlat (Empty, HardLine))
 Question 5
   Found [pretty] with compatible type.
   Failure: [pretty] is incorrect.
