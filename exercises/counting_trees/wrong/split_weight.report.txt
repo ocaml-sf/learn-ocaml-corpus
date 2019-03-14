@@ -1,0 +1,35 @@
+Question 1
+  Failure: Cannot find  [weight]
+Question 2
+  Failure: Cannot find  [height]
+Question 3
+  Failure: Cannot find  [naive_trees_of_weight]
+Question 4
+  Failure: Cannot find  [trees_of_weights]
+Question 5
+  Failure: Cannot find  [fix]
+Question 6
+  Found [sigma] with compatible type.
+  Success 1: [sigma] seems correct.
+Question 7
+  Found [split_weight] with compatible type.
+  Failure: [split_weight] is incorrect.
+    When applied to the following arguments:
+    
+     | 0
+    
+     | (fun w1 w2 -> 1 + w1 * w2)
+    it produces the following invalid result:
+    [0] A valid result is:
+    
+     | 1
+Question 8
+  Failure: Cannot find  [trees_of_weight]
+Question 9
+  Failure: Cannot find  [trees_of_weight_0_19]
+Question 10
+  Failure: Cannot find  [split_wb_weight]
+Question 11
+  Failure: Cannot find  [wb_trees_of_weight]
+Question 12
+  Failure: Cannot find  [wb_trees_of_weight_0_19]

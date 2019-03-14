@@ -1,0 +1,36 @@
+Question 1
+  Found [weight] with compatible type.
+  Success 1: [weight] seems correct.
+Question 2
+  Found [height] with compatible type.
+  Success 1: [height] seems correct.
+Question 3
+  Found [naive_trees_of_weight] with compatible type.
+  Success 1: [naive_trees_of_weight] seems correct.
+Question 4
+  Found [trees_of_weights] with compatible type.
+  Success 1: [trees_of_weights] seems correct.
+Question 5
+  Found [fix] with compatible type.
+  Success 1: [fix] seems correct.
+Question 6
+  Found [sigma] with compatible type.
+  Success 1: [sigma] seems correct.
+Question 7
+  Found [split_weight] with compatible type.
+  Success 1: [split_weight] seems correct.
+Question 8
+  Found [trees_of_weight] with compatible type.
+  Success 1: [trees_of_weight] seems correct.
+Question 9
+  Found [trees_of_weight_0_19] with compatible type.
+  Success 1: [trees_of_weight_0_19] is correct.
+Question 10
+  Found [split_wb_weight] with compatible type.
+  Success 1: [split_wb_weight] seems correct.
+Question 11
+  Found [wb_trees_of_weight] with compatible type.
+  Success 1: [wb_trees_of_weight] seems correct.
+Question 12
+  Found [wb_trees_of_weight_0_19] with compatible type.
+  Success 1: [wb_trees_of_weight_0_19] is correct.
