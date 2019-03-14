@@ -1,0 +1,18 @@
+Question 1
+  Failure: Cannot find  [slow_elements]
+Question 2
+  Failure: Cannot find  [elements_with]
+Question 3
+  Failure: Cannot find  [elements]
+Question 4
+  Found [fringe] with compatible type.
+  Failure: [fringe] is incorrect.
+    The following test scenario causes an assertion failure:
+     | let a = fringe Node (Leaf, 0, Node (Leaf, 1, Leaf)) in
+     | let Cons (observed, b) = a() in
+     | assert (observed = 0);
+     | ()
+Question 5
+  Failure: Cannot find  [equal]
+Question 6
+  Failure: Cannot find  [same_fringe]
