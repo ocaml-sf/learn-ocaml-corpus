@@ -1,0 +1,23 @@
+Question 1
+  Found [even] with compatible type.
+  Success 1: [even] seems correct.
+  Found [odd] with compatible type.
+  Success 1: [odd] seems correct.
+Question 2
+  Found [merge] with compatible type.
+  Failure: [merge] is incorrect.
+    When applied to the following arguments:
+    
+     | [0]
+    
+     | [0]
+    it produces the following invalid result:
+    [[0]] A valid result is:
+    
+     | [0; 0]
+Question 3
+  Failure: Cannot find  [sort]
+Question 4
+  Failure: Cannot find  [uniq]
+Question 5
+  Failure: Cannot find  [weed]

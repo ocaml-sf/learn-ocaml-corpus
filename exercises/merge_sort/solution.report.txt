@@ -1,0 +1,17 @@
+Question 1
+  Found [even] with compatible type.
+  Success 1: [even] seems correct.
+  Found [odd] with compatible type.
+  Success 1: [odd] seems correct.
+Question 2
+  Found [merge] with compatible type.
+  Success 1: [merge] seems correct.
+Question 3
+  Found [sort] with compatible type.
+  Success 1: [sort] seems correct.
+Question 4
+  Found [uniq] with compatible type.
+  Success 1: [uniq] seems correct.
+Question 5
+  Found [weed] with compatible type.
+  Success 1: [weed] seems correct.
