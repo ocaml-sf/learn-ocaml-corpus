@@ -63,6 +63,11 @@ let product s1 s2 =
     empty
   else
     Product (length s1 * length s2, s1, s2)
+    (* This implementation of [product] imposes the following invariant:
+       in every node of the form [Product (_, s1, s2)], the sequences [s1]
+       and [s2] are nonempty. This is exploited in the implementation of
+       [get] (below) where we divide by [length s2] without fear of division
+       by zero. *)
 
 let map phi s =
   if is_empty s then

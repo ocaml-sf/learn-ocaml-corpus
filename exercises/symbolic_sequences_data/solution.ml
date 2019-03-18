@@ -30,6 +30,11 @@ let product s1 s2 =
     empty
   else
     Product (length s1 * length s2, s1, s2)
+    (* This implementation of [product] imposes the following invariant:
+       in every node of the form [Product (_, s1, s2)], the sequences [s1]
+       and [s2] are nonempty. This is exploited in the implementation of
+       [get] (below) where we divide by [length s2] without fear of division
+       by zero. *)
 
 let map phi s =
   if is_empty s then
@@ -41,9 +46,9 @@ let rec get : type a . a seq -> int -> a =
   fun s i ->
     match s with
     | Empty ->
-        raise OutOfBounds
+        out_of_bounds()
     | Singleton x ->
-        if i = 0 then x else raise OutOfBounds
+        if i = 0 then x else out_of_bounds()
     | Sum (_, s1, s2) ->
         let n1 = length s1 in
         if i < n1 then get s1 i
