@@ -123,7 +123,8 @@ Because sequences can be extremely long,
 OCaml's built-in type `int`, which is 63 bits wide at best,
 can be insufficient to represent the length of a sequence.
 In order to avoid overflows, we *should* use a type of unbounded integers,
-such as the type `Z.t` provided by the library `zarith`.
+such as the type `Z.t` provided by the library
+[`zarith`](https://github.com/ocaml/Zarith).
 However, for the sake of simplicity,
 in this exercise, we stick with the type `int`.
 
@@ -153,8 +154,14 @@ instead of a record of functions.
 **Question 1.** Implement the three destructors presented above,
 in one line each.
 
-**Question 2.** Implement the five constructors presented above. At this
-stage, compute a correct value of `length`, and provide dummy `get` and
+**Question 2.** Implement the five constructor functions presented above,
+namely
+`empty`,
+`singleton`,
+`sum`,
+`product`,
+and `map`.
+At this stage, compute a correct value of `length`, and provide dummy `get` and
 `foreach` functions, which raise the exception `TODO` when invoked.
 
 **Question 3.** Replace the five dummy `get` functions

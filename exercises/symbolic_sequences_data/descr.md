@@ -123,7 +123,8 @@ Because sequences can be extremely long,
 OCaml's built-in type `int`, which is 63 bits wide at best,
 can be insufficient to represent the length of a sequence.
 In order to avoid overflows, we *should* use a type of unbounded integers,
-such as the type `Z.t` provided by the library `zarith`.
+such as the type `Z.t` provided by the library
+[`zarith`](https://github.com/ocaml/Zarith).
 However, for the sake of simplicity,
 in this exercise, we stick with the type `int`.
 
@@ -141,7 +142,8 @@ type _ seq =
 | Map      : int * ('a -> 'b) * 'a seq -> 'b seq
 ```
 
-This is a *generalized* algebraic data type.
+This is a
+[generalized algebraic data type](https://caml.inria.fr/pub/docs/manual-ocaml/extn.html).
 In an ordinary algebraic data type,
 every data constructor has result type `'a seq`.
 Here, the constructor `Product` violates this rule:
@@ -156,7 +158,13 @@ This allows a constant-time implementation of the function `length`.
 
 **Question 1.** Implement `length`.
 
-**Question 2.** Implement the five constructors presented above,
+**Question 2.** Implement the five constructor functions presented above,
+namely
+`empty`,
+`singleton`,
+`sum`,
+`product`,
+and `map`,
 in one line each.
 
 **Question 3.** Implement `get`.
