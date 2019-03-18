@@ -1,0 +1,27 @@
+Found [empty] with compatible type.
+Found [singleton] with compatible type.
+Found [sum] with compatible type.
+Found [product] with compatible type.
+Found [map] with compatible type.
+Found [map] with compatible type.
+Question 2 (length)
+  Found [length] with compatible type.
+  Failure: Something is wrong. The following expression:
+    
+     | length (singleton 0)
+    produces the following value: [0] Yet, it should produce this value: [1]
+Question 3 (random access)
+  Found [get] with compatible type.
+  Failure: Something is wrong. The following expression:
+    
+     | get (sum (singleton 0) empty) 0
+    raises the following exception: [OutOfBounds] Yet, it should produce this
+    value: [0]
+Question 4 (iteration)
+  Found [foreach] with compatible type.
+  Failure: Something is wrong. The following expression:
+    
+     | elements
+     |   (map (fun (x, y) -> x - y) (product (singleton 0) (singleton 0)))
+    produces the following value: [[]] Yet, it should produce this value:
+    [[0]]

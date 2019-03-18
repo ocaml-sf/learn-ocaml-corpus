@@ -1,0 +1,20 @@
+Found [empty] with compatible type.
+Found [singleton] with compatible type.
+Found [sum] with compatible type.
+Found [product] with compatible type.
+Found [map] with compatible type.
+Found [map] with compatible type.
+Question 2 (length)
+  Found [length] with compatible type.
+  Success 1: The computation of a sequence's length seems correct.
+Question 3 (random access)
+  Found [get] with compatible type.
+  Failure: Something is wrong. The following expression:
+    
+     | get
+     |   (map (fun (x, y) -> x - y) (product (singleton 0) (singleton 1)))
+     |   0
+    produces the following value: [1] Yet, it should produce this value: [-1]
+Question 4 (iteration)
+  Found [foreach] with compatible type.
+  Success 1: Iteration seems correct.

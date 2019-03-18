@@ -1,0 +1,15 @@
+Found [empty] with compatible type.
+Found [singleton] with compatible type.
+Found [sum] with compatible type.
+Found [product] with compatible type.
+Found [map] with compatible type.
+Found [map] with compatible type.
+Question 2 (length)
+  Found [length] with compatible type.
+  Success 1: The computation of a sequence's length seems correct.
+Question 3 (random access)
+  Found [get] with compatible type.
+  Failure: Not yet implemented.
+Question 4 (iteration)
+  Found [foreach] with compatible type.
+  Failure: Not yet implemented.
