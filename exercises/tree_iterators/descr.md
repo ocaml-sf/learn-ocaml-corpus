@@ -29,7 +29,7 @@ a simple, widely-known implementation of dictionaries. In this exercise,
 however, these invariants play no role.
 
 The **fringe** of a tree is the list of its elements, in the order in which
-they appear when the tree is displayed as an OCaml expression. (This is
+they appear when the tree is written down as an OCaml expression. (This is
 sometimes known as an infix enumeration.) For instance, the fringe of the tree
 `Node (Node (Leaf, 0, Leaf), 1, Node (Leaf, 2, Leaf))` is the list
 `[0; 1; 2]`.
@@ -101,6 +101,9 @@ module Seq : sig
   val nil : 'a t
   val cons: 'a -> 'a t -> 'a t
 
+  exception Trap
+  val trap: 'a t
+
 end
 ```
 
@@ -125,6 +128,11 @@ two reasons:
 The functions `nil` and `cons` are constructor functions. They are provided
 for convenience, but could just as well be defined outside of the module
 `Seq`. Their definitions (not shown) are one line long.
+
+The sequence `trap` behaves in a special way: when it is applied to `()`,
+which means that its head is requested, it raises the exception `Trap`.
+You will not need to use `trap`.
+The automatic grading code for Question 5 uses it internally.
 
 ## Building the fringe of a tree (on demand)
 
@@ -161,6 +169,10 @@ Furthermore, we assume that it is permitted to use
 the generic equality function `(=)` to
 compare two elements of type `'a`.
 
+*Note.* If the sequences `xs` and `ys` differ at some point, say at their
+`i`-th elements, then they must not be evaluated further than that; that is,
+the `i+1`-th element of either sequence must never be requested.
+
 ## Testing whether two trees have the same fringe
 
 **Question 6.**
@@ -169,6 +181,10 @@ of type `'a tree -> 'a tree -> bool`
 such that `same_fringe t1 t2` is `true`
 if and only if the trees `t1` and `t2`
 have the same fringe.
+
+Of course, if the trees `t1` and `t2` have distinct fringes,
+then the comparison should stop and return `false` as early
+as possible.
 
 This exercise has real-world applications. For instance, the function
 `same_fringe` can be used to test whether two sets, represented as binary
