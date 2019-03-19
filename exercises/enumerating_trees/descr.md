@@ -36,6 +36,7 @@ returns a finite sequence of values of type `'a` whose size is `s`.
 Thus, an enumeration `e` of type `'a enum` represents a set of elements of
 type `'a`, grouped by size. The function call `e(s)` returns the subset of
 the elements of size `s`.
+(This subset is represented as a sequence without duplicate elements.)
 The function `e` is allowed to assume that its argument `s` is nonnegative;
 an enumeration must never be passed a negative size.
 
@@ -160,6 +161,9 @@ the size of every element is increased by one. That is, if a value `x` appears
 in `e` among the elements of size `s`, then it should appear in `pay e` among
 the elements of size `s+1`.
 
+*Note*. `pay` is so named because the elements of the enumeration `pay e` are
+*more expensive*, so to speak, than the elements of the enumeration `e`.
+
 **Question 4.** Define a function `sum` of type `'a enum -> 'a enum -> 'a
 enum` such that `sum e1 e2` represents the union of the sets `e1` and `e2`.
 One can assume that the sets `e1` and `e2` are disjoint.
@@ -194,7 +198,9 @@ In the following, we use the constructor functions defined above.
 **Question 7.** Define an enumeration `bit` of type `int enum`
 whose values, `0` and `1`, are both considered to have size 0.
 
-We assume that a memoizing fixed point combinator `fix` is given. Its type is
+We assume that a
+[memoizing](https://en.wikipedia.org/wiki/Memoization)
+fixed point combinator `fix` is given. Its type is
 `(('a -> 'b) -> ('a -> 'b)) -> ('a -> 'b)`. The idea is, instead of defining
 an ordinary recursive function by `let rec f x = e`, a user can define a
 memoizing recursive function by `let f = fix (fun f x -> e)`.
