@@ -1,0 +1,18 @@
+Question 1
+  Found [slow_elements] with compatible type.
+  Failure: [slow_elements] is incorrect.
+    The following expression:
+    
+     | slow_elements (Node (Leaf, 0, Node (Leaf, 1, Leaf)))
+    produces the following result: [[1; 0]] This is invalid. Producing the
+    following result is valid: [[0; 1]]
+Question 2
+  Failure: Cannot find  [elements_with]
+Question 3
+  Failure: Cannot find  [elements]
+Question 4
+  Failure: Cannot find  [fringe]
+Question 5
+  Failure: Cannot find  [equal]
+Question 6
+  Failure: Cannot find  [same_fringe]

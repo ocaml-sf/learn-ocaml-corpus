@@ -1,0 +1,18 @@
+Question 1
+  Failure: Cannot find  [slow_elements]
+Question 2
+  Failure: Cannot find  [elements_with]
+Question 3
+  Failure: Cannot find  [elements]
+Question 4
+  Failure: Cannot find  [fringe]
+Question 5
+  Found [equal] with compatible type.
+  Failure: [equal] is incorrect.
+    The following expression:
+    
+     | equal (Seq.cons 0 Seq.nil) (Seq.cons 0 Seq.trap)
+    produces the following result: [true] This is invalid. Raising the
+    following exception is valid: [Seq.Trap]
+Question 6
+  Failure: Cannot find  [same_fringe]

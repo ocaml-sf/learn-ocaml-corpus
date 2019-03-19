@@ -1,0 +1,18 @@
+Question 1
+  Found [slow_elements] with compatible type.
+  Failure: Not yet implemented.
+Question 2
+  Found [elements_with] with compatible type.
+  Failure: Not yet implemented.
+Question 3
+  Found [elements] with compatible type.
+  Failure: Not yet implemented.
+Question 4
+  Found [fringe] with compatible type.
+  Failure: Not yet implemented.
+Question 5
+  Found [equal] with compatible type.
+  Failure: Not yet implemented.
+Question 6
+  Found [same_fringe] with compatible type.
+  Failure: Not yet implemented.

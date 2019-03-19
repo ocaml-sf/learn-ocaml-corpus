@@ -1,0 +1,17 @@
+-- about this exercise ---------------------------------------------------------
+
+Check that [elements] is implemented as a single call to [elements_with].
+
+Check that no mutable state is used.
+
+Check that [fringe] does not call [elements] or its variants.
+
+-- ocaml questions -------------------------------------------------------------
+
+-- learn-ocaml questions -------------------------------------------------------
+
+Some standard library modules are missing: Arg, Bigarray, Complex,
+Filename, Float, Lazy, Marshal, Queue, Scanf, Stack, Uchar, Weak.
+(Issue #241.)
+
+Nontermination in the student code is not properly caught. (Issue #240.)

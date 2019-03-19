@@ -1,0 +1,21 @@
+Question 1
+  Failure: Cannot find  [slow_elements]
+Question 2
+  Failure: Cannot find  [elements_with]
+Question 3
+  Failure: Cannot find  [elements]
+Question 4
+  Found [fringe] with compatible type.
+  Failure: The following exception is raised and never caught:
+    
+     | Not_found
+     | Raised at file "./solution.ml", line 4, characters 8-17
+     | Called from file "./test.ml", line 1165, characters 17-25
+     | Called from unknown location
+     | Called from unknown location
+     | Called from file "./test.ml", line 1159, characters 2-764
+     | Called from file "./test.ml", line 643, characters 4-19
+Question 5
+  Failure: Cannot find  [equal]
+Question 6
+  Failure: Cannot find  [same_fringe]
