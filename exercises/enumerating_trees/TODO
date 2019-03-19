@@ -1,0 +1,21 @@
+-- about this exercise ---------------------------------------------------------
+
+Could install links from "Counting Trees" to "Enumerating Trees" and back.
+
+Can also point to the two exercises on Symbolic Sequences.
+
+Also, there is a link to "Counting Trees".
+
+Port new code to blank.
+  New definition of [raw_apply].
+
+-- ocaml questions -------------------------------------------------------------
+
+-- learn-ocaml questions -------------------------------------------------------
+
+Is it possible to extract a student function at a polymorphic type? (Issue #238.)
+
+Is it possible to send all of the code (or one statement)
+from the Editor buffer to the Toplevel buffer?
+
+Is it possible to link from one exercise description to another?

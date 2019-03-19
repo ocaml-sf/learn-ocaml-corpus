@@ -1,0 +1,49 @@
+Question 1
+  Found [empty] with compatible type.
+  Success 1: [empty] seems correct.
+Question 2
+  Found [just] with compatible type.
+  Success 1: [just] seems correct.
+Question 3
+  Found [empty] with compatible type.
+  Found [just] with compatible type.
+  Found [pay] with compatible type.
+  Success 1: [pay] seems correct.
+Question 4
+  Found [empty] with compatible type.
+  Found [just] with compatible type.
+  Found [pay] with compatible type.
+  Found [sum] with compatible type.
+  Success 1: [sum] seems correct.
+Question 5
+  Found [empty] with compatible type.
+  Found [just] with compatible type.
+  Found [pay] with compatible type.
+  Found [product] with compatible type.
+  Failure: Something is wrong. The following expression:
+    
+     | List.sort compare (
+     |   Seq.elements (product (just 24) (just 42) (* applied to size: *) 1)
+     | )
+    produces the following value: [[(24, 42)]] Yet, it should produce this
+    value: [[]]
+Question 6
+  Found [empty] with compatible type.
+  Found [just] with compatible type.
+  Found [pay] with compatible type.
+  Failure: Cannot find  [map]
+Question 7
+  Failure: Cannot find  [bit]
+Question 8
+  Failure: Cannot find  [bit]
+Question 9
+  Failure: Cannot find  [tree]
+Question 10
+  Found [empty] with compatible type.
+  Found [just] with compatible type.
+  Found [pay] with compatible type.
+  Failure: Cannot find  [balanced_product]
+Question 11
+  Failure: Cannot find  [balanced_tree]
+Question 12
+  Failure: Cannot find  [balanced_tidy_tree]

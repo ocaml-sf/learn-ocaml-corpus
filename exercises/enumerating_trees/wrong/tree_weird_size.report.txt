@@ -1,0 +1,52 @@
+Question 1
+  Found [empty] with compatible type.
+  Success 1: [empty] seems correct.
+Question 2
+  Found [just] with compatible type.
+  Success 1: [just] seems correct.
+Question 3
+  Found [empty] with compatible type.
+  Found [just] with compatible type.
+  Found [pay] with compatible type.
+  Success 1: [pay] seems correct.
+Question 4
+  Found [empty] with compatible type.
+  Found [just] with compatible type.
+  Found [pay] with compatible type.
+  Found [sum] with compatible type.
+  Success 1: [sum] seems correct.
+Question 5
+  Found [empty] with compatible type.
+  Found [just] with compatible type.
+  Found [pay] with compatible type.
+  Found [product] with compatible type.
+  Success 1: [product] seems correct.
+Question 6
+  Found [empty] with compatible type.
+  Found [just] with compatible type.
+  Found [pay] with compatible type.
+  Found [map] with compatible type.
+  Success 1: [map] seems correct.
+Question 7
+  Found [bit] with compatible type.
+  Success 1: [bit] seems correct.
+Question 8
+  Found [bit] with compatible type.
+  Found [list] with compatible type.
+  Success 1: [list] seems correct.
+Question 9
+  Found [tree] with compatible type.
+  Failure: Something is wrong. The following expression:
+    
+     | List.sort compare (Seq.elements (tree (* applied to size: *) 1))
+    produces the following value: [[]] Yet, it should produce this value:
+    [[Node (Leaf, Leaf)]]
+Question 10
+  Found [empty] with compatible type.
+  Found [just] with compatible type.
+  Found [pay] with compatible type.
+  Failure: Cannot find  [balanced_product]
+Question 11
+  Failure: Cannot find  [balanced_tree]
+Question 12
+  Failure: Cannot find  [balanced_tidy_tree]
