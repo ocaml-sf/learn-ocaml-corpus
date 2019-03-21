@@ -79,9 +79,9 @@ let rec get : type a . a seq -> int -> a =
   fun s i ->
     match s with
     | Empty ->
-        out_of_bounds()
+        raise OutOfBounds
     | Singleton x ->
-        if i = 0 then x else out_of_bounds()
+        if i = 0 then x else raise OutOfBounds
     | Sum (_, s1, s2) ->
         let n1 = length s1 in
         if i < n1 then get s1 i
