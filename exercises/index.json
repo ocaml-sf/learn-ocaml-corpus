@@ -21,7 +21,13 @@
         {
             "title": "Programming",
             "exercises": [
-                "pprint"
+                "counting_trees",
+                "enumerating_trees",
+                "merge_sort",
+                "pprint",
+                "symbolic_sequences_objects",
+                "symbolic_sequences_data",
+                "tree_iterators"
             ]
         }
     }
