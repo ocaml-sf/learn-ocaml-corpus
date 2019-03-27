@@ -1,0 +1,24 @@
+Question 1
+  Found [pigeonhole_sort] with compatible type.
+  Failure: [pigeonhole_sort] is incorrect.
+    The following expression:
+    
+     | pigeonhole_sort 1 [(0, true); (0, false)]
+    produces the following result: [[false; true]] This is invalid. Producing
+    the following result is valid: [[true; false]]
+Question 2
+  Failure: Cannot find  [cmp]
+Question 3
+  Failure: Cannot find  [sort]
+Question 4
+  Failure: Cannot find  [simple_sort]
+Question 5
+  Failure: Cannot find  [simple_sort]
+Question 6
+  Failure: Cannot find  [simple_sort]
+Question 7
+  Failure: Cannot find  [simple_sort]
+Question 8
+  Failure: Cannot find  [simple_sort]
+Question 9
+  Failure: Cannot find  [discr]
