@@ -1,0 +1,40 @@
+Question 1
+  Found [pigeonhole_sort] with compatible type.
+  Success 1: [pigeonhole_sort] seems correct.
+Question 2
+  Found [cmp] with compatible type.
+  Found [cmp] with compatible type.
+  Found [cmp] with compatible type.
+  Found [cmp] with compatible type.
+  Found [cmp] with compatible type.
+  Success 1: [cmp] seems correct.
+Question 3
+  Found [sort] with compatible type.
+  Found [sort] with compatible type.
+  Found [sort] with compatible type.
+  Found [sort] with compatible type.
+  Found [sort] with compatible type.
+  Success 1: [sort] seems correct.
+Question 4
+  Found [simple_sort] with compatible type.
+  Success 1: [simple_sort] seems correct.
+Question 5
+  Found [simple_sort] with compatible type.
+  Found [bool] with compatible type.
+  Failure: [bool] is incorrect.
+    The following expression:
+    
+     | simple_sort bool [true; false]
+    produces the following result: [[true; false]] This is invalid. Producing
+    the following result is valid: [[false; true]]
+Question 6
+  Found [simple_sort] with compatible type.
+  Failure: Cannot find  [list]
+Question 7
+  Found [simple_sort] with compatible type.
+  Failure: Cannot find  [string]
+Question 8
+  Found [simple_sort] with compatible type.
+  Failure: Cannot find  [int32]
+Question 9
+  Failure: Cannot find  [discr]

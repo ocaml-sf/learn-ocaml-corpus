@@ -1,0 +1,26 @@
+Question 1
+  Found [pigeonhole_sort] with compatible type.
+  Failure: Not yet implemented.
+Question 2
+  Found [cmp] with compatible type.
+  Failure: Not yet implemented.
+Question 3
+  Found [sort] with compatible type.
+  Failure: Not yet implemented.
+Question 4
+  Found [simple_sort] with compatible type.
+  Failure: Not yet implemented.
+Question 5
+  Found [simple_sort] with compatible type.
+  Failure: Cannot find  [bool]
+Question 6
+  Found [simple_sort] with compatible type.
+  Failure: Cannot find  [list]
+Question 7
+  Found [simple_sort] with compatible type.
+  Failure: Cannot find  [string]
+Question 8
+  Found [simple_sort] with compatible type.
+  Failure: Cannot find  [int32]
+Question 9
+  Failure: Cannot find  [discr]

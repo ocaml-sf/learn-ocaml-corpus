@@ -1,0 +1,30 @@
+Question 1
+  Found [pigeonhole_sort] with compatible type.
+  Success 1: [pigeonhole_sort] seems correct.
+Question 2
+  Found [cmp] with compatible type.
+  Found [cmp] with compatible type.
+  Found [cmp] with compatible type.
+  Found [cmp] with compatible type.
+  Found [cmp] with compatible type.
+  Success 1: [cmp] seems correct.
+Question 3
+  Found [sort] with compatible type.
+  Failure: [sort] is incorrect.
+    The following expression:
+    
+     | sort OTrue [(0, true); (0, false)]
+    produces the following result: [[false; true]] This is invalid. Producing
+    the following result is valid: [[true; false]]
+Question 4
+  Failure: Cannot find  [simple_sort]
+Question 5
+  Failure: Cannot find  [simple_sort]
+Question 6
+  Failure: Cannot find  [simple_sort]
+Question 7
+  Failure: Cannot find  [simple_sort]
+Question 8
+  Failure: Cannot find  [simple_sort]
+Question 9
+  Failure: Cannot find  [discr]

@@ -23,6 +23,7 @@
             "exercises": [
                 "counting_trees",
                 "enumerating_trees",
+                "generic_sorting",
                 "merge_sort",
                 "pprint",
                 "symbolic_sequences_objects",
