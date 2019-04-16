@@ -37,9 +37,11 @@ Question 8
 Question 9
   Found [discr] with compatible type.
   Found [discr] with compatible type.
+  Found [discr] with compatible type.
+  Found [discr] with compatible type.
   Failure: [discr] is incorrect.
     The following expression:
     
-     | discr (ONat (4)) [(1, true); (2, true)]
-    produces the following result: [[[]; [true]; [true]; []]] This is
-    invalid. Producing the following result is valid: [[[true]; [true]]]
+     | discr (OProd (ONat (2), ONat (2))) [((1, 0), false); ((0, 1), true)]
+    produces the following result: [[[false]; [true]]] This is invalid.
+    Producing the following result is valid: [[[true]; [false]]]
