@@ -1,0 +1,42 @@
+Question 1
+  Found [return] with compatible type.
+  Found [>>=] with compatible type.
+  Found [fail] with compatible type.
+  Found [choose] with compatible type.
+  Found [sols] with compatible type.
+  Functional correctness
+    Success 1: The code seems correct. Tested 2411 scenarios.
+  Laziness
+    Success 1: The code seems lazy.
+Question 2
+  Found [return] with compatible type.
+  Found [>>=] with compatible type.
+  Found [fail] with compatible type.
+  Found [choose] with compatible type.
+  Found [sols] with compatible type.
+  Found [at_most_once] with compatible type.
+  Functional correctness
+    Success 1: The code seems correct. Tested 2486 scenarios.
+  Laziness
+    Success 1: The code seems lazy.
+Question 3
+  Found [return] with compatible type.
+  Found [>>=] with compatible type.
+  Found [fail] with compatible type.
+  Found [choose] with compatible type.
+  Found [sols] with compatible type.
+  Found [at_most_once] with compatible type.
+  Found [interleave] with compatible type.
+  Functional correctness
+    Success 1: The code seems correct. Tested 2867 scenarios.
+  Laziness
+    Failure: Some computations take place too early. The following
+             expression:
+      
+       | Seq.map snapshot sols (interleave (tick (return 0)) (tick (return 0)))
+       | |> Seq.take 20
+       | |> Seq.to_list
+      produces the following result: [[((* value: *) 0, (* work: *) 2); ((*
+      value: *) 0, (* work: *) 2)]] This is invalid. Producing the following
+      result is valid: [[((* value: *) 0, (* work: *) 1); ((* value: *) 0, (*
+      work: *) 2)]]
