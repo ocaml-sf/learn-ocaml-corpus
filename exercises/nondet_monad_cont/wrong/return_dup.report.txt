@@ -1,0 +1,18 @@
+Question 1
+  Found [return] with compatible type.
+  Found [>>=] with compatible type.
+  Found [fail] with compatible type.
+  Found [choose] with compatible type.
+  Found [sols] with compatible type.
+  Functional correctness
+    Success 1: The code seems correct. Tested 2411 scenarios.
+  Laziness
+    Failure: Some computations take place too early. The following
+             expression:
+      
+       | Seq.map snapshot sols (tick (return 0) >>= fun a -> tick (return a))
+       | |> Seq.take 20
+       | |> Seq.to_list
+      produces the following result: [[((* value: *) 0, (* work: *) 3)]] This
+      is invalid. Producing the following result is valid: [[((* value: *) 0,
+      (* work: *) 2)]]

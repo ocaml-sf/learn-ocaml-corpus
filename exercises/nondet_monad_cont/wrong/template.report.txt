@@ -1,0 +1,8 @@
+Question 1
+  Found [return] with compatible type.
+  Found [>>=] with compatible type.
+  Found [fail] with compatible type.
+  Found [choose] with compatible type.
+  Found [sols] with compatible type.
+  Functional correctness
+    Failure: Not yet implemented.

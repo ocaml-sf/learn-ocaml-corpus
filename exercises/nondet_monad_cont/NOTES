@@ -1,0 +1,20 @@
+400 lines of introduction in descr.md,
+leading up to a Question 1
+whose solution fits in 5 lines of code.
+This is a bit frustrating,
+but I see no way of improving this situation.
+
+The analogy between
+  failure continuation / Nil
+  success continuation / Cons
+clearly shows that there is a Church (or Scott?) encoding at play,
+but I am not sure of the details.
+A rough intuition is that the continuation-based implementation
+is the Church encoding of the lazy-sequence-based implementation.
+
+When I write that a `compute` function can invoke its success continuation
+several times, this is potentially misleading: a student might think that it
+is OK to *directly* call the success continuation several times. In reality,
+the success continuation is *directly* called at most once, and to this call,
+we pass a failure continuation which itself has the ability of calling the
+success continuation again.
