@@ -518,7 +518,9 @@ This is in fact arguably a rather natural way of discovering this
 implementation, as it could otherwise be difficult to *guess* the
 definitions of the algebraic data types `_ failure`,
 `(_, _) success`, and `_ m`.
-A paper by Pottier and Gauthier
+The paper
+**Polymorphic typed defunctionalization and concretization**
+[(Pottier and Gauthier, 2006)](http://gallium.inria.fr/~fpottier/publis/fpottier-gauthier-hosc.pdf)
 explains how defunctionalization
 gives rise to a generalized algebraic data type
 and an `apply` function
