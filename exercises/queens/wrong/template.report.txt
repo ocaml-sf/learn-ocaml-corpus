@@ -1,0 +1,22 @@
+Question 1
+  Found [select] with compatible type.
+  Functional correctness
+    Failure: Not yet implemented.
+Question 2
+  Found [unfold] with compatible type.
+  Failure: Not yet implemented.
+Question 3
+  Found [permutations] with compatible type.
+  Failure: Not yet implemented.
+Question 4
+  Found [nodup] with compatible type.
+  Failure: Not yet implemented.
+Question 5
+  Found [safe] with compatible type.
+  Failure: Not yet implemented.
+Question 6
+  Found [queens] with compatible type.
+  Failure: Not yet implemented.
+Question 7
+  Found [queenz] with compatible type.
+  Failure: Not yet implemented.
