@@ -1,0 +1,153 @@
+Found [inputs] with compatible type.
+Success 361: Your score is 361. The maximum score is 370.
+  Candidate 0:
+  You provided a problematic input of optimal size (2).
+  Candidate 1:
+  You provided a problematic input of optimal size (4).
+  Candidate 2:
+  You provided a problematic input of optimal size (2).
+  Candidate 3:
+  You provided a problematic input of optimal size (2).
+  Candidate 4:
+  You provided a problematic input of optimal size (1).
+  Candidate 5:
+  You provided a problematic input of optimal size (2).
+  Candidate 6:
+  You provided a problematic input of optimal size (2).
+  Candidate 7:
+  You provided a problematic input of optimal size (2).
+  Candidate 8:
+  You provided a problematic input of optimal size (4).
+  Candidate 9:
+  You provided a problematic input of optimal size (4).
+  Candidate 10:
+  You provided a problematic input of optimal size (0).
+  Candidate 11:
+  You provided a problematic input of optimal size (0).
+  Candidate 12:
+  You provided a problematic input of optimal size (4).
+  Candidate 13:
+  You provided a problematic input of optimal size (3).
+  Candidate 14:
+  You provided a problematic input of optimal size (24).
+  Candidate 15:
+  You provided a problematic input of optimal size (1).
+  Candidate 16:
+  You provided a problematic input of optimal size (5).
+  Candidate 17:
+  You provided a problematic input of optimal size (2).
+  Candidate 18:
+  You provided a problematic input of size 5, which is good, but there exist
+  shorter ones.
+  Candidate 19:
+  You provided a problematic input of optimal size (3).
+  Candidate 20:
+  You provided a problematic input of optimal size (356).
+  Candidate 21:
+  You provided a problematic input of optimal size (4).
+  Candidate 22:
+  You provided a problematic input of optimal size (1).
+  Candidate 23:
+  You provided a problematic input of optimal size (3).
+  Candidate 24:
+  You provided a problematic input of optimal size (6).
+  Candidate 25:
+  You provided a problematic input of optimal size (3).
+  Candidate 26:
+  You provided a problematic input of optimal size (5).
+  Candidate 27:
+  You provided a problematic input of optimal size (26).
+  Candidate 28:
+  You provided a problematic input of optimal size (16).
+  Candidate 29:
+  You provided a problematic input of optimal size (15).
+  Candidate 30:
+  You provided a problematic input of optimal size (1).
+  Candidate 31:
+  You provided a problematic input of size 32, which is good, but there exist
+  shorter ones.
+  Candidate 32:
+  You provided a problematic input of optimal size (8).
+  Candidate 33:
+  You provided a problematic input of optimal size (1).
+  Candidate 34:
+  You provided a problematic input of optimal size (394).
+  Candidate 35:
+  You provided a problematic input of optimal size (56).
+  Candidate 36:
+  You provided a problematic input of optimal size (1).
+  Candidate 37:
+  You provided a problematic input of optimal size (1).
+  Candidate 38:
+  You provided a problematic input of optimal size (1).
+  Candidate 39:
+  You provided a problematic input of optimal size (2).
+  Candidate 40:
+  You provided a problematic input of optimal size (3).
+  Candidate 41:
+  You provided a problematic input of optimal size (43).
+  Candidate 42:
+  You provided a problematic input of optimal size (2).
+  Candidate 43:
+  You provided a problematic input of optimal size (1).
+  Candidate 44:
+  You provided a problematic input of optimal size (2).
+  Candidate 45:
+  You provided a problematic input of size 51, which is good, but there exist
+  shorter ones.
+  Candidate 46:
+  You provided a problematic input of optimal size (5).
+  Candidate 47:
+  You provided a problematic input of optimal size (95).
+  Candidate 48:
+  You provided a problematic input of optimal size (16).
+  Candidate 49:
+  You provided a problematic input of optimal size (116).
+  Candidate 50:
+  You provided a problematic input of optimal size (4).
+  Candidate 51:
+  You provided a problematic input of optimal size (185).
+  Candidate 52:
+  You provided a problematic input of optimal size (0).
+  Candidate 53:
+  You provided a problematic input of optimal size (6).
+  Candidate 54:
+  You provided a problematic input of optimal size (8).
+  Candidate 55:
+  You provided a problematic input of optimal size (1).
+  Candidate 56:
+  You provided a problematic input of optimal size (2).
+  Candidate 57:
+  You provided a problematic input of optimal size (32).
+  Candidate 58:
+  You provided a problematic input of optimal size (4).
+  Candidate 59:
+  You provided a problematic input of optimal size (2).
+  Candidate 60:
+  You provided a problematic input of optimal size (1).
+  Candidate 61:
+  You provided a problematic input of optimal size (2).
+  Candidate 62:
+  You provided a problematic input of optimal size (0).
+  Candidate 63:
+  You provided a problematic input of optimal size (5).
+  Candidate 64:
+  You provided a problematic input of optimal size (5).
+  Candidate 65:
+  You provided a problematic input of optimal size (146).
+  Candidate 66:
+  You provided a problematic input of optimal size (32).
+  Candidate 67:
+  You provided a problematic input of optimal size (1).
+  Candidate 68:
+  You provided a problematic input of optimal size (6).
+  Candidate 69:
+  You provided a problematic input of optimal size (8).
+  Candidate 70:
+  You provided a problematic input of optimal size (2).
+  Candidate 71:
+  You provided a problematic input of optimal size (3).
+  Candidate 72:
+  You provided a problematic input of optimal size (1).
+  Candidate 73:
+  You provided a problematic input of optimal size (2).
