@@ -43,6 +43,9 @@ sorts it according to the preorder `o`,
 which is a preorder on keys,
 and returns just a list of values.
 The keys are dropped.
+(This somewhat unusual presentation, where keys and values are distinguished,
+helps define `sort` recursively. A more standard presentation, where keys and
+values are identified, can easily be obtained as a special case; see Question 4.)
 
 The time complexity of `sort o kvs` is `O(n)`, where `n` is the length of the
 input list `kvs`, and where the constant factor is allowed to depend on the
