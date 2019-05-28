@@ -93,7 +93,7 @@ correct, but does not verify the time complexity of your algorithm. It
 is up to you to convince yourself that the complexity bound is met.
 
 *Note.* In a real-world implementation,
-one would use memoization so as to ensure
+one might wish to ensure
 that two successive calls to `pigeonhole_sort bound`
 use the same internal array,
 instead of allocating a new array every time.
