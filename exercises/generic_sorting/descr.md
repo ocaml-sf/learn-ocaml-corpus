@@ -47,9 +47,9 @@ The keys are dropped.
 helps define `sort` recursively. A more standard presentation, where keys and
 values are identified, can easily be obtained as a special case; see Question 4.)
 
-The time complexity of `sort o kvs` is `O(n)`, where `n` is the length of the
-input list `kvs`, and where the constant factor is allowed to depend on the
-preorder `o`.
+The time complexity of `sort o kvs` is `O(m * n)`,
+where `m` is the size of the syntactic representation of the preorder `o`,
+and where `n` is the length of the input list `kvs`.
 
 Throughout this exercise, we restrict our attention to **stable** sorting
 algorithms. That is, if two values are associated with equivalent keys
@@ -199,13 +199,17 @@ sorts it according to the preorder `o`,
 and returns just a list of values,
 dropping the keys.
 This must be a stable sort.
-The time complexity of `sort o kvs` must be `O(n)`, where `n` is the length
-of the input list `kvs`, and where the constant factor is allowed to depend on
-the preorder `o`.
+The time complexity of `sort o kvs` must be `O(m * n)`,
+where `m` is the size of the syntactic representation of the preorder `o`,
+and where `n` is the length of the input list `kvs`.
 
 *Note.* The automatic grading code verifies whether the output list is
 correct, but does not verify the time complexity of your algorithm. It
 is up to you to convince yourself that the complexity bound is met.
+
+*Note.* When proving that this complexity bound holds, it is permitted
+to assume that, every time the data constructor `OMap` is applied to a
+function `f`, this function has constant time complexity.
 
 Sometimes the key-value distinction is not useful:
 one simply wishes to sort a list of values.
