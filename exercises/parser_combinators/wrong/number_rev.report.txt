@@ -1,0 +1,33 @@
+Question 1
+  Found [return] with compatible type.
+  Found [>>=] with compatible type.
+  Found [fail] with compatible type.
+  Found [choose] with compatible type.
+  Found [at_most_once] with compatible type.
+  Found [map] with compatible type.
+  Found [>>] with compatible type.
+  Found [any] with compatible type.
+  Found [eof] with compatible type.
+  Found [char] with compatible type.
+  Success 1: The code seems correct. Tested 1534 parsers on 31 input strings.
+Question 2
+  Found [return] with compatible type.
+  Found [>>=] with compatible type.
+  Found [fail] with compatible type.
+  Found [choose] with compatible type.
+  Found [at_most_once] with compatible type.
+  Found [map] with compatible type.
+  Found [>>] with compatible type.
+  Found [any] with compatible type.
+  Found [eof] with compatible type.
+  Found [char] with compatible type.
+  Found [digit] with compatible type.
+  Found [number_lax] with compatible type.
+  Found [number] with compatible type.
+  Failure: Something is wrong. The following expression:
+    
+     | "12" |> run (number_lax >>= fun a -> eof >> return a) |> Seq.take 2
+     | |> Seq.to_list
+     | |> List.sort compare
+    produces the following result: [[21]] This is invalid. Producing the
+    following result is valid: [[12]]

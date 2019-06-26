@@ -1,0 +1,17 @@
+Question 1
+  Found [return] with compatible type.
+  Found [>>=] with compatible type.
+  Found [fail] with compatible type.
+  Found [choose] with compatible type.
+  Found [at_most_once] with compatible type.
+  Found [map] with compatible type.
+  Found [>>] with compatible type.
+  Found [any] with compatible type.
+  Found [eof] with compatible type.
+  Found [char] with compatible type.
+  Failure: Something is wrong. The following expression:
+    
+     | "" |> run (choose (return 0) (return 0)) |> Seq.take 3 |> Seq.to_list
+     | |> List.sort compare
+    produces the following result: [[0]] This is invalid. Producing the
+    following result is valid: [[0; 0]]
