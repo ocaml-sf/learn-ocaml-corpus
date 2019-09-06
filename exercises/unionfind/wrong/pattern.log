@@ -1,0 +1,32 @@
+Learnocaml v.0.10 running.
+[ Loading the prelude. ][K[ Preparing the test environment. ][K[ Loading your code. ][KError in user code:
+
+File "./solution.ml", line 10, characters 9-21:
+This pattern matches values of type 'a ref
+       but a pattern was expected which matches values of type
+         elem = content R.ref
+
+grader outcomes:
+val print_html : 'a -> 'b = <fun>
+exception TODO
+module OriginalRefs__ :
+  sig
+    type nonrec 'a ref = 'a ref
+    val ref : 'a -> 'a ref
+    val ( := ) : 'a ref -> 'a -> unit
+    val ( ! ) : 'a ref -> 'a
+  end
+module R :
+  sig
+    type 'a ref
+    val ref : 'a -> 'a ref
+    val ( ! ) : 'a ref -> 'a
+    val ( !! ) : 'a ref -> 'a
+    val ( := ) : 'a ref -> 'a -> unit
+    val cost : ('a -> 'b) -> 'a -> int * 'b
+  end
+type elem = content R.ref
+and content = Link of elem | Root of rank
+and rank = int
+
+

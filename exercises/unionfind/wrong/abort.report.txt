@@ -1,0 +1,13 @@
+Question 1
+  Found [make] with compatible type.
+  Found [find] with compatible type.
+  Found [eq] with compatible type.
+  Found [union] with compatible type.
+  Failure: Something is wrong. The following expression:
+    
+     | let a = make() in
+     | let obs = eq a a in obs ::
+     | let obs = eq a a in obs ::
+     | []
+    raises the following exception: [Code.Abort] This is invalid. Producing
+    the following result is valid: [[true; true]]
