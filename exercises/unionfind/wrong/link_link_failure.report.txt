@@ -1,0 +1,10 @@
+Question 1
+  Found [make] with compatible type.
+  Found [find] with compatible type.
+  Found [eq] with compatible type.
+  Found [union] with compatible type.
+  Failure: Something is wrong. The following expression:
+    
+     | let a = make() in let b = make() in union b a; union a a; []
+    raises the following exception: [Not_found] This is invalid. Producing
+    the following result is valid: [[]]

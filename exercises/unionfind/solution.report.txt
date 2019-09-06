@@ -1,0 +1,12 @@
+Question 1
+  Found [make] with compatible type.
+  Found [find] with compatible type.
+  Found [eq] with compatible type.
+  Found [union] with compatible type.
+  Success 1: The code seems correct. Tested 9486 scenarios.
+Question 2
+  Found [make] with compatible type.
+  Found [find] with compatible type.
+  Found [eq] with compatible type.
+  Found [union] with compatible type.
+  Success 1: The computational complexity of the code seems correct.

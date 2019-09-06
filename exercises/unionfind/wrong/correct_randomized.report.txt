@@ -1,0 +1,16 @@
+Question 1
+  Found [make] with compatible type.
+  Found [find] with compatible type.
+  Found [eq] with compatible type.
+  Found [union] with compatible type.
+  Success 1: The code seems correct. Tested 9486 scenarios.
+Question 2
+  Found [make] with compatible type.
+  Found [find] with compatible type.
+  Found [eq] with compatible type.
+  Found [union] with compatible type.
+  Failure: The computational complexity of the code seems too high. For a
+           certain scenario (not shown), which involves 511 union operations
+           and 4096 find operations, your candidate implementation performs
+           41982 reads of references, whereas our solution performs only 9609
+           reads.
