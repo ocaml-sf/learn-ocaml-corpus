@@ -1,0 +1,481 @@
+<style>
+ table#markov {
+	 border-spacing: 0;
+	 border-collapse: collapse;
+	 background: #eee;
+	 border: 1px #444 solid;
+	 padding: 0px;
+	 float: right;
+ }
+ table#markov td {
+	 margin: 0 ;
+	 padding: 1px 5px 1px 5px;
+	 font-size: 14px ;
+ }
+ table#markov tr.h td {
+	 background: #444;
+	 color: #eee;
+	 text-align: center;
+ }
+ table#markov tr.a {
+	 background: #eee;
+ }
+ table#markov tr.b {
+	 background: #d8d8d8;
+ }
+ table#markov tr td:nth-child(1),
+ table#markov tr td:nth-child(1) {
+	 font-family: monospace;
+	 text-align: right;
+ }
+ table#markov tr td:nth-child(2),
+ table#markov tr td:nth-child(2) {
+	 text-align: right;
+ }
+ table#markov tr td:nth-child(3),
+ table#markov tr td:nth-child(3) {
+	 font-family: monospace;
+ }
+</style>
+
+<table id="markov">
+  <tr class="h"><td>word</td><td>→</td><td>next</td><td>freq</td></tr>
+  <tr class="a"><td>"START"</td><td>→</td><td>"I"</td><td>100%</td></tr>
+  <tr class="b"><td>"I"</td><td>→</td><td>"am"</td><td>100%</td></tr>
+  <tr class="a"><td>"am"</td><td>→</td><td>"a"</td><td>100%</td></tr>
+  <tr class="b"><td>"a"</td><td>→</td><td>"man"</td><td>25%</td></tr>
+  <tr class="b"><td></td><td>|</td><td>"good"</td><td>75%</td></tr>
+  <tr class="a"><td>"man"</td><td>→</td><td>"and"</td><td>50%</td></tr>
+  <tr class="a"><td></td><td>|</td><td>"STOP"</td><td>50%</td></tr>
+  <tr class="b"><td>"and"</td><td>→</td><td>"my"</td><td>50%</td></tr>
+  <tr class="b"><td></td><td>|</td><td>"a"</td><td>50%</td></tr>
+  <tr class="a"><td>"my"</td><td>→</td><td>"dog"</td><td>100%</td></tr>
+  <tr class="b"><td>"dog"</td><td>→</td><td>"is"</td><td>33%</td></tr>
+  <tr class="b"><td></td><td>|</td><td>"and"</td><td>33%</td></tr>
+  <tr class="b"><td></td><td>|</td><td>"makes"</td><td>34%</td></tr>
+  <tr class="a"><td>"good"</td><td>→</td><td>"dog"</td><td>66%</td></tr>
+  <tr class="a"><td></td><td>|</td><td>"man"</td><td>34%</td></tr>
+  <tr class="b"><td>"is"</td><td>→</td><td>"a"</td><td>100%</td></tr>
+  <tr class="a"><td>"makes"</td><td>→</td><td>"a"</td><td>100%</td></tr>
+</table>
+
+<p>
+  The goal of this project is to synthesize natural language sentences
+  using information extracted from an existing text corpus.
+</p>
+
+<p>
+  For this, given a text corpus as input, we will first compute the
+  frequency of all sequences of two words in the original text; then
+  we will use this information to produce new sentences by randomly
+  collating these sequences with the same frequencies.
+</p>
+
+<p>
+  This method is known under the term of <em>Markov chain</em>. From
+  the input text, we compute a transition table that associates to
+  each word the list of words that may appear after it, with their
+  relative frequencies.
+</p>
+
+<p>
+  For instance, if we examine <em>”I am a man and my dog is a good
+    dog and a good dog makes a good man”</em>, delimiting it with
+  <code>”START”</code> and <code>”STOP”</code> to identify the
+  beginning and end of the sentence, we end up with the
+  transition table on the right.
+</p>
+
+<p>
+  This table can then be used to generate new text that ressembles the
+  input in the following way: starting from the <code>"START"</code>
+  word, choose one of the words that may appear after it, with the
+  probability found in the table, add it to the output, then iterate
+  the process until the <code>"STOP"</code> word is found. Below are
+  some example sentences produced using this table.
+</p>
+
+<pre>
+START I am a good  man STOP ; START I am a good dog  is a good dog and
+my dog and my  dog is a man and my  dog and a man STOP ;  START I am a
+good dog is a man and my dog makes a good man STOP ; START I am a good
+dog makes a good dog is a good dog  and a good dog makes a good dog is
+a man STOP ; START I am a good dog and a man and a good dog and a good
+man and a good dog is a good dog  is a good man and a man STOP ; START
+I am a good dog and a good dog and my dog is a man STOP ; START I am a
+man STOP ;  START I am a good dog  is a good dog is a  good dog and my
+dog is a man STOP ; START I am a good man STOP ; START I am a good dog
+makes a good dog and a good dog is a good dog is a good man and my dog
+is a good dog and  my dog and a good man and a good  dog is a good man
+STOP ; START I am a man and my dog and my dog is a good dog and a good
+dog makes a man STOP
+</pre>
+
+<p>
+  This project is decomposed in three parts.
+</p>
+
+<ol style="list-style-type: upper-latin">
+  <li>
+    First, we will build a quick prototype, that goes from an input
+    sentence to a randomly generated sentences via a distribution
+    table as the ones above.
+  </li>
+  <li>
+    Then we will use better data structures to enhance the performance
+    so that we can use larger texts, such as small books, as input.
+  </li>
+  <li>
+    After that, we will enhance the quality of input and output, by
+    analysing in a smarter way the input text corpus, and by
+    considering sequences of more than two words.
+  </li>
+</ol>
+
+<p style="background:#eee;border:1px #ccc solid;padding:10px">
+  <strong>Note:</strong> this project may take more time to be graded,
+  because it is longer than simple exercises, and because it is tested
+  on large inputs. We suggest that you use the typecheck button and
+  the toplevel extensively, so that you are reasonnably sure of your
+  code before submitting it to the tests. Also, we added a function
+  <code>grade_only : int list -> unit</code>, that you may
+  call in your code to select the exercises to grade. All other
+  exercises won't be graded at all, and considered failed. For
+  instance, if you write <code>grade_only [ 3 ] ;;</code> at the
+  beginning of your file, only exercise 3 will be tested.
+</p>
+
+<h2>Part A: A First Draft</h2>
+
+<p>
+  Our first goal will be to build such a table and generate sentences
+  from it, quick and dirty style, using lists and their predefined
+  operators. Consider using as much as possible the <code>List</code> module
+  (<code>List.assoc</code>, <code>List.length</code>, <code>List.nth</code>,
+  etc.) and don't think about efficiency.
+</p>
+
+<p style="background:#eee;border:1px #ccc solid;padding:10px">
+  In this exercise, we will use associative lists as the data
+  structure that links each word to its possible suffixes. Associative
+  lists are often used in prototypes or non critical programs because
+  they are very easy to use and debug. Their major downfall is
+  the complexity of searching for an element.
+
+  <br/>
+
+  The type of an associative list that maps <code>string</code> keys
+  to <code>'a</code> values is simply <code>(string * 'a) list</code>.
+  The value associated with a key <code>"x"</code> is simply the right
+  component of the first pair in the list whose left component
+  is <code>"x"</code>. This lookup is already defined in the standard
+  library as <code>List.assoc</code>. Hence, setting the value of
+  <code>"x"</code> to <code>3</code>, for instance, is just adding
+  <code>("x",3)</code> in front of the list. To remove an element, you
+  can just use <code>List.filter</code> with the right predicate.
+</p>
+
+<p>The type of lookup tables for this exercise is</p>
+
+<pre>
+type ltable = (string * string list) list
+</pre>
+
+<ol>
+  <li>
+    Write a function <code>words : string -> string list</code> that
+    takes a sentence and returns the list of its words. As a first
+    approximation, will work on single sentences in simple english, so
+    you can consider sequences of roman letters and digits as words,
+    and everything else as separators. If you want to build words bit
+    by bit, you can experiment with the
+    <a href="http://caml.inria.fr/pub/docs/manual-ocaml/libref/Buffer.html">Buffer</a>
+    module. Beware, this preliminary function may not be as easy as it
+    seems.
+  </li>
+  <li>
+    Write <code>build_ltable : string list -> ltable</code> that builds an
+    associative list mapping each word present in the input text to
+    all its possible successors (including duplicates). The table
+    should also contain <code>"START"</code> that points to the first
+    word and <code>"STOP"</code> that is pointed by the last word.
+
+    <br/>
+
+    For instance, a correct (and minimal) table for <code>"x y z y x y"</code> looks like:
+    <pre>
+[ ("z", [ "y" ]);
+  ("x", [ "y" ; "y" ]);
+  ("START", [ "x" ]);
+  ("y", [ "x" ; "z" ; "STOP" ]) ]
+    </pre>
+  </li>
+  <li>
+    Write the random selection function
+    <code>next_in_ltable : (string * string list) list -> string - > string</code>
+    which takes a table, a given word and returns a valid successor of
+    this word. Your function should respect the probability
+    distribution (which should be trivially ensured by the presence of
+    the duplicates in the successor lists).
+  </li>
+  <li>
+    Write the random generation function
+    <code>walk_ltable : (string * string list) list -> string list</code>
+    which takes a table and returns a sequence of words that form a
+    valid random sentence (without the <code>"START"</code> and <code>"STOP"</code>).
+  </li>
+</ol>
+
+<p style="background:#eee;border:1px #ccc solid;padding:10px">
+  You can use <code>display_quote: string list -> unit</code> to
+  display the generated texts.
+</p>
+
+<h2>Part B: Performance Improvements</h2>
+
+<p>
+  Now, we want to use more efficient data structures, so that we can
+  take larger inputs and build bigger transition tables.
+</p>
+
+<p style="background:#eee;border:1px #ccc solid;padding:10px">
+  In this exercise, we will use hash tables, predefined in OCaml in the
+  <a href="http://caml.inria.fr/pub/docs/manual-ocaml/libref/Hashtbl.html">Hashtbl</a>
+  module. Used correctly, hash table provide both fast insertion and
+  extraction. Have a look at the documentation of the module. In
+  particular, don't miss the difference between <code>Hashtbl.add</code>
+  and <code>Hashtbl.replace</code> (you'll probably want to use the latter
+  most of the time).
+</p>
+
+<p>The types for this exercise are:</p>
+
+<pre>
+type distribution =
+  { total : int ;
+    amounts : (string * int) list }
+type htable = (string, distribution) Hashtbl.t
+</pre>
+
+<ol start="5">
+  <li>
+    In the simple version, we stored for each word the complete list
+    of suffixes, including duplicates. This is a valid data structure
+    to use when building the table since adding a new suffix in front
+    of the list is fast. But when generating, it means computing the
+    length of this list each time, and accessing its random
+    <code>nth</code> element, which is slow if the list is long.
+
+    <br/>
+
+    Write <code>compute_distribution : string list -> distribution</code> that
+    takes a list of strings and returns a pair containing its length
+    and an association between each string present in the original
+    list and its number of occurrences.
+
+    <br/>
+
+    For instance,
+    <code>compute_distribution ["a";"b";"c";"b";"c";"a";"b";"c";"c";"c"]</code>
+    should give <code>{ total = 10 ; amounts = [("c", 5); ("b", 3); ("a", 2)] }</code>.
+
+    <br/>
+
+    <strong>Hint:</strong> a first step that simplifies the problem is
+    to sort the list.
+  </li>
+  <li>
+    Write a new version of <code>build_htable : string list -> htable</code>
+    that creates a hash table instead of an associative list, so that
+    both table building and sentence generation will be faster.
+
+    <br/>
+
+    Like the associative list, the table is indexed by the words, each
+    word being associated to its successors. But instead of just
+    storing the list of successors, it will use the format of the
+    previous question.
+
+    <br/>
+
+    <strong>Hint:</strong> You can first define an intermediate table
+    of type <code>(string, string list) Hashtbl.t</code> that stores
+    the lists of successors with duplicates. Then you traverse this
+    intermediate table with <code>Hashtbl.iter</code>, and for each
+    word, you add the result of <code>compute_distribution</code> in
+    the final table.
+  </li>
+  <li>
+    Define <code>next_in_htable : htable -> string -> string</code>
+    that does the same thing as <code>next_in_ltable</code> for the
+    new table format.
+  </li>
+  <li>
+    Finally, define <code>walk_htable : htable -> string list</code>
+  </li>
+</ol>
+
+<h2>Part C: Quality Improvements</h2>
+
+<ol start="9">
+  <li>
+    If we want to generate sentences from larger corpuses, such as the
+    ones of the <code>ebooks_corpus</code> given in the prelude, we
+    cannot just ignore the punctuation. We also want to generate text
+    using not only the beginning of the original text, but the start
+    of any sentence in the text.
+
+    <br/>
+
+    Define <code>sentences : string -> string list list</code> that
+    splits a string into a list of sentences such as:
+
+    <ul>
+      <li>
+          uninterrupted sequences of roman letters, numbers, and non
+          ASCII characters (in the range <code>'\128'..'\255'</code>) are words;
+      </li>
+      <li>
+        single punctuation characters
+        <code>';'</code>, <code>','</code>, <code>':'</code>, <code>'-'</code>,
+        <code>'"'</code>, <code>'\''</code>, <code>'?'</code>, <code>'!'</code>
+        and <code>'.'</code>
+        are words;
+      </li>
+      <li>
+          punctuation characters
+          <code>'?'</code>, <code>'!'</code> and <code>'.'</code>
+          terminate sentences;
+      </li>
+      <li>
+          everything else is a separator;
+      </li>
+      <li>
+          and your function should not return any empty sentence.
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p>
+    Now, we will drastically improve the results by matching sequences
+    of more than two words. We will thus update the format of our tables
+    again, and use the following <code>ptable</code>
+    type (which looks a lot like the previous one).
+</p>
+
+<pre>
+type ptable =
+  { prefix_length : int ;
+    table : (string list, distribution) Hashtbl.t }
+</pre>
+
+<p>
+    So let's say we want to identify sequences of `N` words in the
+    text. The <code>prefix_length</code> field contains `N - 1`.  The
+    <code>table</code> field associates each list of `N - 1` words
+    from the text with the distribution of its possible successors.
+</p>
+
+<table id="markov">
+    <tr class="h"><td>prefix</td><td>→</td><td>next</td><td>freq</td></tr>
+    <tr class="a"><td>["START"; "START"]</td><td>→</td><td>"I"</td><td>100%</td></tr>
+    <tr class="b"><td>["START"; "I"]</td><td>→</td><td>"am"</td><td>100%</td></tr>
+    <tr class="a"><td>["I"; "am"]</td><td>→</td><td>"a"</td><td>100%</td></tr>
+    <tr class="b"><td>["am"; "a"]</td><td>→</td><td>"man"</td><td>100%</td></tr>
+    <tr class="a"><td>["man"; "and"]</td><td>→</td><td>"my"</td><td>100%</td></tr>
+    <tr class="b"><td>["is"; "a"]</td><td>→</td><td>"good"</td><td>100%</td></tr>
+    <tr class="a"><td>["and"; "my"]</td><td>→</td><td>"dog"</td><td>100%</td></tr>
+    <tr class="b"><td>["my"; "dog"]</td><td>→</td><td>"is"</td><td>100%</td></tr>
+    <tr class="a"><td>["makes"; "a"]</td><td>→</td><td>"good"</td><td>100%</td></tr>
+    <tr class="b"><td>["a"; "good"]</td><td>→</td><td>"man"</td><td>33%</td></tr>
+    <tr class="b"><td></td><td>|</td><td>"dog"</td><td>66%</td></tr>
+    <tr class="a"><td>["dog"; "is"]</td><td>→</td><td>"a"</td><td>100%</td></tr>
+    <tr class="b"><td>["and"; "a"]</td><td>→</td><td>"good"</td><td>100%</td></tr>
+    <tr class="a"><td>["good"; "dog"]</td><td>→</td><td>"makes"</td><td>50%</td></tr>
+    <tr class="a"><td></td><td>|</td><td>"and"</td><td>50%</td></tr>
+    <tr class="b"><td>["dog"; "and"]</td><td>→</td><td>"a"</td><td>100%</td></tr>
+    <tr class="a"><td>["a"; "man"]</td><td>→</td><td>"and"</td><td>100%</td></tr>
+    <tr class="b"><td>["good"; "man"]</td><td>→</td><td>"STOP"</td><td>100%</td></tr>
+    <tr class="a"><td>["dog"; "makes"]</td><td>→</td><td>"a"</td><td>100%</td></tr>
+</table>
+
+<p>
+    The table on the right gives the lookup table for the example given
+    at the beginning of the project:  <em>”I am a man and my dog is a
+    good dog and a good dog makes a good man”</em>, and a size of
+    `2`. You can see that the branching points are fewer and make a bit
+    more sense.
+
+    <br/>
+
+    As you can see, we will use <code>"STOP"</code> as an end marker as
+    before. But instead of a single <code>"START"</code> we will use as
+    a start marker a prefix of the same size as the others, filled with
+    <code>"START"</code>.
+</p>
+
+<ol start="10">
+    <li>
+        First, define <code>start: int -> string list</code> that makes
+        the start prefix for a given size (<code>start 0 = []</code>,
+        <code>start 1 = [ "START" ]</code>, <code>start 2 = [ "START" ; "START" ]</code>,
+        etc.).
+    </li>
+    <li>
+        Define <code>shift: string list -> string -> string list</code>.
+        It removes the front element of the list and puts the
+        new element at the end.
+        (<code>shift [ "A" ; "B" ; "C" ] "D" = [ "B" ; "C" ; "D" ]</code>,
+        <code>shift [ "B" ; "C" ; "D" ] "E" = [ "C" ; "D" ; "E" ]</code>,
+        etc.).
+    </li>
+    <li>
+        Define <code>build_ptable : string list -> int -> ptable</code> that
+        builds a table for a given prefix length, using the two previous
+        functions.
+    </li>
+    <li>
+        Define <code>walk_ptable : ptable -> string list</code> that
+        generates a sentence from a given <code>ptable</code>. Unless you
+        put specific annotations, <code>next_in_htable</code> should be
+        polymorphic enough to work on the field <code>table</code> of a
+        <code>ptable</code>, so you don't have to rewrite one. If you
+        want, since we now have proper sentence splitting, you can
+        generate multi-sentence texts, by choosing randomly to continue
+        from the start after encountering a <code>"STOP"</code>.
+    </li>
+</ol>
+
+<p>
+    Finally, the most funny texts are generated when mixing various
+    kinds of inputs together (pirate stories, history books, recipes,
+    political news, etc.).
+</p>
+
+<ol start="14">
+    <li>
+        Define <code>merge_ptables: ptable list -> ptable</code> that combines
+        several tables together (you may fail with an exception if the
+        prefix sizes are inconsistent).
+    </li>
+</ol>
+
+<p style="background:#eee;border:1px #ccc solid;padding:10px">
+    Now you can try and generate some texts using larger inputs, such
+    as short novels! The prelude provides a few samples, otherwise
+    <a href="https://www.gutenberg.org/">Project Gutemberg</a>
+    is a good source.
+
+    You can use <code>display_quote: string list -> unit</code> to
+    display the generated texts.
+</p>
+
+<pre>
+let sauce_ptable =
+   merge_ptables
+     (List.map
+        (fun s -> build_ptable s 2)
+        (sentences some_cookbook_sauce_chapter)) ;;
+display_quote (walk_ptable sauce_ptable) ;;
+</pre>

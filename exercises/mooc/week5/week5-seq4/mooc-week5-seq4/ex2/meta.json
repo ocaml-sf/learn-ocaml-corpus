@@ -1,0 +1,4 @@
+{ "learnocaml_version": "1",
+  "kind": "exercise",
+  "title": "Implementing a Stack with an Array", 
+  "stars": 1.5 }

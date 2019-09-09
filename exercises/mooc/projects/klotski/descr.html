@@ -1,0 +1,1180 @@
+<p>
+  Klotski is a sliding block puzzle, that has a fairly detailed
+  <a href="https://en.wikipedia.org/wiki/Klotski">page on
+  WikiPedia</a>. The purpose of this project is to write a solver for
+  Klotski using a graph exploration algorithm.
+</p>
+
+<p>
+  The Klotski puzzle is made of a board of 4x5 places which contains
+  the following 10 pieces:
+</p>
+
+<ul>
+  <li>one 2x2 square piece (written <code>S</code>) ;</li>
+  <li>one 2x1 horizontal rectangle piece (written <code>H</code>) ;</li>
+  <li>four 1x2 vertical rectangle pieces
+  (written <code>V0</code>, <code>V1</code>, <code>V2</code>
+  and <code>V3</code>) ;</li>
+  <li>four 1x1 square pieces
+  (written <code>C0</code>, <code>C1</code>, <code>C2</code>, <code>C3</code>).</li>
+</ul>
+
+<p>
+  The puzzle is presented in the initial configuration that is shown in the following picture:
+</p>
+
+<div style="text-align:center">
+  <svg width='140' height='170' style="vertical-align:middle">
+    <rect style='transform: translate(70px,85px);stroke: #ccc;stroke-width: 1px;fill: #eee;' x='-69.5' y='-84.5' width='139' height='169'/>
+    <rect style='transform: translate(25px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <g style='transform: translate(115px,145px);'>
+      <rect style='fill: #990;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(25px,145px);'>
+      <rect style='fill: #C66;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(85px,115px);'>
+      <rect style='fill: #399;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(55px,115px);'>
+      <rect style='fill: #096;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(115px,100px);'>
+      <rect style='fill: #06C;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+    <g style='transform: translate(70px,85px);'>
+      <rect style='fill: #C60;' x='-29' y='-14' width='58' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 29 -14 L 26 -11 L -26 -11 L -26 11 L -29 14 L -29 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -29 14 L -26 11 L 26 11 L 26 -11 L 29 -14 L 29 14 Z'></path>
+    </g>
+    <g style='transform: translate(25px,100px);'>
+      <rect style='fill: #C30;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+    <g style='transform: translate(115px,40px);'>
+      <rect style='fill: #690;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+    <g style='transform: translate(70px,40px);'>
+      <rect style='fill: #F90;' x='-29' y='-29' width='58' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 29 -29 L 26 -26 L -26 -26 L -26 26 L -29 29 L -29 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -29 29 L -26 26 L 26 26 L 26 -26 L 29 -29 L 29 29 Z'></path>
+    </g>
+    <g style='transform: translate(25px,40px);'>
+      <rect style='fill: #FC0;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+  </svg>
+<!--
+  <pre style="display:inline-block;vertical-align:middle;margin: 0 0 0 10px; padding: 10px;">
+[| [| (V,0) ; (S,0) ; (S,0) ; (V,1) |] ; 
+   [| (V,0) ; (S,0) ; (S,0) ; (V,1) |] ; 
+   [| (V,2) ; (H,0) ; (H,0) ; (V,3) |] ; 
+   [| (V,2) ; (C,0) ; (C,1) ; (V,3) |] ; 
+   [| (C,2) ; (X,0) ; (X,0) ; (C,3) |] |]</pre>
+-->
+</div>
+
+<p>
+  A move in this puzzle consists in sliding a piece at a time, and to win you
+  must have managed to move the large square piece all the way down, reaching
+  a configuration that matches the following shape pattern:
+</p>
+
+<div style="text-align:center">
+  <svg width='140' height='170' style="vertical-align:middle">
+    <rect style='transform: translate(70px,85px);stroke: #ccc;stroke-width: 1px;fill: #eee;' x='-69.5' y='-84.5' width='139' height='169'/>
+    <rect style='transform: translate(25px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <g style='transform: translate(70px,130px);'>
+      <rect style='fill: #F90;' x='-29' y='-29' width='58' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 29 -29 L 26 -26 L -26 -26 L -26 26 L -29 29 L -29 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -29 29 L -26 26 L 26 26 L 26 -26 L 29 -29 L 29 29 Z'></path>
+    </g>
+  </svg>
+<!--
+  <pre style="display:inline-block;vertical-align:middle;margin: 0 0 0 10px; padding: 10px;">
+[| [| (_,_) ; (_,_) ; (_,_) ; (_,_) |] ; 
+   [| (_,_) ; (_,_) ; (_,_) ; (_,_) |] ; 
+   [| (_,_) ; (_,_) ; (_,_) ; (_,_) |] ; 
+   [| (_,_) ; (S,0) ; (S,0) ; (_,_) |] ; 
+   [| (_,_) ; (S,0) ; (S,0) ; (_,_) |] |]</pre>
+-->
+</div>
+
+<p>
+To solve the puzzle, one may search all its state space for a winning configuration.
+The state space of the Klotski puzzle can be described as a graph, having as nodes
+the configurations of the board, and as arrows the possible moves.
+</p>
+
+<p>
+In the following picture, we show an excerpt of the Klotski graph, starting from
+the initial configuration. All the boards reachable from the initial configuration
+in one step are shown, as well as a few of the boards reachable in two steps.
+</p>
+
+<p>
+    <div style="text-align:center">
+        <img src="images/Klotski-graph.svg" />
+    </div>
+</p>
+
+<p> 
+
+Since all moves can be undone, it is easy to see that one can move from any
+configuration of the graph to any other configuration of the graph. This means
+that, when exploring the graph, one will naturally pass through the same
+configuration more than once, following different paths. To avoid spending our
+time running in circles when searching for a solution, we will need to avoid
+visiting a configuration more than once!
+
+</p>
+
+<h2>Approach</h2>
+
+<p>
+  To solve the Klotski puzzle, you will proceed in two steps:
+
+  <ol style="list-style-type:upper-alpha">
+    <li>
+       <P>As a first step, you will write a  <em>generic solver </em> for any problem whose search space can be represented by a graph, and making sure you handle properly loops in the graph. </P>
+    </li>
+    <li>
+       <P>As a second step, you will describe the Klotski puzzle search space as a graph. </P>
+    </li>
+  </ol>
+  Once the two steps above are done, finding a solution will just be a matter of passing the Klotski graph to the generic solver.
+</p>
+
+<p style="background:#eee;border:1px #ccc solid;padding:10px">
+  <strong>Note:</strong> this project may take quite a lot of time to
+  be graded, because it is long, and because the algorithm is
+  complex. We suggest that you use the typecheck button and the
+  toplevel extensively, so that you are reasonnably sure of your code
+  before submitting it to the tests. Also, we added a
+  function <code>grade_only : int list -> unit</code>, that you may
+  call in your code to select the exercises to grade. All other
+  exercises won't be graded at all, and considered failed. For
+  instance, if you write <code>grade_only [ 3 ] ;;</code> at the
+  beginning of your file, only exercise 3 will be tested.
+</p>
+
+<h2>Preliminaries</h2>
+
+<p>
+  First, you will implement some useful basic functions.
+</p>
+
+<ol>
+  <li>
+    Write a function <code>loop</code> of type <code>('a -> bool) ->
+   ('a -> 'a) -> 'a -> 'a</code> such that <code>loop p f x = x</code>
+   when <code>p x = true</code> and <code>loop p f x = loop p f (f
+   x)</code> otherwise.
+  </li>
+  <li>
+    Write a function <code>exists</code> of type <code>('a -> bool) -> 'a list -> bool</code>
+   such that <code>exists p l = true</code> if and only if there exists an element
+   <code>x</code> of <code>l</code> such that <code>p x = true</code>.
+  </li>
+  <li>
+    Write a function <code>find</code> of type <code>('a -> bool) ->
+    'a list -> 'a</code> such that
+   <code>find p l = x</code> if <code>x</code> is the first element
+   of <code>l</code> for which <code>p x = true</code>.  If no such
+   element exists, <code>find</code> raises the
+   exception <code>NotFound</code> given in the prelude.
+  </li>
+</ol>
+
+<h2>Part A: A Generic Problem Solver</h2>
+
+<p>
+  The goal of this section is to implement a generic problem solver
+  based on graph exploration. The questions will help you start with
+  a naive implementation and refine it step-by-step.
+</p>
+
+<p>
+  A general way to look at problem solving is to consider some set `E`
+  representing the states of the problem and to consider also a finite
+  binary relation `cc"R"` that represents the small reasoning steps that
+  can be made to move from one state of the problem to another.
+</p>
+
+<p>
+  Remember that a binary relation is a subset of all the pairs in
+  `E`. We will write `x cc"R" y` if `(x, y)` is in `cc"R"`. The
+  image of `x` under `cc"R"` in `E` is written `cc"R"(x)` and it is
+  defined as the set of all `y` in `E` such that `x cc"R" y`. A
+  relation can be viewed through this image function as a function
+  from `E` to the subsets of `E`. Hence, we can use the following type
+  definition (also given in the prelude) to represent binary
+  relations.
+</p>
+
+<pre>type 'e rel = 'e -> 'e list</pre>
+
+<ol start="4">
+  <li>
+    As an exercise, we want to define a relation `x cc"N" y` that tells
+    if the difference between two integers is at most 2. For instance,
+    we have that `1 cc"N" 3`, `3 cc"N" 1` and `2 cc"N" 2`, but not `1
+    cc"N" 4` or `5 cc"N" 0`.
+
+    <br/>
+
+    Define <code>near: int rel</code> that encodes the image of this
+    relation as an OCaml function. For instance, <code>near 2</code>
+    should return something like <code>[0;1;2;3;4]</code>.
+  </li>
+</ol>
+
+<p>
+  In practice, the <code>'e rel</code> type describes the function
+  which, from a given configuration of the problem, gives all the
+  possible configurations in which we can end up after performing a
+  step. In this question, we want not just to look at the possible
+  next steps from a single configuration, but from a set of
+  configurations.
+
+  <br/>
+
+  Formally, we will say that we extend the image function `cc"R"` of a
+  binary relation `cc"R"` over `E` to a function `\bar{cc"R"}` defined as
+  follows.
+
+  <br/>
+
+  `\bar{cc"R"}([]) = []` and `\bar{cc"R"}(x :: xs) = cc"R"(x) "@" \bar{cc"R"}(xs)`.
+
+  <br/>
+
+  Basically, this computes the list of all possible new configuration
+  that are reachable in one step from any configuration in an original
+  list, losing track of the exact predecessor of each
+  configuration. We just know that if a configuration is present in the
+  resulting set, then there must have been one in the original set
+  that led to it in one step.
+</p>
+
+<ol start="5">
+  <li>
+    Write function <code>flat_map</code> of type <code>'e rel -> ('e
+      list -> 'e list)</code> such that
+    <code>flat_map r</code> represents `\bar{cc"R"}` if <code>r</code>
+    represents a binary relation `cc"R"`.
+
+    <br/>
+
+    For instance, <code>flat_map near</code> applied
+    to <code>[2;3;4]</code> should return something
+    like <code>[0;1;2;3;4;1;2;3;4;5;2;3;4;5;6]</code>.
+  </li>
+</ol>
+
+<p>
+  A binary relation over the set of problem configurations relates all
+  pairs of configurations that are separated by a single step (for us,
+  moving one piece of the game).
+
+  <br/>
+
+  Sometimes, we want to relate a configuration with its possible
+  futures, up to a given number of steps.
+
+  <br/>
+
+  Formally, if `cc"R"` if a binary relation over `E`, we say that `x
+  cc"R"^n y` iff there exists a chain of elements `e_i` of `E` of
+  length `n-1` such as `x cc"R" e_1 cc"R" ... cc"R" e_{n-1} cc"R"
+  y`. The image function of `cc"R"^n` is simply the image function of
+  `cc"R"` iterated `n` times.
+
+</p>
+
+<ol start="6">
+  <li>
+    Write a function <code>iter_rel: 'e rel -> int -> 'e rel</code> that
+    computes this iteration. Iterating a relation 1 time or less does
+    nothing (identity).
+
+    <br/>
+
+    For instance, <code>iter_rel near 2</code> should be the image
+    function of the relation that tells is two integers are separated by
+    4 of less.
+  </li>
+</ol>
+
+<p>
+  The transitive closure of a binary relation `cc"R"` is the relation
+  that iterates `cc"R"` over and over. Therefore, this is the union
+  of all the relations obtained by iterating `n` times the relation
+  `cc"R"`, for all `n`.
+
+  <br/>
+
+  Formally, `cc"R"^* (x) = cc"R"^0 (x) \cup cc"R"^1 (x) \cup cc"R"^2 (x) \cup ...`
+
+  <br/>
+
+  Or more constructively, `cc"R"^0 (x) = [x]` and `cc"R"^{n + 1} (x) = \bar{cc"R"} (cc"R"^n (x))`.
+</p>
+
+<p>
+  We are not interested in computing the transitive closure of any
+  relation, which could not terminate, depending on the relation. Our
+  purpose is to compute the possible futures, starting from the
+  initial configuration of the problem, until a specific property of
+  the state is reached (in our case, we won the game).
+</p>
+
+<p>
+  To represent such a property, we use the following type (also given
+  in the prelude). It is a function that takes a state, and tells if
+  the property holds (returning <code>true</code>) or not.
+</p>
+
+<pre>type 'e prop = 'e -> bool</pre>
+
+<p>
+  Solving a problem characterized by a property `p` and a relation
+   `cc"R"` for an initial problem state `s` is finding an element `x`
+   in `cc"R"^*(s)` such that `p(x)=`
+  <code>true</code>.
+</p>
+
+<ol start="7">
+  <li>
+   Write a function <code>solve</code> of type <code>'a rel -> 'a prop
+   -> 'a -> 'a</code> such that <code>solve r p x</code> computes the
+   iteration of the relation `cc"R"` represented by <code>r</code>
+   starting at <code>x</code> until it reaches an
+   element <code>y</code> such that <code>p y</code>.
+
+   <br/>
+
+   For instance, <code>solve near (fun x -> x = 12) 0</code> should
+   simply return <code>12</code>. Internally, the function will start
+   from the set <code>[0]</code>, and iterate <code>near</code> to
+   obtain first <code>[-2;-1;0;1;2]</code>, then a sequence of growing
+   lists, until eventually one iteration returns a list that contains
+   <code>12</code>.
+  </li>
+  <li>
+    Define a function <code>solve_path</code> of type <code>'a rel ->
+   'a prop -> 'a -> 'a list</code> such that <code>solve_path r p
+   x</code> behaves exactly as <code>solve</code> except that it
+   produces not only the final value <code>y</code> such that <code>p
+   y</code> but also all the intermediate elements from <code>x</code>
+   to <code>y</code> that show how <code>x</code> is related
+   to <code>y</code> through <code>r</code>.
+
+    <br/>
+
+    For instance, <code>solve_path near (fun x -> x = 12) 0</code> should
+    return <code>[0;2;4;6;8;10;12]</code>.
+
+   <br/>
+
+   This function can be written simply by calling <code>solve</code>
+   with well-chosen arguments. The idea is to iterate over the set of
+   paths to destinations, instead of the set of destinations.
+  </li>
+</ol>
+
+<p>
+  The previous solver is very naive since it introduces a lot of
+   redundancy in the search process. This is due to the simplistic
+   representation of sets as lists: an element may be repeated several
+   times in a list. Let us assume that we are given a more efficient
+   data structure for sets over elements of type <code>'a</code> as
+   specified by the following record type <code>('a, 'set)
+   set_operations</code> (also given in the prelude).
+</p>
+<pre>
+type ('a, 'set) set_operations =
+  { empty : 'set ;
+    mem : 'a -> 'set -> bool ;
+    add : 'a -> 'set -> 'set }
+</pre>
+<p style="background:#eee;border:1px #ccc solid;padding:10px">
+  This is a pattern that you will see in some OCaml libraries, to
+  combine a set of operations in something more syntactically
+  lightweight than an object or a functor. It is simple to use:
+  given that you have a value <code>ops</code> of this type, just
+  use <code>ops.empty</code> to obtain an empty set, <code>ops.add 13
+  s</code> to create a new set that is a copy of an existing
+  set <code>s</code> augmented with a new
+  element <code>13</code>, <code>s.add 1 (s.add 2 s.empty)</code> to
+  create a set from scratch containing two elements <code>1</code>
+  and <code>2</code>, and finally <code>s.mem 8 s</code> to test
+  if <code>8</code> is an element of a set <code>s</code>.
+</p>
+<p>
+  From now on, we will assume that a value of type <code>('a, 'set)
+  set_operations</code> will be provided as input to the solver (you
+  won't have to write one). For your own tests, you can use
+  <code>int_set_operations: (int, _) set_operations</code> and
+  <code>int_list_set_operations: (int list, _) set_operations</code>
+  that are predefined.
+</p>
+
+<ol start="9">
+  <li>
+    Write a function <code>archive_map</code> of type
+
+    <br/>
+
+    <code>('a, 'set) set_operations -> 'a rel -> ('set * 'a list) -> ('set * 'a list)</code>
+
+    <br/>
+
+    such that: <code>archive_map opset rel (s, l) = (s', l')</code>, where:
+
+    <ul>
+      <li>
+	 <code>l'</code> is the list of elements that are reachable
+	 using <code>rel</code> from the elements of <code>l</code> and
+	 which are not already in the set <code>s</code>.
+      </li>
+      <li>
+	 <code>s'</code> is the union of <code>s</code> and the
+	 elements of <code>l'</code>.
+      </li>
+    </ul>
+  </li>
+  <li>
+    Use <code>archive_map</code> to program a new
+    function <code>solve'</code> (don't forget the quote after the
+    name) of type <code>('a, 'set) set_operations -> 'a rel -> 'a prop
+    -> 'a -> 'a</code> that explores the search space with no
+    redundancy.
+  </li>
+  <li>
+    Same question for <code>solve_path'</code> of type
+    <code>('a list, 'set) set_operations -> 'a rel -> 'a prop -> 'a -> 'a
+   list</code>.
+  </li>
+
+</ol>
+
+<p>
+  The last step of this first part is to implement a solver for a
+  one-player puzzle. A one-player puzzle is characterized by the
+  following elements.
+
+  <ol style="list-style-type:lower-roman">
+    <li>
+      a type for <code>'configuration</code>s which represent the
+      states of the puzzle ;
+    </li>
+    <li>
+      a type for <code>'move</code>s which represent how the player can move
+      from one configuration to another ;
+    </li>
+    <li>
+      a function <code>move : 'configuration -> 'move ->
+      'configuration</code> which applies a move to a configuration to get a new
+      one ;
+    </li>
+    <li> a function <code>possible_moves : 'configuration -> 'move list</code>
+      which returns the list of moves that can be applied to an input
+      configuration ;
+    </li>
+    <li>
+      a function <code>final : 'configuration -> bool</code> which returns <code>true</code>
+      if and only if the input configuration is the one we are looking
+      for.
+    </li>
+  </ol>
+  The following record type <code>puzzle</code> (also given in the
+  prelude) will be used to characterize a puzzle.
+</p>
+
+<pre>
+type ('configuration, 'move) puzzle =
+  { move : 'configuration -> 'move -> 'configuration;
+    possible_moves : 'configuration -> 'move list;
+    final : 'configuration -> bool }
+</pre>
+
+<ol start="12">
+  <li>
+    Implement <code>solve_puzzle : ('c, 'm) puzzle -> ('c list, 's)
+      set_operations -> 'c -> 'c list</code> such
+    that <code>solve_puzzle p opset c</code> is a list of moves the
+    application of which to the configuration
+    <code>c</code> results in a configuration <code>c'</code> such
+    that <code>p.final c' = true</code>. Here, <code>opset</code> is a
+    record of set operations which the implementation
+    of <code>solve_puzzle</code> may use.
+  </li>
+</ol>
+
+<h2>Part B: A Solver for Klotski</h2>
+
+Let's start by giving names to the pieces on the board:
+<ul>
+  <li>the one 2x2 square piece are written <code>S</code> ;</li>
+  <li>the one 2x1 horizontal rectangle piece are written <code>H</code> ;</li>
+  <li>the four 1x2 vertical rectangle pieces are written <code>V0</code>, <code>V1</code>, <code>V2</code>
+  and <code>V3</code> ;</li>
+  <li>the four 1x1 square pieces are written <code>C0</code>, <code>C1</code>, <code>C2</code>, <code>C3</code>.</li>
+</ul>
+
+<p>
+  As you have surely noticed, the board has two places which are not covered
+  by any piece. We will write <code>X</code> to denote such a place.
+</p>
+
+<p>The type to describe the different kind of pieces is naturally an enumeration:</p>
+
+<pre>type piece_kind = S | H | V | C | X</pre>
+
+<p>A piece is characterized by its kind and an index.</p>
+
+<pre>type piece = piece_kind * int</pre>
+
+<p>Let us enumerate the pieces using toplevel definitions:</p>
+
+<pre>
+let x = (X, 0) and s = (S, 0) and h = (H, 0)
+let (c0, c1, c2, c3) = ((C, 0), (C, 1), (C, 2), (C, 3))
+let (v0, v1, v2, v3) = ((V, 0), (V, 1), (V, 2), (V, 3))
+let all_pieces : piece list = [ s; h; c0; c1; c2; c3; v0; v1; v2; v3 ]
+</pre>
+
+<p>A board is a matrix of 5x4 places. Each place refers to the piece
+  that covers it.</p>
+
+<pre>type board = piece array array</pre>
+
+<p style="background:#eee;border:1px #ccc solid;padding:10px">
+  You can use the function <code>display_board: board -> unit</code>
+  to visualize a board configuration in the toplevel.
+</p>
+
+<p>
+  For
+  instance, the initial configuration is written as follows:
+</p>
+
+<div style="text-align:center">
+  <svg width='140' height='170' style="vertical-align:middle">
+    <rect style='transform: translate(70px,85px);stroke: #ccc;stroke-width: 1px;fill: #eee;' x='-69.5' y='-84.5' width='139' height='169'/>
+    <rect style='transform: translate(25px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <g style='transform: translate(115px,145px);'>
+      <rect style='fill: #990;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(25px,145px);'>
+      <rect style='fill: #C66;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(85px,115px);'>
+      <rect style='fill: #399;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(55px,115px);'>
+      <rect style='fill: #096;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(115px,100px);'>
+      <rect style='fill: #06C;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+    <g style='transform: translate(70px,85px);'>
+      <rect style='fill: #C60;' x='-29' y='-14' width='58' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 29 -14 L 26 -11 L -26 -11 L -26 11 L -29 14 L -29 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -29 14 L -26 11 L 26 11 L 26 -11 L 29 -14 L 29 14 Z'></path>
+    </g>
+    <g style='transform: translate(25px,100px);'>
+      <rect style='fill: #C30;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+    <g style='transform: translate(115px,40px);'>
+      <rect style='fill: #690;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+    <g style='transform: translate(70px,40px);'>
+      <rect style='fill: #F90;' x='-29' y='-29' width='58' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 29 -29 L 26 -26 L -26 -26 L -26 26 L -29 29 L -29 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -29 29 L -26 26 L 26 26 L 26 -26 L 29 -29 L 29 29 Z'></path>
+    </g>
+    <g style='transform: translate(25px,40px);'>
+      <rect style='fill: #FC0;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+  </svg>
+  <pre style="display:inline-block;vertical-align:middle;margin: 0 0 0 10px; padding: 10px;">
+[| [| (V,0) ; (S,0) ; (S,0) ; (V,1) |] ; 
+   [| (V,0) ; (S,0) ; (S,0) ; (V,1) |] ; 
+   [| (V,2) ; (H,0) ; (H,0) ; (V,3) |] ; 
+   [| (V,2) ; (C,0) ; (C,1) ; (V,3) |] ; 
+   [| (C,2) ; (X,0) ; (X,0) ; (C,3) |] |]</pre>
+</div>
+
+
+<!--
+
+<p>
+  For
+  instance, <code>(C,0)</code> can slide vertically:
+</p>
+
+<div style="text-align:center">
+  <svg width='140' height='170' style="vertical-align:middle">
+    <rect style='transform: translate(70px,85px);stroke: #ccc;stroke-width: 1px;fill: #eee;' x='-69.5' y='-84.5' width='139' height='169'/>
+    <rect style='transform: translate(25px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <g style='transform: translate(115px,145px);'>
+      <rect style='fill: #990;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(55px,145px);'>
+      <rect style='fill: #096;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(25px,145px);'>
+      <rect style='fill: #C66;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(85px,115px);'>
+      <rect style='fill: #399;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(115px,100px);'>
+      <rect style='fill: #06C;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+    <g style='transform: translate(70px,85px);'>
+      <rect style='fill: #C60;' x='-29' y='-14' width='58' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 29 -14 L 26 -11 L -26 -11 L -26 11 L -29 14 L -29 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -29 14 L -26 11 L 26 11 L 26 -11 L 29 -14 L 29 14 Z'></path>
+    </g>
+    <g style='transform: translate(25px,100px);'>
+      <rect style='fill: #C30;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+    <g style='transform: translate(115px,40px);'>
+      <rect style='fill: #690;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+    <g style='transform: translate(70px,40px);'>
+      <rect style='fill: #F90;' x='-29' y='-29' width='58' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 29 -29 L 26 -26 L -26 -26 L -26 26 L -29 29 L -29 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -29 29 L -26 26 L 26 26 L 26 -26 L 29 -29 L 29 29 Z'></path>
+    </g>
+    <g style='transform: translate(25px,40px);'>
+      <rect style='fill: #FC0;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+  </svg>
+  <pre style="display:inline-block;vertical-align:middle;margin: 0 0 0 10px; padding: 10px;">
+[| [| (V,0) ; (S,0) ; (S,0) ; (V,1) |] ; 
+   [| (V,0) ; (S,0) ; (S,0) ; (V,1) |] ; 
+   [| (V,2) ; (H,0) ; (H,0) ; (V,3) |] ; 
+   [| (V,2) ; (X,0) ; (C,1) ; (V,3) |] ; 
+   [| (C,2) ; (C,0) ; (X,0) ; (C,3) |] |]</pre>
+</div>
+
+<p>
+  In this configuration, <code>(C,1)</code> can slide horizontally:
+</p>
+
+<div style="text-align:center">
+  <svg width='140' height='170' style="vertical-align:middle">
+    <rect style='transform: translate(70px,85px);stroke: #ccc;stroke-width: 1px;fill: #eee;' x='-69.5' y='-84.5' width='139' height='169'/>
+    <rect style='transform: translate(25px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <g style='transform: translate(115px,145px);'>
+      <rect style='fill: #990;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(55px,145px);'>
+      <rect style='fill: #096;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(25px,145px);'>
+      <rect style='fill: #C66;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(55px,115px);'>
+      <rect style='fill: #399;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(115px,100px);'>
+      <rect style='fill: #06C;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+    <g style='transform: translate(70px,85px);'>
+      <rect style='fill: #C60;' x='-29' y='-14' width='58' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 29 -14 L 26 -11 L -26 -11 L -26 11 L -29 14 L -29 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -29 14 L -26 11 L 26 11 L 26 -11 L 29 -14 L 29 14 Z'></path>
+    </g>
+    <g style='transform: translate(25px,100px);'>
+      <rect style='fill: #C30;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+    <g style='transform: translate(115px,40px);'>
+      <rect style='fill: #690;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+    <g style='transform: translate(70px,40px);'>
+      <rect style='fill: #F90;' x='-29' y='-29' width='58' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 29 -29 L 26 -26 L -26 -26 L -26 26 L -29 29 L -29 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -29 29 L -26 26 L 26 26 L 26 -26 L 29 -29 L 29 29 Z'></path>
+    </g>
+    <g style='transform: translate(25px,40px);'>
+      <rect style='fill: #FC0;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+  </svg>
+  <pre style="display:inline-block;vertical-align:middle;margin: 0 0 0 10px; padding: 10px;">
+[| [| (V,0) ; (S,0) ; (S,0) ; (V,1) |] ; 
+   [| (V,0) ; (S,0) ; (S,0) ; (V,1) |] ; 
+   [| (V,2) ; (H,0) ; (H,0) ; (V,3) |] ; 
+   [| (V,2) ; (C,1) ; (X,0) ; (V,3) |] ; 
+   [| (C,2) ; (C,0) ; (X,0) ; (C,3) |] |]</pre>
+</div>
+
+<p>
+  So can <code>(C,3)</code>:
+</p>
+
+<div style="text-align:center">
+  <svg width='140' height='170' style="vertical-align:middle">
+    <rect style='transform: translate(70px,85px);stroke: #ccc;stroke-width: 1px;fill: #eee;' x='-69.5' y='-84.5' width='139' height='169'/>
+    <rect style='transform: translate(25px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <g style='transform: translate(85px,145px);'>
+      <rect style='fill: #990;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(55px,145px);'>
+      <rect style='fill: #096;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(25px,145px);'>
+      <rect style='fill: #C66;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(55px,115px);'>
+      <rect style='fill: #399;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(115px,100px);'>
+      <rect style='fill: #06C;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+    <g style='transform: translate(70px,85px);'>
+      <rect style='fill: #C60;' x='-29' y='-14' width='58' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 29 -14 L 26 -11 L -26 -11 L -26 11 L -29 14 L -29 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -29 14 L -26 11 L 26 11 L 26 -11 L 29 -14 L 29 14 Z'></path>
+    </g>
+    <g style='transform: translate(25px,100px);'>
+      <rect style='fill: #C30;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+    <g style='transform: translate(115px,40px);'>
+      <rect style='fill: #690;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+    <g style='transform: translate(70px,40px);'>
+      <rect style='fill: #F90;' x='-29' y='-29' width='58' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 29 -29 L 26 -26 L -26 -26 L -26 26 L -29 29 L -29 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -29 29 L -26 26 L 26 26 L 26 -26 L 29 -29 L 29 29 Z'></path>
+    </g>
+    <g style='transform: translate(25px,40px);'>
+      <rect style='fill: #FC0;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+  </svg>
+  <pre style="display:inline-block;vertical-align:middle;margin: 0 0 0 10px; padding: 10px;">
+[| [| (V,0) ; (S,0) ; (S,0) ; (V,1) |] ; 
+   [| (V,0) ; (S,0) ; (S,0) ; (V,1) |] ; 
+   [| (V,2) ; (H,0) ; (H,0) ; (V,3) |] ; 
+   [| (V,2) ; (C,1) ; (X,0) ; (V,3) |] ; 
+   [| (C,2) ; (C,0) ; (C,3) ; (X,0) |] |]</pre>
+</div>
+
+<p>
+  and now <code>(V,3)</code> can move vertically:
+</p>
+
+<div style="text-align:center">
+  <svg width='140' height='170' style="vertical-align:middle">
+    <rect style='transform: translate(70px,85px);stroke: #ccc;stroke-width: 1px;fill: #eee;' x='-69.5' y='-84.5' width='139' height='169'/>
+    <rect style='transform: translate(25px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,25px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,55px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,85px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,115px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(25px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(55px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(85px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <rect style='transform: translate(115px,145px);fill: #ccc;' x='-12' y='-12' width='24' height='24'/>
+    <g style='transform: translate(85px,145px);'>
+      <rect style='fill: #990;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(55px,145px);'>
+      <rect style='fill: #096;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(25px,145px);'>
+      <rect style='fill: #C66;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(115px,130px);'>
+      <rect style='fill: #06C;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+    <g style='transform: translate(55px,115px);'>
+      <rect style='fill: #399;' x='-14' y='-14' width='28' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -14 L 11 -11 L -11 -11 L -11 11 L -14 14 L -14 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 14 L -11 11 L 11 11 L 11 -11 L 14 -14 L 14 14 Z'></path>
+    </g>
+    <g style='transform: translate(70px,85px);'>
+      <rect style='fill: #C60;' x='-29' y='-14' width='58' height='28'/>
+      <path style='opacity: 0.3;fill: white;' d='M 29 -14 L 26 -11 L -26 -11 L -26 11 L -29 14 L -29 -14 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -29 14 L -26 11 L 26 11 L 26 -11 L 29 -14 L 29 14 Z'></path>
+    </g>
+    <g style='transform: translate(25px,100px);'>
+      <rect style='fill: #C30;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+    <g style='transform: translate(115px,40px);'>
+      <rect style='fill: #690;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+    <g style='transform: translate(70px,40px);'>
+      <rect style='fill: #F90;' x='-29' y='-29' width='58' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 29 -29 L 26 -26 L -26 -26 L -26 26 L -29 29 L -29 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -29 29 L -26 26 L 26 26 L 26 -26 L 29 -29 L 29 29 Z'></path>
+    </g>
+    <g style='transform: translate(25px,40px);'>
+      <rect style='fill: #FC0;' x='-14' y='-29' width='28' height='58'/>
+      <path style='opacity: 0.3;fill: white;' d='M 14 -29 L 11 -26 L -11 -26 L -11 26 L -14 29 L -14 -29 Z'></path>
+      <path style='opacity: 0.3;fill: black;' d='M -14 29 L -11 26 L 11 26 L 11 -26 L 14 -29 L 14 29 Z'></path>
+    </g>
+  </svg>
+  <pre style="display:inline-block;vertical-align:middle;margin: 0 0 0 10px; padding: 10px;">
+[| [| (V,0) ; (S,0) ; (S,0) ; (V,1) |] ; 
+   [| (V,0) ; (S,0) ; (S,0) ; (V,1) |] ; 
+   [| (V,2) ; (H,0) ; (H,0) ; (X,0) |] ; 
+   [| (V,2) ; (C,1) ; (X,0) ; (V,3) |] ; 
+   [| (C,2) ; (C,0) ; (C,3) ; (V,3) |] |]</pre>
+</div>
+
+-->
+
+<ol start="13">
+  <li>
+    Write a function <code>final: board -> bool</code> such that <code>final
+      board = true</code> if and only if <code>board</code> is a final
+    configuration for Klotski.
+  </li>
+</ol>
+
+<p>
+  We have defined the configurations of our puzzle, now we have to
+  define the moves. We will use the following types (also given in the
+    prelude).
+</p>
+
+<pre>
+type move = Move of piece * direction * board
+and direction = { dcol : int; drow : int }
+</pre>
+
+<p>
+  A move is characterized by a direction and a piece it is
+  applied to. The third component is the board that is obtained when
+  this move is applied to the current board.
+</p>
+
+<p> 
+  With this definition of a move, applying a move to a board is very simple:
+  we just extract the image board from it.
+</p>
+
+<pre>
+let move _ (Move (_, _, b)) = b
+</pre>
+
+<ol start="14">
+  <li>
+    Write a function <code>move_piece : board -> piece -> direction -> board option</code>
+    such that <code>move_piece board p { drow; dcol } = Some board'</code> if moving the piece
+    <code>p</code> in <code>board</code> in direction <code>{ drow; dcol
+      }</code> is possible and gives <code>board'</code>. Otherwise, if
+    this move is not possible, <code>move_piece</code>
+    returns <code>None</code>.
+  </li>
+  <li>
+    Define <code>possible_moves : board -> move list</code> that
+    returns a list of moves that can be applied to <code>board</code>.
+  </li>
+</ol>
+
+<p>
+  At this point, you can define the puzzle instance to pass to the
+  generic solver.
+</p>
+
+<pre>
+let klotski : (board, move) puzzle = { move; possible_moves; final }
+</pre>
+
+<ol start="16">
+  <li>
+    The solver also expects a data structure to represent sets of
+    boards. Use the standard library's functor <code>Set.Make</code>
+    to implement this data structure as a module <code>BoardSet</code>
+    of signature <code>Set.S with type elt = board</code>.
+
+    <br/>
+
+    The required comparison function <code>compare : board -> board ->
+    int</code> should be such that <code>compare b1 b2 = 0</code> if
+    all cells of both arrays are exactly the same.
+
+    <br/>
+
+    Otherwise, it should compare the cells of the two arrays pairwise,
+    starting from cell <code>.(0).(0)</code>,
+    then <code>.(0).(1)</code>, <code>.(0).(2)</code>, <code>.(0).(3)</code>,
+    <code>.(1).(0)</code>, etc. up to the last
+    cell <code>.(4).(3)</code>. The function should return the result
+    of the first comparison of cells that does not
+    return <code>0</code>.
+
+    <br/>
+
+    To compare to cells at index <code>.(i).(j)</code>, first the
+    first component (the kind of piece) is compared. The result
+    is <code>&lt; 0</code> if <code>b1.(i).(j) &lt; b2.(i).(j)</code>
+    and  <code>&gt; 0</code> if <code>b1.(i).(j) &gt; b2.(i).(j)</code>.
+    For this the pieces are ordered as follows: <code>S &gt; H &gt; C &gt; V &gt; X</code>.
+
+    <br/>
+
+    If both first components are the same, the result is the
+    comparison of the second component, with the usual order on
+    integers.
+  </li>
+  <li>
+    Update your <code>compare</code> function, so that it performs as
+    few array accesses as possible, respecting the previous ordering
+    algorithm. It must read the arrays up to the first pair of cells
+    that differ. It should only read the entire arrays in case of
+    equality.
+
+    <br/>
+
+    <strong>Hint:</strong> If you used loops, you can use an exception.
+
+    <br/>
+
+    <strong>Note:</strong> All array accesses are counted,
+    so <code>a.(y).(x)</code> counts for two. If you read several
+    cells in a same row, better put the row in a variable!
+  </li>
+</ol>
+
+<h2>Putting It All Together</h2>
+
+<ol start="18">
+  <li>
+    Write a function <code>solve_klotski : board -> board list</code>
+    such that <code>solve_klotski initial_board</code> is a list of
+    boards from the <code>initial_board</code> to a <code>board</code>
+    such that <code>final board</code>. This list must come from a
+    sequence of valid moves of this puzzle.
+  </li>
+</ol>
+
+<p style="background:#eee;border:1px #ccc solid;padding:10px">
+  You can use the function <code>display_solution: board list ->
+  unit</code> to visualize a solution in the toplevel. The two
+  values <code>initial_board_trivial</code>
+  and <code>initial_board_simpler</code> are variants of the initial
+  configuration whose resolution should be much faster.
+</p>

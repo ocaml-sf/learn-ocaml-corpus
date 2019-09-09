@@ -1,0 +1,47 @@
+<p>
+  On planet Shadokus, a year has 5 months, each month has 4 days, each
+  day has 3 hours and each hour has 2 minutes. A calendar date is
+  therefore defined as the record type <code>date</code> of the given
+  prelude.
+</p>
+
+<ol>
+  <li>
+    A date is well-formed if its year index is <code>&gt;= 1</code>,
+    its month index is <code>&gt;= 1</code> and <code>&lt;= 5</code>,
+    its day index is <code>&gt;= 1</code> and <code>&lt;= 4</code>,
+    its hour index is <code>&gt;= 0</code> and <code>&lt;= 2</code>,
+    and its minute index is <code>&gt;= 0</code> and <code>&lt;=
+      1</code>.
+
+    <br/>
+
+    The start of year <code>12</code> would be:
+    <pre>{ year = 12; month = 1; day = 1; hour = 0; minute = 0 }</pre>
+
+    The end of year <code>12</code> would be:
+    <pre>{ year = 12; month = 5; day = 4; hour = 2; minute = 1 }</pre>
+
+    <br/>
+
+    Write a function <code>wellformed : date -> bool</code> which
+    checks that the input date is well formed.
+  </li>
+  <li>
+    On planet Shadokus, the origin of time is the discovery of the
+    Big-Lambda-Machine, a magical computer that evaluates the infinite
+    lambda-term of time. It is defined by
+    value <code>the_origin_of_time</code> of the given prelude.
+    <br/>
+    Write a function <code>next : date -> date</code> which computes
+    the date which comes one minute after the input date.
+  </li>
+  <li>
+    In this computer, the time is represented by an integer that
+    counts the number of minutes since <code>1/1/1 0:0</code> (the
+    origin of time).
+    <br/>
+    Write a function <code>of_int : int -> date</code> that converts
+    such an integer into a <code>date</code>.
+  </li>
+</ol>

@@ -1,0 +1,38 @@
+<p>
+  A queue is a standard FIFO data structure.
+  See <a href="https://en.wikipedia.org/wiki/Queue_(abstract_data_type)">wikipedia</a>
+</p>
+
+<p>
+  In this exercise, we implement a queue with a pair of two lists
+  <code>(front, back)</code> such that
+  <code>front @ List.rev back</code> represents the sequence of
+  elements in the queue.
+</p>
+
+<ol>
+  <li>
+    Write a function <code>is_empty : queue -> bool</code> such that
+    <code>is_empty q</code> is true if and only if <code>q</code> has
+    no element.
+  </li>
+  <li>
+    Write a function <code>enqueue : int -> queue -> queue</code> such
+    that <code>enqueue x q</code> is the queue as <code>q</code>
+    except that <code>x</code> is at the end of the queue.
+  </li>
+  <li>
+    Write a function <code>split : int list -> int list * int
+    list</code> such that <code>split l = (front, back)</code>
+    where <code>l = back @ List.rev front</code> and the length of
+    <code>back</code> and <code>front</code> is
+    <code>List.length l / 2</code> or <code>List.length l / 2 + 1</code>
+  </li>
+  <li>
+    Write a function <code>dequeue : queue -> int * queue</code> such
+    that <code>dequeue q = (x, q')</code> where <code>x</code> is the
+    front element of the queue <code>q</code> and <code>q'</code>
+    corresponds to remaining elements.  This function assumes
+    that <code>q</code> is non empty.
+  </li>
+</ol>

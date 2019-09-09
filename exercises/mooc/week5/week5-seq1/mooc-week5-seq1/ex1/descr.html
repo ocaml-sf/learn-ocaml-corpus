@@ -1,0 +1,61 @@
+<p>
+  In a previous exercise, we defined binary trees of
+  type <code>'a bt</code> (given in the prelude).
+  <br/>
+  A binary search tree is <em>balanced</em> if, for all internal node
+  <code>n</code>, its two subtrees have the same height.
+</p>
+
+<p>
+  You wrote then a function <code>height</code> for balanced trees, and
+  a function <code>balanced</code> that checks whether a tree is
+  balanced, that looked like the ones given in the template.
+  <br/>
+  This code is quite elegant, but not the most efficient. In this
+  exercise we will improve it using exceptions.
+</p>
+
+<ol>
+  <li>
+    Without changing their algorithms, instrument <code>height</code>
+    and <code>balanced</code> to make them return also the number of
+    visits of leaves (each encounter of an <code>Empty</code> constructor
+    counts for 1, <code>Node</code>s are not counted). The functions
+    should now be typed <code>height : 'a bt -> int * int</code>
+    and <code>balanced : 'a bt -> bool * int</code> where the right
+    part of the result pair is the number of visits.
+
+    <br/>
+
+    When rewriting <code>balanced</code>, don't forget to
+    include the results of all the calls to <code>height</code> in the
+    total sum. You should also remember that if the left hand
+    side of a <code>(&amp;&amp;)</code> is false, the rest is not
+    executed, so be cautious in your rewriting to have the same
+    behaviour (adding <code>if</code>s if necessary), otherwise you
+    could end up calling <code>height</code> more than the original
+    version.
+  </li>
+
+  <li>
+    We now define an exception <code>Unbalanced of int</code>, that we
+    use in a function <code>bal_height : 'a bt -> int * int</code>
+    that returns the height of a <em>balanced</em> tree, with the
+    number of visits of leaves and raises <code>Unbalanced n</code> if
+    the input tree is not balanced. The exception must be raised as
+    soon as possible, when the first pair of subtrees with different
+    heights is encountered. The parameter <code>n</code> of the
+    exception is the number of visits of leaves up to the
+    exception. You may have to define an auxiliary recursive function
+    that takes an additional parameter containing the number of
+    visits already done during the start of the traversal.
+  </li>
+
+  <li>
+    Define now an improved version <code>balanced_fast : 'a bt ->
+    bool * int</code>, that uses <code>bal_height</code> and returns a
+    boolean indicating whether the input tree is balanced, and the
+    number of visits.
+  </li>
+
+</ol>

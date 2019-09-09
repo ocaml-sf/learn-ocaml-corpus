@@ -1,0 +1,81 @@
+<p>
+  In this exercise, we will do some basic two-dimensional geometry.
+</p>
+
+<p>
+  We represent a point in two dimensions using a pair, as defined by
+  type <code>point2d</code> in the given prelude. The first component
+  is abscissa (x) and the second component is the ordinate (y).
+  Abscissas grow from left to right and ordinates grow from bottom to
+  top as illustrated by the following schema:
+</p>
+
+<pre>
+                          ^ (y)
+                          |
+                          |
+                          |
+                          |
+   -------------------- (0,0) --------------------> (x)
+                          |
+                          |
+                          |
+                          |
+</pre>
+
+<p>
+  A tetragon is a polygon with four sides. We represent such an object
+  using a 4-uple of points, as defined by type <code>tetragon</code>
+  in the given prelude. that appear in the following order: the left
+  upper point (lup), the right upper point (rup), the left lower point
+  (llp) and the right lower point (rlp).
+</p>
+
+<ol>
+  <li>
+   Write a function <code>pairwise_distinct</code> of
+   type <code>tetragon -> bool</code> that checks that the points of
+   an input tetragon are pairwise distinct. In the sequel, we assume
+   that all the points are pairwise distinct.
+  </li>
+  <li>
+   A tetragon is well-formed if the following properties are verified:
+   <ol>
+     <li>
+       The left upper and the left lower points have the lowest abscissa.
+     </li>
+     <li>
+       Between the two leftmost points, the left upper point has the
+       greatest ordinate.
+     </li>
+     <li>
+       Between the two rightmost points, the right upper point has the
+       greatest ordinate.
+     </li>
+   </ol>
+   Write a function <code>wellformed</code> of type <code>tetragon ->
+   bool</code> that returns true if and only if the input tetragon is
+   well formed.
+  </li>
+  <li>
+   A simple way to rotate a tetragon by 90 degrees clockwise with
+   respect to (0, 0) is to rotate each of its points by exchanging
+   their abscissa and ordinate and negating the resulting ordinate.
+   <br/> Write a function <code>rotate_point</code> of
+   type <code>point2d -> point2d</code> such that <code>rotate_point
+   p</code> is the point <code>p</code> rotated as explained in the
+   previous paragraph.
+  </li>
+  <li>
+    Once rotated, the points of the tetragon may not be in the right
+    order: lup may be now llp, rup may be now llp, etc.  <br/> Write a
+    function <code>reorder</code> of type <code>point2d * point2d *
+    point2d * point2d -> tetragon</code> that takes 4 pairwise
+    distinct points (not necessarily the output of the previous
+    function but any 4 points) and returns a wellformed tetragon.
+  </li>
+  <li>
+   Write a function <code>rotate_tetragon</code> that takes a
+   well-formed tetragon and returns a well-formed rotated tetragon.
+  </li>
+</ol>

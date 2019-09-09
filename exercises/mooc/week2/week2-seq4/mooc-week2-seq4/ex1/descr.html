@@ -1,0 +1,49 @@
+<p>
+  The code of the mini-database example is given in the prelude.
+</p>
+
+<ol>
+  <li>
+    You may have noticed that there is an error in the implementation
+    of our database. This error leads to not finding users that should
+    be in the database (because they have been added at some point,
+    and not deleted since) after certain sequences of queries.
+
+    <br/>
+
+    Find the bug and give a sequence of
+    operations <code>proof_of_bug</code> of type <code>query
+    array</code> that exhibits it when executed one after the other on
+    an initially empty database.
+
+    <br/>
+
+    The failure must be triggered by the last query.
+  </li>
+  <li>
+    To fix this bug, write a new version of <code>delete</code> that
+    enforces the following invariant on the database, which is
+    expected by the other functions.
+
+    <br/>
+
+    All the contacts of a database <code>db</code> (and no others)
+    should be stored in the array <code>db.contacts</code> between
+    indexes <code>0</code> and <code>db.number_of_contacts - 1</code>
+    (inclusive).
+  </li>
+  <li>
+    Write a new function <code>update : database -> contact -> (bool *
+    database * contact)</code> that either changes the number of an
+    existing person or inserts a new contact. It should
+    return <code>true</code> and the updated database if any of these
+    two options succeeded, or <code>false</code> with the untouched
+    database. The returned <code>contact</code> is not important, it
+    is here just so the function has the same signature as the others.
+  </li>
+  <li>
+    Write an updated <code>engine</code> function that does an update
+    when given a query with code 3, and uses your
+    updated <code>delete</code> function.
+  </li>
+</ol>

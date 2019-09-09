@@ -1,0 +1,4 @@
+{ "learnocaml_version": "1",
+  "kind": "exercise",
+  "title": "Type Abstraction Using a Signature", 
+  "stars": 1.5 }

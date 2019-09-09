@@ -1,0 +1,146 @@
+<p>
+  In this exercise, we will pretty-print directory structures.
+</p>
+
+<p>
+  The prelude gives the types that we will use to represent directory
+  structures. A <code>node</code> in the <code>filesystem</code> is
+  either a simple <code>File</code>, a <code>Dir</code>ectory that
+  contains a nested <code>filesystem</code>, or
+  a <code>Symlink</code>.
+  <br/>
+  The latter, as on Unix systems, is a fake
+  file that redirects to another file. For this, it provides the
+  relative path to this target file. The path is the list of directory
+  to traverse to get to the target file, followed by the later. If one
+  has to go a directory up, we use the common <code>".."</code>
+  directory name that represents the parent directory.
+  <br/>
+  A <code>filesystem</code> is a list of named nodes. An example
+  <code>filesystem</code> is given below, in the format that you will
+  have to produce. Don't worry, we'll break this piece by piece.
+</p>
+
+<pre>
+  /photos
+  | /march
+  | | photo_1.bmp
+  | | photo_2.bmp
+  | | photo_3.bmp
+  | | index.html
+  | /april
+  | | photo_1.bmp
+  | | photo_2.bmp
+  | | index.html
+  /videos
+  | video1.avi
+  | video2.avi
+  | video3.avi
+  | video4.avi
+  | best.avi -> video4.avi
+  | index.html
+  /indexes
+  | videos.html -> ../videos/index.html
+  | photos_march.html -> ../photos/march/index.html
+  | photos_april.html -> ../photos/april/index.html
+  | photos_may.html -> INVALID
+</pre>
+
+<p>
+  This output was generated from the following OCaml structure.
+</p>
+
+<pre>
+[ "photos", Dir
+    [ "march", Dir
+        [ "photo_1.bmp", File ;
+          "photo_2.bmp", File ;
+          "photo_3.bmp", File ;
+          "index.html", File ] ;
+      "april", Dir
+        [ "photo_1.bmp", File ;
+          "photo_2.bmp", File ;
+          "index.html", File ] ] ;
+  "videos", Dir
+    [ "video1.avi", File ;
+      "video2.avi", File ;
+      "video3.avi", File ;
+      "video4.avi", File ;
+      "best.avi", Symlink [ "video4.avi" ] ;
+      "index.html", File ] ;
+  "indexes", Dir
+    [ "videos.html",
+      Symlink [ ".." ; "videos" ; "index.html" ] ;
+      "photos_march.html",
+      Symlink [ ".." ; "photos" ; "march" ; "index.html" ] ;
+      "photos_april.html",
+      Symlink [ ".." ; "photos" ; "april" ; "index.html" ] ;
+      "photos_may.html",
+      Symlink [ ".." ; "photos" ; "may" ; "index.html" ] ] ]
+</pre>
+
+<ol>
+  <li>
+    Write a function <code>print_path: string list -> unit</code> that
+    prints a relative path (the argument of a <code>Symlink</code>)
+    and pretty prints it as shown in the example display, using
+    slashes (<code>'/'</code>) as separator.
+  </li>
+  <li>
+    As you can see in the example, the depth of a file in
+    the <code>filesystem</code> (the number of nested folders that are
+    its ancestors) is represented by a sequence of vertical lines.
+    Write a function <code>print_file: int -> string -> unit</code>
+    that prints a file name, with the given number of <code>"| "</code>
+    in front of it.
+  </li>
+  <li>
+    Write a similar function <code>print_symlink: int -> string ->
+    string list -> unit</code> that prints the link name, with the
+    given number of <code>"| "</code> in front of it, and the relative
+    path (preceded by an arrow <code>" -> "</code>).
+  </li>
+  <li>
+    Write a similar function <code>print_dir: int -> string ->
+    unit</code> that prints the dir name, with the given number
+    of <code>"| "</code> in front of it, and the
+    prepended <code>'/'</code>.
+  </li>
+  <li>
+    Write a function <code>print_filesystem: filesystem -> unit</code>
+    that traverses the filesystem, producing the same display as in
+    the example. You will probably need an auxiliary, recursive
+    function, and you will have to use the previous answers.
+  </li>
+  <li>
+    Write a function <code>resolve: string list -> string list ->
+      string list</code>. It takes as parameters:
+    <ol>
+      <li>The full path from the root to a symlink, including its
+	name. In the given example, that could be for instance <code>[
+	  "indexes" ; "photos_april.html" ]</code>.
+      </li>
+      <li>
+	The relative path for this symlink. Here, that would
+	be <code>[ ".." ; "photos" ; "april" ; "index.html" ]</code>.
+      </li>
+    </ol>
+    The function returns the full path from the root to the target of
+    the symlink. Here, we should get <code>[ "photos" ; "april" ;
+    "index.html" ]</code>. Note that it may not be as easy as it
+    seems, so you may think about it before plunging into the code.
+  </li>
+  <li>
+    Write a function <code>file_exists : filesystem -> string list ->
+    bool</code> that tells if a file exists in
+    the <code>filesystem</code>. The path is the full absolute path to
+    the file, and the target must be a <code>File</code>, not
+    a <code>Dir</code> or a <code>Symlink</code>.
+  </li>
+  <li>
+    Update your function <code>print_filesystem: filesystem ->
+    unit</code> so that it replaces the printed relative path
+    by <code>"INVALID"</code> when the symlink cannot be resolved to
+    an existing file.
+  </li>
+</ol>

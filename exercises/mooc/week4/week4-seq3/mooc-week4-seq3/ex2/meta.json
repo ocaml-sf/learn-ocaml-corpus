@@ -1,0 +1,4 @@
+{ "learnocaml_version": "1",
+  "kind": "exercise",
+  "title": "A Small Arithmetic Interpreter", 
+  "stars": 2 }

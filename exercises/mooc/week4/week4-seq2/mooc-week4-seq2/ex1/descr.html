@@ -1,0 +1,21 @@
+<p>
+  The following function checks the pairwise equality of
+  the elements of two lists, on the common length of both lists:
+</p>
+
+<pre>
+let rec equal_on_common l1 l2 = match l1,l2 with
+  | [],_ -> true
+  | _,[] -> true
+  | h1::r1,h2::r2 -> h1=h2 &amp;&amp; equal_on_common r1 r2
+</pre>
+
+<ol>
+  <li>
+    Rewrite <code>equal_on_common : 'a list -> 'a list -> bool</code> by using
+    nested <code>function .. -></code> constructions. Using
+    the <code>match .. with</code> construction or tuple patterns is forbidden.
+    You can (and must) only call the operators <code>&amp;&amp;</code> and <code>=</code>, and the
+    function <code>equal_on_common</code> recursively.
+  </li>
+</ol>

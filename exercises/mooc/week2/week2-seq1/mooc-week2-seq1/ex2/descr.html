@@ -1,0 +1,35 @@
+<p>
+  Let us solve the following puzzle:
+  <br/>
+  <quote>
+    If you multiply my grand-son age by four, you know how old I
+    am. Now, if you exchange the two digits of our ages then you have
+    to multiply by three my age to get the age of my grand-son!
+  </quote>
+</p>
+
+<ol>
+  <li>
+    Write a function <code>exchange</code> of type <code>int ->
+    int</code> that takes an integer <code>x</code> between 10 and 99
+    and returns an integer which is <code>x</code> whose digits have
+    been exchanged. For instance, <code>exchange 73 = 37</code>.
+  </li>
+  <li>
+    Define <code>is_valid_answer</code> of type <code>int * int ->
+    bool</code> such that <code>is_valid_answer (grand_father_age,
+    grand_son_age)</code> returns <code>true</code> if and only if
+    <code>grand_father_age</code> and <code>grand_son_age</code>
+    verify the constraints of the puzzle.
+  </li>
+  <li>
+    Write a function <code>find : (int * int) -> (int * int)</code>
+    that takes a pair <code>(max_grand_father_age,
+    min_grand_son_age)</code> and returns a
+    solution <code>(grand_father_age, grand_son_age)</code> to
+    the problem, where
+    <code>min_grand_son_age &lt;= grand_son_age &lt; grand_father_age
+    &lt;= max_grand_father_age</code> or <code>(-1, -1)</code> if
+    there was no valid answer in the given range.
+  </li>
+</ol>

@@ -1,0 +1,72 @@
+<p>
+  In this exercise, we will encode imperative stacks
+  of <code>int</code>s using the <code>type stack = int array</code>
+  as defined in the prelude.
+</p>
+
+<p>
+  We will use the first cell (cell <code>0</code>) to store the number
+  of items in the stack. Then the cells of the array starting
+  from <code>1</code> will be used to store the elements in the
+  stack. The bottom element of the stack will be stored at
+  position <code>1</code>.
+</p>
+
+<p>
+  The stack will thus have a maximum capacity, being the length of the
+  array minus one.
+</p>
+
+<ul>
+  <li> An empty stack of capacity <code>4</code> would match the following pattern: <br/>
+
+    <code>[| 0 ; _ ; _ ; _ ; _|]</code>
+  </li>
+  <li> A stack of capacity <code>4</code>
+  containing <code>1</code> at the bottom, then <code>2</code> and
+  then <code>3</code> at the top would match the following pattern: <br/>
+
+    <code>[| 3 ; 1 ; 2 ; 3 ; _|]</code>
+  </li>
+</ul>
+
+<ol>
+  <li>
+    Define a function <code>create : int -> stack</code> that creates
+    a new stack of the given maximum capacity.
+  </li>
+  <li>
+    Define a function <code>push : stack -> int -> unit</code> that
+    adds an element as the top of the stack.
+
+    <br/>
+    
+    The function must fail with the exception <code>Full</code> given
+    in the prelude if nothing can be added to the stack.
+  </li>
+  <li>
+    Define a function <code>append : stack -> int array -> unit</code>
+    that adds an array of integers as the top of the stack. The first
+    element of the array must be at the top of the stack, the others
+    in order, up to the last element, which will be the lowest in the
+    stack. In other words, the last element of the array
+    should be pushed first, etc.
+
+    <br/>
+    
+    The function must fail with the exception <code>Full</code> given
+    in the prelude if some elements could not fit in the stack.  But
+    in this case, it should still fill the stack with as many elements
+    as possible.
+  </li>
+  <li>
+    Define a function <code>pop : stack -> int</code> that takes an
+    element as the top of the stack, removes it from the stack, and
+    return it.
+
+    <br/>
+    
+    The function must fail with the exception <code>Empty</code> given
+    in the prelude if nothing can be taken from the stack.
+  </li>
+</ol>
