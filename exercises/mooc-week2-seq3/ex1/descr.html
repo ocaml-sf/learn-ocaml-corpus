@@ -1,0 +1,30 @@
+<ol>
+  <li>
+   Write a function <code>is_sorted : string array -> bool</code> which
+   checks if the values of the input array are sorted in
+   strictly increasing order, implying that its elements are unique
+   (use <code>String.compare</code>).
+  </li>
+  <li>
+    Using the
+    <a href="https://en.wikipedia.org/wiki/Binary_search_algorithm">
+      binary search algorithm</a>, an element can be found very
+    quickly in a sorted array.
+    
+    <br/>
+
+    Write a function <code>find : string array -> string -> int</code> such that
+   <code>find arr word</code> is the index of the <code>word</code> in
+   the sorted array <code>arr</code> if it occurs in <code>arr</code>
+   or -1 if <code>word</code> does not occur in <code>arr</code>.
+
+   <br/>
+
+   The number or array accesses will be counted, to check that you
+   obtain the expected algorithmic complexity. Beware that you really
+   perform the minimal number of accesses. For instance, if your
+   function has to test the contents of a cell twice, be sure to put
+   the result of the access in a variable, and then perform the tests
+   on that variable.
+  </li>
+</ol>

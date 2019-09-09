@@ -1,0 +1,37 @@
+<p>
+  In this exercise, you will experiment with <em>type-directed
+  programming</em>.
+</p>
+
+<p>
+  We give you the example program of the lecture in which two type
+  definitions have been changed as in the given prelude. A
+  case <code>Tired</code> has been added to type <code>state</code>,
+  and a case <code>Sleep</code> has been added to
+  type <code>action</code>.
+  <br/>
+  By clicking the <em>typecheck</em> button, you can notice that
+  several warnings are issued by the OCaml compiler. Go through the
+  code and fix these warnings as follow.
+</p>
+
+<ol>
+  <li>
+    Update <code>apply_action</code> so that the <code>Sleep</code>
+    action turns a character from the <code>Tired</code> state to
+    the <code>Hungry</code> state.
+  </li>
+  <li>
+    Update <code>possible_changes_for_character</code> so that
+    the <code>Tired</code> state behaves as the <code>Hungry</code>
+    state.
+  </li>
+  <li>
+    Update <code>describe_state</code> so that the description of
+    the <code>Tired</code> state is <code>"tired"</code>.
+  </li>
+  <li>
+    Update <code>tell_action</code> so that <code>tell_action
+    Sleep</code> is <code>"took a nap"</code>.
+  </li>
+</ol>

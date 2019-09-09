@@ -1,0 +1,26 @@
+<ol>
+  <li>
+    Write a function <code>compose : ('a -> 'a) list -> ('a ->
+    'a)</code> that takes as argument a list <code>l</code> of
+    functions, and that returns the function that is the composition
+    of the functions in <code>l</code>. For instance, <code>compose
+    [f;g;h] x = f (g (h x))</code>. Or with concrete
+    functions, <code>compose [(fun x -> x+1);(fun x -> 3*x);(fun x ->
+    x-1)] 2 = 4</code>.
+  </li>
+  <li>
+    Write a function <code>fixedpoint : (float -> float) -> float ->
+    float -> float</code> that takes a function <code>f</code> of
+    type <code>float -> float</code> and two floating-point
+    arguments <code>start</code> and <code>delta</code>. The
+    function <code>fixedpoint</code> applies
+    repetitively <code>f</code> to the result of its previous
+    application, starting from <code>start</code>, until it reaches a
+    value <code>y</code> where the difference between <code>y</code>
+    and <code>(f y)</code> is smaller than delta. In that case it
+    returns the value of <code>y</code>.  For
+    instance, <code>fixedpoint cos 0. 0.001</code> yields
+    approximately <code>0.739</code>
+    (<a href="http://mathworld.wolfram.com/DottieNumber.html">ref</a>).
+  </li>
+</ol>

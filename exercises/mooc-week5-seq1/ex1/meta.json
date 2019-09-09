@@ -1,0 +1,4 @@
+{ "learnocaml_version": "1",
+  "kind": "exercise",
+  "title": "Optimising a Tree Traversal using Exceptions", 
+  "stars": 3 }

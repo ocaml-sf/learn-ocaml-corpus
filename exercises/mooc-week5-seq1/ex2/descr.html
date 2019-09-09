@@ -1,0 +1,83 @@
+<p>
+  In this exercise, we will unveil the basics of the grading system.
+</p>
+
+<p style="background:#eee; padding=10px">
+  <strong>Note:</strong> This exercise is about exceptions, but it
+  uses the <code>unit</code> type that is only presented in the next
+  sequence.
+</p>
+
+<ol>
+  <li>
+    For each question, we call both your function and a reference
+    function on a list of randomly sampled test cases, and observe the
+    results. We also have to handle the case where a function raises
+    an exception instead of producing a result. Sometimes, we even
+    expect your function to raise an exception, and want to compare it
+    to the exception raised by the reference function.
+
+    <br/>
+
+    For this, we use the <code>'a result</code> type given in the
+    prelude.
+
+    <br/>
+
+    Define a function <code>exec: ('a -> 'b) -> 'a -> 'b
+    result</code>, that calls the given function on the given
+    argument, and returns <code>Ok</code> with the result if
+    everything went well, and <code>Error</code> with the exception
+    raised, if there was one.
+  </li>
+  <li>
+    To be able to provide you with the nice error reports, we use an
+    intermediate type for producing reports, similar to the one given
+    in the prelude.
+
+    <br/>
+
+    Define a function <code>compare</code> with the following signature.
+    <pre>compare : 'a result -> 'a result -> ('a -> string) -> message</pre>
+    This function will take first the user function's result and then
+    the reference function's result. It also takes a printer
+    compatible with the return type, to display the results as in one
+    the following cases.
+    <ul>
+      <li><code>("got correct value 13", Successful)</code></li>
+      <li><code>("got unexpected value 13", Failed)</code></li>
+      <li><code>("got correct exception Exit", Successful)</code></li>
+      <li><code>("got unexpected exception Exit", Failed)</code></li>
+    </ul>
+    You must respect the exact wording for your solution to be
+    accepted. To display exceptions, you can use the
+    provided <code>exn_to_string</code> function.
+  </li>
+  <li>
+    Then we define random samplers for each type of data that will be
+    passed to your function. For a given type <code>'a</code>, a
+    random sampler simply has type <code>unit -> 'a</code>, an
+    imperative function that returns a new value of
+    type <code>'a</code> every time you give it a unit.
+
+    <br/>
+
+    Define a function <code>test</code> with the following signature.
+    <pre>test : ('a -> 'b) -> ('a -> 'b) -> (unit -> 'a) -> ('b -> string) -> report</pre>
+    This function must proceed to exactly 10 tests, calling the
+    sampler each time, and return the list of messages. For each
+    sample, you will <code>exec</code> the user function (the first
+    parameter), then <code>exec</code> the reference function,
+    and <code>compare</code> the <code>result</code>s. It will then
+    return the list containing the 10 comparison <code>message</code>s.
+
+    <br/>
+
+    Your solution must respect the constraint that the first call to
+    the sampler corresponds to the first message of the list, the
+    second to the second, etc. Be cautious about not reversing the
+    list. And since the sampler is an imperative, remember to use
+     <code>let</code> ... <code>in</code> constructs if necessary, to
+    force the order of evaluation.
+  </li>
+</ol>

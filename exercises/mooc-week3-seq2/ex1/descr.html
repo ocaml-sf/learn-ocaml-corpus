@@ -1,0 +1,115 @@
+<p>
+  Abstract syntax trees are a convenient way to represent a syntactic
+  expression in a structured way.
+
+  <br/>
+
+  Let us consider arithmetic expressions formed by the
+  following rules:
+  <ol type="a">
+    <li>
+      an integer is an arithmetic expression ;
+    </li>
+    <li>
+      if <code>lhs</code> and <code>rhs</code> are arithmetic
+      expressions then <code>lhs + rhs</code> is an arithmetic
+      expression;
+    </li>
+    <li>
+      if <code>lhs</code> and <code>rhs</code> are arithmetic
+      expressions then <code>lhs * rhs</code> is an arithmetic
+      expression.
+    </li>
+  </ol>
+  Such an expression can be represented by a value of
+  type <code>exp</code> as defined in the given prelude (as well as
+  the definition of <code>1 + 2 * 3</code> as an example).
+</p>
+
+<ol>
+  <li>
+    Write the expression <code>2 * 2 + 3 * 3</code> in a
+    variable <code>my_example</code>.
+  </li>
+  <li>
+    Write a function <code>eval : exp -> int</code> that computes the
+    value of an arithmetic expression. The evaluation rules are:
+    <ol type="a">
+      <li>
+	If the expression is an integer <code>x</code>, the evaluation
+	is <code>x</code>.
+      </li>
+      <li>
+	If the expression is <code>lhs + rhs</code>
+	and <code>lhs</code> evaluates to <code>x</code> and
+	<code>rhs</code> evaluates to <code>y</code>, then the
+	evaluation is <code>x + y</code>.
+      </li>
+      <li>
+	If the expression is <code>lhs * rhs</code>
+	and <code>lhs</code> evaluates to <code>x</code> and
+	<code>rhs</code> evaluates to <code>y</code>, then the
+	evaluation is <code>x * y</code>.
+      </li>
+    </ol>
+  </li>
+  <li>
+    If an expression is of the form <code>a * b + a * c</code>
+    then <code>a * (b + c)</code> is a factorized equivalent
+    expression.
+
+    <br/>
+
+    Write a function <code>factorize : exp -> exp</code> that
+    implements this transformation on its input exp if it has the
+    shape <code>a * b + a * c</code> or does nothing otherwise.
+  </li>
+  <li>
+    Write the reverse transformation of <code>factorize</code>,
+    <code>expand : exp -> exp</code>, which turns an expression of the
+    shape <code>a * (b + c)</code> into <code>a * b + a *
+    c</code>.
+  </li>
+  <li>
+    Implement a function <code>simplify: exp -> exp</code> which takes
+    an expression <code>e</code> and:
+    <ol type="a">
+      <li>
+	If <code>e</code> is of the shape <code>e * 0</code>
+	or <code>0 * e</code>, returns the expression <code>0</code>.
+      </li>
+      <li>
+	If <code>e</code> is of the shape <code>e * 1</code>
+	or <code>1 * e</code>, returns the expression <code>e</code>.
+      </li>
+      <li>
+	If <code>e</code> is of the shape <code>e + 0</code>
+	or <code>0 + e</code>, returns the expression <code>e</code>.
+      </li>
+    </ol>
+   and does nothing otherwise.
+  </li>
+</ol>
+
+<p>
+  <strong>Remarks:</strong>
+  <ol>
+    <li>
+      The symbols (<code>a</code>, <code>b</code>, <code>c</code>
+      and <code>e</code>) can match any expressions, not just
+      integers.
+    </li>
+    <li>
+      these are a syntactical rewritings, so two expressions are
+      considered equal if and only if they are exactly the same
+      expressions (simply use the <code>=</code> operator to check
+      that).
+    </li>
+    <li>
+      The rewritings have to be done on the first level of the
+      expression only, not recursively and not deeper in the
+      expression. If the toplevel expression does not match the
+      expected pattern, simply return the expression untouched.
+    </li>
+  </ol>
+</p>

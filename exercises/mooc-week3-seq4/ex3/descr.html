@@ -1,0 +1,59 @@
+<p>
+  Concatenating two standard OCaml lists takes a time proportional to
+  the length of the first list. In this exercise, we implement a data
+  structure for lists with a constant time concatenation.
+
+  <br/>
+
+  The preludes gives a type <code>'a clist</code>, which is either a
+  single element of type <code>'a</code>, the concatenation of
+  two <code>'a clist</code> or an empty <code>'a clist</code>.
+
+  <br/>
+
+  This representation of a list is not linear: it is a tree-like
+  datastructure since the <code>CApp</code> constructor contains two
+  values of type <code>'a clist</code>.
+
+  <br/>
+
+  The sequence of elements contained in a value of type <code>'a
+  clist</code> is obtained by a depth-first traversal of the tree. For
+  instance, the example given in the prelude, of type <code>int
+  clist</code> is a valid representation for the
+  sequence <code>[1;2;3;4]</code>.
+</p>
+
+<ol>
+  <li>
+    Write a function <code>to_list : 'a clist -> 'a list</code> which
+    computes the <code>'a list</code> that contains the same elements
+    as the input <code>'a clist</code>, in the same order.
+  </li>
+  <li>
+    Write a function <code>of_list : 'a list -> 'a clist</code> which
+    computes the <code>'a clist</code> that contains the same
+    elements as the input <code>'a list</code>, in the same order.
+  </li>
+  <li>
+    Write a function <code>append : 'a clist -> 'a clist -> 'a clist</code> such
+   that:
+
+    <ol type="a">
+      <li><code>append CEmpty l = append l CEmpty = l</code></li>
+      <li><code>append l1 l2 = CApp (l1, l2)</code> otherwise</li>
+    </ol>
+  </li>
+  <li>
+    Write a function <code>hd : 'a clist -> 'a option</code> that returns
+    <code>Some x</code> where <code>x</code> is the first element of
+    the input <code>'a clist</code>, if it is not empty, and returns
+    <code>None</code> otherwise.
+  </li>
+  <li>
+    Write a function <code>tl : 'a clist -> 'a clist option</code>
+    that returns <code>Some l</code> where <code>l</code> is the input
+    sequence without its first element, if this input sequence is not
+    empty, or returns <code>None</code> otherwise.
+  </li>
+</ol>

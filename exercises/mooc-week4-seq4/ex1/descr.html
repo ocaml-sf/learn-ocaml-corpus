@@ -1,0 +1,38 @@
+<p>
+  The idea of this exercise is to use the principle of the <code>map</code>
+  function to implement algorithms that transform data structures using
+  higher-order functions. 
+</p>
+
+<ol>
+  <li>
+    Using the function <code>map</code> from the module <code>List</code>, write
+    a function <code>wrap : 'a list -> 'a list list</code> that transforms a
+    <code>list</code> of elements <code>'a</code>into a list of singleton lists.
+
+    <br />
+
+    For instance, <code>wrap [1;2;3]</code> is equal to
+    <code>[[1];[2];[3]]</code>
+  </li>
+  <li>
+    Consider the definition of the type <code>tree</code> given in the prelude.
+    It represents binary trees carrying data items, on its internal nodes, and on its
+    leaves.
+
+    <br />
+
+    Write a function <code>tree_map : ('a -> 'b) -> 'a tree ->
+    'b tree</code> such that <code>tree_map f t</code> yields a tree of the same
+    structure as <code>t</code>, but with all its data values <code>x</code>
+    replaced by <code>f x</code>
+
+    <br />
+
+    For example, suppose a function <code>string_of_int : int -> string</code>,
+    that takes an integer and generates the string that represent this
+    integer. Applied to <code>tree_map</code> and a tree of integers
+    (i.e. of type <code>int tree</code>), it would yield a tree of strings
+    (i.e. of type <code>string tree</code>).
+  </li>
+</ol>

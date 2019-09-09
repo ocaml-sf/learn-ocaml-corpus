@@ -1,0 +1,32 @@
+<p>
+  The given prelude defines three types, one for three dimensional
+   points, another for velocity vectors in three dimensions, and
+   another one representing moving objects in space.
+</p>
+
+<ol>
+  <li>
+    Write a function <code>move : point -> dpoint -> point</code> such
+    that <code>move p dp</code> is the point <code>p</code> whose
+    coordinates have been updated according to <code>dp</code>.
+    <br/>
+    (<code>x</code> is now <code>x +. dx</code>, <code>y</code> is now
+    <code>y +. dy</code>, <code>z</code> is now <code>z +. dz</code>.
+  </li>
+  <li>
+    Write a function <code>next : physical_object ->
+    physical_object</code> such that <code>next o</code> is the
+    physical object <code>o</code> at time <code>t + dt</code>.
+    <br/>
+    The position of <code>next o</code> is the position
+    of <code>o</code> moved according to its velocity vector.
+  </li>
+  <li>
+    Suppose that these objects are spheres whose radius
+    is <code>1.0</code>.
+    <br/>
+    Write a function <code>will_collide_soon : physical_object ->
+    physical_object -> bool</code> that tells if at the next instant,
+    the two spheres will intersect.
+  </li>
+</ol>

@@ -1,0 +1,33 @@
+<p>
+  In this exercise, we implement the classic functions over lists.
+</p>
+
+<ol>
+  <li>
+    Write a function <code>mem : int -> int list -> bool</code> such that
+    <code>mem x l</code> is true if and only if <code>x</code> occurs in
+    <code>l</code>.
+  </li>
+  <li>
+    Write a function <code>append : int list -> int list -> int list</code>
+    such that <code>append l1 l2</code> is the concatenation of <code>l1</code>
+    and <code>l2</code>.
+  </li>
+  <li>
+    Write a function
+    <code>combine : int list -> int list -> (int * int) list</code>
+    such that <code>combine l1 l2</code> is the list of pairs obtained by joining
+    the elements of <code>l1</code> and <code>l2</code>.
+    This function assumes that <code>l1</code> and <code>l2</code>
+    have the same length. For instance,
+    <code>combine [1;2] [3;4] = [(1, 3); (2, 4)]</code>.
+  </li>
+  <li>
+    Write a function
+    <code>assoc : (string * int) list -> string -> int option</code> such
+    that <code>assoc l k = Some x</code>
+    if <code>(k, x)</code> is the first pair of <code>l</code> whose first
+    component is <code>k</code>.
+    If no such pair exists, <code>assoc l k = None</code>.
+  </li>
+</ol>

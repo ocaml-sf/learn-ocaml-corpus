@@ -1,0 +1,96 @@
+<p>
+   The data structure called <em>trie</em> is very convenient to
+   represent a dictionary whose keys are strings. It is
+   space-efficient way while providing a very fast lookup function.
+   <br/>
+   See <a href="https://en.wikipedia.org/wiki/Trie">the page on
+   WikiPedia</a>.
+   <br/>
+   In this exercise, we will implement such a data structure, assuming
+   that we want to associate integers to the strings of the
+   dictionary.
+   <br/>
+   Let us define a trie using two mutually defined types (given in the
+   prelude):
+   <ul>
+     <li>
+       <code>trie</code> which represents a trie, that is a tree whose
+       root may contain an integer and whose children are indexed by
+       characters ;
+     </li>
+     <li>
+       <code>char_to_children</code> which implements the associative
+       data structure whose keys are characters and whose values are
+       trie (childrens).
+     </li>
+   </ul>
+   As a trade-off between speed and memory consumption, we choose an
+   associative list to represent the association between characters
+   and children.
+   <br/>
+   The prelude also gives examples of empty trie and of another one
+   that contains the following pairs (key, value):
+   <br/>
+   <code>[("A", 15); ("to", 7); ("tea", 3);("ted", 4); ("ten", 12);
+    ("i", 11); ("in", 5); ("inn", 9)]</code>.
+</p>
+
+<ol>
+  <li>
+    Write a function <code>children_from_char : char_to_children ->
+      char -> trie option</code> such that
+    <ol>
+      <li>
+        <code>children_from_char m c = Some t</code> if <code>(c,
+          t)</code> is the first pair in
+        <code>m</code> with <code>c</code> as a first component ;
+      </li>
+      <li>
+        <code>children_from_char m c = None</code> if no such pair
+        exists in <code>m</code>.
+      </li>
+    </ol>
+  </li>
+  <li>
+   Write a function <code>update_children : char_to_children -> char
+   -> trie -> char_to_children</code> such that
+   <ol>
+     <li>
+       <code>children_from_char (update_children m c t) c = Some t</code> ;
+     </li>
+     <li>
+       <code>children_from_char (update_children m c t) c' =
+       children_from_char m c'</code> for <code>c &lt;&gt; c'</code>;
+     </li>
+     <li>
+       If <code>children_from_char m c = Some t</code> then
+       <code>List.length (update_children m c t') = List.length m</code>.
+     </li>
+   </ol>
+  </li>
+  <li>
+    Write a function <code>lookup : trie -> string -> int
+    option</code> such that <code>lookup trie w = Some i</code>
+    if <code>i</code> is the value of the key <code>w</code>
+    in <code>trie</code> and <code>lookup trie w = None</code>
+    if <code>w</code> is not a key of <code>trie</code>.
+    <br/>
+    To look for a key in a trie, iterate over the characters of the
+    key from left to right. Given the current character <code>c</code>
+    and the current node of the trie <code>n</code>, look for the
+    children <code>n</code> for character <code>c</code>. If such a
+    children exists, continue with that trie and the remainder of the
+    key. If no such children exists, the key is not in the trie.
+    <nr/>
+    When the characters of the key are entirely consumed, look at the
+    root of the current trie. If there is an integer, this is the
+    value you are looking for. If there is no integer, the key not in
+    the trie.
+  </li>
+  <li>
+   Write a function <code>insert : trie -> string -> int ->
+   trie</code> such that <code>lookup (insert trie w k) w = Some
+   k</code> and <code>lookup (insert trie w k) w' = lookup trie
+   w'</code> for <code>w &lt;&gt; w'</code>.
+  </li>
+</ol>

@@ -1,0 +1,80 @@
+<p>
+  In this exercise, we will write a small program that computes some operations
+  on integers. We will use a small datatype <code>operation</code> that describes
+  all the operations to perform to compute the result.
+  For example, suppose we want to do the following computation:
+  <br />
+  <code>mul (add 0 1) (mul 3 4)</code>
+  <br />
+  We can describe it as:
+  <code>
+    Op ("mul",
+      Op ("add", Value 0, Value 1),
+      Op ("mul", Value 3, Value 4))
+  </code>
+  <br />
+
+  The <code>Op</code> constructor takes as a first argument
+  a <code>string</code>, which is the name of the function that is stored in
+  an <code>environment</code>. We suppose there exists a
+  variable <code>initial_env</code> that contains some predefined functions.
+</p>
+
+<ol>
+  <li>
+    First of all, we need a way to find a function in an environment of
+    type <code>env</code>, which is basically a list of tuples. Each of these tuples
+    contains a <code>string</code>, which is the name of the function, and a
+    value of type <code>int -> int -> int</code>, which is basically a function
+    that takes two arguments of type <code>int</code> and returns
+    an <code>int</code> as a result.  <br />
+
+    Write a function <code>lookup_function : string -> env -> (int -> int ->
+    int)</code> that returns the function associated to a name in an
+    environment. If there is no function with the name given, you can
+    return <code>invalid_arg "lookup_function"</code>.
+  </li>
+  <li>
+    Another useful feature would be to add functions to a given
+    environment. Write the function <code>add_function : string -> (int
+    -> int -> int) -> env -> env</code> that takes an environment <code>e</code>, a
+    name for the function <code>n</code> and a function <code>f</code>, and
+    returns a new environment that contains the function <code>f</code> that is
+    associated to the name <code>n</code>.
+    <br /><br />
+    What you can notice now is that unless you put explicit annotations,
+    those two previous functions should be polymorphic and work on any list of
+    couples. Actually, <code>lookup_function</code> could have been written
+    as <code>List.assoc</code>.
+  </li>
+  <li>
+   Create a variable <code>my_env: env</code> that is the initial environment
+   plus a function associated to the name <code>"min"</code> that takes two
+   numbers and returns the lowest. You cannot use the already
+   defined <code>Pervasives.min</code> function, nor any <code>let
+   .. in</code>. Take advantage of lambda expressions!
+  </li>
+  <li>
+    Now that we have correctly defined the operations to use the environment, we
+    can write the function that computes an operation. Write a
+    function <code>compute: env -> operation -> int</code> that takes an
+    environment and an operation description, and computes this
+    operation.
+    The result is either:
+    <ul>
+      <li>Directly the value.</li>
+      <li>An operation that takes two computed values and a function from the
+      environment.</li>
+    </ul>
+  </li>
+  <li>
+    Let's be a bit more efficient and use the <em>over-application</em>: suppose
+    a function <code>id: 'a -> 'a</code>, then <code>id id</code> will also have
+    type <code>'a -> 'a</code>, since the <code>'a</code> is instantiated
+    with <code>'a -> 'a </code>. Using that principle, we can
+    apply <code>id</code> to itself infinitely since it will always return a
+    function. Write a function <code>compute_eff : env -> operation ->
+    int</code> that takes an environment and an operation, and computes
+    it. However, you cannot use <code>let</code> inside the function!
+  </li>
+</ol>
