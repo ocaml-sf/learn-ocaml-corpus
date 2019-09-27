@@ -1,0 +1,22 @@
+Question 1
+  Found [build_alphabet] with compatible type.
+  Success 1: [build_alphabet] seems correct.
+Question 2
+  Found [build_alphabet] with compatible type.
+  Found [build_tree] with compatible type.
+  Success 1: [build_tree] seems correct.
+Question 3
+  Found [build_encoding_dictionary] with compatible type.
+  Success 1: [build_encoding_dictionary] seems correct.
+Question 4
+  Found [find] with compatible type.
+  Failure: [find] is incorrect.
+    The following expression:
+    
+     | find "" 0 Leaf 'a'
+    produces the following result: [('a', 1)] This is invalid. Producing the
+    following result is valid: [('a', 0)]
+Question 5
+  Failure: Cannot find  [write]
+Question 6
+  Failure: Cannot find  [compress]
