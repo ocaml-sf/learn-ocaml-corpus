@@ -1,0 +1,21 @@
+Question 1
+  Found [build_alphabet] with compatible type.
+  Failure: Not yet implemented.
+Question 2
+  Found [build_alphabet] with compatible type.
+  Found [build_tree] with compatible type.
+  Failure: Not yet implemented.
+Question 3
+  Found [build_encoding_dictionary] with compatible type.
+  Failure: Not yet implemented.
+Question 4
+  Found [find] with compatible type.
+  Failure: Not yet implemented.
+Question 5
+  Found [write] with compatible type.
+  Found [read] with compatible type.
+  Failure: Not yet implemented.
+Question 6
+  Found [compress] with compatible type.
+  Found [decompress] with compatible type.
+  Failure: Not yet implemented.

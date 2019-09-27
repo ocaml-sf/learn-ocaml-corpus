@@ -1,0 +1,19 @@
+Question 1
+  Found [build_alphabet] with compatible type.
+  Failure: [build_alphabet] is incorrect.
+    The following expression:
+    
+     | entries (build_alphabet "a")
+    raises the following exception: [Not_found] This is invalid. Producing
+    the following result is valid: [[('a', 1)]]
+Question 2
+  Found [build_alphabet] with compatible type.
+  Failure: Cannot find  [build_tree]
+Question 3
+  Failure: Cannot find  [build_encoding_dictionary]
+Question 4
+  Failure: Cannot find  [find]
+Question 5
+  Failure: Cannot find  [write]
+Question 6
+  Failure: Cannot find  [compress]

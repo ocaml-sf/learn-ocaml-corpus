@@ -1,0 +1,25 @@
+Question 1
+  Found [build_alphabet] with compatible type.
+  Success 1: [build_alphabet] seems correct.
+Question 2
+  Found [build_alphabet] with compatible type.
+  Found [build_tree] with compatible type.
+  Failure: [build_tree] is incorrect.
+    The following expression:
+    
+     | "aaaabbbccd" |> build_alphabet |> build_tree
+    yields the following tree, which is suboptimal:
+    
+     | Node (Node (Leaf 'd', Leaf 'c'), Node (Leaf 'b', Leaf 'a'))
+    According to this tree, the input text "aaaabbbccd" is encoded as the
+    binary string 11111111101010010100, whose length is 20 bits, whereas, by
+    using another tree, this input text can be encoded as a binary string of
+    only 19 bits.
+Question 3
+  Failure: Cannot find  [build_encoding_dictionary]
+Question 4
+  Failure: Cannot find  [find]
+Question 5
+  Failure: Cannot find  [write]
+Question 6
+  Failure: Cannot find  [compress]
