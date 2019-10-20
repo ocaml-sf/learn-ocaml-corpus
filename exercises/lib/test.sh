@@ -12,6 +12,7 @@ positive_test() {
     echo "[FAIL] $f is rejected!" ;
   fi
 }
+export -f positive_test
 
 negative_test() {
   local f="$1"
@@ -27,6 +28,12 @@ export -f negative_test
 # Make sure that the proposed solution is (quickly) accepted.
 echo "Grading the proposed solution..."
 time -p positive_test solution.ml
+
+# Allow other correct solutions to be proposed.
+if [ -d right ] ; then
+  echo "Grading known correct solutions..."
+  time -p (ls right/*.ml | parallel --no-notice positive_test) ;
+fi
 
 # Make sure that a number of known incorrect solutions are rejected.
 echo "Grading known incorrect solutions..."
