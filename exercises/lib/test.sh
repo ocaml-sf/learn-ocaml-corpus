@@ -6,7 +6,7 @@ IFS=$'\n\t'
 
 positive_test() {
   local f="$1"
-  if $LEARN grade --dump-reports=${f%.ml} >${f%.ml}.log 2>&1 ; then
+  if $LEARN grade --timeout=5 --dump-reports=${f%.ml} >${f%.ml}.log 2>&1 ; then
     echo " [OK]  $f is correctly accepted." ;
   else
     echo "[FAIL] $f is rejected!" ;
@@ -16,7 +16,7 @@ positive_test() {
 negative_test() {
   local f="$1"
   rm -f ${f%.ml}.report.txt ${f%.ml}.report.html ;
-  if $LEARN grade --grade-student=$f --dump-reports=${f%.ml} >${f%.ml}.log 2>&1 ; then
+  if $LEARN grade --timeout=5 --grade-student=$f --dump-reports=${f%.ml} >${f%.ml}.log 2>&1 ; then
     echo "[FAIL] $f is incorrectly accepted!" ;
   else
     echo " [OK]  $f is correctly rejected." ;
