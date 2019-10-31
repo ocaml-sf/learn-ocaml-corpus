@@ -6,7 +6,7 @@ IFS=$'\n\t'
 
 positive_test() {
   local f="$1"
-  if $LEARN grade --timeout=5 --dump-reports=${f%.ml} >${f%.ml}.log 2>&1 ; then
+  if $LEARN grade --timeout=5 --grade-student=$f --dump-reports=${f%.ml} >${f%.ml}.log 2>&1 ; then
     echo " [OK]  $f is correctly accepted." ;
   else
     echo "[FAIL] $f is rejected!" ;
