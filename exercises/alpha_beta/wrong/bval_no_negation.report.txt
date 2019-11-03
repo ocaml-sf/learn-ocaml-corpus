@@ -1,0 +1,45 @@
+Question 1
+  Found [size] with compatible type.
+  Success 1: [size] seems correct.
+Question 2
+  Found [height] with compatible type.
+  Success 1: [height] seems correct.
+Question 3
+  Found [eval] with compatible type.
+  Success 1: [eval] seems correct.
+  Found [eval] with compatible type.
+  Success 1: [eval] appears to be symmetric.
+Question 4
+  Found [nval] with compatible type.
+  Success 1: [nval] seems correct.
+  Found [eval] with compatible type.
+  Found [nval] with compatible type.
+  Success 1: [nval] appears to respect its specification.
+Question 5
+  Found [ntval] with compatible type.
+  Success 1: [ntval] seems correct.
+Question 6
+  Found [bval] with compatible type.
+  Found [ntval] with compatible type.
+  Failure: [bval bottom top] does not respect its specification. This
+           expression:
+    
+     | let t = nonleaf [leaf (-1)] in
+     | bval bottom top t
+    should be equivalent to the following expression:
+    
+     | let t = nonleaf [leaf (-1)] in
+     | ntval t
+    Yet, the former expression produces the following result: [-1] whereas
+    the latter expression produces the following result: [1]
+  Found [bval] with compatible type.
+  Failure: [bval] is incorrect.
+    The following expression:
+    
+     | bval (-1) 0 (nonleaf [leaf (-1)])
+    produces the following result: [-1] This is invalid. Producing the
+    following result is valid: [1]
+Question 7
+  Failure: Cannot find  [assured_win]
+Question 8
+  Failure: Cannot find  [bmove]
