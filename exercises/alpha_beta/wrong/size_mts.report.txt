@@ -1,0 +1,25 @@
+Question 1
+  Found [size] with compatible type.
+  Failure: [size] is incorrect.
+    The following expression:
+    
+     | size (nonleaf [leaf (-1)])
+    produces the following result: [3] This is invalid. Producing the
+    following result is valid: [2]
+Question 2
+  Failure: Cannot find  [height]
+Question 3
+  Failure: Cannot find  [eval]
+  Failure: Cannot find  [eval]
+Question 4
+  Failure: Cannot find  [nval]
+  Failure: Cannot find  [eval]
+Question 5
+  Failure: Cannot find  [ntval]
+Question 6
+  Failure: Cannot find  [bval]
+  Failure: Cannot find  [bval]
+Question 7
+  Failure: Cannot find  [assured_win]
+Question 8
+  Failure: Cannot find  [bmove]

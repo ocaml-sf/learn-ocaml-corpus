@@ -1,0 +1,40 @@
+Question 1
+  Found [size] with compatible type.
+  Success 1: [size] seems correct.
+Question 2
+  Found [height] with compatible type.
+  Success 1: [height] seems correct.
+Question 3
+  Found [eval] with compatible type.
+  Failure: [eval] is incorrect.
+    The following expression:
+    
+     | eval Even (nonleaf [nonleaf [leaf (-1)]])
+    produces the following result: [-max_int] This is invalid. Producing the
+    following result is valid: [-1]
+  Found [eval] with compatible type.
+  Failure: [eval] is not symmetric. This expression:
+    
+     | let sense = Even in
+     | let t = nonleaf [leaf (-1)] in
+     | eval (opposite sense) t
+    should be equivalent to the following expression:
+    
+     | let sense = Even in
+     | let t = nonleaf [leaf (-1)] in
+     | - (eval sense t)
+    Yet, the former expression produces the following result: [-max_int]
+    whereas the latter expression produces the following result: [-1]
+Question 4
+  Failure: Cannot find  [nval]
+  Found [eval] with compatible type.
+  Failure: Cannot find  [nval]
+Question 5
+  Failure: Cannot find  [ntval]
+Question 6
+  Failure: Cannot find  [bval]
+  Failure: Cannot find  [bval]
+Question 7
+  Failure: Cannot find  [assured_win]
+Question 8
+  Failure: Cannot find  [bmove]
