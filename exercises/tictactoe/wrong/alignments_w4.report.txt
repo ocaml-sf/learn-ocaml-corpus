@@ -1,0 +1,64 @@
+Question 1
+  Found [decode] with compatible type.
+  Success 1: [decode] seems correct.
+Question 2
+  Found [mask] with compatible type.
+  Success 1: [mask] seems correct.
+Question 3
+  Found [read] with compatible type.
+  Success 1: [read] seems correct.
+Question 4
+  Found [update] with compatible type.
+  Success 1: [update] seems correct.
+Question 5
+  Found [east] with compatible type.
+  Success 1: [east] seems correct.
+  Found [northeast] with compatible type.
+  Success 1: [northeast] seems correct.
+  Found [southeast] with compatible type.
+  Success 1: [southeast] seems correct.
+Question 6
+  Found [alignments] with compatible type.
+  Failure: [alignments] is incorrect.
+    The following expression:
+    
+     | alignments 4 4 2 north (bitmap 4 4 "
+     |   00000
+     |   11110
+     |   11110
+     |   11110
+     |   11110
+     |   ")
+    produces the following result:
+     | (bitmap 4 4 "
+     |   00000
+     |   11110
+     |   11110
+     |   11110
+     |   11110
+     |   ")This is invalid. Producing the following result is valid:
+     | (bitmap 4 4 "
+     |   00000
+     |   00000
+     |   11110
+     |   11110
+     |   11110
+     |   ")
+Question 7
+  Found [has_alignment] with compatible type.
+  Failure: [has_alignment] is incorrect.
+    The following expression:
+    
+     | has_alignment 4 4 3 (bitmap 4 4 "
+     |   00000
+     |   11000
+     |   10110
+     |   01000
+     |   01010
+     |   ")
+    produces the following result: [true] This is invalid. Producing the
+    following result is valid: [false]
+Question 8
+  Found [tree] with compatible type.
+  Found [initial] with compatible type.
+  Success 1: [tree] and [initial] seem correct.

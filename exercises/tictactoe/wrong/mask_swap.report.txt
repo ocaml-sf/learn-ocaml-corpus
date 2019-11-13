@@ -1,0 +1,36 @@
+Question 1
+  Found [decode] with compatible type.
+  Success 1: [decode] seems correct.
+Question 2
+  Found [mask] with compatible type.
+  Failure: [mask] is incorrect.
+    The following expression:
+    
+     | mask 3 3 0 1
+    produces the following result:
+     | (bitmap 3 3 "
+     |   0000
+     |   0000
+     |   0000
+     |   0100
+     |   ")This is invalid. Producing the following result is valid:
+     | (bitmap 3 3 "
+     |   0000
+     |   0000
+     |   1000
+     |   0000
+     |   ")
+Question 3
+  Failure: Cannot find  [read]
+Question 4
+  Failure: Cannot find  [update]
+Question 5
+  Failure: Cannot find  [east]
+  Failure: Cannot find  [northeast]
+  Failure: Cannot find  [southeast]
+Question 6
+  Failure: Cannot find  [alignments]
+Question 7
+  Failure: Cannot find  [has_alignment]
+Question 8
+  Failure: Cannot find  [tree]

@@ -1,0 +1,30 @@
+Question 1
+  Found [decode] with compatible type.
+  Success 1: [decode] seems correct.
+Question 2
+  Found [mask] with compatible type.
+  Success 1: [mask] seems correct.
+Question 3
+  Found [read] with compatible type.
+  Success 1: [read] seems correct.
+Question 4
+  Found [update] with compatible type.
+  Success 1: [update] seems correct.
+Question 5
+  Found [east] with compatible type.
+  Failure: [east] is incorrect.
+    The following expression:
+    
+     | east 3 3
+    produces the following result: [3] This is invalid. Producing the
+    following result is valid: [4]
+  Found [northeast] with compatible type.
+  Success 1: [northeast] seems correct.
+  Found [southeast] with compatible type.
+  Success 1: [southeast] seems correct.
+Question 6
+  Failure: Cannot find  [alignments]
+Question 7
+  Failure: Cannot find  [has_alignment]
+Question 8
+  Failure: Cannot find  [tree]
