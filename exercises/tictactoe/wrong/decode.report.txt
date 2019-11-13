@@ -1,0 +1,24 @@
+Question 1
+  Found [decode] with compatible type.
+  Failure: [decode] is incorrect.
+    The following expression:
+    
+     | decode 3 3 3
+    produces the following result: [(1, 0)] This is invalid. Producing the
+    following result is valid: [(0, 3)]
+Question 2
+  Failure: Cannot find  [mask]
+Question 3
+  Failure: Cannot find  [read]
+Question 4
+  Failure: Cannot find  [update]
+Question 5
+  Failure: Cannot find  [east]
+  Failure: Cannot find  [northeast]
+  Failure: Cannot find  [southeast]
+Question 6
+  Failure: Cannot find  [alignments]
+Question 7
+  Failure: Cannot find  [has_alignment]
+Question 8
+  Failure: Cannot find  [tree]

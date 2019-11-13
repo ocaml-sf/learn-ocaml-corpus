@@ -1,0 +1,39 @@
+Question 1
+  Found [decode] with compatible type.
+  Success 1: [decode] seems correct.
+Question 2
+  Found [mask] with compatible type.
+  Success 1: [mask] seems correct.
+Question 3
+  Found [read] with compatible type.
+  Success 1: [read] seems correct.
+Question 4
+  Found [update] with compatible type.
+  Success 1: [update] seems correct.
+Question 5
+  Found [east] with compatible type.
+  Success 1: [east] seems correct.
+  Found [northeast] with compatible type.
+  Success 1: [northeast] seems correct.
+  Found [southeast] with compatible type.
+  Success 1: [southeast] seems correct.
+Question 6
+  Found [alignments] with compatible type.
+  Success 1: [alignments] seems correct.
+Question 7
+  Found [has_alignment] with compatible type.
+  Success 1: [has_alignment] seems correct.
+Question 8
+  Found [tree] with compatible type.
+  Found [initial] with compatible type.
+  Failure: Something is wrong. The following expression produces an incorrect
+           subtree:
+    
+     | let w = 1 in
+     | let h = 1 in
+     | let k = 1 in
+     | let t = tree (initial w h k) in
+     | let path = [] in
+     | descendant path t
+    A node with 1 children is expected, yet a node with more children is
+    found.
