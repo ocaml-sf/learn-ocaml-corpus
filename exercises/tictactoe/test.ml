@@ -1257,49 +1257,6 @@ let rec bseqlength n xs =
 
 (* -------------------------------------------------------------------------- *)
 
-(* For some reason, the module [Queue] is unavailable. Roll our own. *)
-
-module Q = struct
-
-  (* We dequeue from the front and enqueue onto the back. *)
-
-  (* So, the logical content is [q.front ++ rev q.back]. *)
-
-  (* If the front is empty, then the back must be empty as well. *)
-
-  type 'a queue =
-    { mutable front: 'a list; mutable back: 'a list }
-
-  let swing q =
-    if q.front = [] then begin
-      q.front <- List.rev q.back;
-      q.back <- []
-    end
-
-  let create() =
-    { front = []; back = [] }
-
-  let is_empty q =
-    swing q;
-    q.front = []
-
-  let add x q =
-    q.back <- x :: q.back
-
-  let take q =
-    swing q;
-    match q.front with
-    | [] ->
-        (* The queue must be empty. *)
-        raise Not_found
-    | x :: front ->
-        q.front <- front;
-        x
-
-end
-
-(* -------------------------------------------------------------------------- *)
-
 (* Comparing two game trees, breadth first. *)
 
 (* The fact that the reference tree is finite guarantees termination. *)
@@ -1316,6 +1273,8 @@ type path = int list
 exception Fail of path * string
 
 exception Length of path * exn
+
+module Q = Queue
 
 let compare (reference : tree) (candidate : tree) : unit =
   let q = Q.create() in
