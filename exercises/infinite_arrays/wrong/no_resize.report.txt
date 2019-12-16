@@ -1,0 +1,7 @@
+Failure: Something is wrong. Executing the following instruction sequence:
+  
+   | let a = make (-1) in
+   | let v = get a 1965 in
+   | if v <> -1 then raise Inconsistency;
+   | ()
+  raises the following exception: [(Invalid_argument "index out of bounds")]
