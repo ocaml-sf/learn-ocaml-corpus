@@ -42,7 +42,7 @@ computations.
 
 A computation in the nondeterminism monad can produce zero, one, or
 more results. Indeed, a computation that fails produces zero
-results. A computation that succeeds normally produces one result.
+result. A computation that succeeds normally produces one result.
 A computation that uses `choose` can produce more than one result.
 It is in fact possible to construct computations that produce an
 infinite number of results!
