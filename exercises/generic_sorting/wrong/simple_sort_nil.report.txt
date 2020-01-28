@@ -1,0 +1,28 @@
+Question 1
+  Failure: Cannot find  [pigeonhole_sort]
+Question 2
+  Failure: Cannot find  [cmp]
+Question 3
+  Failure: Cannot find  [sort]
+Question 4
+  Found [simple_sort] with compatible type.
+  Failure: [simple_sort] is incorrect.
+    The following expression:
+    
+     | simple_sort (ONat (4)) [0]
+    produces the following result: [[]] This is invalid. Producing the
+    following result is valid: [[0]]
+Question 5
+  Found [simple_sort] with compatible type.
+  Failure: Cannot find  [bool]
+Question 6
+  Found [simple_sort] with compatible type.
+  Failure: Cannot find  [list]
+Question 7
+  Found [simple_sort] with compatible type.
+  Failure: Cannot find  [string]
+Question 8
+  Found [simple_sort] with compatible type.
+  Failure: Cannot find  [int32]
+Question 9
+  Failure: Cannot find  [discr]

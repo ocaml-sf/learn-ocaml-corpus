@@ -1,0 +1,45 @@
+Question 1
+  Found [pigeonhole_sort] with compatible type.
+  Success 1: [pigeonhole_sort] seems correct.
+Question 2
+  Found [cmp] with compatible type.
+  Found [cmp] with compatible type.
+  Found [cmp] with compatible type.
+  Found [cmp] with compatible type.
+  Found [cmp] with compatible type.
+  Success 1: [cmp] seems correct.
+Question 3
+  Found [sort] with compatible type.
+  Found [sort] with compatible type.
+  Found [sort] with compatible type.
+  Found [sort] with compatible type.
+  Found [sort] with compatible type.
+  Success 1: [sort] seems correct.
+Question 4
+  Found [simple_sort] with compatible type.
+  Success 1: [simple_sort] seems correct.
+Question 5
+  Found [simple_sort] with compatible type.
+  Found [bool] with compatible type.
+  Success 1: [bool] seems correct.
+Question 6
+  Found [simple_sort] with compatible type.
+  Found [list] with compatible type.
+  Success 1: [list] seems correct.
+Question 7
+  Found [simple_sort] with compatible type.
+  Found [string] with compatible type.
+  Success 1: [string] seems correct.
+Question 8
+  Found [simple_sort] with compatible type.
+  Found [int32] with compatible type.
+  Success 1: [int32] seems correct.
+Question 9
+  Found [discr] with compatible type.
+  Found [discr] with compatible type.
+  Failure: [discr] is incorrect.
+    The following expression:
+    
+     | discr (ONat (4)) [(1, true); (2, true)]
+    produces the following result: [[[]; [true]; [true]; []]] This is
+    invalid. Producing the following result is valid: [[[true]; [true]]]

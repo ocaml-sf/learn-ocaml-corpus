@@ -1,0 +1,28 @@
+Question 1
+  Found [pigeonhole_sort] with compatible type.
+  Success 1: [pigeonhole_sort] seems correct.
+Question 2
+  Found [cmp] with compatible type.
+  Found [cmp] with compatible type.
+  Found [cmp] with compatible type.
+  Found [cmp] with compatible type.
+  Failure: [cmp] is incorrect.
+    The following expression:
+    
+     | cmp (OProd (ONat (2), ONat (2))) (1, 0) (0, 1)
+    produces the following result: [Lt] This is invalid. Producing the
+    following result is valid: [Gt]
+Question 3
+  Failure: Cannot find  [sort]
+Question 4
+  Failure: Cannot find  [simple_sort]
+Question 5
+  Failure: Cannot find  [simple_sort]
+Question 6
+  Failure: Cannot find  [simple_sort]
+Question 7
+  Failure: Cannot find  [simple_sort]
+Question 8
+  Failure: Cannot find  [simple_sort]
+Question 9
+  Failure: Cannot find  [discr]
