@@ -134,7 +134,7 @@ computations.
   and by `m2`.
 
 The constructor function `delay` is used to delay the construction
-of a computation until the moment where this computation must be
+of a computation until the moment when this computation must be
 executed. Indeed, a difficulty that arises in a strict programming
 language, such as OCaml, is that the arguments passed to constructor
 functions, such as `return` and `choose`, are evaluated immediately,
