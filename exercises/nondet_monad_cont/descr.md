@@ -32,8 +32,9 @@ following key elements:
 
 * A single observation function, `sols: 'a m -> 'a Seq.t`, which
   converts a computation to a sequence of results, thereby allowing
-  the user to execute this computation and observe its results. The
-  name `sols` stands for `solutions`.
+  the user to execute this computation and observe its results.
+  (More information on the module `Seq` is given further on.)
+  The name `sols` stands for `solutions`.
 
 A monad can be thought of as a **mini-programming language** where
 computations are first-class citizens: we have a type of
@@ -87,7 +88,7 @@ of type `'a`.
 
 To execute a computation `m`, one must first convert it to a
 sequence of type `'a Seq.t`, whose elements can then be demanded,
-one by one. (More information on the module `Seq` is given below.)
+one by one.
 This conversion is performed by the observation function `sols`.
 
 The call `sols m` typically terminates in constant time; the actual
