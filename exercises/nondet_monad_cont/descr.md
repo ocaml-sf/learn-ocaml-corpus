@@ -49,7 +49,7 @@ It is in fact possible to construct computations that produce an
 infinite number of results!
 
 Thus, a useful way to think of a computation is as **a sequence of
-results**, that is, a sequence of results.
+results**.
 
 Because of this remark, one might be tempted to define the type `'a
 m` as a synonym for `'a Seq.t`, the type of sequences of values of
