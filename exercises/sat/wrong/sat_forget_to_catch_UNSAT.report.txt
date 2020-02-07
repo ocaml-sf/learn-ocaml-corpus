@@ -1,0 +1,32 @@
+Question 1
+  Found [const] with compatible type.
+  Found [conn] with compatible type.
+  Found [neg] with compatible type.
+  Found [var] with compatible type.
+  Success 1: The smart constructors seem correct.
+Question 2
+  Found [eval] with compatible type.
+  Success 1: [eval] seems correct.
+Question 3
+  Found [satisfiable] with compatible type.
+  Success 1: [satisfiable] seems correct.
+  Found [valid] with compatible type.
+  Success 1: [valid] seems correct.
+Question 4
+  Success 1: [CNF] seems correct.
+Question 5
+  Found [intersect] with compatible type.
+  Success 1: [intersect] seems correct.
+Question 6
+  Success 1: [Trail] seems correct.
+Question 7
+  Success 1: [VarSet] seems correct.
+Question 8
+  Failure: Something is wrong. Consider this formula (of 0 variable):
+    
+     | FConst (false)
+    This formula can also be displayed as follows:
+    
+     | false
+    While attempting to solve this formula, the following exception was
+    raised: [Code.UNSAT]
