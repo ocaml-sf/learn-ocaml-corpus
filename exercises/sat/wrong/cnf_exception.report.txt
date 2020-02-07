@@ -1,0 +1,23 @@
+Question 1
+  Found [const] with compatible type.
+  Found [conn] with compatible type.
+  Found [neg] with compatible type.
+  Found [var] with compatible type.
+  Success 1: The smart constructors seem correct.
+Question 2
+  Found [eval] with compatible type.
+  Success 1: [eval] seems correct.
+Question 3
+  Found [satisfiable] with compatible type.
+  Success 1: [satisfiable] seems correct.
+  Found [valid] with compatible type.
+  Success 1: [valid] seems correct.
+Question 4
+  Failure: Something is wrong. Consider this formula:
+    
+     | FConn (false, FVar (0), FConn (true, FVar (0), FVar (0)))
+    This formula can also be displayed as follows:
+    
+     | x0 | (x0 & x0)
+    While attempting to convert this formula to conjunctive normal form, the
+    following exception was raised: [(Invalid_argument Gotcha!)]

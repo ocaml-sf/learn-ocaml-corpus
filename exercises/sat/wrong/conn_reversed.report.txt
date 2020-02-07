@@ -1,0 +1,10 @@
+Question 1
+  Found [const] with compatible type.
+  Found [conn] with compatible type.
+  Found [neg] with compatible type.
+  Found [var] with compatible type.
+  Failure: Something is wrong. The following expression:
+    
+     | conn false (const false) (const true)
+    produces the following result: [FConst (false)] This is invalid.
+    Producing the following result is valid: [FConst (true)]

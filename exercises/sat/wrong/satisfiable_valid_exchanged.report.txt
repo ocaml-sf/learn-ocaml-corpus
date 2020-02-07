@@ -1,0 +1,24 @@
+Question 1
+  Found [const] with compatible type.
+  Found [conn] with compatible type.
+  Found [neg] with compatible type.
+  Found [var] with compatible type.
+  Success 1: The smart constructors seem correct.
+Question 2
+  Found [eval] with compatible type.
+  Success 1: [eval] seems correct.
+Question 3
+  Found [satisfiable] with compatible type.
+  Failure: [satisfiable] is incorrect.
+    The following expression:
+    
+     | satisfiable 1 (FVar (0))
+    produces the following result: [false] This is invalid. Producing the
+    following result is valid: [true]
+  Found [valid] with compatible type.
+  Failure: [valid] is incorrect.
+    The following expression:
+    
+     | valid 1 (FVar (0))
+    produces the following result: [true] This is invalid. Producing the
+    following result is valid: [false]
