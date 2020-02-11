@@ -528,3 +528,7 @@ in the transformed program.
 Here, the process gives rise to three generalized algebraic data types
 and three `apply` functions, because we defunctionalize computations,
 success continuations, and failure continuations independently.
+
+One potential advantage of the defunctionalized version is the fact that it
+can be implemented in a programming language that does not support first-class
+functions, such as C.
