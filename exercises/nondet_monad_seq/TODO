@@ -1,0 +1,19 @@
+-- about this exercise ---------------------------------------------------------
+
+* Add a link to the exercise where the nondeterminism monad is used.
+
+* Should `fix` be part of the constructors?
+  How do we define `nats`?
+
+* Should also test computations that are expected to produce an infinite
+  number of results. E.g., grade `nats`.
+
+* The error messages that are produced when the code is not lazy (too eager)
+  are admittedly cryptic. Could we produce a better explanation?
+
+-- ocaml questions -------------------------------------------------------------
+
+-- learn-ocaml questions -------------------------------------------------------
+
+* Some tests that succeed when run in batch mode
+  fail with `Stack_overflow` when run in Firefox.
