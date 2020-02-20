@@ -1,0 +1,8 @@
+Question 1
+  Found [elements] with compatible type.
+  Failure: [elements] is incorrect.
+    The following expression:
+    
+     | elements (Fork (Leaf (false), Leaf (true)))
+    produces the following result: [[true; false]] This is invalid. Producing
+    the following result is valid: [[false; true]]

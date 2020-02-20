@@ -1,0 +1,20 @@
+Question 1
+  Found [elements] with compatible type.
+  Success 1: [elements] seems correct.
+Question 2
+  Found [depths] with compatible type.
+  Success 1: [depths] seems correct.
+Question 3
+  Found [spectre] with compatible type.
+  Success 1: [spectre] seems correct.
+Question 4
+  Found [new_input] with compatible type.
+  Success 1: [new_input] seems correct.
+Question 5
+  Found [build] with compatible type.
+  Failure: [build] is incorrect.
+    The following expression:
+    
+     | build [(true, 2); (false, 1); (true, 2)]
+    raises the following exception: [Stack overflow] This is invalid. Raising
+    the following exception is valid: [InputIsIllFormed(1)]
