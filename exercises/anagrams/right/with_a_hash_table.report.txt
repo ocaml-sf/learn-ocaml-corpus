@@ -1,0 +1,3 @@
+Question 1
+  Found [anagrams] with compatible type.
+  Success 1: [anagrams] seems correct.
