@@ -11,19 +11,6 @@ let () = Random.init 0
 
 (* -------------------------------------------------------------------------- *)
 
-(* Some of the code below should move to separate library files. *)
-
-(* -------------------------------------------------------------------------- *)
-
-(* Miscellaneous. *)
-
-let postincrement c =
-  let n = !c in
-  c := n + 1;
-  n
-
-(* -------------------------------------------------------------------------- *)
-
 (* PPrintMini. *)
 
 (* -------------------------------------------------------------------------- *)
@@ -277,52 +264,8 @@ let pretty width doc =
 
 (* Additions to PPrintMini. *)
 
-let separate (sep : 'a) (xs : 'a list) : 'a list =
-  match xs with
-  | [] ->
-      []
-  | x :: xs ->
-      x :: List.flatten (List.map (fun x -> [sep; x]) xs)
-
 let concat (docs : document list) : document =
   List.fold_right (^^) docs empty
-
-let comma =
-  utf8string "," ^^ break 1
-
-let commas docs =
-  concat (separate comma docs)
-
-let semi =
-  utf8string ";" ^^ break 1
-
-let semis docs =
-  concat (separate semi docs)
-
-let block doc =
-  nest 2 (break 0 ^^ doc) ^^ break 0
-
-let parens doc =
-  utf8string "(" ^^ block doc ^^ utf8string ")"
-
-let brackets doc =
-  utf8string "[" ^^ block doc ^^ utf8string "]"
-
-let ocaml_array_brackets doc =
-  utf8string "[| " ^^ block doc ^^ utf8string "|]"
-
-let tuple docs =
-  group (parens (commas docs))
-
-let list docs =
-  group (brackets (semis docs))
-
-let construct label docs =
-  match docs with
-  | [] ->
-      utf8string label
-  | _ ->
-      utf8string label ^^ space ^^ tuple docs
 
 let flow docs =
   match docs with
@@ -337,335 +280,8 @@ let raw_apply docs =
 let apply f docs =
   raw_apply (utf8string f :: docs)
 
-let parens_apply f docs =
-  parens (apply f docs)
-
-let piped_apply f docs =
-  (* Isolate the last argument. *)
-  assert (List.length docs > 0);
-  let docs = List.rev docs in
-  let doc, docs = List.hd docs, List.rev (List.tl docs) in
-  (* Print. *)
-  group (doc ^^ break 1 ^^ utf8string "|>" ^^ space ^^ apply f docs)
-
-let def x e1 e2 =
-  group (
-    utf8string ("let " ^ x ^ " =") ^^
-    nest 2 (break 1 ^^ e1) ^^ break 1 ^^
-    utf8string "in"
-  ) ^^ hardline ^^
-  e2
-
 let wrap (print : 'a -> document) : 'a -> string =
   fun x -> pretty 70 (group (print x))
-
-(* -------------------------------------------------------------------------- *)
-
-(* An implementation of symbolic sequences. *)
-
-module SymSeq = struct
-
-  type _ seq =
-  | Empty    : 'a seq
-  | Singleton: 'a -> 'a seq
-  | Interval : int * int -> int seq
-  | Sum      : int * 'a seq * 'a seq -> 'a seq
-  | Product  : int * 'a seq * 'b seq -> ('a * 'b) seq
-  | Map      : int * ('a -> 'b) * 'a seq -> 'b seq
-
-  exception OutOfBounds
-
-  let length (type a) (s : a seq) : int =
-    match s with
-    | Empty ->
-        0
-    | Singleton _ ->
-        1
-    | Interval (b, c) ->
-        c - b
-    | Sum (length, _, _) ->
-        length
-    | Product (length, _, _) ->
-        length
-    | Map (length, _, _) ->
-        length
-
-  let is_empty s =
-    length s = 0
-
-  let empty =
-    Empty
-
-  let singleton x =
-    Singleton x
-
-  let interval b c =
-    if b < c then
-      Interval (b, c)
-    else
-      empty
-
-  let check length =
-    assert (length >= 0); (* if this fails, an overflow has occurred *)
-    length
-
-  let sum s1 s2 =
-    if is_empty s1 then s2
-    else if is_empty s2 then s1
-    else Sum (check (length s1 + length s2), s1, s2)
-
-  let bigsum ss =
-    List.fold_left sum empty ss
-
-  let exists (xs : 'a list) (s : 'a -> 'b seq) : 'b seq =
-    bigsum (List.map s xs)
-
-  let product s1 s2 =
-    if is_empty s1 || is_empty s2 then
-      empty
-    else
-      Product (check (length s1 * length s2), s1, s2)
-
-  let map phi s =
-    if is_empty s then
-      empty
-    else
-      Map (length s, phi, s)
-
-  let rec get : type a . a seq -> int -> a =
-    fun s i ->
-      match s with
-      | Empty ->
-          raise OutOfBounds
-      | Singleton x ->
-          if i = 0 then x else raise OutOfBounds
-      | Interval (b, c) ->
-          if 0 <= i && b + i < c then b + i else raise OutOfBounds
-      | Sum (_, s1, s2) ->
-          let n1 = length s1 in
-          if i < n1 then get s1 i
-          else get s2 (i - n1)
-      | Product (_, s1, s2) ->
-          let q, r = i / length s2, i mod length s2 in
-          get s1 q, get s2 r
-      | Map (_, phi, s) ->
-          phi (get s i)
-
-  let rec foreach : type a . a seq -> (a -> unit) -> unit =
-    fun s k ->
-      match s with
-      | Empty ->
-          ()
-      | Singleton x ->
-          k x
-      | Interval (b, c) ->
-          for i = b to c-1 do
-            k i
-          done
-      | Sum (_, s1, s2) ->
-          foreach s1 k;
-          foreach s2 k
-      | Product (_, s1, s2) ->
-          foreach s1 (fun x1 ->
-            foreach s2 (fun x2 ->
-              k (x1, x2)
-            )
-          )
-      | Map (_, phi, s) ->
-          foreach s (fun x -> k (phi x))
-
-  let elements (s : 'a seq) : 'a list =
-    let xs = ref [] in
-    foreach s (fun x -> xs := x :: !xs);
-    List.rev !xs
-
-  (* For some reason, [Random.int] stops working at [2^30]. *)
-
-  let rec random_int n =
-    let threshold = 1 lsl 30 in
-    if n < threshold then
-      Random.int n
-    else
-      failwith "Can't sample over more than 2^30 elements."
-
-  (* Extract a list of at most [threshold] elements from the sequence [s]. *)
-
-  let sample threshold (s : 'a seq) : 'a list =
-    if length s <= threshold then
-      (* If the sequence is short enough, keep of all its elements. *)
-      elements s
-    else
-      (* Otherwise, keep a randomly chosen sample. *)
-      let xs = ref [] in
-      for i = 1 to threshold do
-        let i = random_int (length s) in
-        let x = get s i in
-        xs := x :: !xs
-      done;
-      !xs
-
-end
-
-type 'a seq =
-  'a SymSeq.seq
-
-(* -------------------------------------------------------------------------- *)
-
-(* A fixed point combinator. *)
-
-let fix : type a b . ((a -> b) -> (a -> b)) -> (a -> b) =
-  fun ff ->
-    let table = Hashtbl.create 128 in
-    let rec f (x : a) : b =
-      try
-        Hashtbl.find table x
-      with Not_found ->
-        let y = ff f x in
-        Hashtbl.add table x y;
-        y
-    in
-    f
-
-let   curry f x y = f (x, y)
-let uncurry f (x, y) = f x y
-
-let fix2 : type a b c . ((a -> b -> c) -> (a -> b -> c)) -> (a -> b -> c) =
-  fun ff ->
-    let ff f = uncurry (ff (curry f)) in
-    curry (fix ff)
-
-(* -------------------------------------------------------------------------- *)
-
-(* A memoization combinator. *)
-
-let memoize (f : 'a -> 'b) : 'a -> 'b =
-  let table = Hashtbl.create 32 in
-  let f x =
-    try
-      Hashtbl.find table x
-    with Not_found ->
-      let y = f x in
-      Hashtbl.add table x y;
-      y
-  in
-  f
-
-let memoize2 (f : 'a -> 'b -> 'c) : 'a -> 'b -> 'c =
-  curry (memoize (uncurry f))
-
-(* -------------------------------------------------------------------------- *)
-
-(* MiniFeat. *)
-
-module Feat = struct
-
-  (* Core combinators. *)
-
-  type 'a enum =
-    int -> 'a SymSeq.seq
-
-  let empty : 'a enum =
-    fun _s ->
-      SymSeq.empty
-
-  let zero =
-    empty
-
-  let enum (xs : 'a SymSeq.seq) : 'a enum =
-    fun s ->
-      if s = 0 then xs else SymSeq.empty
-
-  let just (x : 'a) : 'a enum =
-    (* enum (SymSeq.singleton x) *)
-    fun s ->
-      if s = 0 then SymSeq.singleton x else SymSeq.empty
-
-  let interval b c : int enum =
-    enum (SymSeq.interval b c)
-
-  let pay (enum : 'a enum) : 'a enum =
-    fun s ->
-      if s = 0 then SymSeq.empty else enum (s-1)
-
-  let sum (enum1 : 'a enum) (enum2 : 'a enum) : 'a enum =
-    fun s ->
-      SymSeq.sum (enum1 s) (enum2 s)
-
-  let ( ++ ) =
-    sum
-
-  let exists (xs : 'a list) (enum : 'a -> 'b enum) : 'b enum =
-    fun s ->
-      SymSeq.exists xs (fun x -> enum x s)
-
-  let rec _up i j =
-    if i <= j then
-      i :: _up (i + 1) j
-    else
-      []
-
-  let product (enum1 : 'a enum) (enum2 : 'b enum) : ('a * 'b) enum =
-    fun s ->
-      SymSeq.bigsum (
-        List.map (fun s1 ->
-          let s2 = s - s1 in
-          SymSeq.product (enum1 s1) (enum2 s2)
-        ) (_up 0 s)
-      )
-
-  let ( ** ) =
-    product
-
-  let balanced_product (enum1 : 'a enum) (enum2 : 'b enum) : ('a * 'b) enum =
-    fun s ->
-      if s mod 2 = 0 then
-        let s = s / 2 in
-        SymSeq.product (enum1 s) (enum2 s)
-      else
-        let s = s / 2 in
-        SymSeq.sum
-          (SymSeq.product (enum1 s) (enum2 (s+1)))
-          (SymSeq.product (enum1 (s+1)) (enum2 s))
-
-  let ( *-* ) =
-    balanced_product
-
-  let map (phi : 'a -> 'b) (enum : 'a enum) : 'b enum =
-    fun s ->
-      SymSeq.map phi (enum s)
-
-  (* Convenience functions. *)
-
-  let finite (xs : 'a list) : 'a enum =
-    List.fold_left (++) zero (List.map just xs)
-
-  let bool : bool enum =
-    just false ++ just true
-
-  let list (elem : 'a enum) : 'a list enum =
-    let cons (x, xs) = x :: xs in
-    fix (fun list ->
-      just [] ++ pay (map cons (elem ** list))
-    )
-
-  let nonempty_list (elem : 'a enum) : 'a list enum =
-    let cons (x, xs) = x :: xs in
-    map cons (elem ** list elem)
-
-  (* Extract a list of at most [threshold] elements of each size,
-     for every size up to [s] (included), from the enumeration [e]. *)
-
-  let sample threshold s (e : 'a enum) : 'a list =
-    List.flatten (
-      List.map (fun i ->
-        SymSeq.sample threshold (e i)
-      ) (_up 0 s)
-    )
-
-end
-
-type 'a enum =
-  'a Feat.enum
 
 (* -------------------------------------------------------------------------- *)
 
@@ -726,50 +342,12 @@ let protect f =
       let report = [R.Message (text, R.Failure)] in
       report
 
-(* [successful] tests whether a report is successful. *)
-
-let successful_status = function
-  | R.Success _
-  | R.Warning
-  | R.Informative
-  | R.Important ->
-     true
-  | R.Failure ->
-     false
-
-let rec successful_item = function
-  | R.Section (_, r) ->
-      successful r
-  | R.Message (_, status) ->
-      successful_status status
-
-and successful (r : report) =
-  List.for_all successful_item r
-
-let (-@>) (r : report) (f : unit -> report) : report =
-  if successful r then
-    r @ f()
-  else
-    r
-
 (* -------------------------------------------------------------------------- *)
 
 (* Generic test functions. *)
 
 let grab ty name k =
   T.test_value (T.lookup_student ty name) k
-
-let test_value_0 name ty reference eq =
-  grab ty name (fun candidate ->
-    protect (fun () ->
-      if not (eq candidate reference) then
-        fail [
-          R.Code name; R.Text "is incorrect.";
-        ];
-      let message = [ R.Code name; R.Text "is correct."; ] in
-      [ R.Message (message, R.Success 1) ]
-    )
-  )
 
 let correct name =
   let message = [ R.Code name; R.Text "seems correct."; ] in
@@ -847,27 +425,6 @@ let black_box_compare
       show_expected_behavior show_value expected_behavior
     )
 
-let test_value_1 name ty reference printx showy eqy tests =
-  grab ty name (fun candidate ->
-    protect (fun () ->
-      tests |> List.iter (fun x ->
-        let actual_behavior = T.result (fun () -> candidate x)
-        and expected_behavior = T.result (fun () -> reference x) in
-        let print_expr () =
-          apply name [ printx x ]
-            (* beware: [printx] must produce parentheses if necessary *)
-        in
-        black_box_compare
-          eqy showy
-          (incorrect name)
-          (wrap print_expr) ()
-          actual_behavior
-          expected_behavior
-      );
-      correct name
-    )
-  )
-
 let test_value_2 name ty reference printx1 printx2 showy eqy tests =
   grab ty name (fun candidate ->
     protect (fun () ->
@@ -877,28 +434,6 @@ let test_value_2 name ty reference printx1 printx2 showy eqy tests =
         let print_expr () =
           apply name [ printx1 x1; printx2 x2 ]
             (* beware: [printx1] and [printx2] must produce parentheses
-               if necessary *)
-        in
-        black_box_compare
-          eqy showy
-          (incorrect name)
-          (wrap print_expr) ()
-          actual_behavior
-          expected_behavior
-      );
-      correct name
-    )
-  )
-
-let test_value_3 name ty reference printx1 printx2 printx3 showy eqy tests =
-  grab ty name (fun candidate ->
-    protect (fun () ->
-      tests |> List.iter (fun ((x1, x2, x3) as x) ->
-        let actual_behavior = T.result (fun () -> candidate x1 x2 x3)
-        and expected_behavior = T.result (fun () -> reference x1 x2 x3) in
-        let print_expr () =
-          apply name [ printx1 x1; printx2 x2; printx3 x3 ]
-            (* beware: [printx1], etc. must produce parentheses
                if necessary *)
         in
         black_box_compare
@@ -943,22 +478,6 @@ let pairs xs ys =
     )
   )
 
-(* [split n f] enumerates all manners of splitting [n] into [n1 + n2], where
-   [n1] and [n2] can be zero. For each such split, the enumeration [f n1 n2]
-   is produced. *)
-
-let split n f =
-  flat_map (fun n1 ->
-    let n2 = n - n1 in
-    f n1 n2
-  ) (up 0 (n+1))
-
-(* If [f i] is an enumeration, then [deepening f n] is the concatenation
-   of the enumerations [f 0, f 1, ... f n]. *)
-
-let deepening (f : int -> 'a list) (n : int) : 'a list =
-  flat_map f (up 0 (n+1))
-
 (* -------------------------------------------------------------------------- *)
 
 (* Printers. *)
@@ -971,76 +490,10 @@ let show_string s =
 let print_string s =
   utf8string (show_string s)
 
-(* A printer for integers. *)
-
-let show_int i =
-  if i = max_int then
-    "max_int"
-  else if i = -max_int then
-    "-max_int"
-  else
-    sprintf "%d" i
-
-let print_int i =
-  utf8string (show_int i)
-
-let show_atomic_int i =
-  if i >= 0 then
-    show_int i
-  else
-    sprintf "(%s)" (show_int i)
-
-let print_atomic_int i =
-  utf8string (show_atomic_int i)
-
-(* A printer for characters. *)
-
-let show_char c =
-  sprintf "'%s'" (Char.escaped c)
-
-let print_char c =
-  utf8string (show_char c)
-
 (* A printer for Booleans. *)
 
 let show_bool b =
   if b then "true" else "false"
-
-let print_bool b =
-  utf8string (show_bool b)
-
-(* A printer for options. *)
-
-let print_option print = function
-  | None ->
-       utf8string "None"
-  | Some x ->
-       construct "Some" [ print x ]
-
-(* A printer for arrays. *)
-
-let print_array print_element a =
-  group (ocaml_array_brackets (concat (
-    a |> Array.map (fun x ->
-      print_element x ^^ semicolon ^^ break 1
-    ) |> Array.to_list
-  )))
-
-(* A printer for lists. *)
-
-let print_list print_element xs =
-  list (map print_element xs)
-
-let print_list_int =
-  print_list print_int
-
-let show_list_int =
-  wrap print_list_int
-
-(* A printer for pairs. *)
-
-let print_pair print_x print_y (x, y) =
-  tuple [ print_x x; print_y y ]
 
 (* -------------------------------------------------------------------------- *)
 
