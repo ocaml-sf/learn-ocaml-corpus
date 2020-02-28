@@ -1,0 +1,8 @@
+Question 1
+  Found [anagrams] with compatible type.
+  Failure: [anagrams] is incorrect.
+    The following expression:
+    
+     | anagrams "tar" "rat"
+    produces the following result: [false] This is invalid. Producing the
+    following result is valid: [true]
