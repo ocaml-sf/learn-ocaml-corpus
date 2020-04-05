@@ -1,0 +1,21 @@
+Question 1
+  Found [inorder] with compatible type.
+  Success 1: [inorder] seems correct.
+  Found [preorder] with compatible type.
+  Success 1: [preorder] seems correct.
+Question 2
+  Found [i1] with compatible type.
+  Found [i2] with compatible type.
+  Success 1: The trees [i1] and [i2] respect the required conditions.
+Question 3
+  Found [p1] with compatible type.
+  Found [p2] with compatible type.
+  Success 1: The trees [p1] and [p2] respect the required conditions.
+Question 4
+  Found [reconstruct] with compatible type.
+  Failure: [reconstruct] is incorrect.
+    The following expression:
+    
+     | reconstruct ['a'] ['a']
+    raises the following exception: [(Failure tl)] This is invalid. Producing
+    the following result is valid: [(Node (Leaf, 'a', Leaf))]
