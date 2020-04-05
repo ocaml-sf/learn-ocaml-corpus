@@ -1,0 +1,10 @@
+Question 1
+  Found [inorder] with compatible type.
+  Failure: [inorder] is incorrect.
+    The following expression:
+    
+     | inorder (Node (Leaf, 'a', Leaf))
+    produces the following result: [[]] This is invalid. Producing the
+    following result is valid: [['a']]
+  Found [preorder] with compatible type.
+  Success 1: [preorder] seems correct.
