@@ -99,7 +99,7 @@ result.
 
 The constructor functions `return` and `(>>=)` exist in all monads.
 (They are also known as `return` and `bind`.) `return` constructs a
-trivial computation, which does nothing except return a value,
+trivial computation, which does nothing except returning a value,
 whereas `(>>=)` constructs the sequential composition of two
 computations. Together, they allow constructing the sequential
 composition of an arbitrary number of computations.
