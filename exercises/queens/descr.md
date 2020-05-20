@@ -24,7 +24,7 @@ as early as possible.
 ## The Nondeterminism Monad
 
 When searching for the solution of a problem, one must typically
-explore multiple choices. If a series of choices lead to a failure
+explore multiple choices. If a series of choices leads to failure
 (a dead end), then one must backtrack and explore another avenue.
 
 There are a number of ways in which nondeterminism and backtracking
