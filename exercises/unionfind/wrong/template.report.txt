@@ -1,0 +1,6 @@
+Question 1
+  Found [make] with compatible type.
+  Found [find] with compatible type.
+  Found [eq] with compatible type.
+  Found [union] with compatible type.
+  Failure: Not yet implemented.
