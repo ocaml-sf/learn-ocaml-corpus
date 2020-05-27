@@ -45,7 +45,7 @@ follows:
   chosen.) If `x` and `y` are already members of the same equivalence class,
   this operation has no effect.
 
-It may be worth emphasizing that this is a mutable data structure. The
+It may be worth emphasizing that this is a **mutable** data structure. The
 operation `union` alters the data structure and cannot be undone.
 
 ## The Union-Find data structure
