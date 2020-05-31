@@ -476,7 +476,7 @@ integer literals, addition, and subtraction are permitted (Question 3).
 Then, we add multiplication, division, and the ability to enclose a
 subexpression within parentheses (Question 4).
 
-In the following, `'a top` is an abbreviation for the type of a binary
+In the following, `'a op` is an abbreviation for the type of a binary
 operation whose operands and result have type `'a`:
 
 ```
