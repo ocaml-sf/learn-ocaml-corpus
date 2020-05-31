@@ -264,7 +264,7 @@ descends in the tree `t` along the path
 that is encoded at index `i` in the binary data `data`,
 until a leaf is reached,
 and returns the character carried by that leaf
-as well as an updated index into the binary data `data`.
+as well as an updated index into the binary data `data`. The index corresponds to the bit in `data` that follows the encoding of `c`.
 
 ## Encoding and Decoding the Decoding Dictionary Itself
 
