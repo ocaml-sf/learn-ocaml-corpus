@@ -223,7 +223,7 @@ elements are pairs of a tree and an integer frequency. Drawing
 an element of the queue must yield an element whose frequency
 is minimal.
 Then,
-Define the function `build_tree`,
+define the function `build_tree`,
 whose type is `alphabet -> tree`,
 which implements Huffman's algorithm,
 as described above.
