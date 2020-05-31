@@ -131,7 +131,7 @@ actually needs to reside in memory.
 
 In this relatively simple-minded approach, there is *no sharing* of subtrees.
 If two moves lead to the same game state, then the game tree contains two
-identical subtrees. There is unfortunately no way of recognizing that these
+identical subtrees. In a purely functional setting, there is, unfortunately, no way of recognizing that these
 subtrees are identical and (thereby) to avoid duplicated work. It is possible
 to do so, using a hash table whose keys are game states, but this is not done
 in this exercise.
