@@ -500,7 +500,7 @@ interprets it as the corresponding operation on integers.
 `'a parser -> 'a op parser -> 'a parser` such that the parser
 `chainl1 p op` recognizes a nonempty sequence of `p`'s,
 separated with `op`'s,
-and interprets it as a left-associative chain of applications
+and interprets it as a left-parenthesized chain of applications
 of operators to values.
 
 **Question 3.** Define a parser `sum` of type `int parser` that recognizes and
