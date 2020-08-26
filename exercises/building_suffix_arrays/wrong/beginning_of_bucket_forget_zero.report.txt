@@ -1,0 +1,39 @@
+Question 1
+  Found [is_sorted] with compatible type.
+  Success 1: [is_sorted] seems correct.
+Question 2
+  Found [is_permutation] with compatible type.
+  Success 1: [is_permutation] seems correct.
+Question 3
+  Found [leq_suffix_suffix] with compatible type.
+  Success 1: [leq_suffix_suffix] seems correct.
+Question 4
+  Found [is_suffix_array] with compatible type.
+  Success 1: [is_suffix_array] seems correct.
+Question 5
+  Found [naive_suffix_sort] with compatible type.
+  Success 1: [naive_suffix_sort] seems correct.
+Question 6
+  Found [pigeonhole_sort] with compatible type.
+  Success 1: [pigeonhole_sort] seems correct.
+Question 7
+  Found [beginning_of_bucket] with compatible type.
+  Failure: [beginning_of_bucket] is incorrect.
+    The following expression:
+    
+     | beginning_of_bucket String.length [|
+     |   "bob";
+     |   "car";
+     |   "bit";
+     |   "car";
+     |   "hello";
+     |   "cinema";
+     |   "copycat";
+     |   "hamster";
+     |   "obituary";
+     |   "cinematographer"
+     | |]
+    produces the following result: [[| false; false; false; false; true;
+    true; true; false; true; true |]] This is invalid. Producing the
+    following result is valid: [[| true; false; false; false; true; true;
+    true; false; true; true |]]

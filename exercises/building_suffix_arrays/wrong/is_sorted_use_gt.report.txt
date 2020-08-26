@@ -1,0 +1,8 @@
+Question 1
+  Found [is_sorted] with compatible type.
+  Failure: [is_sorted] is incorrect.
+    The following expression:
+    
+     | is_sorted (>=) [| 7; 1 |]
+    produces the following result: [false] This is invalid. Producing the
+    following result is valid: [true]
