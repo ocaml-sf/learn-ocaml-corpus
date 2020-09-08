@@ -1,0 +1,32 @@
+Question 1
+  Found [size] with compatible type.
+  Failure: Not yet implemented.
+Question 2
+  Found [height] with compatible type.
+  Failure: Not yet implemented.
+Question 3
+  Found [eval] with compatible type.
+  Failure: Not yet implemented.
+  Found [eval] with compatible type.
+  Failure: Not yet implemented.
+Question 4
+  Found [nval] with compatible type.
+  Failure: Not yet implemented.
+  Found [eval] with compatible type.
+  Found [nval] with compatible type.
+  Failure: Not yet implemented.
+Question 5
+  Found [ntval] with compatible type.
+  Failure: Not yet implemented.
+Question 6
+  Found [bval] with compatible type.
+  Found [ntval] with compatible type.
+  Failure: Not yet implemented.
+  Found [bval] with compatible type.
+  Failure: Not yet implemented.
+Question 7
+  Found [assured_win] with compatible type.
+  Failure: Not yet implemented.
+Question 8
+  Found [bmove] with compatible type.
+  Failure: Not yet implemented.

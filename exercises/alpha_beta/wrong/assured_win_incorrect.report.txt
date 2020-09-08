@@ -1,0 +1,41 @@
+Question 1
+  Found [size] with compatible type.
+  Success 1: [size] seems correct.
+Question 2
+  Found [height] with compatible type.
+  Success 1: [height] seems correct.
+Question 3
+  Found [eval] with compatible type.
+  Success 1: [eval] seems correct.
+  Found [eval] with compatible type.
+  Success 1: [eval] appears to be symmetric.
+Question 4
+  Found [nval] with compatible type.
+  Success 1: [nval] seems correct.
+  Found [eval] with compatible type.
+  Found [nval] with compatible type.
+  Success 1: [nval] appears to respect its specification.
+Question 5
+  Found [ntval] with compatible type.
+  Success 1: [ntval] seems correct.
+Question 6
+  Found [bval] with compatible type.
+  Found [ntval] with compatible type.
+  Success 1: [bval bottom top] appears to respect its specification.
+  Found [bval] with compatible type.
+  Success 1: [bval] seems correct.
+  Found [bval] with compatible type.
+  Success 1: [bval] appears to examine as few tree nodes as possible.
+Question 7
+  Found [assured_win] with compatible type.
+  Failure: [assured_win] is incorrect.
+    The following expression:
+    
+     | assured_win (nonleaf [leaf 0; leaf (-1)])
+    produces the following result: [false] This is invalid. Producing the
+    following result is valid: [true]
+Question 8
+  Found [bmove] with compatible type.
+  Success 1: [bmove] seems correct.
+  Found [bmove] with compatible type.
+  Success 1: [bmove] appears to examine as few tree nodes as possible.
