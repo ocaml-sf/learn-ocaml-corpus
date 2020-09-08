@@ -1,0 +1,30 @@
+Question 1
+  Found [build_alphabet] with compatible type.
+  Success 1: [build_alphabet] seems correct.
+Question 2
+  Found [build_alphabet] with compatible type.
+  Found [build_tree] with compatible type.
+  Success 1: [build_tree] seems correct.
+Question 3
+  Found [build_encoding_dictionary] with compatible type.
+  Success 1: [build_encoding_dictionary] seems correct.
+Question 4
+  Found [find] with compatible type.
+  Success 1: [find] seems correct.
+Question 5
+  Found [write] with compatible type.
+  Found [read] with compatible type.
+  Failure: Something is wrong. The following expression:
+    
+     | let data = write (Leaf 'a') ^ "cookie" in
+     | let i = snd (read data) in String.sub data i 6
+    produces the following result: ["001100"] This is invalid. Producing the
+    following result is valid: ["cookie"]
+Question 6
+  Found [compress] with compatible type.
+  Found [decompress] with compatible type.
+  Failure: Something is wrong. The following expression:
+    
+     | "ab" |> compress |> decompress
+    produces the following result: ["baabbaaaabaabbaaabaab"] This is invalid.
+    Producing the following result is valid: ["ab"]

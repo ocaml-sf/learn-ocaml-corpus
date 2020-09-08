@@ -1,0 +1,28 @@
+Question 1
+  Found [build_alphabet] with compatible type.
+  Success 1: [build_alphabet] seems correct.
+Question 2
+  Found [build_alphabet] with compatible type.
+  Found [build_tree] with compatible type.
+  Success 1: [build_tree] seems correct.
+Question 3
+  Found [build_encoding_dictionary] with compatible type.
+  Success 1: [build_encoding_dictionary] seems correct.
+Question 4
+  Found [find] with compatible type.
+  Success 1: [find] seems correct.
+Question 5
+  Found [write] with compatible type.
+  Found [read] with compatible type.
+  Success 1: [write] and [read] seem correct.
+Question 6
+  Found [compress] with compatible type.
+  Found [decompress] with compatible type.
+  Failure: Something is wrong. The following expression:
+    
+     | "It is amazing that such a seemingly short sentence can be successfully compressed."
+     | |> compress
+    produces a sequence of 656 bits, whereas the original sentence occupies
+    656 bits when represented as an ASCII string. No compression has been
+    achieved! Perhaps your binary encoding of the dictionary is not compact
+    enough?
