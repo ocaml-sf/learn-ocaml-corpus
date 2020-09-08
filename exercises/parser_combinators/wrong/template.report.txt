@@ -1,0 +1,12 @@
+Question 1
+  Found [return] with compatible type.
+  Found [>>=] with compatible type.
+  Found [fail] with compatible type.
+  Found [choose] with compatible type.
+  Found [at_most_once] with compatible type.
+  Found [map] with compatible type.
+  Found [>>] with compatible type.
+  Found [any] with compatible type.
+  Found [eof] with compatible type.
+  Found [char] with compatible type.
+  Failure: Not yet implemented.
