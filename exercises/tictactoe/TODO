@@ -1,0 +1,9 @@
+-- about this exercise ---------------------------------------------------------
+
+The [tests] parameter to [test_value_X] should be a lazy suspension, so that
+we avoid building a long list of test inputs when [grab] fails (because the
+student has not written the code yet).
+
+-- ocaml questions -------------------------------------------------------------
+
+-- learn-ocaml questions -------------------------------------------------------

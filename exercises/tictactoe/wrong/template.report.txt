@@ -1,0 +1,29 @@
+Question 1
+  Found [decode] with compatible type.
+  Failure: Not yet implemented.
+Question 2
+  Found [mask] with compatible type.
+  Failure: Not yet implemented.
+Question 3
+  Found [read] with compatible type.
+  Failure: Not yet implemented.
+Question 4
+  Found [update] with compatible type.
+  Failure: Not yet implemented.
+Question 5
+  Found [east] with compatible type.
+  Failure: Not yet implemented.
+  Found [northeast] with compatible type.
+  Failure: Not yet implemented.
+  Found [southeast] with compatible type.
+  Failure: Not yet implemented.
+Question 6
+  Found [alignments] with compatible type.
+  Failure: Not yet implemented.
+Question 7
+  Found [has_alignment] with compatible type.
+  Failure: Not yet implemented.
+Question 8
+  Found [tree] with compatible type.
+  Found [initial] with compatible type.
+  Failure: Not yet implemented.
