@@ -294,4 +294,4 @@ the Alpha-Beta algorithm evaluates it in a fraction of a second.
 
 To explore larger values of `w`, `h`, and `k`, such as (4, 4, 4),
 it is necessary to improve the Alpha-Beta algorithm; in particular,
-a transposition table is required.
+a [transposition table](https://en.wikipedia.org/wiki/Transposition_table) is required.
