@@ -1,0 +1,6 @@
+Failure: Something is wrong. Executing the following instruction sequence:
+  
+   | let a = make (-1) in
+   | set a 0 44;
+   | ()
+  raises the following exception: [(Invalid_argument "index out of bounds")]

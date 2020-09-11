@@ -1,0 +1,8 @@
+Failure: Something is wrong. Executing the following instruction sequence:
+  
+   | let a = make (-1) in
+   | set a 20 7;
+   | let v = get a 20 in
+   | if v <> 7 then raise Inconsistency;
+   | ()
+  raises the following exception: [Inconsistency]
