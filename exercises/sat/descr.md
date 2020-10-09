@@ -212,7 +212,7 @@ exponential blowup in the size of formulae.
 Fortunately, there is in reality no need for a double implication:
 a single implication `x -> f` suffices. Indeed,
 
-* `a \/ (b /\ c)` is equivalent to `exists x.( (a \/ x)  /\  (x  -> b /\ c) )`.
+* `a \/ (b /\ c)` is equivalent to `exists x.( (a \/ x)  /\  (x -> b /\ c) )`.
 
 Please take some time to understand why this is true.
 
