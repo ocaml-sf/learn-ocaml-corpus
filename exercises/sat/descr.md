@@ -203,8 +203,9 @@ the same truth value as the conjunction `b /\ c`.
 
 A couple more remarks must be made for the above idea to really work.
 
-First, the use of a double implication `x <-> f` is problematic,
-because it represents the conjunction `(x -> f) /\ (f -> x)`,
+First, the use of a double implication `x <-> f` is problematic.
+Because double implication does not exist in the syntax of formulae,
+it must be encoded as the conjunction `(x -> f) /\ (f -> x)`,
 or `(~x \/ f) /\ (~f \/ x)`, where the subformula `f` is
 duplicated. Unless we are careful, this duplication could cause an
 exponential blowup in the size of formulae.
