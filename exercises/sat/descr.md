@@ -345,7 +345,9 @@ Infinite arrays are described at the very end of this exercise.
 new clause, and the function `count_clauses`, which indicates how many clauses
 have been recorded so far. Note that a clause that contains both the literal
 `x` and the opposite literal `~x` is unsatisfiable. In such a situation, the
-function `new_clause` must raise the exception `UNSAT`. *Hint:* to detect this
+function `new_clause` must raise the exception `UNSAT`. 
+
+*Hint:* to detect this
 situation, use `intersect`.
 
 **Question C.** (Ungraded.) Implement the function `new_var`, which creates and
