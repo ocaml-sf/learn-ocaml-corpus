@@ -366,7 +366,8 @@ made, undo this decision, make the opposite decision (that is, set `x` to
 another subtree.
 
 A solver usually maintains several mutable data structures, such as a set of
-undecided variables, a set of unit clauses, etc. When the solver backtracks to
+undecided variables, a set of unit clauses, etc. (These data structures are
+presented further on.) When the solver backtracks to
 an earlier point in time, it must reestablish an earlier state of these data
 structures. This is typically implemented either by saving and restoring an
 entire state or by keeping track of an *undo trail*, that is, a stack of *undo
