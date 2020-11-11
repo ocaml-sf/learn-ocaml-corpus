@@ -15,7 +15,7 @@ The list of the data values carried by its leaves is `[1; 2; 3]` and the list
 of the depths of its leaves is `[1; 2; 2]`.
 
 In fact, these two lists are sufficient to describe this tree in an
-unambiguous manner: no other three has the same list of leaf data and
+unambiguous manner: no other tree has the same list of leaf data and
 the same list of leaf depths.
 
 Let us combine these lists, and use the word *spectre* to refer a list
