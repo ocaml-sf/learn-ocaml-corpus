@@ -251,7 +251,8 @@ named `CNF`, whose signature is as follows:
 In short, this means that you have access to several functions that allow you
 to create new auxiliary variables and to declare new clauses. Using these
 facilities, you must define a single function, `cnf`, which receives a formula
-as an argument and transforms it to conjunctive normal form.
+as an argument and transforms it to conjunctive normal form. This CNF is stored in the internal state of the module and
+is modified by each call to its functions.
 
 In greater detail, the facilities to which you have access
 can be described as follows.
