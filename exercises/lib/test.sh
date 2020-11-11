@@ -4,24 +4,41 @@ IFS=$'\n\t'
 
 # Functions.
 
+grade() {
+  local f="$1"
+  $LEARN grade --timeout=5 --grade-student=$f --dump-reports=${f%.ml} >${f%.ml}.log 2>&1
+}
+export -f grade
+
+filter() {
+  local f="$1"
+  rm -f $.bak
+  mv $f $f.bak
+  grep -v "Learnocaml v" $f.bak >$f
+  rm -f $f.bak
+}
+export -f filter
+
 positive_test() {
   local f="$1"
-  if $LEARN grade --timeout=5 --grade-student=$f --dump-reports=${f%.ml} >${f%.ml}.log 2>&1 ; then
+  if grade $f ; then
     echo " [OK]  $f is correctly accepted." ;
   else
     echo "[FAIL] $f is rejected!" ;
   fi
+  filter ${f%.ml}.log
 }
 export -f positive_test
 
 negative_test() {
   local f="$1"
   rm -f ${f%.ml}.report.txt ${f%.ml}.report.html ;
-  if $LEARN grade --timeout=5 --grade-student=$f --dump-reports=${f%.ml} >${f%.ml}.log 2>&1 ; then
+  if grade $f ; then
     echo "[FAIL] $f is incorrectly accepted!" ;
   else
     echo " [OK]  $f is correctly rejected." ;
   fi
+  filter ${f%.ml}.log
 }
 export -f negative_test
 

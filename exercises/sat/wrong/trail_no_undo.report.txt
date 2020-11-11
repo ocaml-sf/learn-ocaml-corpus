@@ -1,0 +1,32 @@
+Question 1
+  Found [const] with compatible type.
+  Found [conn] with compatible type.
+  Found [neg] with compatible type.
+  Found [var] with compatible type.
+  Success 1: The smart constructors seem correct.
+Question 2
+  Found [eval] with compatible type.
+  Success 1: [eval] seems correct.
+Question 3
+  Found [satisfiable] with compatible type.
+  Success 1: [satisfiable] seems correct.
+  Found [valid] with compatible type.
+  Success 1: [valid] seems correct.
+Question 4
+  Success 1: [CNF] seems correct.
+Question 5
+  Found [intersect] with compatible type.
+  Success 1: [intersect] seems correct.
+Question 6
+  Failure: Something is wrong. Executing the following instruction sequence:
+     | let module Trail = Trail() in
+     | let s = ref (-1) in
+     | (* Take a checkpoint. *)
+     | let checkpoint0 = Trail.record() in
+     | (* Set [s] to 0 and push an undo action. *)
+     | let x = !s in s := 0; Trail.push (fun () -> s := x);
+     | (* Go back to this checkpoint. *)
+     | Trail.revert checkpoint0;
+     | (* Check the value of [s]. *)
+     | if -1 <> !s then raise (ExpectedGot (-1, !s));
+     | ()caused the following exception to be raised: [ExpectedGot(-1, 0)]

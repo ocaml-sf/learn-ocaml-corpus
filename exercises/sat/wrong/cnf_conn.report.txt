@@ -1,0 +1,50 @@
+Question 1
+  Found [const] with compatible type.
+  Found [conn] with compatible type.
+  Found [neg] with compatible type.
+  Found [var] with compatible type.
+  Success 1: The smart constructors seem correct.
+Question 2
+  Found [eval] with compatible type.
+  Success 1: [eval] seems correct.
+Question 3
+  Found [satisfiable] with compatible type.
+  Success 1: [satisfiable] seems correct.
+  Found [valid] with compatible type.
+  Success 1: [valid] seems correct.
+Question 4
+  Failure: Something is wrong. Consider this formula (of 1 variable):
+    
+     | FConn (
+     |   false,
+     |   FConn (true, FConn (true, FVar (0), FNeg (FVar (0))), FVar (0)),
+     |   FVar (0)
+     | )
+    This formula can also be displayed as follows:
+    
+     | (x0 & ~x0 & x0) | x0
+    Converting this formula to conjunctive normal form yields the following
+    new formula (of 3 variables):
+    
+     | FConn (
+     |   true,
+     |   FConn (
+     |     true,
+     |     FConn (
+     |       true,
+     |       FConn (false, FVar (0), FNeg (FVar (1))),
+     |       FNeg (FVar (0))
+     |     ),
+     |     FConn (false, FVar (0), FNeg (FVar (1)))
+     |   ),
+     |   FConn (false, FVar (1), FVar (0))
+     | )
+    This formula can also be displayed as follows:
+    
+     | (x0 | ~x1) & ~x0 & (x0 | ~x1) & (x1 | x0)
+    Unfortunately, these formulae do not have the desired relationship. The
+    original formula is satisfied by this assignment:
+    
+     | x0
+    whereas the new formula is not satisfied by any extension of this
+    assignment.

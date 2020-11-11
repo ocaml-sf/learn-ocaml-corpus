@@ -1,0 +1,40 @@
+Question 1
+  Found [const] with compatible type.
+  Found [conn] with compatible type.
+  Found [neg] with compatible type.
+  Found [var] with compatible type.
+  Success 1: The smart constructors seem correct.
+Question 2
+  Found [eval] with compatible type.
+  Success 1: [eval] seems correct.
+Question 3
+  Found [satisfiable] with compatible type.
+  Success 1: [satisfiable] seems correct.
+  Found [valid] with compatible type.
+  Success 1: [valid] seems correct.
+Question 4
+  Success 1: [CNF] seems correct.
+Question 5
+  Found [intersect] with compatible type.
+  Success 1: [intersect] seems correct.
+Question 6
+  Success 1: [Trail] seems correct.
+Question 7
+  Success 1: [VarSet] seems correct.
+Question 8
+  Failure: Something is wrong. Consider this formula (of 3 variables):
+    
+     | FConn (
+     |   true,
+     |   FConn (false, FVar (2), FVar (2)),
+     |   FConn (false, FNeg (FVar (2)), FNeg (FVar (0)))
+     | )
+    This formula can also be displayed as follows:
+    
+     | (x2 | x2) & (~x2 | ~x0)
+    Your solver claims that this formula is satisfied by the following
+    assignment:
+    
+     | ~x0 & x1 & ~x2
+    However, this is not the case. Under this assignment, this formula
+    evaluates to false.

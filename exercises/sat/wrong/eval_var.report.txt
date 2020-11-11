@@ -1,0 +1,14 @@
+Question 1
+  Found [const] with compatible type.
+  Found [conn] with compatible type.
+  Found [neg] with compatible type.
+  Found [var] with compatible type.
+  Success 1: The smart constructors seem correct.
+Question 2
+  Found [eval] with compatible type.
+  Failure: [eval] is incorrect.
+    The following expression:
+    
+     | eval (Array.get [| true; |]) (FVar (0))
+    produces the following result: [false] This is invalid. Producing the
+    following result is valid: [true]
