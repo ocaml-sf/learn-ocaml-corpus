@@ -9,10 +9,14 @@ leaf carries a piece of data of type `'a`.
     | Fork of 'a tree * 'a tree
 ```
 
-For instance, the tree `Fork (Leaf 1, Fork (Leaf 2, Leaf 3))` has type `int
-tree`, as its leaves carry integers.
-The list of the data values carried by its leaves is `[1; 2; 3]` and the list
-of the depths of its leaves is `[1; 2; 2]`.
+For instance, the tree `Fork (Leaf 'a', Fork (Leaf 'b', Leaf 'c'))`
+has type `char tree`, as its leaves carry characters.
+The list of the data values carried by its leaves,
+read from left to right,
+is `['a'; 'b'; 'c']`.
+The list of the depths of its leaves,
+read from left to right,
+is `[1; 2; 2]`.
 
 In fact, these two lists are sufficient to describe this tree in an
 unambiguous manner: no other tree has the same list of leaf data and
@@ -29,9 +33,9 @@ of pairs of a datum and a depth:
 ```
 
 The spectre of the tree
-`Fork (Leaf 1, Fork (Leaf 2, Leaf 3))`
+`Fork (Leaf 'a', Fork (Leaf 'b', Leaf 'c'))`
 is
-`[(1, 1); (2, 2); (3, 2)]`.
+`[('a', 1); ('b', 2); ('c', 2)]`.
 
 A tree is unambiguously described by its spectre: two distinct trees must have
 distinct spectres.
