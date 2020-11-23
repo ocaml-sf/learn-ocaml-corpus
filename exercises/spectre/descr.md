@@ -273,7 +273,7 @@ input, then the parser terminates successfully.
 ## Notes
 
 The task of reconstructing a tree from its spectre appears as a subroutine in
-Garsia and Wachs' algorithm, whose purpose is to construct a minimum-cost
+[Garsia and Wachs' algorithm](https://en.wikipedia.org/wiki/Garsia%E2%80%93Wachs_algorithm), whose purpose is to construct a minimum-cost
 binary tree out of a sequence of leaves and their weights. There, the cost of
 a tree is defined as the sum over all leaves of the weight of this leaf
 multiplied by the depth at which this leaf appears.
