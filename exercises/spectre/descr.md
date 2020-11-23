@@ -249,7 +249,7 @@ A bottom-up parser works as follows:
   steps can be taken in succession.
 
 * Finally, if at some point the stack consists of a single subtree `t` at
-  depth 0, then the parser terminates and returns `t` as its final result.
+  depth 0 and the read head has reached the end of input, then the parser terminates and returns `t` as its final result.
 
 The main difficulty in the implementation of a bottom-up parser is again to
 choose between shifting, reducing, and declaring that the input is ill-formed.
