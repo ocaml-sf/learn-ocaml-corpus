@@ -8,8 +8,14 @@ if and only if
 the strings `s1` and `s2` are anagrams
 of one another.
 
-*Hint.* Two strings are anagrams of one another if and only if they have the
-same histogram, that is, the same number of occurrences of every character.
+<details>
+  <summary>Hint</summary>
+  Two strings are anagrams of one another if and only if they have the
+  same histogram, that is, the same number of occurrences of every character.
+</details>
 
-*Hint.* Use some of the functions in the standard library modules `String` and
-`Map`.
+<details>
+  <summary>Hint</summary>
+  Use some of the functions in the standard library modules `String` and
+  `Map`.
+</details>
