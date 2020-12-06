@@ -40,7 +40,7 @@ exercise, two of these are of interest:
 inorder and preorder traversals of the tree `t`.
 
 *Note.* The most direct definition of these functions uses list concatenation
-`@` and (unfortunately) has quadratic time complexity. There also slightly
+`@` and (unfortunately) has quadratic time complexity. There also exist slightly
 more complex definitions that involve an accumulator and have linear time
 complexity. You may use whichever definition you prefer.
 
