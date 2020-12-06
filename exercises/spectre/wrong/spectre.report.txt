@@ -1,0 +1,15 @@
+Question 1
+  Found [elements] with compatible type.
+  Success 1: [elements] seems correct.
+Question 2
+  Found [depths] with compatible type.
+  Success 1: [depths] seems correct.
+Question 3
+  Found [spectre] with compatible type.
+  Failure: [spectre] is incorrect.
+    The following expression:
+    
+     | spectre (Fork (Leaf (false), Fork (Leaf (false), Leaf (false))))
+    produces the following result: [[(false, 2); (false, 2); (false, 1)]]
+    This is invalid. Producing the following result is valid: [[(false, 1);
+    (false, 2); (false, 2)]]

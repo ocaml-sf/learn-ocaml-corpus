@@ -1,0 +1,18 @@
+Question 1
+  Found [elements] with compatible type.
+  Success 1: [elements] seems correct.
+Question 2
+  Found [depths] with compatible type.
+  Success 1: [depths] seems correct.
+Question 3
+  Found [spectre] with compatible type.
+  Success 1: [spectre] seems correct.
+Question 4
+  Found [new_input] with compatible type.
+  Failure: [new_input] is incorrect.
+    The following usage scenario:
+    
+     | let input = new_input ['a'; 'b'] in
+     | ()
+    causes the following exception to be raised: [(Invalid_argument "I don't
+    like long input")]

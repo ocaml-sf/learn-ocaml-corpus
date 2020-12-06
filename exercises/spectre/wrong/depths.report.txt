@@ -1,0 +1,11 @@
+Question 1
+  Found [elements] with compatible type.
+  Success 1: [elements] seems correct.
+Question 2
+  Found [depths] with compatible type.
+  Failure: [depths] is incorrect.
+    The following expression:
+    
+     | depths (Leaf (false))
+    produces the following result: [[1]] This is invalid. Producing the
+    following result is valid: [[0]]
