@@ -1,0 +1,9 @@
+Question 1
+  Found [inorder] with compatible type.
+  Success 1: [inorder] seems correct.
+  Found [preorder] with compatible type.
+  Success 1: [preorder] seems correct.
+Question 2
+  Found [i1] with compatible type.
+  Found [i2] with compatible type.
+  Failure: The trees [i1] and [i2] are identical!

@@ -1,0 +1,10 @@
+Question 1
+  Found [inorder] with compatible type.
+  Success 1: [inorder] seems correct.
+  Found [preorder] with compatible type.
+  Failure: [preorder] is incorrect.
+    The following expression:
+    
+     | preorder (Node (Node (Node (Leaf, 'b', Leaf), 'a', Leaf), 'b', Leaf))
+    produces the following result: [['b'; 'b'; 'a']] This is invalid.
+    Producing the following result is valid: [['b'; 'a'; 'b']]
