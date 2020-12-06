@@ -25,7 +25,7 @@ traversals, which are known as *inorder*, *preorder*, *postorder*, *reverse
 inorder*, *reverse preorder*, and *reverse postorder* traversals. In this
 exercise, two of these are of interest:
 
-* The *inorder traversal* corresponds to the permutation `u`, `x`, `v`. It is
+* The *inorder traversal* corresponds to the identity permutation `u`, `x`, `v`. It is
   defined as follows: the inorder traversal of a binary node `Node (u, x, v)`
   is formed by concatenating the inorder traversal of the subtree `u`, the
   element `x`, and the inorder traversal of the subtree `v`.
