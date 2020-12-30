@@ -1,0 +1,79 @@
+{
+    "learnocaml_version": "1",
+    "groups":
+    {
+	"mooc":
+	{
+	    "title": "Introduction to Functional Programming (MOOC)",
+	    "exercises" : [
+		"mooc/week1/seq3/ex1",
+		"mooc/week1/seq3/ex2",
+		"mooc/week1/seq4/ex1",
+		"mooc/week1/seq4/ex2",
+		"mooc/week2/seq1/ex1",
+		"mooc/week2/seq1/ex2",
+		"mooc/week2/seq2/ex1",
+		"mooc/week2/seq2/ex2",
+		"mooc/week2/seq3/ex1",
+		"mooc/week2/seq3/ex2",
+		"mooc/week2/seq4/ex1",
+		"mooc/week3/seq1/ex1",
+		"mooc/week3/seq1/ex2",
+		"mooc/week3/seq2/ex1",
+		"mooc/week3/seq2/ex2",
+		"mooc/week3/seq3/ex1",
+		"mooc/week3/seq4/ex3",
+		"mooc/week3/seq4/ex1",
+		"mooc/week4/seq1/ex1",
+		"mooc/week4/seq2/ex1",
+		"mooc/week4/seq3/ex1",
+		"mooc/week4/seq3/ex2",
+		"mooc/week4/seq4/ex1",
+		"mooc/week5/seq1/ex1",
+		"mooc/week5/seq1/ex2",
+		"mooc/week5/seq2/ex1",
+		"mooc/week5/seq2/ex2",
+		"mooc/week5/seq3/ex1",
+		"mooc/week5/seq3/ex2",
+		"mooc/week5/seq4/ex1",
+		"mooc/week5/seq4/ex2",
+		"mooc/week6/seq1/ex1",
+		"mooc/week6/seq1/ex2",
+		"mooc/week6/seq2/ex1",
+		"mooc/week6/seq3/ex1"
+	    ]
+	},
+
+        "fpottier":
+        {
+	    "title": "Advanced Functional Programming by François Pottier",
+	    "exercises": [
+                "fpottier/alpha_beta",
+                "fpottier/anagrams",
+                "fpottier/breaking_sort",
+                "fpottier/counting_trees",
+                "fpottier/enumerating_trees",
+                "fpottier/generic_sorting",
+                "fpottier/huffman",
+                "fpottier/infinite_arrays",
+                "fpottier/leftist_heaps",
+                "fpottier/merge_sort",
+                "fpottier/nondet_monad_cont",
+                "fpottier/nondet_monad_defun",
+                "fpottier/nondet_monad_seq",
+                "fpottier/parser_combinators",
+                "fpottier/persistent_arrays",
+                "fpottier/pprint",
+                "fpottier/random_access_lists",
+                "fpottier/sat",
+                "fpottier/spectre",
+                "fpottier/stereo",
+                "fpottier/symbolic_sequences_data",
+                "fpottier/symbolic_sequences_objects",
+                "fpottier/tictactoe",
+                "fpottier/tree_iterators",
+                "fpottier/unionfind"
+            ]
+        }
+    }
+}
