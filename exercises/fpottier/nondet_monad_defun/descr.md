@@ -10,7 +10,7 @@ algebraic data type.
 
 This implementation can be viewed as a defunctionalized version
 of the continuation-based implementation studied in
-<a href="" onclick="top.location='/exercises/nondet_monad_cont/';">another exercise</a>.
+<a href="/exercise.html#id=nondet_monad_cont';">another exercise</a>.
 The underlying algorithm is exactly the same,
 but whereas the continuation-based implementation represents
 code and continuations as first-class functions,
@@ -324,7 +324,7 @@ the success continuation indicates what to do next.
 Each of these three data structures is described by a generalized algebraic
 data type. We now give the definitions of these data types. (These definitions
 can in fact be *deduced* from the solution of the
-<a href="" onclick="top.location='/exercises/nondet_monad_cont/';">companion exercise</a>,
+<a href="" onclick="top.location='/exercise.html#id=nondet_monad_cont';">companion exercise</a>,
 by defunctionalization, but we leave this story for another time.)
 
 The type `'a m` of **computations** is defined as follows:

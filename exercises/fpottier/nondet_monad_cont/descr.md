@@ -502,7 +502,7 @@ of the type `'a Seq.t` of sequences.
 
 The continuation-based representation is more efficient than the
 sequence-based representation investigated in
-<a href="" onclick="top.location='/exercises/nondet_monad_seq/';">another exercise</a>.
+<a href="" onclick="top.location='/exercise.html#id=nondet_monad_seq';">another exercise</a>.
 This is evident in the implementation of `choose`,
 where there is no per-element cost.
 In particular, the left-leaning computation
