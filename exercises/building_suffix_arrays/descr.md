@@ -513,7 +513,7 @@ together:
 whose arguments are the string *s*, the positive integer *h*,
 and the arrays *a* and *b*.
 The array *a* is assumed to be *h*-sorted.
-The array *b* is assumed to contain beginnning-of-*h*-bucket marks.
+The array *b* is assumed to contain beginning-of-*h*-bucket marks.
 The function `stage` should first test whether the task is complete,
 that is, whether the array *a* is in fact sorted.
 If so, it should return *a*.
