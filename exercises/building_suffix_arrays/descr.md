@@ -281,7 +281,7 @@ algorithm is *O(n log n)*.
 
 The aim of stage 0 is to sort an array of the nonempty suffixes
 according to their first characters. This can be
-done in linear time using a pigeonhole sort.
+done in linear time using a [pigeonhole sort](https://en.wikipedia.org/wiki/Pigeonhole_sort).
 
 **Question 6.** Define a function `pigeonhole_sort`
 of type `int -> ('a -> int) -> 'a array -> unit`
