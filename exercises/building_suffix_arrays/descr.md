@@ -109,6 +109,10 @@ this array of integers:
 
 that is, in OCaml notation, the array `[|9; 7; 4; 1; 0; 8; 6; 3; 5; 2|]`.
 
+This array is a permutation of the semi-open interval `[0, 10)`: that is,
+each integer index comprised between `0` (included) and `10` (excluded)
+appears exactly once in this array.
+
 ## Preliminaries
 
 In this exercise, we manipulate many arrays. Thus, we wish to refer to
