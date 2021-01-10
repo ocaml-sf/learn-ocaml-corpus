@@ -519,7 +519,7 @@ that is, whether the array *a* is in fact sorted.
 If so, it should return *a*.
 Otherwise, it should perform stage *h*,
 thus ensuring that the array *a* is *2h*-sorted
-and that the array *b* contains beginnning-of-*2h*-bucket marks.
+and that the array *b* contains beginning-of-*2h*-bucket marks.
 It can then invoke itself recursively.
 Once this is done, write a function `suffix_sort`
 of type `string -> suffix array` such that
