@@ -249,7 +249,7 @@ algorithm for building a suffix array.
 The algorithm that we present was proposed by Udi Manber and Gene Myers in the
 paper [Suffix arrays: a new method for on-line string
 searches](https://epubs.siam.org/doi/10.1137/0222058)
-(1990). The complexity of this algorithm is *O(n log n)*,
+(1990). The complexity of this algorithm is *O(n.log n)*,
 where *n* is the size of the string of interest.
 
 As we will see, Manber and Myers' algorithm itself is not exactly
