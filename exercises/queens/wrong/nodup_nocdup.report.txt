@@ -1,0 +1,26 @@
+Question 1
+  Found [select] with compatible type.
+  Functional correctness
+    Success 1: [select] seems correct.
+  Laziness
+    Success 1: [select] seems lazy.
+Question 2
+  Found [unfold] with compatible type.
+  Success 1: [unfold] seems correct.
+Question 3
+  Found [permutations] with compatible type.
+  Success 1: [permutations] seems correct.
+Question 4
+  Found [nodup] with compatible type.
+  Failure: [nodup] is incorrect.
+    The following expression:
+    
+     | nodup [3; 0; 3]
+    produces the following result: [true] This is invalid. Producing the
+    following result is valid: [false]
+Question 5
+  Failure: Cannot find  [safe]
+Question 6
+  Failure: Cannot find  [queens]
+Question 7
+  Failure: Cannot find  [queenz]
