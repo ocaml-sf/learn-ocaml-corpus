@@ -33,14 +33,14 @@ let exercise_2 =
              [%ty: string -> char Code.MultiSet.t] "letters" letters [])
 
 let permut s =
-  let s = String.copy s in
-  for i = String.length s - 1 downto 2 do
+  let s = Bytes.of_string s in
+  for i = Bytes.length s - 1 downto 2 do
     let j = Random.int (i+1) in
-    let x = s.[i] in
-    s.[i] <- s.[j] ;
-    s.[j] <- x
+    let x = Bytes.get s i in
+    Bytes.set s i (Bytes.get s j) ;
+    Bytes.set s j x
   done ;
-  s
+  Bytes.to_string s
 
 let exercise_3 =
   set_progress "Grading exercise 3." ;
