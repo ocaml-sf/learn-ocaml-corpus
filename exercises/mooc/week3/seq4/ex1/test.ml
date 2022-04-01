@@ -1,7 +1,7 @@
 open Report
 open Test_lib
 
-let rec sample_bt ~balanced sample () =
+let rec gen_sample_bt ~balanced sample () =
   let rec rew = function
     | Empty -> Empty
     | Node (l, _, r) -> Node (rew l, sample (), rew r) in
@@ -11,14 +11,14 @@ let rec sample_bt ~balanced sample () =
       let s = sample_rec (level - 1) in Node (s, sample (), rew s)
     else Node (sample_rec (level - 1), sample (), sample_rec (level - 1)) in
   match sample_rec 6 with
-  | Empty -> sample_bt ~balanced sample ()
+  | Empty -> gen_sample_bt ~balanced sample ()
   | res when Solution.balanced res = balanced -> res
-  | _ -> sample_bt ~balanced sample ()
+  | _ -> gen_sample_bt ~balanced sample ()
 
 let sample_bt sample =
   sample_alternatively
-    [ (fun () -> sample_bt ~balanced: true sample ()) ;
-      (fun () -> sample_bt ~balanced: false sample ()) ]
+    [ (fun () -> gen_sample_bt ~balanced: true sample ()) ;
+      (fun () -> gen_sample_bt ~balanced: false sample ()) ]
 
 let exercise_1 =
   set_progress "Grading exercise 1." ;

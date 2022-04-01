@@ -26,7 +26,7 @@ module Pervasives = struct
     div_f x y
 end
 
-open Pervasives
+include Pervasives
 
 let test_ccr ccr (a, b, c, s) =
   let unset_all () =
