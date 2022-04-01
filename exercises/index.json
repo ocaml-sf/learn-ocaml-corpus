@@ -40,7 +40,9 @@
 		"mooc/week6/seq1/ex1",
 		"mooc/week6/seq1/ex2",
 		"mooc/week6/seq2/ex1",
-		"mooc/week6/seq3/ex1"
+		"mooc/week6/seq3/ex1",
+		"mooc/projects/klotski",
+		"mooc/projects/markov"
 	    ]
 	},
 
