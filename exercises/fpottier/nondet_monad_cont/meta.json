@@ -2,5 +2,6 @@
   "learnocaml_version":"1",
   "kind":"exercise",
   "stars":3,
-  "title":"Implementing Nondeterminism with Continuations"
+  "title":"Implementing Nondeterminism with Continuations",
+  "backward_exercises": ["fpottier/merge_sort"]
 }

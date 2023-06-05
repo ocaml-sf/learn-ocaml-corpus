@@ -1,4 +1,6 @@
 { "learnocaml_version": "1",
   "kind": "exercise",
-  "title": "Tetragon", 
-  "stars": 2.5 }
+  "title": "Tetragon",
+  "stars": 2.5,
+  "backward_exercises": ["smelodesousa/F4/4-type-4"]
+}

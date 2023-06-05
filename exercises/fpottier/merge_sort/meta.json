@@ -2,5 +2,6 @@
   "learnocaml_version":"1",
   "kind":"exercise",
   "stars":3,
-  "title":"Merge Sort"
+  "title":"Merge Sort",
+  "backward_exercises": ["fpottier/leftist_heaps"]
 }

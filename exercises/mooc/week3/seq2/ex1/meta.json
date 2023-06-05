@@ -1,4 +1,6 @@
 { "learnocaml_version": "1",
   "kind": "exercise",
-  "title": "Symbolic Manipulation of Arithmetic Expressions", 
-  "stars": 2 }
+  "title": "Symbolic Manipulation of Arithmetic Expressions",
+  "stars": 2,
+  "backward_exercises": ["smelodesousa/F5/5-randomness-is-hard"]
+}

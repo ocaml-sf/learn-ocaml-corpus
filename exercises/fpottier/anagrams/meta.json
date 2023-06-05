@@ -2,5 +2,6 @@
   "learnocaml_version":"1",
   "kind":"exercise",
   "stars":3,
-  "title":"Recognizing Anagrams"
+  "title":"Recognizing Anagrams",
+  "backward_exercises": ["fpottier/alpha_beta"]
 }

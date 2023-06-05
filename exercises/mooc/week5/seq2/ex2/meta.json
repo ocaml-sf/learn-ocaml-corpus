@@ -1,4 +1,6 @@
 { "learnocaml_version": "1",
   "kind": "exercise",
   "title": "Displaying a Filesystem Hierarchy", 
-  "stars": 3 }
+  "stars": 3,
+  "backward_exercises": ["mooc/week5/seq2/ex1"]
+}

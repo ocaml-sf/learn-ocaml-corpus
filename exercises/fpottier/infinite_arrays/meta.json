@@ -2,5 +2,6 @@
   "learnocaml_version":"1",
   "kind":"exercise",
   "stars":3,
-  "title":"Infinite Arrays"
+  "title":"Infinite Arrays",
+  "backward_exercises": ["fpottier/huffman"]
 }

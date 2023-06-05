@@ -1,4 +1,6 @@
 { "learnocaml_version": "1",
   "kind": "exercise",
   "title": "Fixing a module signature",
-  "stars": 2 }
+  "stars": 2,
+  "backward_exercises": ["mooc/week6/seq1/ex2"]
+}

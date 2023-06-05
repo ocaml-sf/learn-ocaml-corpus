@@ -2,5 +2,6 @@
   "learnocaml_version":"1",
   "kind":"exercise",
   "stars":3,
-  "title":"From a Spectre to a Tree"
+  "title":"From a Spectre to a Tree",
+  "backward_exercises": ["fpottier/sat"]
 }

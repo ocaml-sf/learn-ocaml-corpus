@@ -2,5 +2,6 @@
   "learnocaml_version":"1",
   "kind":"exercise",
   "stars":3,
-  "title":"Implementing Nondeterminism as an Abstract Machine"
+  "title":"Implementing Nondeterminism as an Abstract Machine",
+  "backward_exercises": ["fpottier/nondet_monad_cont"]
 }

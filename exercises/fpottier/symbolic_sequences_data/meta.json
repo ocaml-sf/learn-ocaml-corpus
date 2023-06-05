@@ -2,5 +2,6 @@
   "learnocaml_version":"1",
   "kind":"exercise",
   "stars":3,
-  "title":"Symbolic Sequences as Data"
+  "title":"Symbolic Sequences as Data",
+  "backward_exercises": ["fpottier/stereo"]
 }

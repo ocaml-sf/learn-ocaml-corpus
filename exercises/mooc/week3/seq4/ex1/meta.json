@@ -1,4 +1,6 @@
 { "learnocaml_version": "1",
   "kind": "exercise",
-  "title": "Balanced Binary Trees", 
-  "stars": 1 }
+  "title": "Balanced Binary Trees",
+  "stars": 1,
+  "backward_exercises": ["smelodesousa/F4/4-fun-2"]
+}

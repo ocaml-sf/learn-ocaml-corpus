@@ -2,5 +2,6 @@
   "learnocaml_version":"1",
   "kind":"exercise",
   "stars":3,
-  "title":"Generic Sorting"
+  "title":"Generic Sorting",
+  "backward_exercises": ["fpottier/enumerating_trees"]
 }

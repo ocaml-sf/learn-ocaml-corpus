@@ -1,4 +1,6 @@
 { "learnocaml_version": "1",
   "kind": "exercise",
-  "title": "Points and vectors", 
-  "stars": 1.5 }
+  "title": "Points and vectors",
+  "stars": 1.5,
+  "backward_exercises": ["hferee/5.2_sierpinski_vg"]
+}

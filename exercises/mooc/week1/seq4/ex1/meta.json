@@ -1,4 +1,6 @@
 { "learnocaml_version": "1",
   "kind": "exercise",
   "title": "Simple Functions over Integers", 
-  "stars": 1 }
+  "stars": 1,
+  "backward_exercises" : ["hferee/1.2_declarations"]
+}

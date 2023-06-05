@@ -1,4 +1,6 @@
 { "learnocaml_version": "1",
   "kind": "exercise",
-  "title": "Using and Writing the Map Function", 
-  "stars": 1 }
+  "title": "Using and Writing the Map Function",
+  "stars": 1,
+  "backward_exercises": ["mooc/week4/seq3/ex2"]
+}

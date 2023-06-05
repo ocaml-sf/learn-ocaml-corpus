@@ -1,4 +1,6 @@
 { "learnocaml_version": "1",
   "kind": "exercise",
-  "title": "First In First Out", 
-  "stars": 2 }
+  "title": "First In First Out",
+  "stars": 2,
+  "backward_exercises": ["hferee/8_sort"]
+}

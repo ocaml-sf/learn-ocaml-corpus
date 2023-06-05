@@ -2,5 +2,6 @@
   "learnocaml_version":"1",
   "kind":"exercise",
   "stars":3,
-  "title":"Alpha-Beta Search"
+  "title":"Alpha-Beta Search",
+  "backward_exercises": ["mooc/week6/seq3/ex1"]
 }

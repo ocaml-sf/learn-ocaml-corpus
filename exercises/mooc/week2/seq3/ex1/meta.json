@@ -1,4 +1,6 @@
 { "learnocaml_version": "1",
   "kind": "exercise",
-  "title": "Searching for Strings in Arrays", 
-  "stars": 2 }
+  "title": "Searching for Strings in Arrays",
+  "stars": 2,
+  "backward_exercises": ["smelodesousa/F3/3-dichotomy"]
+}

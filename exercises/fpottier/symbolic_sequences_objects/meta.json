@@ -2,5 +2,6 @@
   "learnocaml_version":"1",
   "kind":"exercise",
   "stars":3,
-  "title":"Symbolic Sequences as Objects"
+  "title":"Symbolic Sequences as Objects",
+  "backward_exercises": ["fpottier/symbolic_sequences_data"]
 }

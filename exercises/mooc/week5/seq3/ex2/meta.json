@@ -1,4 +1,6 @@
 { "learnocaml_version": "1",
   "kind": "exercise",
   "title": "Producing Fine ASCII Art", 
-  "stars": 2 }
+  "stars": 2,
+  "backward_exercises": ["mooc/week5/seq3/ex1"]
+}
