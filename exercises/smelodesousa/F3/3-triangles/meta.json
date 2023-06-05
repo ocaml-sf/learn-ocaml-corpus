@@ -1,0 +1,9 @@
+{
+    "learnocaml_version" : "2",
+    "kind"               : "exercise",
+    "stars"              : 2,
+    "title"              : "Triangles",
+    "identifier"         : "3.16",
+    "authors"            : [["Rui Barata", "rui.barata@ubi.pt"],["Simão Melo de Sousa",""]],
+    "backward_exercises": ["smelodesousa/F3/3-mccarthy-91-function"]
+}

@@ -1,0 +1,9 @@
+{
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 2,
+  "title": "The dutch flag problem",
+  "identifier": "5.16",
+  "authors": [["Rui Barata", "rui.barata@ubi.pt"]],
+  "backward_exercises": ["smelodesousa/F5/5-absolute-majority"]
+}

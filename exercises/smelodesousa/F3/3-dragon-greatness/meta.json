@@ -1,0 +1,12 @@
+{
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 3,
+  "title": "The dragon's greatness",
+  "identifier": "3.21",
+  "authors": [
+    ["Dário Santos", "dariovfsantos@gmail.com"],
+    ["Simão Sousa", "desousa@di.ubi.pt"]
+  ],
+  "backward_exercises": ["hferee/10_assoc"]
+}

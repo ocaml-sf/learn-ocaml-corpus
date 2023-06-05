@@ -1,0 +1,9 @@
+{
+    "learnocaml_version" : "2",
+    "kind"               : "exercise",
+    "stars"              : 1,
+    "title"              : "Errors",
+    "identifier"         : "1.5",
+    "authors"            : [["Rui Barata", "rui.barata@ubi.pt"], ["Simão Sousa", "desousa@di.ubi.pt"]],
+    "backward_exercises": ["smelodesousa/F1/1-future"]
+}

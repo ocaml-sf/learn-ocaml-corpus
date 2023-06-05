@@ -1,0 +1,9 @@
+{
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 3,
+  "title": "Subsequence of lists",
+  "identifier": "5.5",
+  "authors": [["Dário Santos", "dariovfsantos@gmail.com"]],
+  "backward_exercises": ["smelodesousa/F5/5-max-sub-list"]
+}

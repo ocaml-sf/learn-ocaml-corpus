@@ -1,0 +1,9 @@
+{
+    "learnocaml_version" : "2",
+    "kind"               : "exercise",
+    "stars"              : 1,
+    "title"              : "In case of litigation, split it in half",
+    "identifier"         : "5.5",
+    "authors"            : [["Rui Barata", "rui.barata@ubi.pt"], ["Leonardo Santos", "leomendesantos@gmail.com"]],
+    "backward_exercises": ["smelodesousa/F5/5-salc"]
+}

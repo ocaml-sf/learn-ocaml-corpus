@@ -1,0 +1,9 @@
+{
+  "learnocaml_version" : "2",
+  "kind"               : "exercise",
+  "stars"              : 1,
+  "title"              : "Digits",
+  "identifier"         : "3.6",
+  "authors"            : [["Dário Santos", "dariovfsantos@gmail.com"], ["Simão Sousa", "desousa@di.ubi.pt"]],
+  "backward_exercises": ["smelodesousa/F3/3-pi"]
+}

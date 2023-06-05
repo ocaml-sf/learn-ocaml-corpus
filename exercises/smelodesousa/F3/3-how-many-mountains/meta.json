@@ -1,0 +1,13 @@
+{
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 3,
+  "title": "How many mountains?",
+  "identifier": "3.20",
+  "authors": [
+    ["Dário Santos", "dariovfsantos@gmail.com"],
+    ["Gonçalo Domingos", "goncalogdomingos@gmail.com"],
+    ["Simão Sousa", "desousa@di.ubi.pt"]
+  ],
+  "backward_exercises": ["smelodesousa/F3/3-collatz-hailstones"]
+}

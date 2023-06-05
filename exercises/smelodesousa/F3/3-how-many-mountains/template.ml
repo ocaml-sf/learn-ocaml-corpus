@@ -1,0 +1,1 @@
+let mountains n k = failwith "Unanswered"

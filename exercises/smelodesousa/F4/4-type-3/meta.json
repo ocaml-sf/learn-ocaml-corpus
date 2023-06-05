@@ -1,0 +1,12 @@
+{
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 1,
+  "title": "Check type III",
+  "identifier": "4.3",
+  "authors": [
+    ["Rui Barata", "rui.barata@ubi.pt"],
+    ["Simão Sousa", "desousa@di.ubi.pt"]
+  ],
+  "backward_exercises": ["smelodesousa/F4/4-type-2"]
+}

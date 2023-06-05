@@ -1,0 +1,9 @@
+{
+    "learnocaml_version"    : "2",
+    "kind"                  : "exercise",
+    "stars"                 : 1,
+    "title"                 : "Reach infinity",
+    "identifier"            : "3.4",
+    "authors"               : [["Dário Santos","dariovfsantos@gmail.com"], ["Gonçalo Domingos","goncalogdomingos@gmail.com"], ["Simão Sousa", "desousa@di.ubi.pt"]],
+    "backward_exercises": ["smelodesousa/F3/3-a-historic-algorithm"]
+}

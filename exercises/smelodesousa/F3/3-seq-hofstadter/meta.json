@@ -1,0 +1,9 @@
+{
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 1,
+  "title": "The Hofstadter-Huber Qr,s(n) sequences",
+  "identifier": "3.7",
+  "authors": [["Gonçalo Domingos", "goncalogdomingos@gmail.com"]],
+  "backward_exercises": ["smelodesousa/F3/3-digits"]
+}

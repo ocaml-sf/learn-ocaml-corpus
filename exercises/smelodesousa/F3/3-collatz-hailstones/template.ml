@@ -1,0 +1,1 @@
+let rec collatz n = failwith "Replace with your solution"
