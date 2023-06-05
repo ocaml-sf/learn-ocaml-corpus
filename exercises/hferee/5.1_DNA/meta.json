@@ -1,0 +1,7 @@
+{
+    "learnocaml_version": "1",
+    "kind": "exercise",
+    "stars": 2,
+    "title": "DNA sequences",
+    "backward_exercises": ["smelodesousa/F5/5-burrows-wheeler"]
+}

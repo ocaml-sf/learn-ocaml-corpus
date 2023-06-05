@@ -1,0 +1,7 @@
+{
+    "learnocaml_version": "1",
+    "kind": "exercise",
+    "stars": 3,
+    "title": "Encode by range",
+    "backward_exercises": ["mooc/week3/seq2/ex1"]
+}

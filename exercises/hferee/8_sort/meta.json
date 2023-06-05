@@ -1,0 +1,7 @@
+{
+    "learnocaml_version": "1",
+    "kind": "exercise",
+    "stars": 2,
+    "title": "Sort by insertion",
+    "backward_exercises": ["hferee/8_sieve"]
+}

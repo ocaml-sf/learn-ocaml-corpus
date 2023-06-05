@@ -1,0 +1,7 @@
+{
+    "learnocaml_version": "1",
+    "kind": "exercise",
+    "stars": 2,
+    "title": "Lists of lists",
+    "backward_exercises": ["hferee/10_run_length"]
+}

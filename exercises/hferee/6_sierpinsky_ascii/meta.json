@@ -1,0 +1,7 @@
+{
+    "learnocaml_version": "1",
+    "kind": "exercise",
+    "stars": 3,
+    "title": "Sierpinsky in ascii",
+    "backward_exercises": ["hferee/6_hanoi"]
+}

@@ -1,0 +1,7 @@
+{
+    "learnocaml_version": "1",
+    "kind": "exercise",
+    "stars": 3,
+    "title": "Sierpiński triangle",
+    "backward_exercises": ["hferee/5.0_prime_numbers"]
+}

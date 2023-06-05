@@ -1,0 +1,7 @@
+{
+    "learnocaml_version": "1",
+    "kind": "exercise",
+    "stars": 2,
+    "title": "Conditional expressions",
+    "backward_exercises": ["hferee/1.3_bool"]
+}

@@ -1,0 +1,7 @@
+{
+    "learnocaml_version": "1",
+    "kind": "exercise",
+    "stars": 2,
+    "title": "Lists",
+    "backward_exercises": ["smelodesousa/F3/3-dragon-greatness"]
+}
