@@ -3,7 +3,7 @@
   "kind": "exercise",
   "title": "Integer Identifiers",
   "focus": [
-    " Variable declaration",
+    "Variable declaration",
     "int operators"
   ],
   "stars": 1
