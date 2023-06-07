@@ -1,9 +1,28 @@
 {
-    "learnocaml_version" : "2",
-    "kind"               : "exercise",
-    "stars"              : 1,
-    "title"              : "Mistery",
-    "identifier"         : "1.3",
-    "authors"            : [["Rui Barata", "rui.barata@ubi.pt"],  ["Dário Santos", "dariovfsantos@gmail.com"], ["Simão Sousa", "desousa@di.ubi.pt"]],
-    "backward_exercises": ["smelodesousa/F1/1-type-error"]
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 1,
+  "title": "Mistery",
+  "focus": [
+    "Types",
+    "Fonctions recursives"
+  ],
+  "identifier": "1.3",
+  "authors": [
+    [
+      "Rui Barata",
+      "rui.barata@ubi.pt"
+    ],
+    [
+      "Dário Santos",
+      "dariovfsantos@gmail.com"
+    ],
+    [
+      "Simão Sousa",
+      "desousa@di.ubi.pt"
+    ]
+  ],
+  "backward_exercises": [
+    "smelodesousa/F1/1-type-error"
+  ]
 }

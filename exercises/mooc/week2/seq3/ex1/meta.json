@@ -1,6 +1,13 @@
-{ "learnocaml_version": "1",
+{
+  "learnocaml_version": "1",
   "kind": "exercise",
   "title": "Searching for Strings in Arrays",
+  "focus": [
+    "Array manipulation",
+    "recursive functions"
+  ],
   "stars": 2,
-  "backward_exercises": ["smelodesousa/F3/3-dichotomy"]
+  "backward_exercises": [
+    "smelodesousa/F3/3-dichotomy"
+  ]
 }

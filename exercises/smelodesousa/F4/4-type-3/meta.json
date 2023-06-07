@@ -3,10 +3,21 @@
   "kind": "exercise",
   "stars": 1,
   "title": "Check type III",
+  "focus": [
+    "types"
+  ],
   "identifier": "4.3",
   "authors": [
-    ["Rui Barata", "rui.barata@ubi.pt"],
-    ["Simão Sousa", "desousa@di.ubi.pt"]
+    [
+      "Rui Barata",
+      "rui.barata@ubi.pt"
+    ],
+    [
+      "Simão Sousa",
+      "desousa@di.ubi.pt"
+    ]
   ],
-  "backward_exercises": ["smelodesousa/F4/4-type-2"]
+  "backward_exercises": [
+    "smelodesousa/F4/4-type-2"
+  ]
 }

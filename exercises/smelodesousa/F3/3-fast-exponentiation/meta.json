@@ -1,9 +1,32 @@
 {
-    "learnocaml_version"    : "2",
-    "kind"                  : "exercise",
-    "stars"                 : 2,
-    "title"                 : "Fast Exponentiation",
-    "identifier"            : "3.12",
-    "authors"               : [["Leonardo Santos", "leomendesantos@gmail.com"], ["Dário Santos","dariovfsantos@gmail.com"], ["Gonçalo Domingos","goncalogdomingos@gmail.com"], ["Simão Sousa", "desousa@di.ubi.pt"]],
-    "backward_exercises": ["smelodesousa/F3/3-tribonacci"]
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 2,
+  "title": "Fast Exponentiation",
+  "focus": [
+    "Arithmetic operations",
+    "recursive functions"
+  ],
+  "identifier": "3.12",
+  "authors": [
+    [
+      "Leonardo Santos",
+      "leomendesantos@gmail.com"
+    ],
+    [
+      "Dário Santos",
+      "dariovfsantos@gmail.com"
+    ],
+    [
+      "Gonçalo Domingos",
+      "goncalogdomingos@gmail.com"
+    ],
+    [
+      "Simão Sousa",
+      "desousa@di.ubi.pt"
+    ]
+  ],
+  "backward_exercises": [
+    "smelodesousa/F3/3-tribonacci"
+  ]
 }

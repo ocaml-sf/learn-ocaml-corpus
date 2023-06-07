@@ -3,10 +3,21 @@
   "kind": "exercise",
   "stars": 1,
   "title": "Type or error",
+  "focus": [
+    "Type inference"
+  ],
   "identifier": "1.2",
   "authors": [
-    ["Rui Barata", "rui.barata@ubi.pt"],
-    ["Simão Sousa", "desousa@di.ubi.pt"]
+    [
+      "Rui Barata",
+      "rui.barata@ubi.pt"
+    ],
+    [
+      "Simão Sousa",
+      "desousa@di.ubi.pt"
+    ]
   ],
-  "backward_exercises": ["smelodesousa/F1/1-type"]
+  "backward_exercises": [
+    "smelodesousa/F1/1-type"
+  ]
 }

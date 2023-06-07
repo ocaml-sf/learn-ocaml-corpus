@@ -1,9 +1,19 @@
 {
-    "learnocaml_version" : "2",
-    "kind"               : "exercise",
-    "stars"              : 2,
-    "title"              : "Lists and sub-lists III",
-    "identifier"         : "5.11",
-    "authors"            : [["Rui Barata", "rui.barata@ubi.pt"]],
-    "backward_exercises": ["smelodesousa/F5/5-lists-sublists-2"]
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 2,
+  "title": "Lists and sub-lists III",
+  "focus": [
+    "List manipulation"
+  ],
+  "identifier": "5.11",
+  "authors": [
+    [
+      "Rui Barata",
+      "rui.barata@ubi.pt"
+    ]
+  ],
+  "backward_exercises": [
+    "smelodesousa/F5/5-lists-sublists-2"
+  ]
 }

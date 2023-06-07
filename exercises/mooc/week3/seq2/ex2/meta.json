@@ -1,6 +1,13 @@
-{ "learnocaml_version": "1",
+{
+  "learnocaml_version": "1",
   "kind": "exercise",
   "title": "Tries",
+  "focus": [
+    "Option type",
+    "char and string manipulations"
+  ],
   "stars": 3,
-  "backward_exercises": ["smelodesousa/F5/5-pizzaria"]
+  "backward_exercises": [
+    "smelodesousa/F5/5-pizzaria"
+  ]
 }

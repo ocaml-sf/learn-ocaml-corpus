@@ -3,7 +3,17 @@
   "kind": "exercise",
   "stars": 3,
   "title": "Luigi’s Pizzeria - From MIUP 2018",
+  "focus": [
+    "List manipulation"
+  ],
   "identifier": "5.23",
-  "authors": [["Rui Barata", "rui.barata@ubi.pt"]],
-  "backward_exercises": ["smelodesousa/F5/5-brackets"]
+  "authors": [
+    [
+      "Rui Barata",
+      "rui.barata@ubi.pt"
+    ]
+  ],
+  "backward_exercises": [
+    "smelodesousa/F5/5-brackets"
+  ]
 }

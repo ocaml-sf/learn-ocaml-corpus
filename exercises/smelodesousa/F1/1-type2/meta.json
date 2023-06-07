@@ -3,10 +3,21 @@
   "kind": "exercise",
   "stars": 1,
   "title": "Types 2",
+  "focus": [
+    "Types"
+  ],
   "identifier": "1.10",
   "authors": [
-    ["Rui Barata", "rui.barata@ubi.pt"],
-    ["Simão Sousa", "desousa@di.ubi.pt"]
+    [
+      "Rui Barata",
+      "rui.barata@ubi.pt"
+    ],
+    [
+      "Simão Sousa",
+      "desousa@di.ubi.pt"
+    ]
   ],
-  "backward_exercises": ["smelodesousa/F1/1-what-type2"]
+  "backward_exercises": [
+    "smelodesousa/F1/1-what-type2"
+  ]
 }

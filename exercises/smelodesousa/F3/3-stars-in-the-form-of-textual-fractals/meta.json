@@ -3,11 +3,25 @@
   "kind": "exercise",
   "stars": 2,
   "title": "Stars in the form of textual fractals",
+  "focus": [
+    "Print functions"
+  ],
   "identifier": "3.18",
   "authors": [
-    ["Dário Santos", "dariovfsantos@gmail.com"],
-    ["Rui Barata", "rui.barata@ubi.pt"],
-    ["Simão Sousa", "desousa@di.ubi.pt"]
+    [
+      "Dário Santos",
+      "dariovfsantos@gmail.com"
+    ],
+    [
+      "Rui Barata",
+      "rui.barata@ubi.pt"
+    ],
+    [
+      "Simão Sousa",
+      "desousa@di.ubi.pt"
+    ]
   ],
-  "backward_exercises": ["hferee/6_sierpinsky_ascii"]
+  "backward_exercises": [
+    "hferee/6_sierpinsky_ascii"
+  ]
 }

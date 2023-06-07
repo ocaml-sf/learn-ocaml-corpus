@@ -3,7 +3,17 @@
   "kind": "exercise",
   "stars": 2,
   "title": "Maximum sequence of true",
+  "focus": [
+    "List manipulation"
+  ],
   "identifier": "5.8",
-  "authors": [["Gonçalo Domingos", "goncalogdomingos@gmail.com"]],
-  "backward_exercises": ["smelodesousa/F5/5-rle"]
+  "authors": [
+    [
+      "Gonçalo Domingos",
+      "goncalogdomingos@gmail.com"
+    ]
+  ],
+  "backward_exercises": [
+    "smelodesousa/F5/5-rle"
+  ]
 }

@@ -1,6 +1,13 @@
-{ "learnocaml_version": "1",
+{
+  "learnocaml_version": "1",
   "kind": "exercise",
   "title": "Tetragon",
+  "focus": [
+    "Logical operations",
+    "tuple manipulations"
+  ],
   "stars": 2.5,
-  "backward_exercises": ["smelodesousa/F4/4-type-4"]
+  "backward_exercises": [
+    "smelodesousa/F4/4-type-4"
+  ]
 }

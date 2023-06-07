@@ -1,7 +1,13 @@
 {
-    "learnocaml_version": "1",
-    "kind": "exercise",
-    "stars": 1,
-    "title": "Parameterized lists",
-    "backward_exercises": ["mooc/week2/seq3/ex2"]
+  "learnocaml_version": "1",
+  "kind": "exercise",
+  "stars": 1,
+  "title": "Parameterized lists",
+  "focus": [
+    "List manipulation",
+    "polymorphic types"
+  ],
+  "backward_exercises": [
+    "mooc/week2/seq3/ex2"
+  ]
 }

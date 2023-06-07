@@ -3,11 +3,25 @@
   "kind": "exercise",
   "stars": 2,
   "title": "Dichotomy",
+  "focus": [
+    "Array manipulation"
+  ],
   "identifier": "3.14",
   "authors": [
-    ["Dário Santos", "dariovfsantos@gmail.com"],
-    ["Gonçalo Domingos", "goncalogdomingos@gmail.com"],
-    ["Simão Sousa", "desousa@di.ubi.pt"]
+    [
+      "Dário Santos",
+      "dariovfsantos@gmail.com"
+    ],
+    [
+      "Gonçalo Domingos",
+      "goncalogdomingos@gmail.com"
+    ],
+    [
+      "Simão Sousa",
+      "desousa@di.ubi.pt"
+    ]
   ],
-  "backward_exercises": ["smelodesousa/F3/3-how-many-mountains"]
+  "backward_exercises": [
+    "smelodesousa/F3/3-how-many-mountains"
+  ]
 }

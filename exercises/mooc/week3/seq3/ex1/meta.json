@@ -1,6 +1,13 @@
-{ "learnocaml_version": "1",
+{
+  "learnocaml_version": "1",
   "kind": "exercise",
   "title": "Type Directed Programming",
+  "focus": [
+    "Code comprehension and update",
+    "fixing warnings"
+  ],
   "stars": 1,
-  "backward_exercises": ["mooc/week3/seq2/ex2"]
+  "backward_exercises": [
+    "mooc/week3/seq2/ex2"
+  ]
 }

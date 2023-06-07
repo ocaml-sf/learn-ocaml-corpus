@@ -1,7 +1,13 @@
 {
-    "learnocaml_version": "1",
-    "kind": "exercise",
-    "stars": 2,
-    "title": "Conditional expressions",
-    "backward_exercises": ["hferee/1.3_bool"]
+  "learnocaml_version": "1",
+  "kind": "exercise",
+  "stars": 2,
+  "title": "Conditional expressions",
+  "focus": [
+    "Booleans",
+    "conditional"
+  ],
+  "backward_exercises": [
+    "hferee/1.3_bool"
+  ]
 }

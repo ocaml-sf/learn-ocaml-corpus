@@ -1,7 +1,14 @@
 {
-    "learnocaml_version": "1",
-    "kind": "exercise",
-    "stars": 2,
-    "title": "Option type and association lists",
-    "backward_exercises": ["hferee/10_parameterized_lists"]
+  "learnocaml_version": "1",
+  "kind": "exercise",
+  "stars": 2,
+  "title": "Option type and association lists",
+  "focus": [
+    "List manipulation",
+    "option type",
+    "polymorphic types"
+  ],
+  "backward_exercises": [
+    "hferee/10_parameterized_lists"
+  ]
 }

@@ -1,9 +1,24 @@
 {
-  "learnocaml_version" : "2",
-  "kind"               : "exercise",
-  "stars"              : 1,
-  "title"              : "Lotto",
-  "identifier"         : "5.3",
-  "authors"            : [["Dário Santos", "dariovfsantos@gmail.com"], ["Leonardo Santos", "leomendesantos@gmail.com"]],
-  "backward_exercises": ["smelodesousa/F5/5-shine-in-society"]
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 1,
+  "title": "Lotto",
+  "focus": [
+    "List manipulation",
+    "types"
+  ],
+  "identifier": "5.3",
+  "authors": [
+    [
+      "Dário Santos",
+      "dariovfsantos@gmail.com"
+    ],
+    [
+      "Leonardo Santos",
+      "leomendesantos@gmail.com"
+    ]
+  ],
+  "backward_exercises": [
+    "smelodesousa/F5/5-shine-in-society"
+  ]
 }

@@ -1,7 +1,13 @@
 {
-    "learnocaml_version": "1",
-    "kind": "exercise",
-    "stars": 1,
-    "title": "Local declarations",
-    "backward_exercises": ["mooc/week1/seq3/ex1"]
+  "learnocaml_version": "1",
+  "kind": "exercise",
+  "stars": 1,
+  "focus": [
+    "Variable declaration",
+    "int operators"
+  ],
+  "title": "Local declarations",
+  "backward_exercises": [
+    "mooc/week1/seq3/ex1"
+  ]
 }

@@ -1,9 +1,32 @@
 {
-    "learnocaml_version"    : "2",
-    "kind"                  : "exercise",
-    "stars"                 : 2,
-    "title"                 : "The Collatz conjecture, or Hailstones, or Syracuse and other cool names...",
-    "identifier"            : "3.17",
-    "authors"               : [["Leonardo Santos", "leomendesantos@gmail.com"], ["Dário Santos","dariovfsantos@gmail.com"], ["Gonçalo Domingos","goncalogdomingos@gmail.com"], ["Simão Sousa", "desousa@di.ubi.pt"]],
-    "backward_exercises": ["smelodesousa/F3/3-triangles"]
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 2,
+  "title": "The Collatz conjecture, or Hailstones, or Syracuse and other cool names...",
+  "focus": [
+    "Arithmetic operations",
+    "recursive functions"
+  ],
+  "identifier": "3.17",
+  "authors": [
+    [
+      "Leonardo Santos",
+      "leomendesantos@gmail.com"
+    ],
+    [
+      "Dário Santos",
+      "dariovfsantos@gmail.com"
+    ],
+    [
+      "Gonçalo Domingos",
+      "goncalogdomingos@gmail.com"
+    ],
+    [
+      "Simão Sousa",
+      "desousa@di.ubi.pt"
+    ]
+  ],
+  "backward_exercises": [
+    "smelodesousa/F3/3-triangles"
+  ]
 }

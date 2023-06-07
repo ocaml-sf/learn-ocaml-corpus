@@ -1,7 +1,12 @@
 {
-    "learnocaml_version": "1",
-    "kind": "exercise",
-    "stars": 2,
-    "title": "Applications of the fold_right function",
-    "backward_exercises": ["hferee/7_lists_binary_encoding"]
+  "learnocaml_version": "1",
+  "kind": "exercise",
+  "stars": 2,
+  "title": "Applications of the fold_right function",
+  "focus": [
+    "list manipulation"
+  ],
+  "backward_exercises": [
+    "hferee/7_lists_binary_encoding"
+  ]
 }

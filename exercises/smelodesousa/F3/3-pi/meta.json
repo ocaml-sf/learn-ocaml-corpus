@@ -3,10 +3,23 @@
   "kind": "exercise",
   "stars": 1,
   "title": "Approximate π",
+  "focus": [
+    "Arithmetic operations",
+    "recursive functions",
+    "floats"
+  ],
   "identifier": "3.5",
   "authors": [
-    ["Rui Barata", "rui.barata@ubi.pt"],
-    ["Simão Melo de Sousa", ""]
+    [
+      "Rui Barata",
+      "rui.barata@ubi.pt"
+    ],
+    [
+      "Simão Melo de Sousa",
+      ""
+    ]
   ],
-  "backward_exercises": ["smelodesousa/F3/3-reach-infinity"]
+  "backward_exercises": [
+    "smelodesousa/F3/3-reach-infinity"
+  ]
 }

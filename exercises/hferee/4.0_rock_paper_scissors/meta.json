@@ -1,7 +1,13 @@
 {
-    "learnocaml_version": "1",
-    "kind": "exercise",
-    "stars": 1,
-    "title": "Rock-Paper-Scissors",
-    "backward_exercises": ["mooc/week2/seq1/ex2"]
+  "learnocaml_version": "1",
+  "kind": "exercise",
+  "stars": 1,
+  "title": "Rock-Paper-Scissors",
+  "focus": [
+    "Record",
+    "variant type"
+  ],
+  "backward_exercises": [
+    "mooc/week2/seq1/ex2"
+  ]
 }

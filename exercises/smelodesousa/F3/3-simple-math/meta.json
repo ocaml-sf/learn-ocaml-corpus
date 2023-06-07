@@ -3,10 +3,22 @@
   "kind": "exercise",
   "stars": 1,
   "title": "Simple math",
+  "focus": [
+    "Arithmetic operations",
+    "floats"
+  ],
   "identifier": "3.1",
   "authors": [
-    ["Rui Barata", "rui.barata@ubi.pt"],
-    ["Simão Melo de Sousa", ""]
+    [
+      "Rui Barata",
+      "rui.barata@ubi.pt"
+    ],
+    [
+      "Simão Melo de Sousa",
+      ""
+    ]
   ],
-  "backward_exercises": ["mooc/week2/seq1/ex1"]
+  "backward_exercises": [
+    "mooc/week2/seq1/ex1"
+  ]
 }

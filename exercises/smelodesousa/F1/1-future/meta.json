@@ -1,9 +1,33 @@
 {
-    "learnocaml_version" : "2",
-    "kind"               : "exercise",
-    "stars"              : 1,
-    "title"              : "Future",
-    "identifier"         : "1.4",
-    "authors"            : [["Rui Barata", "rui.barata@ubi.pt"],  ["Dário Santos", "dariovfsantos@gmail.com"], ["Simão Sousa", "desousa@di.ubi.pt"], ["Leonardo Santos", "leomendesantos@gmail.com"]],
-    "backward_exercises": ["smelodesousa/F1/1-mistery"]
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 1,
+  "title": "Future",
+  "focus": [
+    "Types",
+    "Fonctions recursives",
+    "Errors"
+  ],
+  "identifier": "1.4",
+  "authors": [
+    [
+      "Rui Barata",
+      "rui.barata@ubi.pt"
+    ],
+    [
+      "Dário Santos",
+      "dariovfsantos@gmail.com"
+    ],
+    [
+      "Simão Sousa",
+      "desousa@di.ubi.pt"
+    ],
+    [
+      "Leonardo Santos",
+      "leomendesantos@gmail.com"
+    ]
+  ],
+  "backward_exercises": [
+    "smelodesousa/F1/1-mistery"
+  ]
 }
