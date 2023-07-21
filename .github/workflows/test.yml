@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  test:
+    name: Run learn-ocaml on the corpus
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        server_image:
+          - 'ocamlsf/learn-ocaml:0.15.0'
+          # TODO: Keep up-to-date
+          - 'ocamlsf/learn-ocaml:master'
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
+      - name: Create directory www
+        run: |
+          mkdir -m 755 www
+          # if [ "${{ matrix.server_image }}" = "ocamlsf/learn-ocaml:0.12" ]; then
+          #   # Workaround https://github.com/ocaml-sf/learn-ocaml/issues/305 for learn-ocaml 0.12
+          #   find exercises -type d -mindepth 1 -exec bash -c 'mkdir -p -m 755 "www/${1/exercises/static}"' bash "{}" \;
+          # fi
+          sudo chown -R 1000:1000 www
+      - name: Run learn-ocaml on the corpus
+        run: 'docker run --rm -v "$PWD:/repository" -v "$PWD/www:/home/learn-ocaml/www" ${{ matrix.server_image }} build'
