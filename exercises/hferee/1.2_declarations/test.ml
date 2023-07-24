@@ -10,8 +10,8 @@ let check_count_fun code_ast name f n =
   let reports = find_binding code_ast name (ast_check_expr ~on_variable_occurence:
     (fun v -> if v = f then incr count; []))
   in
-  if !count <> n then [Message ([Text ("Il faut utiliser exactement " ^ string_of_int n ^ " fois '" ^ f ^ "'.")], Failure)] 
-  else [Message ([Text("Bon nombre de '" ^ f ^ "' : " ^ string_of_int n ^ ".")], Success 1)]
+  if !count <> n then [Message ([Text ("You have to use exactly " ^ string_of_int n ^ " times '" ^ f ^ "'.")], Failure)]
+  else [Message ([Text("Correct number of '" ^ f ^ "' : " ^ string_of_int n ^ ".")], Success 1)]
 
 
 let testmult name =

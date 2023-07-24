@@ -6,7 +6,7 @@ and `e2`.
 
 **Question 1.**
 
-For each of the following expressions, give its value, or `Erreur` if it doesn't
+For each of the following expressions, give its value, or `Error` if it doesn't
 make sense.
 
 ```ocaml
@@ -27,9 +27,9 @@ Replace the following conditional expressions with equivalent expressions contai
 strictly fewer `if` statements.
 
 ```ocaml
-let simplifie1 x = if x > 3 then false else true
+let simplify1 x = if x > 3 then false else true
 
-let simplifie2 x y=
+let simplify2 x y=
     if x then
         if y then false
         else true

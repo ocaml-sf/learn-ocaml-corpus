@@ -19,7 +19,7 @@ let exercise =
         [test_show, (4, 2); test_show (-4, 2)]
     ); *)
     Section(
-      [Text "Pas de correction automatique pour cet exercice"], [])
+      [Text "No automatic correction for this exercise"], [])
    ]
 
 let () =

@@ -36,7 +36,7 @@ let rec hide l msg = match l with
 let check_count name l test status=
     Section ([Code name], test @
     if l = [] then []
-    else hide (List.concat(List.map (fun (f, n) -> check_one_count name f n "Simplifier davantage." status) l)) "Suffisamment simplifié.")
+    else hide (List.concat(List.map (fun (f, n) -> check_one_count name f n "Simplify more." status) l)) "Simplified enough.")
 
 let bools = [true; false]
 
@@ -53,10 +53,10 @@ let exercise =
    testexn "phrase2";
    testexn "phrase3";
 
-   check_count "simplifie1" [(test_construct "true", 0); (test_construct "false", 0)]
-    (test_function_1_against_solution [%ty : int -> bool] ~gen:0 "simplifie1" [-1; 0; 1; 2; 100]) Failure;
-   check_count "simplifie2" [(test_construct "true", 0); (test_construct "false", 0)]
-    (test_function_2_against_solution [%ty : bool -> bool -> bool] ~gen:0 "simplifie2" bools2) Failure;
+   check_count "simplify1" [(test_construct "true", 0); (test_construct "false", 0)]
+    (test_function_1_against_solution [%ty : int -> bool] ~gen:0 "simplify1" [-1; 0; 1; 2; 100]) Failure;
+   check_count "simplify2" [(test_construct "true", 0); (test_construct "false", 0)]
+    (test_function_2_against_solution [%ty : bool -> bool -> bool] ~gen:0 "simplify2" bools2) Failure;
    check_count "edt" [(test_string "Nothing interesting" , 1)]
     (test_function_2_against_solution [%ty : string -> int -> string] ~gen:5 "edt"
         [("monday", 13*60+29); ("monday", 13*60+30); ("monday", 15*60+30); ("monday", 14);

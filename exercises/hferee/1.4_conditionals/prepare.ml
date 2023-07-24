@@ -1,1 +1,1 @@
-exception Erreur
+exception Error

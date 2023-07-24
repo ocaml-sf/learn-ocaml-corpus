@@ -1,13 +1,13 @@
 let phrase1 = 4
 
-let phrase2 = Erreur
+let phrase2 = Error
 
-let phrase3 = Erreur
+let phrase3 = Error
 
 
-let simplifie1 x = x <= 3
+let simplify1 x = x <= 3
 
-let simplifie2 x y = if x then not y else y
+let simplify2 x y = if x then not y else y
 
 let edt day time =
     if day = "monday" && 13 * 60 + 30 <= time && time < 15 * 60 + 30 then "practical"

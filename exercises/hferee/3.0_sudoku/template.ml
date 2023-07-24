@@ -1,2 +1,2 @@
-(* Pas de modèle cette fois-ci.
-   Déclarez vous-même les fonctions, annotées avec le bon type *)
+(* No model this time.
+   Declare the functions yourself, annotated with the correct type *)

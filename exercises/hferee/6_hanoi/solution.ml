@@ -1,7 +1,7 @@
 let string_of_tower = function
-  | L -> "gauche"
-  | R -> "droite"
-  | M -> "milieu"
+  | L -> "left"
+  | R -> "right"
+  | M -> "middle"
 
 let move x y =
   print_string (string_of_tower x ^ " -> " ^ string_of_tower y);

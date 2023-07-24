@@ -29,33 +29,33 @@ expression that evaluates to `true` if and only if the number `x` is within
 
 
 ```ocaml
-let intervalle10 x = false
+let interval10 x = false
 ```
 
 **Question 2.** In the following declarations, replace the boolean
 expression with its value (`true` or `false`)
 
 ```ocaml
-let valeur1 = true && false
+let value1 = true && false
 
-let valeur2 = true || false
+let value2 = true || false
 
-let valeur3 = not (true || true) && true
+let value3 = not (true || true) && true
 ```
 
 **Question 3.** In the following declarations, replace the expression on the
 right-hand side with a simpler equivalent expression.
 
 ```ocaml
-let simplifier1 x y = (x || y) || x
+let simplify1 x y = (x || y) || x
 
-let simplifier2 x y = (x > 5 && x >= 7)
+let simplify2 x y = (x > 5 && x >= 7)
 
-let simplifier3 x y z = x = y && y = z && x = z
+let simplify3 x y z = x = y && y = z && x = z
 
-let simplifier4 x y = x > 7 || (x <= 7 && y > 2)
+let simplify4 x y = x > 7 || (x <= 7 && y > 2)
 
-let simplifier5 x = (((x = true) = false) = false) = true
+let simplify5 x = (((x = true) = false) = false) = true
 ```
 
 **Question 4.** A leap year is a year whose number is divisible by 4, except if it is
@@ -64,7 +64,7 @@ replace `false` with a boolean expression that evaluates to `true` only when `x`
 integer corresponding to a leap year.
 
 ```ocaml
-let bissextile x = false
+let leap x = false
 ```
 
 It is worth noting that the `mod` operator calculates the remainder of the division operation.

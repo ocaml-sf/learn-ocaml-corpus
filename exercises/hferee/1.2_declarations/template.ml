@@ -1,4 +1,4 @@
-(* Remplacer les -1 par vos réponses *)
+(* Replace the -1 with your answers *)
 
 let phrase0 = -1
 

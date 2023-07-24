@@ -14,7 +14,7 @@ let check name f n =
     (fun v -> if test_construct f v then incr count; []))
   in
   if !count <> n then
-    let msg = if n = 0 then "Ne pas utiliser " else "Utiliser " in
+    let msg = if n = 0 then "Do not use " else "Use " in
     [Message ([Text (msg ^ f)], Failure)]
   else []
 

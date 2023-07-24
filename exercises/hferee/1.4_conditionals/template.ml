@@ -1,17 +1,17 @@
 (* Question 1 *)
-let phrase1 = "Remplacez-moi"
+let phrase1 = "Replace me"
 
-let phrase2 = "Remplacez-moi"
+let phrase2 = "Replace me"
 
-let phrase3 = "Remplacez-moi"
+let phrase3 = "Replace me"
 
 
 (* Question 2 *)
-let simplifie1 x = "Remplacez-moi"
+let simplify1 x = "Replace me"
 
-let simplifie2 x y = "Remplacez-moi"
+let simplify2 x y = "Replace me"
 
-let edt day time = "Remplacez-moi"
+let edt day time = "Replace me"
 
 
 (* Question 3 *)
