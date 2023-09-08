@@ -2,7 +2,7 @@ open Report
 open Test_lib
 
 let print_float ppf = Format.fprintf ppf "%.3f" ;;
-#install_printer print_float ;;
+(* #install_printer print_float ;; *)
 
 let dist p1 p2 =
   sqrt ((p1.x -. p2.x) ** 2. +. (p1.y -. p2.y) ** 2. +. (p1.z -. p2.z) ** 2.)

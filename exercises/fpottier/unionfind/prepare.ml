@@ -33,7 +33,7 @@ end = struct
   let (!) r = incr c; !r
 end
 
-open R
+include R
 
 (* The following type definitions should ideally be public, but we cannot
    place them in prelude.ml because prepare depends on prelude, not the

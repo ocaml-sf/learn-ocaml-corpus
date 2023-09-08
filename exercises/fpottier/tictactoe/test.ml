@@ -1270,7 +1270,7 @@ let rec bseqlength n xs =
 
 type path = int list
 
-exception Fail of path * string
+exception Failp of path * string
 
 exception Length of path * exn
 
@@ -1281,7 +1281,7 @@ let compare (reference : tree) (candidate : tree) : unit =
   Q.add (reference, candidate, []) q;
   while not (Q.is_empty q) do
     let t0, t1, path = Q.take q in
-    let fail msg = raise (Fail (List.rev path, msg)) in
+    let fail msg = raise (Failp (List.rev path, msg)) in
     match t0, t1 with
     | TLeaf _, TNonLeaf _ ->
         fail "A leaf is expected, yet a node is found."
@@ -1422,7 +1422,7 @@ let test_tree () =
             try
               compare expected_tree actual_tree
             with
-            | Fail (path, msg) ->
+            | Failp (path, msg) ->
                 fail (
                   something_is_wrong @
                   R.Text "The following expression produces an incorrect subtree:" ::

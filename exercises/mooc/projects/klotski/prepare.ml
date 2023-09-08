@@ -13,7 +13,7 @@ let print_int_list_set ppf int_set =
        ~pp_sep: (fun ppf () -> Format.fprintf ppf ";")
        print_int_list)
     (IntListSet.elements int_set) ;;
-#install_printer print_int_list_set ;;
+(* #install_printer print_int_list_set ;; *)
 
 module IntSet = Set.Make (struct type t = int let compare = (-) end)
 type int_set_operations = (int, IntSet.t) set_operations
@@ -25,7 +25,7 @@ let print_int_set ppf int_set =
        ~pp_sep: (fun ppf () -> Format.fprintf ppf ";")
        (fun ppf -> Format.fprintf ppf "%d"))
     (IntSet.elements int_set) ;;
-#install_printer print_int_set ;;
+(* #install_printer print_int_set ;; *)
 
 module Anim = struct
   type point = float * float

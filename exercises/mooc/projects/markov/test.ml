@@ -8,7 +8,7 @@ let print_long_string ppf str =
     Format.fprintf ppf "%S" str
 
 ;;
-#install_printer print_long_string
+(* #install_printer print_long_string *)
 ;;
 
 let print_htable ppf htable =
@@ -23,7 +23,7 @@ let print_htable ppf htable =
   Format.fprintf ppf  "table)@]"
 
 ;;
-#install_printer print_htable
+(* #install_printer print_htable *)
 ;;
 
 let print_ptable_table ppf table =
@@ -39,7 +39,7 @@ let print_ptable_table ppf table =
   Format.fprintf ppf  "table)@]"
 
 ;;
-#install_printer print_ptable_table
+(* #install_printer print_ptable_table *)
 ;;
 
 let print_ptable ppf { prefix_length ; table } =
@@ -55,7 +55,7 @@ let print_ptable ppf { prefix_length ; table } =
   Format.fprintf ppf  "{ prefix_length ; table })@]"
 
 ;;
-#install_printer print_ptable
+(* #install_printer print_ptable *)
 ;;
 
 let graded n cb =

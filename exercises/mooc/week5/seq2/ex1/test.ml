@@ -1,6 +1,8 @@
 open Report
 open Test_lib
 
+let sample_int = sample_int
+
 let exercise_1 =
   Section ([ Text "Exercise 1: " ; Code "print_int_list" ],
            test_function_1_against_solution
