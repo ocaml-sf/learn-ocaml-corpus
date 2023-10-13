@@ -1,8 +1,0 @@
-services:
-  - docker
-
-before_install:
-  - docker pull ocamlsf/learn-ocaml
-
-script:
-  - docker run --rm -v $(pwd)/.:/repository ocamlsf/learn-ocaml -- build
