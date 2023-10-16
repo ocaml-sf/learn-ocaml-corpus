@@ -1,0 +1,12 @@
+Question 1
+  Found [is_sorted] with compatible type.
+  Success 1: [is_sorted] seems correct.
+Question 2
+  Found [is_permutation] with compatible type.
+  Failure: [is_permutation] is incorrect.
+    The following expression:
+    
+     | is_permutation [| 1 |]
+    raises the following exception: [(Invalid_argument "index out of
+    bounds")] This is invalid. Producing the following result is valid:
+    [false]

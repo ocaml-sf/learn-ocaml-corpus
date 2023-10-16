@@ -1,0 +1,9 @@
+-- about this exercise ---------------------------------------------------------
+
+When a function returns an incorrect result and this result is an array,
+instead of just showing the candidate result and the reference result,
+we could indicate at which index (or indices) the two arrays differ.
+
+-- ocaml questions -------------------------------------------------------------
+
+-- learn-ocaml questions -------------------------------------------------------
