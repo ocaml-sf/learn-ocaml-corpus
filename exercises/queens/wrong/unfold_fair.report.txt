@@ -1,0 +1,15 @@
+Question 1
+  Failure: Cannot find  [select]
+Question 2
+  Found [unfold] with compatible type.
+  Success 1: [unfold] seems correct.
+Question 3
+  Failure: Cannot find  [permutations]
+Question 4
+  Failure: Cannot find  [nodup]
+Question 5
+  Failure: Cannot find  [safe]
+Question 6
+  Failure: Cannot find  [queens]
+Question 7
+  Failure: Cannot find  [queenz]

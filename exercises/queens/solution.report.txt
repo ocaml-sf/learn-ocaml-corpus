@@ -1,0 +1,24 @@
+Question 1
+  Found [select] with compatible type.
+  Functional correctness
+    Success 1: [select] seems correct.
+  Laziness
+    Success 1: [select] seems lazy.
+Question 2
+  Found [unfold] with compatible type.
+  Success 1: [unfold] seems correct.
+Question 3
+  Found [permutations] with compatible type.
+  Success 1: [permutations] seems correct.
+Question 4
+  Found [nodup] with compatible type.
+  Success 1: [nodup] seems correct.
+Question 5
+  Found [safe] with compatible type.
+  Success 1: [safe] seems correct.
+Question 6
+  Found [queens] with compatible type.
+  Success 1: [queens] seems correct.
+Question 7
+  Found [queenz] with compatible type.
+  Success 1: [queenz] seems correct.
