@@ -38,7 +38,7 @@ let rec merge l1 l2 =
      else
        x2::(merge l1 l2')
 
-let wrap = List.map (fun x -> [x])
+let wrap a = List.map (fun x -> [x]) a
 
 let rec flatten_merge = function
   | x1::x2::l' ->

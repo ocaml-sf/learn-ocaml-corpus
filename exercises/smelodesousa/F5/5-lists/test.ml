@@ -2,7 +2,7 @@ open Test_lib
 open Report
 
 (* samplers *)
-let sample_Palindrome () = 
+let csample_Palindrome () = 
   let () = Random.self_init () in 
   if ((Random.int 2) = 0)
   then
@@ -15,17 +15,17 @@ let sample_Palindrome () =
   else
     sample_list ~min_size: 5 ~max_size: 20 (fun () -> ((Random.int 1000) - 500)) ()
 
-let sample_allChar () = 
+let csample_allChar () = 
   let () = Random.self_init () in 
   char_of_int ((Random.int 95) + 32)
 
-let sample_Slist () = 
+let csample_Slist () = 
   let () = Random.self_init () in 
   if ((Random.int 2) = 1)
   then let l = (sample_list ~min_size: 5 ~max_size: 20 (fun () -> ((Random.int 100) - 50))) in ((l()) , compare)
   else let l = (sample_list ~min_size: 5 ~max_size: 20 ~sorted: true (fun () -> ((Random.int 100) - 50))) in ((l()) , compare)
 
-let sample_sorted_dupped_list () = 
+let csample_sorted_dupped_list () = 
   let s = ref (-1) in
   let f = ref (-1) in
   let () = Random.self_init () in
@@ -48,7 +48,7 @@ let sample_sorted_dupped_list () =
     ranged_list !s !f;
   end
 
-let sample_dupped_list () = 
+let csample_dupped_list () = 
   let () = Random.self_init () in
   let size = Random.int(15) + 1 in
   let rec ranged_list pos size = 
@@ -86,7 +86,7 @@ let palindromeS =
   test_function_1_against_solution
   [%ty: int list -> bool]
   "palindrome"
-  ~sampler: sample_Palindrome
+  ~sampler: csample_Palindrome
   ~gen: 6
   [([]); [1]; [2; 2]; [2; 1; 2]])
 
@@ -96,7 +96,7 @@ let uppercaseS =
   test_function_1_against_solution
   [%ty: char list -> char list]
   "uppercase"
-  ~sampler: (sample_list ~min_size: 5 ~max_size: 20 sample_allChar)
+  ~sampler: (sample_list ~min_size: 5 ~max_size: 20 csample_allChar)
   ~gen: 7
   [([]); ['a']; ['%']])
 
@@ -106,7 +106,7 @@ let is_sortedS =
   test_function_2_against_solution
   [%ty: int list -> (int -> int -> int) -> bool]
   "is_sorted"
-  ~sampler: (sample_Slist)
+  ~sampler: (csample_Slist)
   ~gen: 8
   [([], compare); ([-1;0;0;1], compare)])
 
@@ -116,7 +116,7 @@ let remove_sorted_dupsS =
   test_function_1_against_solution
   [%ty: int list -> int list]
   "remove_duplicate_sorted"
-  ~sampler: sample_sorted_dupped_list
+  ~sampler: csample_sorted_dupped_list
   ~gen: 8
   [([]); ([-1;0;0;1])])
   
@@ -126,7 +126,7 @@ let remove_dupsS =
   test_function_1_against_solution
   [%ty: int list -> int list]
   "remove_duplicate"
-  ~sampler: sample_dupped_list
+  ~sampler: csample_dupped_list
   ~gen: 8
   [([]); ([-1;0;0;1])])
   

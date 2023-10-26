@@ -186,7 +186,7 @@ type ('a, 'b, 'c) correct1_q11 = ('a -> 'b) -> ('b list -> 'c) -> 'a list -> 'c
 type ('a, 'b, 'c) correct2_q11 = (int -> float) -> (float list -> string) -> int list -> string
 type ('a, 'b, 'c) correct3_q11 = (bool -> char) -> (char list -> int) -> bool list -> int
 type ('a, 'b, 'c) incorrect1_q11 = ('a -> 'b) -> (int -> 'c) -> 'a list -> 'c
-type ('a, 'b, 'c) incorrect1_q11 = ('a -> 'b) -> ('b list -> 'c) -> float -> 'c
+type ('a, 'b, 'c) incorrect2_q11 = ('a -> 'b) -> ('b list -> 'c) -> float -> 'c
 
 
 let ex11 =

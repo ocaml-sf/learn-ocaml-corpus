@@ -27,6 +27,3 @@ let print_grid f (g : grid) : unit =
     ; print_string "\n" in
   let a t (x, y, z) = t x, t y, t z in
   print_grid_aux (a (fun ll -> a (fun (x, _, _) -> x) ll, a (fun (_, x, _) -> x) ll, a (fun (_, _, x) -> x) ll) g);;
-
-
-#install_printer print_grid;;
