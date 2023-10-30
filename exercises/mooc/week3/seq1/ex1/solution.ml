@@ -17,4 +17,7 @@ let split l =
 let rec dequeue (front, back) =
   match front with
     | x :: front' -> (x, (front', back))
-    | [] -> assert (back <> []); dequeue (split back)
+    | [] -> match back with
+      | [] -> assert false
+      | [x] -> (x, ([], []))
+      | back -> dequeue (split back)
