@@ -1,81 +1,188 @@
 {
-    "learnocaml_version": "1",
-    "groups":
-    {
-	"mooc":
-	{
-	    "title": "Introduction to Functional Programming (MOOC)",
-	    "exercises" : [
-		"mooc/week1/seq3/ex1",
-		"mooc/week1/seq3/ex2",
-		"mooc/week1/seq4/ex1",
-		"mooc/week1/seq4/ex2",
-		"mooc/week2/seq1/ex1",
-		"mooc/week2/seq1/ex2",
-		"mooc/week2/seq2/ex1",
-		"mooc/week2/seq2/ex2",
-		"mooc/week2/seq3/ex1",
-		"mooc/week2/seq3/ex2",
-		"mooc/week2/seq4/ex1",
-		"mooc/week3/seq1/ex1",
-		"mooc/week3/seq1/ex2",
-		"mooc/week3/seq2/ex1",
-		"mooc/week3/seq2/ex2",
-		"mooc/week3/seq3/ex1",
-		"mooc/week3/seq4/ex3",
-		"mooc/week3/seq4/ex1",
-		"mooc/week4/seq1/ex1",
-		"mooc/week4/seq2/ex1",
-		"mooc/week4/seq3/ex1",
-		"mooc/week4/seq3/ex2",
-		"mooc/week4/seq4/ex1",
-		"mooc/week5/seq1/ex1",
-		"mooc/week5/seq1/ex2",
-		"mooc/week5/seq2/ex1",
-		"mooc/week5/seq2/ex2",
-		"mooc/week5/seq3/ex1",
-		"mooc/week5/seq3/ex2",
-		"mooc/week5/seq4/ex1",
-		"mooc/week5/seq4/ex2",
-		"mooc/week6/seq1/ex1",
-		"mooc/week6/seq1/ex2",
-		"mooc/week6/seq2/ex1",
-		"mooc/week6/seq3/ex1",
-		"mooc/projects/klotski",
-		"mooc/projects/markov"
-	    ]
-	},
-
-        "fpottier":
-        {
-	    "title": "Advanced Functional Programming by François Pottier",
-	    "exercises": [
-                "fpottier/alpha_beta",
-                "fpottier/anagrams",
-                "fpottier/breaking_sort",
-                "fpottier/counting_trees",
-                "fpottier/enumerating_trees",
-                "fpottier/generic_sorting",
-                "fpottier/huffman",
-                "fpottier/infinite_arrays",
-                "fpottier/leftist_heaps",
-                "fpottier/merge_sort",
-                "fpottier/nondet_monad_cont",
-                "fpottier/nondet_monad_defun",
-                "fpottier/nondet_monad_seq",
-                "fpottier/parser_combinators",
-                "fpottier/persistent_arrays",
-                "fpottier/pprint",
-                "fpottier/random_access_lists",
-                "fpottier/sat",
-                "fpottier/spectre",
-                "fpottier/stereo",
-                "fpottier/symbolic_sequences_data",
-                "fpottier/symbolic_sequences_objects",
-                "fpottier/tictactoe",
-                "fpottier/tree_iterators",
-                "fpottier/unionfind"
-            ]
+  "learnocaml_version": "1",
+  "groups": {
+    "mooc": {
+      "title": "Introduction to Functional Programming (MOOC)",
+      "exercises": [
+        "mooc/week1/seq3/ex1",
+        "mooc/week1/seq3/ex2",
+        "mooc/week1/seq4/ex1",
+        "mooc/week1/seq4/ex2",
+        "mooc/week2/seq1/ex1",
+        "mooc/week2/seq1/ex2",
+        "mooc/week2/seq2/ex1",
+        "mooc/week2/seq2/ex2",
+        "mooc/week2/seq3/ex1",
+        "mooc/week2/seq3/ex2",
+        "mooc/week2/seq4/ex1",
+        "mooc/week3/seq1/ex1",
+        "mooc/week3/seq1/ex2",
+        "mooc/week3/seq2/ex1",
+        "mooc/week3/seq2/ex2",
+        "mooc/week3/seq3/ex1",
+        "mooc/week3/seq4/ex3",
+        "mooc/week3/seq4/ex1",
+        "mooc/week4/seq1/ex1",
+        "mooc/week4/seq2/ex1",
+        "mooc/week4/seq3/ex1",
+        "mooc/week4/seq3/ex2",
+        "mooc/week4/seq4/ex1",
+        "mooc/week5/seq1/ex1",
+        "mooc/week5/seq1/ex2",
+        "mooc/week5/seq2/ex1",
+        "mooc/week5/seq2/ex2",
+        "mooc/week5/seq3/ex1",
+        "mooc/week5/seq3/ex2",
+        "mooc/week5/seq4/ex1",
+        "mooc/week5/seq4/ex2",
+        "mooc/week6/seq1/ex1",
+        "mooc/week6/seq1/ex2",
+        "mooc/week6/seq2/ex1",
+        "mooc/week6/seq3/ex1",
+        "mooc/projects/klotski",
+        "mooc/projects/markov"
+      ]
+    },
+    "fpottier": {
+      "title": "Advanced Functional Programming by François Pottier",
+      "exercises": [
+        "fpottier/alpha_beta",
+        "fpottier/anagrams",
+        "fpottier/breaking_sort",
+        "fpottier/counting_trees",
+        "fpottier/enumerating_trees",
+        "fpottier/generic_sorting",
+        "fpottier/huffman",
+        "fpottier/infinite_arrays",
+        "fpottier/leftist_heaps",
+        "fpottier/merge_sort",
+        "fpottier/nondet_monad_cont",
+        "fpottier/nondet_monad_defun",
+        "fpottier/nondet_monad_seq",
+        "fpottier/parser_combinators",
+        "fpottier/persistent_arrays",
+        "fpottier/pprint",
+        "fpottier/random_access_lists",
+        "fpottier/sat",
+        "fpottier/spectre",
+        "fpottier/stereo",
+        "fpottier/symbolic_sequences_data",
+        "fpottier/symbolic_sequences_objects",
+        "fpottier/tictactoe",
+        "fpottier/tree_iterators",
+        "fpottier/unionfind"
+      ]
+    },
+    "practical_smelodesousa": {
+      "title": "Exercises by Simão Melo de Sousa",
+      "groups" : {
+        "types1" : {
+          "title": "Types, assessments and errors",
+          "exercises": [
+            "smelodesousa/F1/1-type",
+            "smelodesousa/F1/1-type-error",
+            "smelodesousa/F1/1-mistery",
+            "smelodesousa/F1/1-future",
+            "smelodesousa/F1/1-errors",
+            "smelodesousa/F1/1-type-value",
+            "smelodesousa/F1/1-what-type",
+            "smelodesousa/F1/1-true-false",
+            "smelodesousa/F1/1-what-type2",
+            "smelodesousa/F1/1-type2",
+            "smelodesousa/F1/1-tuples",
+            "smelodesousa/F1/1-fun-calls"
+          ]
+        },
+        "calculations": {
+          "title": "Calculations and recursion",
+          "exercises": [
+            "smelodesousa/F3/3-simple-math",
+            "smelodesousa/F3/3-manhattan-distance",
+            "smelodesousa/F3/3-a-historic-algorithm",
+            "smelodesousa/F3/3-reach-infinity",
+            "smelodesousa/F3/3-pi",
+            "smelodesousa/F3/3-digits",
+            "smelodesousa/F3/3-seq-hofstadter",
+            "smelodesousa/F3/3-hofstadter",
+            "smelodesousa/F3/3-sums",
+            "smelodesousa/F3/3-tribonacci",
+            "smelodesousa/F3/3-fast-exponentiation",
+            "smelodesousa/F3/3-catalan",
+            "smelodesousa/F3/3-dichotomy",
+            "smelodesousa/F3/3-mccarthy-91-function",
+            "smelodesousa/F3/3-triangles",
+            "smelodesousa/F3/3-collatz-hailstones",
+            "smelodesousa/F3/3-stars-in-the-form-of-textual-fractals",
+            "smelodesousa/F3/3-how-many-mountains",
+            "smelodesousa/F3/3-dragon-greatness"
+          ]
+        },
+        "types2": {
+          "title": "Types, assessments and errors - part 2",
+          "exercises": [
+            "smelodesousa/F4/4-type-1",
+            "smelodesousa/F4/4-type-2",
+            "smelodesousa/F4/4-type-3",
+            "smelodesousa/F4/4-type-4",
+            "smelodesousa/F4/4-fun-1",
+            "smelodesousa/F4/4-fun-2"
+          ]
+        },
+        "lists_vectors": {
+          "title": "Lists and vectors",
+          "exercises": [
+            "smelodesousa/F5/5-lists",
+            "smelodesousa/F5/5-shine-in-society",
+            "smelodesousa/F5/5-lotto",
+            "smelodesousa/F5/5-salc",
+            "smelodesousa/F5/5-half",
+            "smelodesousa/F5/5-horner",
+            "smelodesousa/F5/5-rle",
+            "smelodesousa/F5/5-seq-true",
+            "smelodesousa/F5/5-lists-sublists-1",
+            "smelodesousa/F5/5-lists-sublists-2",
+            "smelodesousa/F5/5-lists-sublists-3",
+            "smelodesousa/F5/5-lists-sublists-4",
+            "smelodesousa/F5/5-randomness-is-hard",
+            "smelodesousa/F5/5-zombie-attack",
+            "smelodesousa/F5/5-absolute-majority",
+            "smelodesousa/F5/5-holand",
+            "smelodesousa/F5/5-gray-codes",
+            "smelodesousa/F5/5-max-sub-list",
+            "smelodesousa/F5/5-subsequence-of-lists",
+            "smelodesousa/F5/5-brackets",
+            "smelodesousa/F5/5-burrows-wheeler",
+            "smelodesousa/F5/5-pizzaria"
+          ]
         }
+      }
+
+    },
+    "practical_hferee" : {
+      "title" : "Functional Programming by Hugo Ferée",
+      "exercises": [
+        "hferee/1.2_declarations",
+        "hferee/1.3_bool",
+        "hferee/1.4_conditionals",
+        "hferee/4.0_rock_paper_scissors",
+        "hferee/4.2_coordinates",
+        "hferee/5.0_prime_numbers",
+        "hferee/5.1_DNA",
+        "hferee/5.2_sierpinski_vg",
+        "hferee/6_hanoi",
+        "hferee/6_sierpinsky_ascii",
+        "hferee/7_lists",
+        "hferee/7_lists_binary_encoding",
+        "hferee/8_sieve",
+        "hferee/8_fold",
+        "hferee/8_sort",
+        "hferee/10_assoc",
+        "hferee/10_parameterized_lists",
+        "hferee/10_run_length",
+        "hferee/11_lists_lists",
+        "hferee/11_printable"
+      ]
     }
+
+  }
 }

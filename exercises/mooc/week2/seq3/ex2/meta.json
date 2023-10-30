@@ -1,4 +1,13 @@
-{ "learnocaml_version": "1",
+{
+  "learnocaml_version": "1",
   "kind": "exercise",
-  "title": "Finding the Minimum", 
-  "stars": 1 }
+  "title": "Finding the Minimum",
+  "focus": [
+    "Array manipulation",
+    "recursive functions"
+  ],
+  "stars": 1,
+  "backward_exercises": [
+    "mooc/week2/seq3/ex1"
+  ]
+}

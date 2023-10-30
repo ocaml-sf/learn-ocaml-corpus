@@ -1,0 +1,23 @@
+{
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 1,
+  "title": "True or false?",
+  "focus": [
+    "Type inference"
+  ],
+  "identifier": "1.8",
+  "authors": [
+    [
+      "Rui Barata",
+      "rui.barata@ubi.pt"
+    ],
+    [
+      "Simão Sousa",
+      "desousa@di.ubi.pt"
+    ]
+  ],
+  "backward_exercises": [
+    "smelodesousa/F1/1-what-type"
+  ]
+}

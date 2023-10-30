@@ -1,4 +1,6 @@
 { "learnocaml_version": "1",
   "kind": "exercise",
   "title": "Implementing a Stack with an Array", 
-  "stars": 1.5 }
+  "stars": 1.5,
+  "backward_exercises": ["mooc/week5/seq4/ex1"]
+}

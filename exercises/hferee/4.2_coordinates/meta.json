@@ -1,0 +1,13 @@
+{
+  "learnocaml_version": "1",
+  "kind": "exercise",
+  "stars": 1,
+  "title": "Change of coordinates",
+  "focus": [
+    "Record",
+    "variant type"
+  ],
+  "backward_exercises": [
+    "hferee/4.0_rock_paper_scissors"
+  ]
+}

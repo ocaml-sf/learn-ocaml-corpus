@@ -1,0 +1,24 @@
+{
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 2,
+  "title": "Absolute majority!",
+  "focus": [
+    "Array manipulation",
+    "list manipulation"
+  ],
+  "identifier": "5.12",
+  "authors": [
+    [
+      "Gonçalo Domingos",
+      "goncalogdomingos@gmail.com"
+    ],
+    [
+      "Leonardo Santos",
+      "leomendesantos@gmail.com"
+    ]
+  ],
+  "backward_exercises": [
+    "smelodesousa/F5/5-zombie-attack"
+  ]
+}

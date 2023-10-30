@@ -1,0 +1,12 @@
+{
+  "learnocaml_version": "1",
+  "kind": "exercise",
+  "stars": 3,
+  "title": "Encode by range",
+  "focus": [
+    "List manipulation"
+  ],
+  "backward_exercises": [
+    "mooc/week3/seq2/ex1"
+  ]
+}

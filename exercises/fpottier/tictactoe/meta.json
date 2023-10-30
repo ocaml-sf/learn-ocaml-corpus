@@ -2,5 +2,6 @@
   "learnocaml_version":"1",
   "kind":"exercise",
   "stars":3,
-  "title":"Building a Game Tree"
+  "title":"Building a Game Tree",
+  "backward_exercises": ["fpottier/symbolic_sequences_objects"]
 }

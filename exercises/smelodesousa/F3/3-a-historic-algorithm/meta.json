@@ -1,0 +1,25 @@
+{
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 1,
+  "title": "A historic algorithm",
+  "focus": [
+    "Arithmetic operations",
+    "recursive functions",
+    "exceptions"
+  ],
+  "identifier": "3.3",
+  "authors": [
+    [
+      "Dário Santos",
+      "dariovfsantos@gmail.com"
+    ],
+    [
+      "Simão Sousa",
+      "desousa@di.ubi.pt"
+    ]
+  ],
+  "backward_exercises": [
+    "smelodesousa/F3/3-manhattan-distance"
+  ]
+}

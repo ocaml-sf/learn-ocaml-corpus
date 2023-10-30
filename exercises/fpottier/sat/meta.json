@@ -2,5 +2,6 @@
   "learnocaml_version":"1",
   "kind":"exercise",
   "stars":3,
-  "title":"A SAT solver"
+  "title":"A SAT solver",
+  "backward_exercises": ["fpottier/random_access_lists"]
 }

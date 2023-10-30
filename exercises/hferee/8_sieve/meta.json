@@ -1,0 +1,12 @@
+{
+  "learnocaml_version": "1",
+  "kind": "exercise",
+  "stars": 2,
+  "title": "Sieve of Eratosthenes",
+  "focus": [
+    "list manipulation"
+  ],
+  "backward_exercises": [
+    "hferee/8_fold"
+  ]
+}

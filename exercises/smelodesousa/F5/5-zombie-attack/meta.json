@@ -1,0 +1,20 @@
+{
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 2,
+  "title": "Zombie attack!",
+  "focus": [
+    "Array manipulation",
+    "char manipulation"
+  ],
+  "identifier": "5.11",
+  "authors": [
+    [
+      "Gonçalo Domingos",
+      "goncalogdomingos@gmail.com"
+    ]
+  ],
+  "backward_exercises": [
+    "hferee/11_printable"
+  ]
+}

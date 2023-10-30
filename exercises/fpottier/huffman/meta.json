@@ -2,5 +2,6 @@
   "learnocaml_version":"1",
   "kind":"exercise",
   "stars":3,
-  "title":"Huffman Compression"
+  "title":"Huffman Compression",
+  "backward_exercises": ["fpottier/generic_sorting"]
 }

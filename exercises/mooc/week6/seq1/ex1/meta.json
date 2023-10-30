@@ -1,4 +1,6 @@
 { "learnocaml_version": "1",
   "kind": "exercise",
   "title": "Type Abstraction Using a Signature", 
-  "stars": 1.5 }
+  "stars": 1.5,
+  "backward_exercises": ["mooc/week5/seq4/ex2"]
+}

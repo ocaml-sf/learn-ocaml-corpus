@@ -1,0 +1,27 @@
+{
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 1,
+  "title": "Verify the type II",
+  "focus": [
+    "types"
+  ],
+  "identifier": "4.2",
+  "authors": [
+    [
+      "Rui Barata",
+      "rui.barata@ubi.pt"
+    ],
+    [
+      "Simão Sousa",
+      "desousa@di.ubi.pt"
+    ],
+    [
+      "Leonardo Santos",
+      "leomendesantos@gmail.com"
+    ]
+  ],
+  "backward_exercises": [
+    "smelodesousa/F1/1-fun-calls"
+  ]
+}

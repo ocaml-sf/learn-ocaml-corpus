@@ -2,5 +2,6 @@
   "learnocaml_version":"1",
   "kind":"exercise",
   "stars":3,
-  "title":"Parser Combinators"
+  "title":"Parser Combinators",
+  "backward_exercises": ["fpottier/nondet_monad_seq"]
 }

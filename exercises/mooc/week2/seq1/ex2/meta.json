@@ -1,4 +1,13 @@
-{ "learnocaml_version": "1",
+{
+  "learnocaml_version": "1",
   "kind": "exercise",
-  "title": "Enigma", 
-  "stars": 2.5 }
+  "title": "Enigma",
+  "focus": [
+    "Arithmetic operations",
+    "recursive functions"
+  ],
+  "stars": 2.5,
+  "backward_exercises": [
+    "smelodesousa/F3/3-catalan"
+  ]
+}

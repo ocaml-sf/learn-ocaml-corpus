@@ -1,0 +1,13 @@
+{
+  "learnocaml_version": "1",
+  "kind": "exercise",
+  "stars": 1,
+  "title": "Hanoi tower",
+  "focus": [
+    "Variant type",
+    "Print functions"
+  ],
+  "backward_exercises": [
+    "hferee/5.1_DNA"
+  ]
+}

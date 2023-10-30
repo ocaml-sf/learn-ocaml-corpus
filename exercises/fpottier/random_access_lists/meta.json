@@ -2,5 +2,6 @@
   "learnocaml_version":"1",
   "kind":"exercise",
   "stars":3,
-  "title":"Random access lists"
+  "title":"Random access lists",
+  "backward_exercises": ["fpottier/pprint"]
 }

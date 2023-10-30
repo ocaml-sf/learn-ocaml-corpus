@@ -2,5 +2,6 @@
   "learnocaml_version":"1",
   "kind":"exercise",
   "stars":3,
-  "title":"Enumerating Trees"
+  "title":"Enumerating Trees",
+  "backward_exercises": ["fpottier/counting_trees"]
 }

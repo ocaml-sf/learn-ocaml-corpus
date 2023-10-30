@@ -1,0 +1,13 @@
+{
+  "learnocaml_version": "1",
+  "kind": "exercise",
+  "stars": 1,
+  "title": "Prime numbers",
+  "focus": [
+    "Arithmetic operations",
+    "recursive functions"
+  ],
+  "backward_exercises": [
+    "mooc/week2/seq4/ex1"
+  ]
+}

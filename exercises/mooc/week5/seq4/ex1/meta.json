@@ -1,4 +1,6 @@
 { "learnocaml_version": "1",
   "kind": "exercise",
   "title": "Rotating the Contents of an Array", 
-  "stars": 1.5 }
+  "stars": 1.5,
+  "backward_exercises": ["mooc/week5/seq3/ex2"]
+}

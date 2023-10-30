@@ -1,0 +1,19 @@
+{
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 1,
+  "title": "Utilities about Lists",
+  "focus": [
+    "List manipulation"
+  ],
+  "identifier": "5.1",
+  "authors": [
+    [
+      "Rui Barata",
+      "rui.barata@ubi.pt"
+    ]
+  ],
+  "backward_exercises": [
+    "mooc/week3/seq1/ex1"
+  ]
+}

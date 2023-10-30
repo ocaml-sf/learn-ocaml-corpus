@@ -1,0 +1,19 @@
+{
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 3,
+  "title": "Burrows-Wheeler transform",
+  "focus": [
+    "String manipulation"
+  ],
+  "identifier": "5.18",
+  "authors": [
+    [
+      "Gonçalo Domingos",
+      "goncalogdomingos@gmail.com"
+    ]
+  ],
+  "backward_exercises": [
+    "mooc/week3/seq3/ex1"
+  ]
+}

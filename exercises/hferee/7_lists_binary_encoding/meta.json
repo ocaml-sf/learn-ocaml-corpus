@@ -1,0 +1,13 @@
+{
+  "learnocaml_version": "1",
+  "kind": "exercise",
+  "stars": 2,
+  "title": "Binary encoding of integers",
+  "focus": [
+    "Variant type",
+    "list manipulation"
+  ],
+  "backward_exercises": [
+    "hferee/7_lists"
+  ]
+}

@@ -1,4 +1,7 @@
+_opam
 www
 sync
 *.report.html
 *~
+*.cm*
+exercises/**/*.js

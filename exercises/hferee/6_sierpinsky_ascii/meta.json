@@ -1,0 +1,13 @@
+{
+  "learnocaml_version": "1",
+  "kind": "exercise",
+  "stars": 3,
+  "title": "Sierpinsky in ascii",
+  "focus": [
+    "String manipulation",
+    "Print functions"
+  ],
+  "backward_exercises": [
+    "hferee/6_hanoi"
+  ]
+}

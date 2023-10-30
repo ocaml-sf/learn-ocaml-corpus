@@ -1,0 +1,28 @@
+{
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 2,
+  "title": "McCarthy 91 function",
+  "focus": [
+    "Arithmetic operations",
+    "recursive functions"
+  ],
+  "identifier": "3.15",
+  "authors": [
+    [
+      "Dário Santos",
+      "dariovfsantos@gmail.com"
+    ],
+    [
+      "Simão Sousa",
+      "desousa@di.ubi.pt"
+    ],
+    [
+      "Leonardo Santos",
+      "leomendesantos@gmail.com"
+    ]
+  ],
+  "backward_exercises": [
+    "mooc/week2/seq2/ex2"
+  ]
+}

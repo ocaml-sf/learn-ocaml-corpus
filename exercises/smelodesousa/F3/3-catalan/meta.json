@@ -1,0 +1,29 @@
+{
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 2,
+  "title": "Catalan: a language, a desert and some numbers",
+  "focus": [
+    "Arithmetic operations",
+    "recursive functions",
+    "exceptions"
+  ],
+  "identifier": "3.13",
+  "authors": [
+    [
+      "Rui Barata",
+      "rui.barata@ubi.pt"
+    ],
+    [
+      "Simão Melo de Sousa",
+      ""
+    ],
+    [
+      "Leonardo Santos",
+      "leomendesantos@gmail.com"
+    ]
+  ],
+  "backward_exercises": [
+    "smelodesousa/F3/3-fast-exponentiation"
+  ]
+}

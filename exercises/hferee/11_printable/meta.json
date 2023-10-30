@@ -1,0 +1,14 @@
+{
+  "learnocaml_version": "1",
+  "kind": "exercise",
+  "stars": 2,
+  "title": "Display",
+  "focus": [
+    "List manipulation",
+    "polymorphic types",
+    "Print functions"
+  ],
+  "backward_exercises": [
+    "hferee/11_lists_lists"
+  ]
+}

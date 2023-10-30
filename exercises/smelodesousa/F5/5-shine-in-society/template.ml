@@ -1,0 +1,1 @@
+let speak_vacantly () = failwith "Replace with your solution"

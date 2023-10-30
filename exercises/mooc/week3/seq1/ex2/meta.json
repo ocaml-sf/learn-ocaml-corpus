@@ -1,4 +1,13 @@
-{ "learnocaml_version": "1",
+{
+  "learnocaml_version": "1",
   "kind": "exercise",
-  "title": "Classic Functions Over Lists", 
-  "stars": 2 }
+  "title": "Classic Functions Over Lists",
+  "focus": [
+    "List manipulation",
+    "pattern matching"
+  ],
+  "stars": 2,
+  "backward_exercises": [
+    "smelodesousa/F5/5-horner"
+  ]
+}

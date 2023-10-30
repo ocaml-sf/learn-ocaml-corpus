@@ -1,0 +1,24 @@
+{
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 2,
+  "title": "Run-length encoder",
+  "focus": [
+    "List manipulation",
+    "types"
+  ],
+  "identifier": "5.7",
+  "authors": [
+    [
+      "Rui Barata",
+      "rui.barata@ubi.pt"
+    ],
+    [
+      "Leonardo Santos",
+      "leomendesantos@gmail.com"
+    ]
+  ],
+  "backward_exercises": [
+    "mooc/week3/seq1/ex2"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "learnocaml_version": "2",
+  "kind": "exercise",
+  "stars": 1,
+  "title": "Shine in society",
+  "focus": [
+    "List manipulation",
+    "String manipulation"
+  ],
+  "identifier": "5.2",
+  "authors": [
+    [
+      "Dário Santos",
+      "dariovfsantos@gmail.com"
+    ]
+  ],
+  "backward_exercises": [
+    "smelodesousa/F5/5-lists"
+  ]
+}

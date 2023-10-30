@@ -1,4 +1,6 @@
 { "learnocaml_version": "1",
   "kind": "exercise",
-  "title": "Functions Returning Functions", 
-  "stars": 2 }
+  "title": "Functions Returning Functions",
+  "stars": 2,
+  "backward_exercises": ["mooc/week4/seq1/ex1"]
+}
