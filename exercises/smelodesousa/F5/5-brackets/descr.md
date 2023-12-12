@@ -13,8 +13,8 @@ Note that, as a result, concatenating two texts with well-placed parentheses or 
 
 # Goal
 
-Define a function `verify : char list -> char list -> bool` which checks if the text contained in the first parameter has well-placed parentheses. It is suggested that you use the second parameter (another `char list`, which we will define the accumulator) to _accumulate_ the intermediate scan results. Therefore, the accumulator is empty at the beginning of the analysis, and if during the check the accumulator has a parenthesis '(' as its first element, then the current status of the analysis still waits for a parenthesis ')'  which corresponds to the closing of the parenthesis in the accumulator. A proper use of this accumulator makes checking much easier!
+Define a function `verify : char list -> bool` which checks if the text contained in the first parameter has well-placed parentheses. It is suggested that you use an accumulator to _accumulate_ the intermediate scan results. Therefore, the accumulator is empty at the beginning of the analysis, and if during the check the accumulator has a parenthesis '(' as its first element, then the current status of the analysis still waits for a parenthesis ')'  which corresponds to the closing of the parenthesis in the accumulator. A proper use of this accumulator makes checking much easier!
 
 For example:
 
-`verify ['a';'(';'a';'b';'(';'b';')';'c';'(';'o';'k';'a';')';'n';')';'h'] [] = true`
+`verify ['a';'(';'a';'b';'(';'b';')';'c';'(';'o';'k';'a';')';'n';')';'h'] = true`
