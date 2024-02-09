@@ -1,2 +1,2 @@
-let verify text accumulator = 
+let verify text = 
   failwith "Replace with your solution"

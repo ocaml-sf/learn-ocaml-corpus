@@ -1,10 +1,8 @@
 open Test_lib
 open Report
 
-let sample_verify_right () = 
-  ([], [])
-let sample_verify_wrong () =
-  ([], [])
+let sample_verify_right () = []
+let sample_verify_wrong () = []
 
 let sample_verify () = 
   let () = Random.self_init () in
@@ -13,12 +11,12 @@ let sample_verify () =
   else sample_verify_wrong ()
 
 let verifyS () =
-  test_function_2_against_solution
-  [%ty: char list -> char list -> bool ]
+  test_function_1_against_solution
+  [%ty: char list -> bool ]
   "verify"
   ~sampler: sample_verify
   ~gen: 0
-  [(['a';'(';'a';'b';'(';'b';')';'c';'(';'o';'k';'a';')';'n';')';'h'], []); (['a';'(';'a';'b';'(';'b';')';'c';'(';'o';'k';'a';'n';')';'h'], [])]
+  [[')'; '(']; ['a';'(';'a';'b';'(';'b';')';'c';'(';'o';'k';'a';')';'n';')';'h']; ['a';'(';'a';'b';'(';'b';')';'c';'(';'o';'k';'a';'n';')';'h']]
 
 let () =
   set_result                @@
