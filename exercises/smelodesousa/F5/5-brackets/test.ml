@@ -11,7 +11,7 @@ let sample_verify () =
   else sample_verify_wrong ()
 
 let verifyS () =
-  test_function_2_against_solution
+  test_function_1_against_solution
   [%ty: char list -> bool ]
   "verify"
   ~sampler: sample_verify
