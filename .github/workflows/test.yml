@@ -17,6 +17,7 @@ jobs:
       matrix:
         server_image:
           - 'ocamlsf/learn-ocaml:0.15.0'
+          - 'ocamlsf/learn-ocaml:0.16.0'
           # TODO: Keep up-to-date
           - 'ocamlsf/learn-ocaml:master'
     steps:
