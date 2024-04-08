@@ -13,12 +13,6 @@ let check_count_fun code_ast name f n =
   if !count <> n then [Message ([Text ("You have to use exactly " ^ string_of_int n ^ " times '" ^ f ^ "'.")], Failure)]
   else [Message ([Text("Correct number of '" ^ f ^ "' : " ^ string_of_int n ^ ".")], Success 1)]
 
-
-let testmult name =
-    Section ([Code name],
-    test_variable_against_solution [%ty : int] name @
-    check_count_fun code_ast name "*" 3)
-
 let testadd name =
     Section ([Code name],
     test_variable_against_solution [%ty : int] name @
@@ -28,8 +22,7 @@ let exercise =
   [ testadd "phrase0";
     testadd "phrase1";
     testadd "phrase2";
-    testadd "phrase3";
-    testmult "phrase4"]
+    testadd "phrase3"]
 
 let () =
   set_result @@

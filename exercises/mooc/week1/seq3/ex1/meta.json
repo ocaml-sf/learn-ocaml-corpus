@@ -6,5 +6,8 @@
     "Variable declaration",
     "int operators"
   ],
-  "stars": 1
+    "stars": 1,
+    "backward_exercises": [
+    "hferee/1.2_declarations"
+  ]
 }

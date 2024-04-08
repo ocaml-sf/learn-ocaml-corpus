@@ -6,8 +6,5 @@
     "Variable declaration",
     "int operators"
   ],
-  "title": "Local declarations",
-  "backward_exercises": [
-    "mooc/week1/seq3/ex1"
-  ]
+  "title": "Local declarations"
 }
