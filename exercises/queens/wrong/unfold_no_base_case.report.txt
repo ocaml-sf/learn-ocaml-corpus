@@ -1,0 +1,24 @@
+Question 1
+  Found [select] with compatible type.
+  Functional correctness
+    Success 1: [select] seems correct.
+  Laziness
+    Success 1: [select] seems lazy.
+Question 2
+  Found [unfold] with compatible type.
+  Failure: [unfold] is incorrect.
+    The following expression:
+    
+     | unfold is_zero decrement 0 |> sols |> Seq.take 2 |> Seq.to_list
+    raises the following exception: [(Failure final)] This is invalid.
+    Producing the following result is valid: [[[]]]
+Question 3
+  Failure: Cannot find  [permutations]
+Question 4
+  Failure: Cannot find  [nodup]
+Question 5
+  Failure: Cannot find  [safe]
+Question 6
+  Failure: Cannot find  [queens]
+Question 7
+  Failure: Cannot find  [queenz]

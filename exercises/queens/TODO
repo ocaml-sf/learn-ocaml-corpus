@@ -1,0 +1,24 @@
+-- about this exercise ---------------------------------------------------------
+
+In Question 3, it would be nice to test laziness, e.g. by checking that
+computing one permutation is (much) cheaper than computing all of them.
+Unfortunately, we can measure the cost of the monadic computation only
+(e.g. by counting how many [choose] nodes are built and executed), but
+cannot prevent the student from doing stupidly expensive computations
+outside of the monad (e.g., by computing a list of all permutations
+ahead of time).
+
+In Questions 6 and 7, also check that the first safe placement at a
+large size can effectively be computed. E.g., `queenz 25 |> sols |> Seq.head`
+terminates almost immediately.
+
+What is the timeout value when running in the browser?
+Make sure the correct solution is accepted in the browser,
+and wrong/queenz_queens is rejected in the browser.
+I need to test the student's code with large inputs,
+  so as to make sure it is reasonably fast;
+  but this causes stack overflows!
+
+-- ocaml questions -------------------------------------------------------------
+
+-- learn-ocaml questions -------------------------------------------------------
