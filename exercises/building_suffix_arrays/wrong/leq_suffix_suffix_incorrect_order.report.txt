@@ -1,0 +1,14 @@
+Question 1
+  Found [is_sorted] with compatible type.
+  Success 1: [is_sorted] seems correct.
+Question 2
+  Found [is_permutation] with compatible type.
+  Success 1: [is_permutation] seems correct.
+Question 3
+  Found [leq_suffix_suffix] with compatible type.
+  Failure: [leq_suffix_suffix] is incorrect.
+    The following expression:
+    
+     | leq_suffix_suffix "car" 0 2
+    produces the following result: [false] This is invalid. Producing the
+    following result is valid: [true]
