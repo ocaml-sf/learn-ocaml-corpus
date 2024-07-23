@@ -836,7 +836,7 @@ let compare_enumerations (type a)
   end;
   for s = 0 to threshold do
     (* Compare sorted lists. *)
-    let sort = List.sort Pervasives.compare in
+    let sort = List.sort Stdlib.compare in
     let actual = T.result (fun () -> actual () s |> Seq.elements |> sort)
     and expected = Ok (expected s |> Seq.elements |> sort) in
     black_box_compare (=) (wrap (print_list print))

@@ -8,8 +8,8 @@ let unset r = r := 0
 let ccr_reference a b c s =
   s /. (2. *. (cos (a /. 2.)) *. 2. *. (cos (b /. 2.)) *. 2. *. (cos (c /. 2.)))
 
-module Pervasives = struct
-  include Pervasives
+module Stdlib = struct
+  include Stdlib
   let cos_f = cos
   let cos v =
     set used_cos;
@@ -26,7 +26,7 @@ module Pervasives = struct
     div_f x y
 end
 
-include Pervasives
+include Stdlib
 
 let test_ccr ccr (a, b, c, s) =
   let unset_all () =

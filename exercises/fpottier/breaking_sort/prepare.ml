@@ -1,6 +1,6 @@
 open Printf
 (* A correct sort. *)
-let sort = List.sort Pervasives.compare
+let sort = List.sort Stdlib.compare
 
 exception TODO
 
@@ -261,7 +261,7 @@ let sort42 xs =
     | true, true  ->  0
     | true, false -> -1
     | false, true -> +1
-    | false, false -> Pervasives.compare x y
+    | false, false -> Stdlib.compare x y
   in
   List.sort compare xs
 
@@ -299,7 +299,7 @@ let sort15 xs =
     | true, true  ->  0
     | true, false -> -1
     | false, true -> +1
-    | false, false -> Pervasives.compare x y
+    | false, false -> Stdlib.compare x y
   in
   List.sort compare xs
 
