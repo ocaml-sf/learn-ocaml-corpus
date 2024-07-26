@@ -13,7 +13,7 @@ let sample_string_ff =
   sample_cases
     [ printable_fun "((^) \"@\")" ((^) "@") ;
       printable_fun "(fun s -> s ^ s)" (fun s -> s ^ s) ;
-      printable_fun "String.uppercase" (String.uppercase) ]
+      printable_fun "String.uppercase_ascii" (String.uppercase_ascii) ]
 
 let exercise_1 =
   set_progress "Grading exercise 1." ;

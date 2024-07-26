@@ -68,7 +68,7 @@ let sample_contact =
         names.(id)
       else names.(id mod len) ^ name (id / len) in
     id := !id + len + 2 ;
-    let name = String.capitalize (name !id) in
+    let name = String.capitalize_ascii (name !id) in
     let phone_number = (!id mod 23, !id mod 19, !id mod 7, !id mod 17) in
     { name ; phone_number }
 

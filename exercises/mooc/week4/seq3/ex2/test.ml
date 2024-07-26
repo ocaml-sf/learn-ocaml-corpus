@@ -65,7 +65,7 @@ let check_min l =
     if i <= 0 then acc else
       let x = Random.int 50 - 25 and y = Random.int 50 - 25 in
       let v1 = result @@ fun () -> min x y in
-      let v2 = result @@ fun () -> Pervasives.min x y in
+      let v2 = result @@ fun () -> Stdlib.min x y in
       compute_min min
         (test [%ty: int ] v1 v2 @
          [ Message ([ Text "Computing " ; Code (Format.asprintf "min %d %d" x y) ], Informative) ] @
@@ -88,9 +88,9 @@ let exercise_3 =
            find_binding code_ast "my_env" @@ fun expr ->
            ast_check_expr
              ~on_expression:(function
-                   [%expr Pervasives.min] | [%expr min] ->
+                   [%expr Stdlib.min] | [%expr min] ->
                      [ failure
-                         ~message:"You cannot use the Pervasives.min function." ]
+                         ~message:"You cannot use the Stdlib.min function." ]
                  | { pexp_desc = Pexp_let (_, _, _) } ->
                      [ failure
                        ~message:"You cannot use any let expression to define \
