@@ -41,6 +41,8 @@ let letters word =
   !s
 
 let anagram word1 word2 =
-  let s = ref (letters word1) in
-  String.iter (fun c -> s := MultiSet.remove !s c) word2;
-  !s = MultiSet.empty
+  String.(length word1 = length word2) && begin
+    let s = ref (letters word1) in
+    String.iter (fun c -> s := MultiSet.remove !s c) word2;
+    !s = MultiSet.empty
+  end
