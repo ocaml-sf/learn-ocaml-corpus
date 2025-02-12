@@ -1,0 +1,17 @@
+Question 1
+  Found [is_sorted] with compatible type.
+  Success 1: [is_sorted] seems correct.
+Question 2
+  Found [is_permutation] with compatible type.
+  Success 1: [is_permutation] seems correct.
+Question 3
+  Found [leq_suffix_suffix] with compatible type.
+  Success 1: [leq_suffix_suffix] seems correct.
+Question 4
+  Found [is_suffix_array] with compatible type.
+  Failure: [is_suffix_array] is incorrect.
+    The following expression:
+    
+     | is_suffix_array "" [| 0 |]
+    produces the following result: [true] This is invalid. Producing the
+    following result is valid: [false]
