@@ -1,0 +1,34 @@
+Question 1
+  Found [select] with compatible type.
+  Functional correctness
+    Success 1: [select] seems correct.
+  Laziness
+    Success 1: [select] seems lazy.
+Question 2
+  Found [unfold] with compatible type.
+  Success 1: [unfold] seems correct.
+Question 3
+  Found [permutations] with compatible type.
+  Success 1: [permutations] seems correct.
+Question 4
+  Found [nodup] with compatible type.
+  Success 1: [nodup] seems correct.
+Question 5
+  Found [safe] with compatible type.
+  Success 1: [safe] seems correct.
+Question 6
+  Found [queens] with compatible type.
+  Failure: [queens] is incorrect.
+    The following expression:
+    
+     | queens 6 |> sols |> Seq.take 5 |> Seq.to_list
+    produces the following result: [[]] This is invalid. Producing the
+    following result is valid:
+     | [
+     |   [1; 3; 5; 0; 2; 4];
+     |   [2; 5; 1; 4; 0; 3];
+     |   [3; 0; 4; 1; 5; 2];
+     |   [4; 2; 0; 5; 3; 1]
+     | ]
+Question 7
+  Failure: Cannot find  [queenz]

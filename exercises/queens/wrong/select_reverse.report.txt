@@ -1,0 +1,23 @@
+Question 1
+  Found [select] with compatible type.
+  Functional correctness
+    Success 1: [select] seems correct.
+  Laziness
+    Failure: [select] is not lazy.
+      The following expression:
+      
+       | select [0] |> sols |> Seq.take 0 |> Seq.to_list
+      should build and execute no choice point, but actually builds one
+      choice point and does not execute it.
+Question 2
+  Failure: Cannot find  [unfold]
+Question 3
+  Failure: Cannot find  [permutations]
+Question 4
+  Failure: Cannot find  [nodup]
+Question 5
+  Failure: Cannot find  [safe]
+Question 6
+  Failure: Cannot find  [queens]
+Question 7
+  Failure: Cannot find  [queenz]
